@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -25,12 +26,15 @@
          </image>
       </ImageView>
       <Label layoutX="100.0" layoutY="84.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
-      <Label layoutX="167.0" layoutY="46.0" prefHeight="18.0" prefWidth="200.0" text="                   1Tiket">
+      <Label layoutX="167.0" layoutY="46.0" prefHeight="18.0" prefWidth="200.0" text="                   1Ticket">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Hyperlink layoutX="502.0" layoutY="100.0" text="Logout" />
+      <Hyperlink layoutX="502.0" layoutY="100.0" text="Logout" underline="true">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></Hyperlink>
       <TabPane layoutX="37.0" layoutY="146.0" prefHeight="243.0" prefWidth="567.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="           Eventi            ">

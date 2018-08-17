@@ -23,7 +23,7 @@
       <Button layoutX="196.0" layoutY="279.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" text="ANNULLA" />
       <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="125.0" layoutY="29.0">
          <image>
-            <Image url="@../../ticket-icon-300x300.png" />
+            <Image url="@../../../home/carlo/Scrivania/pip/IngSW-master/ticket/ticket-icon-300x300.png" />
          </image>
       </ImageView>
       <PasswordField layoutX="77.0" layoutY="209.0" prefHeight="26.0" prefWidth="160.0" />
