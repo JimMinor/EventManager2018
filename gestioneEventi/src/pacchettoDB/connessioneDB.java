@@ -5,29 +5,32 @@ import java.sql.*;
 
 /**
  * connessioneDB:
- * L'intento di questa classe e' stabile una connessione con il DB.
+ * L'intento di questa classe e' stabilire una connessione con il DB Relazionale Oracle 11g
  *
  */
 public class connessioneDB {
 
-    public static void connettiDB(){
 
+    public static Connection getConnessioneDB(){
+
+        Connection connessione = null;
         try{
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException e) {
-                System.out.println("Where is your MySQL JDBC Driver?");
-                e.printStackTrace();
-                return;
+                // Ricerca Driver
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+            } catch (ClassNotFoundException E) {
+                E.printStackTrace();
+                return connessione;
             }
-            Connection connessione = DriverManager.getConnection("jdbc:mysql://localhost:3306/TciketDB","Giammarco","troll");
-
-            Statement statement = connessione.createStatement();
-
+            // Creazione Connessione
+            connessione = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","Giammarco","troll");
+            }
+            catch(SQLException E){
+            E.printStackTrace();
+            return connessione;
 
         }
-        catch(Exception E){System.out.println(E);
-        }
 
+     return connessione;
     }
 }

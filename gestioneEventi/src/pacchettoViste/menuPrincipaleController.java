@@ -16,16 +16,12 @@ public class menuPrincipaleController implements  Initializable,controlledScreen
     @FXML
     private AnchorPane eventiArchorPane;
 
-    private screensControl myScreenController;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {}
     @Override
-    public void setScreenParent(screensControl screenPage){
-        myScreenController=screenPage;
-
-
-    }
+    public void setScreenParent(cambiaScreen screenPage){}
 
 
 

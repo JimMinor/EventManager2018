@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -20,7 +19,7 @@
       <TextField fx:id="usernameTextField" layoutX="76.0" layoutY="130.0" maxHeight="28.0" prefColumnCount="2" prefHeight="26.0" prefWidth="160.0" />
       <Label layoutX="116.0" layoutY="102.0" text="USERNAME" />
       <Label layoutX="116.0" layoutY="190.0" text="PASSWORD" />
-      <Button fx:id="annullaButton" layoutX="37.0" layoutY="278.0" mnemonicParsing="false" onAction="#annullaButtonPressed" onMouseClicked="#annullaButtonPressed" prefHeight="32.0" prefWidth="80.0" text="Annulla\1112" />
+      <Button fx:id="annullaButton" layoutX="37.0" layoutY="278.0" mnemonicParsing="false" onAction="#annullaButtonPressed" onMouseClicked="#annullaButtonPressed" prefHeight="32.0" prefWidth="80.0" text="Annulla" />
       <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="125.0" layoutY="29.0">
          <image>
             <Image url="@../ticket-icon-300x300.png" />

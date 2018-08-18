@@ -3,12 +3,11 @@ package pacchettoViste;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-import java.awt.event.ActionEvent;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.*;
-import pacchettoDB.impiegatoController;
 
 public class loginScreenController implements Initializable,controlledScreen {
 
@@ -23,29 +22,39 @@ public class loginScreenController implements Initializable,controlledScreen {
     @FXML
     private PasswordField passwordTextField;
 
-    /** Controller **/
-   private impiegatoController myImpiegatoController;
-
-   private screensControl myScreenController;
+    private pacchettoDB.impiegatoDAO myImpiegatoDAO;
+    private cambiaScreen myScreen;
 
     /** METODI ereditati **/
     @Override
     public void initialize(URL url, ResourceBundle rb) {}
-    @Override
-    public void setScreenParent(screensControl screenPage){
-        this.myScreenController=screenPage;
-    }
+
+   @Override
+   public void setScreenParent(cambiaScreen screenPage){
+        myScreen=screenPage;
+
+   }
 
 
     /** Metodi  FXML  **/
+
+    /** entraButtonPressed()
+     *
+     * @throws Exception
+     *
+     */
     @FXML
-    public void entraButtonPressed(ActionEvent e){
-        myImpiegatoController = new impiegatoController();
-       // myImpiegatoController.controllaDatiUtente(usernameTextField.getText(),passwordTextField.getText());
+    public void entraButtonPressed() {
 
-
-        /** DEBUG **/
-        System.out.println(usernameTextField.getText()+""+ passwordTextField.getText());
+        myImpiegatoDAO = new pacchettoDB.impiegatoDB();
+       try{
+           myImpiegatoDAO.trovaImpiegato(usernameTextField.getText(),passwordTextField.getText());
+       }
+       catch(Exception e){
+           alertController.mostraAlertLogin();
+           return;
+       }
+        myScreen.setScreen(applicationController.menuPrincipaleScreenID);
 
     }
 

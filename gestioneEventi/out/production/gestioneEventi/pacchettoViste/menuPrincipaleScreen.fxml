@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root id="AnchorPane" maxHeight="422.0" maxWidth="641.0" minHeight="422.0" minWidth="641.0" prefHeight="422.0" prefWidth="641.0" snapToPixel="false" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tiket.M1Controller">
+        <AnchorPane id="AnchorPane" cache="true"  maxHeight="422.0" maxWidth="641.0" minHeight="422.0" minWidth="641.0" prefHeight="422.0" prefWidth="641.0" snapToPixel="false"  xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
    <children>
       <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="315.0" layoutY="33.0">
          <image>
@@ -70,4 +70,4 @@
       </TabPane>
       <Label layoutX="99.0" layoutY="104.0" prefHeight="18.0" prefWidth="103.0" text="Privilegi" />
    </children>
-</fx:root>
+</AnchorPane>
