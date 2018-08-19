@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/pacchettoViste/applicationController.java" line="4" />
+    <bookmark url="file://$PROJECT_DIR$/src/pacchettoViste/gestioneEventiApp.java" line="8" />
     <bookmark url="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoController.java" line="8" />
   </component>
   <component name="ChangeListManager">
@@ -62,18 +62,53 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="gestioneEventiApp.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/pacchettoViste/gestioneEventiApp.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="551">
+                    <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
+              <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="275">
+                    <caret line="2271" column="28" lean-forward="true" selection-start-line="2271" selection-start-column="28" selection-end-line="2271" selection-end-column="28" />
+                    <folding>
+                      <element signature="e#85050#85051#0" expanded="true" />
+                      <element signature="e#85102#85103#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="applicationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pacchettoViste/applicationController.java">
+      <file leaf-file-name="mostraAlert.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pacchettoViste/mostraAlert.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state>
+              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#mostraAlertLogin#0;class#alertController#0" />
               </folding>
             </state>
           </provider>
@@ -82,11 +117,12 @@
       <file leaf-file-name="cambiaScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pacchettoViste/cambiaScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-345">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="1375">
+              <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#setScreen#0;class#cambiaScreen#0" />
+                <element signature="e#781#782#0" expanded="true" />
+                <element signature="e#821#822#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,22 +131,24 @@
       <file leaf-file-name="loginScreenController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pacchettoViste/loginScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+            <state relative-caret-position="79">
+              <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#745#746#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alertController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pacchettoViste/alertController.java">
+      <file leaf-file-name="impiegatoDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+            <state relative-caret-position="-3">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="method#mostraAlertLogin#0;class#alertController#0" />
+                <element signature="method#trovaImpiegato#0;class#impiegatoDB#0" />
               </folding>
             </state>
           </provider>
@@ -134,8 +172,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/pacchettoDB/connessioneDB.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/pacchettoViste/loginScreen.fxml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/pacchettoViste/applicationController.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/pacchettoViste/loginScreenController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/pacchettoViste/gestioneEventiApp.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/pacchettoViste/loginScreenController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoController.java" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoDB.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoDAO.java" root0="SKIP_HIGHLIGHTING" />
@@ -164,17 +202,19 @@
         <option value="$PROJECT_DIR$/src/pacchettoDB/impiegatoController.java" />
         <option value="$PROJECT_DIR$/src/pacchettoDB/impiegatoDAO.java" />
         <option value="e582f6e2-ae1e-4377-b342-f0aba8d50d8c/consoles/DB 1" />
-        <option value="$PROJECT_DIR$/src/pacchettoViste/loginScreen.fxml" />
         <option value="$PROJECT_DIR$/src/pacchettoDB/connessioneDB.java" />
         <option value="$PROJECT_DIR$/src/pacchettoViste/controlledScreen.java" />
+        <option value="$PROJECT_DIR$/src/pacchettoViste/screensController.java" />
+        <option value="$PROJECT_DIR$/src/pacchettoDB/impiegatoDB.java" />
+        <option value="$PROJECT_DIR$/src/pacchettoViste/alertController.java" />
+        <option value="$PROJECT_DIR$/src/pacchettoViste/mostraAlert.java" />
+        <option value="$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleScreen.fxml" />
         <option value="$PROJECT_DIR$/src/pacchettoViste/applicationController.java" />
         <option value="$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleController.java" />
-        <option value="$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleScreen.fxml" />
-        <option value="$PROJECT_DIR$/src/pacchettoViste/screensController.java" />
+        <option value="$PROJECT_DIR$/src/pacchettoViste/loginScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/pacchettoViste/gestioneEventiApp.java" />
         <option value="$PROJECT_DIR$/src/pacchettoViste/cambiaScreen.java" />
-        <option value="$PROJECT_DIR$/src/pacchettoViste/alertController.java" />
         <option value="$PROJECT_DIR$/src/pacchettoViste/loginScreenController.java" />
-        <option value="$PROJECT_DIR$/src/pacchettoDB/impiegatoDB.java" />
       </list>
     </option>
   </component>
@@ -186,10 +226,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="454" />
-    <option name="y" value="30" />
-    <option name="width" value="920" />
-    <option name="height" value="761" />
+    <option name="x" value="52" />
+    <option name="y" value="82" />
+    <option name="width" value="1132" />
+    <option name="height" value="504" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
@@ -200,6 +240,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -233,9 +276,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,7 +324,7 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="pacchettoViste.applicationController" />
+      <option name="MAIN_CLASS_NAME" value="pacchettoViste.gestioneEventiApp" />
       <module name="gestioneEventi" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <extension name="coverage">
@@ -384,29 +424,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32752612" />
       <window_info id="DB Browser" order="0" weight="0.25037822" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49924356" weight="0.41811848" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info id="Image Layers" order="7" />
+      <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="DB Execution Console" order="0" weight="0.3292683" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.26928896" side_tool="true" weight="0.18831168" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32980332" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.73071104" visible="true" weight="0.4651568" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.73071104" weight="0.2630662" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3292683" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="3" />
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="1" sideWeight="0.6703755" type="SLIDING" weight="0.28744328" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Designer" order="2" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="7" sideWeight="0.6703755" type="SLIDING" weight="0.22087745" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
-      <window_info id="UI Designer" order="4" />
+      <window_info id="UI Designer" order="3" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3989547" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="right" id="JetGradle" order="5" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -422,39 +463,39 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="DB Execution Console" order="0" weight="0.3292683" />
-      <window_info id="Designer" order="3" />
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="JetGradle" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.73071104" visible="true" weight="0.2630662" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.73071104" visible="true" weight="0.4651568" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info id="DB Browser" order="0" weight="0.25037822" />
-      <window_info id="UI Designer" order="4" />
+      <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Profiler" order="10" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Changes" order="9" />
-      <window_info id="Capture Tool" order="6" />
+      <window_info id="Capture Tool" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.26928896" side_tool="true" weight="0.18831168" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49924356" weight="0.41811848" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Problems" order="11" />
-      <window_info id="Image Layers" order="7" />
+      <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32980332" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3292683" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3292683" />
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="1" sideWeight="0.6703755" type="SLIDING" weight="0.28744328" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="7" sideWeight="0.6703755" type="SLIDING" weight="0.22087745" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32752612" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3989547" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -466,7 +507,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -474,13 +515,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="86" lean-forward="true" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/javafx-src.zip!/javafx/fxml/Initializable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -562,7 +596,7 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/applicationController.java">
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/gestioneEventiApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
@@ -649,14 +683,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pacchettoViste/screensControl.java" />
-    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/loginScreen.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pacchettoViste/controlledScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -664,39 +690,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleScreen.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#trovaImpiegato#0;class#impiegatoDB#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pacchettoDB/connessioneDB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="method#getConnessioneDB#0;class#connessioneDB#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -707,43 +704,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/applicationController.java">
+    <entry file="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="-3">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="method#trovaImpiegato#0;class#impiegatoDB#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="2271" column="28" lean-forward="true" selection-start-line="2271" selection-start-column="28" selection-end-line="2271" selection-end-column="28" />
+          <folding>
+            <element signature="e#85050#85051#0" expanded="true" />
+            <element signature="e#85102#85103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/loginScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="14" column="99" selection-start-line="14" selection-start-column="99" selection-end-line="14" selection-end-column="99" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/gestioneEventiApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/alertController.java">
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleScreen.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        <state relative-caret-position="144">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/cambiaScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1375">
+          <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/mostraAlert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
           <folding>
             <element signature="method#mostraAlertLogin#0;class#alertController#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/cambiaScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setScreen#0;class#cambiaScreen#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pacchettoViste/loginScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        <state relative-caret-position="79">
+          <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
           </folding>
         </state>
       </provider>

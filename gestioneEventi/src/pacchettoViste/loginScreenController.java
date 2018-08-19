@@ -1,12 +1,16 @@
 package pacchettoViste;
 
+import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 public class loginScreenController implements Initializable,controlledScreen {
@@ -24,10 +28,14 @@ public class loginScreenController implements Initializable,controlledScreen {
 
     private pacchettoDB.impiegatoDAO myImpiegatoDAO;
     private cambiaScreen myScreen;
+    private gestioneEventiApp myApplication;
 
     /** METODI ereditati **/
     @Override
-    public void initialize(URL url, ResourceBundle rb) {}
+    public void initialize(URL url, ResourceBundle rb) {
+        myScreen= new cambiaScreen();
+    }
+
 
    @Override
    public void setScreenParent(cambiaScreen screenPage){
@@ -35,6 +43,10 @@ public class loginScreenController implements Initializable,controlledScreen {
 
    }
 
+    public void setApp(gestioneEventiApp a){
+       myApplication=a;
+       System.out.println(myApplication);
+        }
 
     /** Metodi  FXML  **/
 
@@ -44,17 +56,22 @@ public class loginScreenController implements Initializable,controlledScreen {
      *
      */
     @FXML
-    public void entraButtonPressed() {
+    public void entraButtonPressed(javafx.event.ActionEvent event) throws IOException {
 
         myImpiegatoDAO = new pacchettoDB.impiegatoDB();
        try{
            myImpiegatoDAO.trovaImpiegato(usernameTextField.getText(),passwordTextField.getText());
        }
        catch(Exception e){
-           alertController.mostraAlertLogin();
+           mostraAlert.mostraAlertLogin();
            return;
        }
-        myScreen.setScreen(applicationController.menuPrincipaleScreenID);
+
+        myScreen.mostraMenuPrincipale(myApplication);
+
+
+
+
 
     }
 

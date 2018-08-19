@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" cache="true" maxHeight="351.0" maxWidth="304.0" prefHeight="351.0" prefWidth="304.0" snapToPixel="false" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.loginScreenController">
     <children>
-        <Button fx:id="entraButton" layoutX="208.0" layoutY="278.0" onAction="#entraButtonPressed" onMouseClicked="#entraButtonPressed" prefHeight="32.0" prefWidth="80.0" text="Entra" />
+        <Button fx:id="entraButton" layoutX="208.0" layoutY="278.0" onAction="#entraButtonPressed"  prefHeight="32.0" prefWidth="80.0" text="Entra" />
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
 
 

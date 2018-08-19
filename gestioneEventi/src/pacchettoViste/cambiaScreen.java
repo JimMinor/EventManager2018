@@ -1,5 +1,6 @@
 package pacchettoViste;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import javafx.animation.KeyFrame;
@@ -11,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
@@ -102,6 +104,7 @@ public class cambiaScreen extends StackPane{
             } else {
                 setOpacity(0.0);
                 getChildren().add(screens.get(name));
+
                 Timeline fadeIn = new Timeline(
                         new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.0)),
                         new KeyFrame(new Duration(2500), new KeyValue(opacity, 1.0)));
@@ -112,5 +115,14 @@ public class cambiaScreen extends StackPane{
 
             return false;
         }
+    }
+
+    public void mostraMenuPrincipale(gestioneEventiApp g){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("menuPrincipaleScreen.fxml"));
+            g.stagePrincipale.setScene(new Scene(root));
+            g.stagePrincipale.show();
+        }
+        catch(IOException e){}
     }
 }

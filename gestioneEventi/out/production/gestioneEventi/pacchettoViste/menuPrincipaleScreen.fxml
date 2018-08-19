@@ -13,7 +13,7 @@
 
         <AnchorPane id="AnchorPane" cache="true"  maxHeight="422.0" maxWidth="641.0" minHeight="422.0" minWidth="641.0" prefHeight="422.0" prefWidth="641.0" snapToPixel="false"  xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
    <children>
-      <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="315.0" layoutY="33.0">
+      <ImageView fitHeight="250.0" fitWidth="240.0" layoutX="315.0" layoutY="33.0">
          <image>
             <Image url="@../ticket-icon-300x300.png" />
          </image>

@@ -9,28 +9,22 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-        <AnchorPane id="AnchorPane" cache="true"  maxHeight="422.0" maxWidth="641.0" minHeight="422.0" minWidth="641.0" prefHeight="422.0" prefWidth="641.0" snapToPixel="false"  xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
+<AnchorPane id="AnchorPane" cache="true" maxHeight="422.0" maxWidth="641.0" minHeight="422.0" minWidth="641.0" prefHeight="422.0" prefWidth="641.0" snapToPixel="false" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
    <children>
-      <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="315.0" layoutY="33.0">
+      <ImageView fitHeight="78.0" fitWidth="148.0" layoutX="455.0" layoutY="28.0">
          <image>
             <Image url="@../ticket-icon-300x300.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="67.0" fitWidth="76.0" layoutX="61.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="34.0" layoutY="67.0">
+      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="23.0" layoutY="29.0">
          <image>
             <Image url="@../765-default-avatar_4.png" />
          </image>
       </ImageView>
-      <Label layoutX="100.0" layoutY="84.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
-      <Label layoutX="167.0" layoutY="46.0" prefHeight="18.0" prefWidth="200.0" text="                   1Tiket">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Hyperlink layoutX="502.0" layoutY="100.0" text="Logout" />
+      <Label layoutX="83.0" layoutY="31.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
+      <Hyperlink layoutX="28.0" layoutY="101.0" text="Logout" />
       <TabPane layoutX="37.0" layoutY="146.0" prefHeight="243.0" prefWidth="567.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="           Eventi            ">
@@ -39,7 +33,8 @@
                      <children>
                         <Button layoutX="226.0" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Inserisci Evento" />
                         <Button layoutX="226.0" layoutY="108.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Ricerca evento " />
-                     </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
             </content>
           </Tab>
           <Tab text="          Clienti           ">
@@ -68,6 +63,5 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Label layoutX="99.0" layoutY="104.0" prefHeight="18.0" prefWidth="103.0" text="Privilegi" />
    </children>
 </AnchorPane>
