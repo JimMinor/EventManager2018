@@ -15,11 +15,7 @@ import java.util.ArrayList;
 
 public class gestioneEventiApp extends Application {
 
-
-    public static String loginScreenID= "loginScreen";
-    public static String menuPrincipaleScreenID = "menuPrincipale";
-    public static String loginScreenFile = "loginScreen.fxml";
-    public static String menuPrincipaleScreenFile = "menuPrincipaleScreen.fxml";
+    private String loginScreenFile = "loginScreen.fxml";
     private Group root = new Group();
     public Stage stagePrincipale;
     private ArrayList<Initializable> controllers = new ArrayList<>();
