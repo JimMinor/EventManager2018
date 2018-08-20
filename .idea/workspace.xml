@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Cambiata classe di autenticazione">
-      <change beforePath="$PROJECT_DIR$/.idea/IngSW.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IngSW.iml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/impiegatoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/impiegatoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/impiegatoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/autenticatore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/mainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/mainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/screensControl.java" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginScreenController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="loginScreenController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="72" column="67" selection-start-line="72" selection-start-column="67" selection-end-line="72" selection-end-column="67" />
+            <state relative-caret-position="158">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
                 <element signature="e#831#832#0" expanded="true" />
                 <element signature="e#868#869#0" expanded="true" />
@@ -101,16 +96,21 @@
         <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/impiegatoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autenticatore.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="autenticatore.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/autenticatore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="-249">
+              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -187,8 +187,8 @@
         <option value="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/screensControl.java" />
         <option value="$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/impiegatoDAO.java" />
         <option value="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/mainApp.java" />
-        <option value="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreenController.java" />
         <option value="$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/autenticatore.java" />
+        <option value="$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreenController.java" />
       </list>
     </option>
   </component>
@@ -377,6 +377,14 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
     </task>
+    <task id="LOCAL-00001" summary="Cambiata classe di autenticazione">
+      <created>1534756576630</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1534756576630</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -398,7 +406,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32741398" />
       <window_info id="DB Browser" order="0" weight="0.25037822" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49924356" visible="true" weight="0.41426146" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" sideWeight="0.49924356" visible="true" weight="0.2665535" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="DB Execution Console" order="0" weight="0.3292683" />
@@ -406,7 +414,7 @@
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.26928896" side_tool="true" weight="0.18831168" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.32980332" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.73071104" weight="0.46503884" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32963374" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.3293718" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3292683" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
@@ -450,7 +458,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pacchettoDB/impiegatoController.java" />
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/javafx-src.zip!/javafx/fxml/Initializable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -561,13 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/impiegatoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/mainApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -575,10 +575,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/autenticatore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/impiegatoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="72" column="67" selection-start-line="72" selection-start-column="67" selection-end-line="72" selection-end-column="67" />
+        <state relative-caret-position="158">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
           <folding>
             <element signature="e#831#832#0" expanded="true" />
             <element signature="e#868#869#0" expanded="true" />
@@ -587,13 +604,6 @@
             <element signature="e#981#982#0" expanded="true" />
             <element signature="e#1017#1018#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoDB/autenticatore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
         </state>
       </provider>
     </entry>

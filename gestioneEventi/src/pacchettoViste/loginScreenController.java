@@ -32,7 +32,7 @@ public class loginScreenController implements Initializable {
       *     Getter               *
       ****************************
       */
-    public impiegatoDAO getMyAutenticatore() {
+    public autenticatore getMyAutenticatore() {
         return myAut;
     }
 
