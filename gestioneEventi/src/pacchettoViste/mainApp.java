@@ -17,7 +17,7 @@ public class mainApp extends Application {
 
     private String loginScreenFile = "loginScreen.fxml";
     private Group root = new Group();
-    public Stage stagePrincipale;
+    private Stage stagePrincipale;
 
 
 
@@ -34,10 +34,11 @@ public class mainApp extends Application {
 
         this.stagePrincipale=stagePrincipale;
         FXMLLoader loader = new FXMLLoader(getClass().getResource(loginScreenFile));
-        Parent radice=(Parent)loader.load();
+        Parent radice=loader.load();
         stagePrincipale.setScene(new Scene(radice));
-        loginScreenController myLoginScreen = (loginScreenController)loader.getController();
+        loginScreenController myLoginScreen = loader.getController();
         myLoginScreen.setApp(this);
+        stagePrincipale.setTitle("Login");
         stagePrincipale.show();
 
       }

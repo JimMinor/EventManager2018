@@ -8,11 +8,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.*;
+import pacchettoDB.autenticatore;
+import pacchettoDB.impiegatoDAO;
 
-public class loginScreenController implements Initializable,controlledScreen {
+public class loginScreenController implements Initializable {
 
-
-    /** Attributi FXML **/
     @FXML
     private Button entraButton ;
     @FXML
@@ -22,44 +22,61 @@ public class loginScreenController implements Initializable,controlledScreen {
     @FXML
     private PasswordField passwordTextField;
 
-    private pacchettoDB.impiegatoDAO myImpiegatoDAO;
+    private pacchettoDB.autenticatore myAut;
     private cambiaScreen myScreen;
     private mainApp myApplication;
 
-    /** METODI ereditati **/
+
+
+     /****************************
+      *     Getter               *
+      ****************************
+      */
+    public impiegatoDAO getMyAutenticatore() {
+        return myAut;
+    }
+
+    public cambiaScreen getMyScreen() {
+        return myScreen;
+    }
+
+    public mainApp getMyApplication() {
+        return myApplication;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         myScreen= new cambiaScreen();
+        myAut = new autenticatore();
     }
 
-
-   @Override
-   public void setScreenParent(cambiaScreen screenPage){
-        myScreen=screenPage;
-
-   }
 
     public void setApp(mainApp a){
        myApplication=a;
        System.out.println(myApplication);
         }
 
-    /** Metodi  FXML  **/
+
+
+    /****************************
+     *     Metodi FXML          *
+     ****************************
+     */
+
 
     /** entraButtonPressed()
      *
      *  Query al DB per la ricerca di un impiegato
      *
-     * @throws Exception
-     *
      */
     @FXML
-    public void entraButtonPressed(javafx.event.ActionEvent event) throws IOException {
+    public void entraButtonPressed(javafx.event.ActionEvent event)  {
 
-        myImpiegatoDAO = new pacchettoDB.impiegatoDB();
        try{
-           if(myImpiegatoDAO.trovaImpiegato(usernameTextField.getText(),passwordTextField.getText())==false)
+           // Verifica l'autenticazione dell'utente
+           if(!myAut.autenticaUtente(usernameTextField.getText(),passwordTextField.getText()))
                mostraAlert.mostraAlertLogin();
+
          }
        catch(Exception e){
            mostraAlert.mostraAlertLogin();
@@ -67,13 +84,12 @@ public class loginScreenController implements Initializable,controlledScreen {
        }
 
         myScreen.mostraMenuPrincipale(myApplication);
-
-
-
-
-
     }
 
+    /**
+     * Pulisce le TextField
+     *
+     */
     @FXML
     public void annullaButtonPressed(){
         usernameTextField.clear();
