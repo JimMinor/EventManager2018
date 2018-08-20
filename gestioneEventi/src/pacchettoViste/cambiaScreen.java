@@ -37,7 +37,7 @@ public class cambiaScreen extends StackPane{
 
     /** removeScreen
      *  Permette  di eliminare uno screen dall'insieme.
-     * @return void
+     *
      * @param nome dello screen da rimuovere
      *
      */
@@ -66,7 +66,7 @@ public class cambiaScreen extends StackPane{
     public synchronized  boolean caricaScreen(String name, String resource) {
         try {
             FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
-            Parent loadScreen = (Parent) myLoader.load();
+            Parent loadScreen =  myLoader.load();
             controlledScreen myScreenControler = ((controlledScreen) myLoader.getController());
             myScreenControler.setScreenParent(this);
             addScreen(name, loadScreen);
@@ -121,9 +121,11 @@ public class cambiaScreen extends StackPane{
     public void mostraMenuPrincipale(mainApp g){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("menuPrincipaleScreen.fxml"));
-            g.stagePrincipale.setScene(new Scene(root));
-            g.stagePrincipale.show();
+            g.getStagePrincipale().setScene(new Scene(root));
+            g.getStagePrincipale().show();
         }
-        catch(IOException e){}
+        catch(IOException e){
+            // DO-Something
+        }
     }
 }

@@ -12,4 +12,13 @@ public  class mostraAlert {
 
         alert.showAndWait();
     }
+    public static void mostraAlertErroreDB(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Errore");
+        alert.setHeaderText(null);
+        alert.setContentText("Errore di connessione!");
+
+        alert.showAndWait();
+
+    }
 }

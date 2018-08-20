@@ -1,6 +1,8 @@
 package pacchettoDB;
 
 
+import pacchettoViste.mostraAlert;
+
 import java.sql.*;
 
 /**
@@ -26,7 +28,7 @@ public class connessioneDB {
             connessione = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","Giammarco","troll");
             }
             catch(SQLException E){
-            E.printStackTrace();
+            mostraAlert.mostraAlertErroreDB();
             return connessione;
 
         }

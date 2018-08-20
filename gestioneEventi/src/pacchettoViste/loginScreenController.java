@@ -74,12 +74,14 @@ public class loginScreenController implements Initializable {
 
        try{
            // Verifica l'autenticazione dell'utente
-           if(!myAut.autenticaUtente(usernameTextField.getText(),passwordTextField.getText()))
+           if(!myAut.autenticaUtente(usernameTextField.getText(),passwordTextField.getText())) {
                mostraAlert.mostraAlertLogin();
+               return;
+           }
 
          }
        catch(Exception e){
-           mostraAlert.mostraAlertLogin();
+           mostraAlert.mostraAlertErroreDB();
            return;
        }
 
