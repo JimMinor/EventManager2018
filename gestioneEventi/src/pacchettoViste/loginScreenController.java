@@ -1,16 +1,12 @@
 package pacchettoViste;
 
-import javafx.application.Application;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 public class loginScreenController implements Initializable,controlledScreen {
@@ -28,7 +24,7 @@ public class loginScreenController implements Initializable,controlledScreen {
 
     private pacchettoDB.impiegatoDAO myImpiegatoDAO;
     private cambiaScreen myScreen;
-    private gestioneEventiApp myApplication;
+    private mainApp myApplication;
 
     /** METODI ereditati **/
     @Override
@@ -43,7 +39,7 @@ public class loginScreenController implements Initializable,controlledScreen {
 
    }
 
-    public void setApp(gestioneEventiApp a){
+    public void setApp(mainApp a){
        myApplication=a;
        System.out.println(myApplication);
         }
@@ -51,6 +47,8 @@ public class loginScreenController implements Initializable,controlledScreen {
     /** Metodi  FXML  **/
 
     /** entraButtonPressed()
+     *
+     *  Query al DB per la ricerca di un impiegato
      *
      * @throws Exception
      *
@@ -60,8 +58,9 @@ public class loginScreenController implements Initializable,controlledScreen {
 
         myImpiegatoDAO = new pacchettoDB.impiegatoDB();
        try{
-           myImpiegatoDAO.trovaImpiegato(usernameTextField.getText(),passwordTextField.getText());
-       }
+           if(myImpiegatoDAO.trovaImpiegato(usernameTextField.getText(),passwordTextField.getText())==false)
+               mostraAlert.mostraAlertLogin();
+         }
        catch(Exception e){
            mostraAlert.mostraAlertLogin();
            return;

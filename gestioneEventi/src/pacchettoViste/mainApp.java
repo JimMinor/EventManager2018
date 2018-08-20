@@ -13,12 +13,12 @@ import javafx.stage.Stage;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class gestioneEventiApp extends Application {
+public class mainApp extends Application {
 
     private String loginScreenFile = "loginScreen.fxml";
     private Group root = new Group();
     public Stage stagePrincipale;
-    private ArrayList<Initializable> controllers = new ArrayList<>();
+
 
 
     /**
@@ -28,9 +28,10 @@ public class gestioneEventiApp extends Application {
         launch(args);
     }
 
+    /**  Carica il primo stage con la schermata di login */
     @Override
     public void start(Stage stagePrincipale) throws Exception {
-        /** Viene impostato il mio screen (Login) da visualizzare */
+
         this.stagePrincipale=stagePrincipale;
         FXMLLoader loader = new FXMLLoader(getClass().getResource(loginScreenFile));
         Parent radice=(Parent)loader.load();
@@ -38,6 +39,7 @@ public class gestioneEventiApp extends Application {
         loginScreenController myLoginScreen = (loginScreenController)loader.getController();
         myLoginScreen.setApp(this);
         stagePrincipale.show();
+
       }
 
 

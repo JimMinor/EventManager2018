@@ -7,7 +7,11 @@ public class Impiegato extends  Persona {
     private String username;
     private String password;
     private LocaleData dataAssunzione;
+    private LocaleData dataNascita;
     private float stipendio;
+    private String email;
+    private long telefono;
+
 
     public Impiegato(String nome, String cognome, String CF, String username, String password, LocaleData dataAssunzione, float stipendio) {
         super(nome, cognome, CF);

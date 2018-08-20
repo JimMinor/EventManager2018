@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1">
+   <children>
+      <Label layoutX="83.0" layoutY="40.0" text="Dati Cliente">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="96.0" text="Username" />
+      <Label layoutX="79.0" layoutY="127.0" text="Nome" />
+      <Label layoutX="77.0" layoutY="161.0" text="Cognome" />
+      <Label layoutX="80.0" layoutY="191.0" text="Sesso" />
+      <Label layoutX="80.0" layoutY="229.0" text="Cod.Fisc." />
+      <Label layoutX="80.0" layoutY="263.0" text="Indirizzo" />
+      <Label layoutX="78.0" layoutY="299.0" text="e-mail" />
+      <TextField layoutX="328.0" layoutY="92.0" />
+      <TextField layoutX="328.0" layoutY="123.0" />
+      <TextField layoutX="328.0" layoutY="157.0" />
+      <TextField layoutX="328.0" layoutY="225.0" />
+      <TextField layoutX="328.0" layoutY="259.0" />
+      <TextField layoutX="328.0" layoutY="295.0" />
+      <RadioButton layoutX="390.0" layoutY="191.0" mnemonicParsing="false" text="F" />
+      <RadioButton layoutX="328.0" layoutY="191.0" mnemonicParsing="false" text="M" />
+      <Button layoutX="477.0" layoutY="345.0" mnemonicParsing="false" text="Fine" />
+   </children>
+</AnchorPane>

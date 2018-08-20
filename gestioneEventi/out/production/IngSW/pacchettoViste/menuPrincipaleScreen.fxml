@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" cache="true" maxHeight="422.0" maxWidth="641.0" minHeight="422.0" minWidth="641.0" prefHeight="422.0" prefWidth="641.0" snapToPixel="false" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
+   <children>
+      <ImageView fitHeight="78.0" fitWidth="148.0" layoutX="455.0" layoutY="28.0">
+         <image>
+            <Image url="@../ticket-icon-300x300.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="76.0" layoutX="61.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="23.0" layoutY="29.0">
+         <image>
+            <Image url="@../765-default-avatar_4.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="83.0" layoutY="31.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
+      <Hyperlink layoutX="28.0" layoutY="101.0" text="Logout" />
+      <TabPane layoutX="37.0" layoutY="146.0" prefHeight="243.0" prefWidth="567.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="           Eventi            ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="563.0">
+                     <children>
+                        <Button layoutX="226.0" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Inserisci Evento" />
+                        <Button layoutX="226.0" layoutY="108.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Ricerca evento " />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="          Clienti           ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="190.0" prefWidth="567.0">
+                     <children>
+                        <TextField layoutX="208.0" layoutY="32.0" />
+                        <Label layoutX="104.0" layoutY="32.0" text="Nome cliente" />
+                        <Button layoutX="226.0" layoutY="108.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Cerca" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="        Dipendenti    ">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="226.0" layoutY="41.0" mnemonicParsing="false" text="Inserisci Addetto" />
+                        <Button layoutX="226.0" layoutY="108.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Elimina Addetto" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="        Statistiche">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="828.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

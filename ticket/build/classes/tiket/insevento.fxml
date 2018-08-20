@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tiket.InseventoController">
+   <children>
+      <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="248.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../home/carlo/Scrivania/pip/IngSW-master/ticket/ticket-icon-300x300.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="196.0" layoutY="27.0" prefHeight="27.0" prefWidth="104.0" text="1Tiket">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="86.0" text="Nome Evento " />
+      <Label layoutX="41.0" layoutY="123.0" prefHeight="18.0" prefWidth="74.0" text="Città" />
+      <Label layoutX="45.0" layoutY="171.0" text="Data" />
+      <Label layoutX="40.0" layoutY="228.0" text="Luogo" />
+      <Label layoutX="40.0" layoutY="301.0" text="Capienza massima" />
+      <Button layoutX="29.0" layoutY="594.0" mnemonicParsing="false" text="Annulla" />
+      <Button layoutX="385.0" layoutY="594.0" mnemonicParsing="false" text="Inserisci" />
+      <TextField layoutX="257.0" layoutY="91.0" />
+      <DatePicker layoutX="264.0" layoutY="176.0" style="-fx-background-color: white;" />
+      <TextField layoutX="266.0" layoutY="224.0" />
+      <TextField layoutX="257.0" layoutY="119.0" />
+      <TextField layoutX="278.0" layoutY="297.0" />
+      <Label layoutX="42.0" layoutY="370.0" text="Tipo evento" />
+   </children>
+</AnchorPane>

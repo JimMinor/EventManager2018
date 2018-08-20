@@ -19,8 +19,9 @@ public class impiegatoDB implements  impiegatoDAO{
      * errati
      *
      */
-    public boolean trovaImpiegato(String username,String password) throws SQLException {
+    public boolean trovaImpiegato(String username,String password) throws SQLException,Exception {
         // Effettua la connessione al DB
+        if(username==null || password==null || username=="" || password=="") return false;
         Connection connessioneDB = pacchettoDB.connessioneDB.getConnessioneDB();
 
         if (connessioneDB != null) {
@@ -32,10 +33,23 @@ public class impiegatoDB implements  impiegatoDAO{
             //Esecuzione
             ResultSet resultSet = statement.executeQuery();
 
-            if (resultSet.next()) return true;
+            if (resultSet.next()) {
+
+                connessioneDB.close();
+                statement.close();
+                resultSet.close();
+                return true;
+            }
+            else {
+                connessioneDB.close();
+                statement.close();
+                resultSet.close();
+                return false;
+
+            }
 
         }
-         throw new SQLException();
+        else throw new SQLException();
     }
 
 }

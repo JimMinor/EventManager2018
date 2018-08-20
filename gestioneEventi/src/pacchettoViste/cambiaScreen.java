@@ -17,6 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 public class cambiaScreen extends StackPane{
+
     private HashMap<String,Node> screens = new HashMap<>();
 
 
@@ -117,7 +118,7 @@ public class cambiaScreen extends StackPane{
         }
     }
 
-    public void mostraMenuPrincipale(gestioneEventiApp g){
+    public void mostraMenuPrincipale(mainApp g){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("menuPrincipaleScreen.fxml"));
             g.stagePrincipale.setScene(new Scene(root));
