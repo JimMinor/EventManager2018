@@ -12,10 +12,7 @@ import pacchettoDB.autenticazioneConcreta;
 
 public class loginScreenController implements Initializable,screenController {
 
-    @FXML
-    private Button entraButton ;
-    @FXML
-    private Button annullaButton;
+
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -24,18 +21,13 @@ public class loginScreenController implements Initializable,screenController {
     private cambiaStage myCambiaStage;
 
 
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {}
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }
     @Override
     public void setCambiaStage(cambiaStage cambiaStage){myCambiaStage=cambiaStage;}
-
-
-
-    /****************************
-     *     Metodi FXML          *
-     ****************************
-     */
-
 
     /** entraButtonPressed()
      *

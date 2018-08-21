@@ -3,7 +3,7 @@ package pacchettoEntita;
 
 import sun.util.resources.LocaleData;
 
-public class Evento {
+public abstract class Evento {
 
     private Enum<luogoEnum> luogoEvento;
     private int capienzaMassima;
