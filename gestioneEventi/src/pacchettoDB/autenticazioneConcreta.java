@@ -7,19 +7,18 @@ import java.sql.SQLException;
 import java.sql.*;
 
 
-public class autenticatore {
+public class autenticazioneConcreta implements  autenticazione{
 
-
+    @Override
     /**
      * @return true e' stato trovato l'utente nel DB
      * @param username String inserita come utente
      * @param password  String inseritica come password
      * @throws SQLException in caso di errore con il DB o dati
      * errati
-     *
-     */
+     *     */
     public boolean autenticaUtente(String username, String password) throws Exception {
-        // Effettua la connessione al DB
+        // Effettua la connessione al DB se almeno un campo non e' vuoto
         if(username==null || password==null || username.equals("") || password.equals("")) return false;
         Connection connessioneDB = pacchettoDB.connessioneDB.getConnessioneDB();
 

@@ -3,15 +3,14 @@ package pacchettoViste;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.*;
-import pacchettoDB.autenticatore;
-import pacchettoDB.impiegatoDAO;
+import pacchettoDB.autenticazione;
+import pacchettoDB.autenticazioneConcreta;
 
-public class loginScreenController implements Initializable {
+public class loginScreenController implements Initializable,screenController {
 
     @FXML
     private Button entraButton ;
@@ -22,39 +21,13 @@ public class loginScreenController implements Initializable {
     @FXML
     private PasswordField passwordTextField;
 
-    private pacchettoDB.autenticatore myAut;
-    private cambiaScreen myScreen;
-    private mainApp myApplication;
+    private cambiaStage myCambiaStage;
 
-
-
-     /****************************
-      *     Getter               *
-      ****************************
-      */
-    public autenticatore getMyAutenticatore() {
-        return myAut;
-    }
-
-    public cambiaScreen getMyScreen() {
-        return myScreen;
-    }
-
-    public mainApp getMyApplication() {
-        return myApplication;
-    }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        myScreen= new cambiaScreen();
-        myAut = new autenticatore();
-    }
-
-
-    public void setApp(mainApp a){
-       myApplication=a;
-       System.out.println(myApplication);
-        }
+    public void initialize(URL url, ResourceBundle rb) {}
+    @Override
+    public void setCambiaStage(cambiaStage cambiaStage){myCambiaStage=cambiaStage;}
 
 
 
@@ -74,6 +47,7 @@ public class loginScreenController implements Initializable {
 
        try{
            // Verifica l'autenticazione dell'utente
+           autenticazione myAut = new autenticazioneConcreta();
            if(!myAut.autenticaUtente(usernameTextField.getText(),passwordTextField.getText())) {
                mostraAlert.mostraAlertLogin();
                return;
@@ -84,8 +58,7 @@ public class loginScreenController implements Initializable {
            mostraAlert.mostraAlertErroreDB();
            return;
        }
-
-        myScreen.mostraMenuPrincipale(myApplication);
+        myCambiaStage.mostraScreen("menuPrincipaleScreen.fxml");
     }
 
     /**

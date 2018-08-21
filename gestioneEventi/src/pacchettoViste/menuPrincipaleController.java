@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
-public class menuPrincipaleController implements  Initializable,controlledScreen {
+public class menuPrincipaleController implements  Initializable,screenController {
 
 
     @FXML
@@ -17,16 +17,14 @@ public class menuPrincipaleController implements  Initializable,controlledScreen
     @FXML
     private AnchorPane eventiArchorPane;
 
-    private Application myApp;
+    private cambiaStage myCambiaStage;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {}
     @Override
-    public void setScreenParent(cambiaScreen screenPage){}
-    public void setApp(Application a){
-        myApp=a;
-    }
+    public void setCambiaStage(cambiaStage cambiaStage){myCambiaStage=cambiaStage;}
+
 
 
 

@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="536.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tiket.InseventoController">
+<AnchorPane id="AnchorPane" prefHeight="349.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tiket.InseventoController">
    <children>
       <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="253.0" layoutY="14.0">
          <image>
             <Image url="@../../ticket-icon-300x300.png" />
          </image>
       </ImageView>
-      <Label layoutX="194.0" layoutY="23.0" prefHeight="27.0" prefWidth="104.0" text="1Ticket">
+      <Label layoutX="56.0" layoutY="23.0" prefHeight="27.0" prefWidth="351.0" text="Inserimento Evento">
          <font>
             <Font size="18.0" />
          </font>
