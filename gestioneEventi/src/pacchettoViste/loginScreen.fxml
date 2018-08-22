@@ -6,26 +6,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" cache="true" maxHeight="351.0" maxWidth="304.0" prefHeight="351.0" prefWidth="304.0" snapToPixel="false" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.loginScreenController">
+<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.loginScreenController">
     <children>
-        <Button fx:id="entraButton" layoutX="208.0" layoutY="278.0" onAction="#entraButtonPressed"  prefHeight="32.0" prefWidth="80.0" text="Entra" />
+        <Button fx:id="entraButton" accessibleRole="PARENT" layoutX="247.0" layoutY="343.0" onAction="#entraButtonPressed" prefHeight="33.0" prefWidth="141.0" text="Entra" textFill="#0ab6ea" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="19.0" />
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
 
 
-      <TextField fx:id="usernameTextField" layoutX="76.0" layoutY="130.0" maxHeight="28.0" prefColumnCount="2" prefHeight="26.0" prefWidth="160.0" />
-      <Label layoutX="116.0" layoutY="102.0" text="USERNAME" />
-      <Label layoutX="116.0" layoutY="190.0" text="PASSWORD" />
-      <Button fx:id="annullaButton" layoutX="37.0" layoutY="278.0" mnemonicParsing="false" onAction="#annullaButtonPressed" onMouseClicked="#annullaButtonPressed" prefHeight="32.0" prefWidth="80.0" text="Annulla" />
-      <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="125.0" layoutY="29.0">
-         <image>
-            <Image url="@../ticket-icon-300x300.png" />
-         </image>
-      </ImageView>
-      <PasswordField fx:id="passwordTextField" layoutX="77.0" layoutY="209.0" prefHeight="26.0" prefWidth="160.0" />
+      <TextField fx:id="usernameTextField" accessibleRole="PARENT" layoutX="80.0" layoutY="175.0" prefColumnCount="2" prefHeight="25.0" prefWidth="231.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="89.0" />
+      <Button fx:id="annullaButton" accessibleRole="PARENT" layoutX="18.0" layoutY="343.0" mnemonicParsing="false" onAction="#annullaButtonPressed" onMouseClicked="#annullaButtonPressed" prefHeight="32.0" prefWidth="141.0" text="Annulla" textFill="#0ab6ea" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="239.0" />
+      <PasswordField fx:id="passwordTextField" accessibleRole="PARENT" layoutX="80.0" layoutY="244.0" prefHeight="26.0" prefWidth="231.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="89.0" />
+      <Label accessibleRole="PARENT" layoutX="90.0" layoutY="147.0" text="Username" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="256.708984375" AnchorPane.topAnchor="147.0" />
+      <Label accessibleRole="PARENT" layoutX="90.0" layoutY="218.0" text="Password" />
+      <Text fill="#12a5da" fontSmoothingType="LCD" layoutX="33.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="114.294921875">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Text>
     </children>
    <opaqueInsets>
       <Insets />

@@ -10,7 +10,6 @@ public class mainApp extends Application {
     private cambiaStage myScreen;
 
 
-
     /**
      * @param args the command line arguments
      */
@@ -22,18 +21,19 @@ public class mainApp extends Application {
         return stagePrincipale;
     }
 
-    /**  Carica il primo stage con la schermata di login */
+    /**
+     * Carica il primo stage con la schermata di login
+     */
     @Override
     public void start(Stage stagePrincipale) throws Exception {
 
-         this.stagePrincipale=stagePrincipale;
-         myScreen = new cambiaStage(this);
-         myScreen.mostraScreen("loginScreen.fxml");
-         stagePrincipale.show();
+        this.stagePrincipale = stagePrincipale;
+        myScreen = new cambiaStage(this);
 
-      }
-
+        myScreen.mostraScreenLogin("loginScreen.fxml");
+        stagePrincipale.show();
 
 
+    }
 
 }

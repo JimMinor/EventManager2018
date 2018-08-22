@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" cache="true" maxHeight="534.0" maxWidth="703.0" minHeight="422.0" prefHeight="534.0" prefWidth="703.0" snapToPixel="false" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
+<AnchorPane id="AnchorPane" cache="true" maxHeight="534.0" maxWidth="703.0" minHeight="422.0" prefHeight="534.0" prefWidth="703.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
    <children>
       <ImageView fitHeight="75.0" fitWidth="97.0" layoutX="506.0" layoutY="28.0">
          <image>
@@ -25,7 +25,7 @@
       </ImageView>
       <Label layoutX="83.0" layoutY="31.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
       <Hyperlink layoutX="28.0" layoutY="101.0" text="Logout" />
-      <TabPane layoutX="129.0" layoutY="165.0" prefHeight="321.0" prefWidth="395.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="165.0">
+      <TabPane layoutX="14.0" layoutY="165.0" prefHeight="321.0" prefWidth="650.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="165.0">
         <tabs>
           <Tab text="           Eventi            ">
             <content>
@@ -49,7 +49,7 @@
           </Tab>
             <Tab text="   Dipendenti    ">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="556.0">
                      <children>
                         <Button layoutX="226.0" layoutY="41.0" mnemonicParsing="false" text="Inserisci Addetto" />
                         <Button layoutX="226.0" layoutY="108.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" text="Elimina Addetto" />

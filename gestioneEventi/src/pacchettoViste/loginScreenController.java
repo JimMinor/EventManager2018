@@ -50,7 +50,7 @@ public class loginScreenController implements Initializable,screenController {
            mostraAlert.mostraAlertErroreDB();
            return;
        }
-        myCambiaStage.mostraScreen("menuPrincipaleScreen.fxml");
+        myCambiaStage.mostraScreenMenuPrincipale("menuPrincipaleScreen.fxml");
     }
 
     /**
