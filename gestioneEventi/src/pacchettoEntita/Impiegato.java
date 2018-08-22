@@ -7,7 +7,6 @@ public class Impiegato extends  Persona {
     private String username;
     private String password;
     private LocaleData dataAssunzione;
-    private LocaleData dataNascita;
     private float stipendio;
     private String email;
     private long telefono;

@@ -25,7 +25,7 @@ public class connessioneDB {
                 return connessione;
             }
             // Creazione Connessione
-            connessione = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","Giammarco","troll");
+            connessione = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","admin","admin");
             }
             catch(SQLException E){
             mostraAlert.mostraAlertErroreDB();
