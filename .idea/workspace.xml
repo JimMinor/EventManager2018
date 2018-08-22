@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/cambiaStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/cambiaStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/loginScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/loginScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/loginScreenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/mainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/mainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/menuPrincipaleScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/gestioneEventi/out/production/IngSW/pacchettoViste/menuPrincipaleScreen.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -86,7 +80,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginScreen.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loginScreen.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreen.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
@@ -96,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cambiaStage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cambiaStage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/cambiaStage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -441,7 +435,21 @@
       <option name="project" value="LOCAL" />
       <updated>1534945928660</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Aggiunti metodi in cambiaStage, aggiunti CSS">
+      <created>1534945999462</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1534945999462</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Aggiunti metodi in cambiaStage, aggiunti CSS">
+      <created>1534946141419</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1534946141419</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -471,7 +479,7 @@
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.3517398" side_tool="true" weight="0.033955857" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3293718" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.72919816" visible="true" weight="0.3293718" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.72919816" weight="0.3293718" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.3292683" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
@@ -496,6 +504,43 @@
       <window_info anchor="bottom" id="Application Servers" order="12" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32980332" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="DB Execution Console" order="0" weight="0.3292683" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="JetGradle" order="6" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.72919816" weight="0.3293718" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24962178" />
+      <window_info auto_hide="true" id="DB Browser" order="0" weight="0.25037822" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Profiler" order="10" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Changes" order="9" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.3517398" side_tool="true" weight="0.033955857" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.64826024" weight="0.426146" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Problems" order="11" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="12" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.3293718" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3292683" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3292683" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="7" sideWeight="0.6703755" type="SLIDING" weight="0.2193646" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32741398" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32980332" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3989547" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -506,7 +551,8 @@
     <MESSAGE value="Cambiata classe di autenticazione" />
     <MESSAGE value="Piccoli accorgimenti" />
     <MESSAGE value="Aggiunte entita ed enum, aggiornamento codice login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunte entita ed enum, aggiornamento codice login" />
+    <MESSAGE value="Aggiunti metodi in cambiaStage, aggiunti CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti metodi in cambiaStage, aggiunti CSS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -757,6 +803,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" column="164" selection-start-line="14" selection-start-column="164" selection-end-line="14" selection-end-column="164" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/cambiaStage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -767,14 +821,6 @@
             <element signature="method#&lt;unnamed&gt;#0;class#cambiaStage#0" />
             <element signature="method#mostraScreenMenuPrincipale#0;class#cambiaStage#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gestioneEventi/src/pacchettoViste/loginScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="164" selection-start-line="14" selection-start-column="164" selection-end-line="14" selection-end-column="164" />
         </state>
       </provider>
     </entry>
