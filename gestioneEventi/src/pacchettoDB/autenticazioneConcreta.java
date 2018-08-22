@@ -24,7 +24,7 @@ public class autenticazioneConcreta implements  autenticazione{
 
         if (connessioneDB != null) {
             // Preparazione query
-            String query = "SELECT  impiegatoID FROM Impiegato WHERE username=? AND " + "password=?";
+            String query = "SELECT ID FROM Impiegato WHERE username=? AND " + "password=?";
             PreparedStatement statement = connessioneDB.prepareStatement(query);
             statement.setString(1, username);
             statement.setString(2, password);

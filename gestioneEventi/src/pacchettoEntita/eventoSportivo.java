@@ -6,6 +6,9 @@ import java.util.List;
 
 public class eventoSportivo extends  Evento {
 
+    private Enum<sportEnum> sport;
+    private List<String> partecipanti;
+
     public eventoSportivo(String luogoEvento, String descrizione, float prezzoBiglietto, Enum<tipologiaEnum> tipologiaEvento,
                           String nome, LocaleData dataEvento, Enum<sportEnum> sport, List<String> partecipanti) {
         super(luogoEvento, descrizione, prezzoBiglietto, tipologiaEvento, nome, dataEvento);
@@ -29,8 +32,7 @@ public class eventoSportivo extends  Evento {
         this.partecipanti = partecipanti;
     }
 
-    private Enum<sportEnum> sport;
-    private List<String> partecipanti;
+
 
 
 }
