@@ -3,17 +3,14 @@ package pacchettoEntita;
 import sun.util.resources.LocaleData;
 
 import java.util.List;
-import java.time.*;
 
 public class eventoSportivo extends  Evento {
 
     private Enum<sportEnum> sport;
-    private String[] partecipanti;
+    private List<String> partecipanti;
 
-    public eventoSportivo(String luogoEvento, String descrizione, float prezzoBiglietto,
-                          Enum<tipologiaEnum> tipologiaEvento,
-                          String nome, LocalDate dataEvento, Enum<sportEnum> sport,
-                          String[] partecipanti) {
+    public eventoSportivo(String luogoEvento, String descrizione, float prezzoBiglietto, Enum<tipologiaEnum> tipologiaEvento,
+                          String nome, LocaleData dataEvento, Enum<sportEnum> sport, List<String> partecipanti) {
         super(luogoEvento, descrizione, prezzoBiglietto, tipologiaEvento, nome, dataEvento);
         this.sport = sport;
         this.partecipanti = partecipanti;
@@ -27,12 +24,15 @@ public class eventoSportivo extends  Evento {
         this.sport = sport;
     }
 
-    public String[] getPartecipanti() {
+    public List<String> getPartecipanti() {
         return partecipanti;
     }
 
-
+    public void setPartecipanti(List<String> partecipanti) {
+        this.partecipanti = partecipanti;
     }
 
 
 
+
+}

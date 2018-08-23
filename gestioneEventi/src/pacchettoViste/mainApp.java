@@ -2,13 +2,6 @@ package pacchettoViste;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import pacchettoDB.*;
-import pacchettoEntita.Impiegato;
-import pacchettoEntita.Persona;
-import sun.util.resources.LocaleData;
-
-import java.sql.Date;
-import java.time.*;
 
 public class mainApp extends Application {
 
