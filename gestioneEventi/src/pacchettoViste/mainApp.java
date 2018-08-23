@@ -34,8 +34,6 @@ public class mainApp extends Application {
     @Override
     public void start(Stage stagePrincipale) throws Exception {
 
-
-
         this.stagePrincipale = stagePrincipale;
         myScreen = new cambiaStage(this);
 
