@@ -1,7 +1,6 @@
 package pacchettoViste;
 
 import javafx.scene.control.Alert;
-import jfxtras.styles.jmetro8.JMetro;
 
 public  class mostraAlert {
 

@@ -2,6 +2,7 @@ package pacchettoEntita;
 
 import sun.util.resources.LocaleData;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class eventoMusicale extends Evento {
@@ -17,7 +18,7 @@ public class eventoMusicale extends Evento {
     }
 
     public eventoMusicale(String luogoEvento, String descrizione, float prezzoBiglietto, Enum<tipologiaEnum> tipologiaEvento,
-                          String nome, LocaleData dataEvento, List<String> artisti) {
+                          String nome, LocalDate dataEvento, List<String> artisti) {
         super(luogoEvento, descrizione, prezzoBiglietto, tipologiaEvento, nome, dataEvento);
         this.artisti = artisti;
     }

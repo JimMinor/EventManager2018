@@ -1,11 +1,12 @@
 package pacchettoDB;
 
-import oracle.jdbc.proxy.annotation.Pre;
+
 import pacchettoEntita.Evento;
 import pacchettoEntita.eventoMusicale;
 import pacchettoEntita.eventoSportivo;
-
 import java.sql.*;
+import java.sql.Date;
+import java.util.*;
 
 public class eventoDB implements  eventoDAO {
 
@@ -66,8 +67,8 @@ public class eventoDB implements  eventoDAO {
         PreparedStatement preparedStatement = connessioneDB.getConnessioneDB().prepareStatement(query);
         //SETUP QUERY
         preparedStatement.setInt(1,0);
-        preparedStatement.setString(2,e.getPartecipanti()[0]);
-        preparedStatement.setString(3,e.getPartecipanti()[1]);
+        preparedStatement.setString(2,e.getPartecipanti().get(0));
+        preparedStatement.setString(3,e.getPartecipanti().get(1));
         preparedStatement.setString(4,e.getSport().name());
         if(eseguiChiudiQuery(preparedStatement)>0)return true;
         return false;
