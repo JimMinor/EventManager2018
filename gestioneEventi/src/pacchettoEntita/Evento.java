@@ -3,6 +3,8 @@ package pacchettoEntita;
 
 import sun.util.resources.LocaleData;
 
+import java.time.LocalDate;
+
 public abstract class Evento {
 
     private Enum<luogoEnum> luogoEvento;
@@ -12,9 +14,10 @@ public abstract class Evento {
     private Enum<tipologiaEnum> tipologiaEvento;
     private String nome;
     private Enum<cittaEnum> citta;
-    private LocaleData dataEvento;
+    private LocalDate dataEvento;
 
-    public Evento(String luogoEvento, String descrizione, float prezzoBiglietto, Enum<tipologiaEnum> tipologiaEvento, String nome, LocaleData dataEvento) {
+    public Evento(String luogoEvento, String descrizione, float prezzoBiglietto,
+                  Enum<tipologiaEnum> tipologiaEvento, String nome, LocalDate dataEvento) {
 
         this.luogoEvento = luogoEnum.valueOf(luogoEvento);
         this.capienzaMassima = luogoEnum.valueOf(luogoEvento).getNumPosti();
@@ -38,7 +41,7 @@ public abstract class Evento {
         return citta;
     }
 
-    public LocaleData getDataEvento() {
+    public LocalDate getDataEvento() {
         return dataEvento;
     }
 

@@ -35,4 +35,9 @@ public class connessioneDB {
 
      return connessione;
     }
+    public void chiudiConnessione(Connection c,PreparedStatement ps, ResultSet rs) throws SQLException{
+        c.close();
+        ps.close();
+        rs.close();
+    }
 }
