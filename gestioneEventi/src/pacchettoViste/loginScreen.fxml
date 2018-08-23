@@ -6,11 +6,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.loginScreenController">
+<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.loginScreenController">
     <children>
         <Button fx:id="entraButton" accessibleRole="PARENT" layoutX="247.0" layoutY="343.0" onAction="#entraButtonPressed" prefHeight="33.0" prefWidth="141.0" text="Entra" textFill="#0ab6ea" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="19.0" />
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
@@ -26,6 +28,11 @@
             <Font name="System Bold" size="29.0" />
          </font>
       </Text>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="291.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ticket-icon-300x300.png" />
+         </image>
+      </ImageView>
     </children>
    <opaqueInsets>
       <Insets />
