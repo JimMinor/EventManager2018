@@ -17,24 +17,24 @@
    <children>
       <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="1172.0" layoutY="50.0">
          <image>
-            <Image url="@../Documents/GitHub/IngSW/gestioneEventi/src/ticket-icon-300x300.png" />
+            <Image url="@../ticket-icon-300x300.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="33.0" layoutY="39.0">
          <image>
-            <Image url="@../Documents/GitHub/IngSW/gestioneEventi/src/765-default-avatar_4.png" />
+            <Image url="@../765-default-avatar_4.png" />
          </image>
       </ImageView>
       <Label layoutX="93.0" layoutY="41.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
       <Hyperlink layoutX="38.0" layoutY="111.0" text="Logout" />
-      <AnchorPane layoutX="40.0" layoutY="166.0" prefHeight="493.0" prefWidth="212.0" style="-fx-border-color: black;">
+      <AnchorPane layoutX="40.0" layoutY="166.0" prefHeight="506.0" prefWidth="212.0" style="-fx-border-color: black;">
          <children>
-            <Button layoutY="336.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: black; -fx-background-color: whigt;" text="Button" />
-            <Button layoutY="252.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: black; -fx-background-color: whigt;" text="Button" />
-            <Button layoutY="168.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: black; -fx-background-color: whigt;" text="Button" />
-            <Button layoutY="84.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: black; -fx-background-color: whigt;" text="Button" />
-            <Button mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: black; -fx-background-color: whigt;" text="Inserisci Evento" />
-            <Button layoutY="420.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: black; -fx-background-color: whigt;" text="Button" />
+            <Button layoutY="336.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Button" />
+            <Button layoutY="261.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Button" />
+            <Button layoutY="184.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Button" />
+            <Button layoutX="1.0" layoutY="26.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-background-color: whte; -fx-border-color: whte;" text="Inserisci Evento" />
+            <Button layoutY="420.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Button" />
+            <Button layoutY="104.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Button" />
          </children>
       </AnchorPane>
       <AnchorPane id="AnchorPane" layoutX="252.0" layoutY="166.0" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;">
@@ -74,10 +74,10 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <DatePicker layoutX="337.0" layoutY="114.0" prefHeight="40.0" prefWidth="238.0" />
+            <DatePicker layoutX="337.0" layoutY="118.0" prefHeight="62.0" prefWidth="238.0" />
             <TextField layoutX="337.0" layoutY="208.0" prefHeight="28.0" prefWidth="238.0">
                <font>
-                  <Font size="17.0" />
+                  <Font size="15.0" />
                </font>
             </TextField>
             <Label layoutX="27.0" layoutY="262.0" text="Tipo evento">
@@ -106,7 +106,7 @@
             </MenuButton>
             <AnchorPane fx:id="Musicali" layoutY="350.0" prefHeight="96.0" prefWidth="595.0" visible="false">
                <children>
-                  <Label layoutX="24.0" layoutY="14.0" prefHeight="28.0" prefWidth="58.0" text="Artisti">
+                  <Label layoutX="33.0" layoutY="14.0" prefHeight="28.0" prefWidth="58.0" text="Artisti">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -114,7 +114,7 @@
                   <TextArea layoutX="130.0" layoutY="6.0" prefHeight="84.0" prefWidth="459.0" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="sportivi" layoutX="4.0" layoutY="297.0" prefHeight="138.0" prefWidth="587.0" visible="false">
+            <AnchorPane fx:id="sportivi" layoutX="4.0" layoutY="297.0" prefHeight="138.0" prefWidth="587.0">
                <children>
                   <Label layoutX="26.0" layoutY="27.0" text="Tipo sport">
                      <font>
@@ -135,14 +135,14 @@
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="151.0" layoutY="72.0" prefHeight="55.0" prefWidth="422.0">
+                  <TextArea layoutX="150.0" layoutY="90.0" prefHeight="34.0" prefWidth="422.0">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </TextArea>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="culturaeteatro" layoutX="14.0" layoutY="302.0" prefHeight="96.0" prefWidth="574.0">
+            <AnchorPane fx:id="culturaeteatro" layoutX="14.0" layoutY="302.0" prefHeight="96.0" prefWidth="574.0" visible="false">
                <children>
                   <Label layoutX="14.0" layoutY="23.0" text="Genere ">
                      <font>
@@ -160,19 +160,19 @@
                   </MenuButton>
                </children>
             </AnchorPane>
-            <TextField layoutX="337.0" layoutY="67.0" prefHeight="28.0" prefWidth="238.0">
+            <TextField layoutX="337.0" layoutY="69.0" prefHeight="23.0" prefWidth="238.0" text="ujjjj">
                <font>
-                  <Font size="17.0" />
+                  <Font size="15.0" />
                </font>
             </TextField>
             <TextField layoutX="336.0" layoutY="161.0" prefHeight="28.0" prefWidth="238.0">
                <font>
-                  <Font size="17.0" />
+                  <Font size="15.0" />
                </font>
             </TextField>
-            <TextField layoutX="337.0" layoutY="20.0" prefHeight="28.0" prefWidth="238.0">
+            <TextField layoutX="337.0" layoutY="22.0" prefHeight="28.0" prefWidth="238.0">
                <font>
-                  <Font size="17.0" />
+                  <Font size="15.0" />
                </font>
             </TextField>
          </children>
