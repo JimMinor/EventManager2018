@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="750a9f28-ca74-4457-adb2-b042a1d22234" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Analisi_Requisiti_Dominio/gestioneEventi.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/../Analisi_Requisiti_Dominio/gestioneEventi.mdj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ojdbc8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ojdbc8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoDB/autenticazioneConcreta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoDB/autenticazioneConcreta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoDB/connessioneDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoDB/eventoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoDB/eventoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoEntita/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoEntita/Evento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoEntita/eventoMusicale.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoEntita/eventoMusicale.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoEntita/eventoSportivo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoEntita/eventoSportivo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoViste/cambiaStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoViste/cambiaStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoViste/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoViste/loginScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoViste/mainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoViste/mainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoViste/menuPrincipaleScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/gestioneEventi/pacchettoViste/menuPrincipaleScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoDB/autenticazioneConcreta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoDB/autenticazioneConcreta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoDB/connessioneDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoDB/eventoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoDB/eventoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoEntita/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoEntita/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoEntita/eventoMusicale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoEntita/eventoMusicale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoEntita/eventoSportivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoEntita/eventoSportivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoViste/cambiaStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoViste/cambiaStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoViste/loginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoViste/loginScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pacchettoViste/mainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoViste/mainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pacchettoViste/cercacliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoViste/cercaClientScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pacchettoViste/cercadipendenti.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoViste/cercaDipendentiScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pacchettoViste/cercaevento.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoViste/cercaEventoScreen.fxml.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pacchettoViste/inseriscidipendente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacchettoViste/inserisciDipendenteScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pacchettoViste/inseriscievento.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,19 +20,36 @@
     <SUITE FILE_PATH="coverage/gestioneEventi$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1535017105800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="utilityDB.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pacchettoDB/utilityDB.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="eventoDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pacchettoDB/eventoDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <state relative-caret-position="374">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
-                <element signature="method#getConnessioneDB#0;class#utilityDB#0" />
-                <element signature="method#closeDB#0;class#utilityDB#0" />
-                <element signature="method#closeDB#1;class#utilityDB#0" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#inserisciEvento#0;class#eventoDB#0" />
+                <element signature="method#inserisciEventoGenerico#0;class#eventoDB#0" />
+                <element signature="method#inserisciEventoSpecifico#0;class#eventoDB#0" />
+                <element signature="method#inserisciEventoSportivo#0;class#eventoDB#0" />
+                <element signature="method#inserisciEventoMusicale#0;class#eventoDB#0" />
+                <element signature="docComment;method#setPreparedStatementQuery#0;class#eventoDB#0" />
+                <element signature="method#setPreparedStatementQuery#0;class#eventoDB#0" />
+                <element signature="method#setQueryInserisciEventoGenerico#0;class#eventoDB#0" />
+                <element signature="method#eseguiQuery#0;class#eventoDB#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inserisciEventoScreen.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pacchettoViste/inserisciEventoScreen.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -130,9 +129,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,6 +219,14 @@
       <option name="presentableId" value="Default" />
       <updated>1534958281068</updated>
     </task>
+    <task id="LOCAL-00001" summary="Evento DAO aggiornato">
+      <created>1535118025877</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1535118025877</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -233,67 +240,68 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.1271777" />
       <window_info id="DB Browser" order="7" weight="0.329296" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.32767403" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3293718" />
       <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.0" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3292683" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.33989403" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3293718" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.335352" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.329296" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.3293718" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32767403" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="DB Execution Console" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.329296" />
       <window_info anchor="bottom" id="Run" order="7" weight="0.3292683" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.1271777" />
-      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info id="DB Browser" order="7" weight="0.329296" />
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.329296" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
-      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Messages" order="4" visible="true" weight="0.3292683" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.329296" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.329296" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info id="Favorites" order="1" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -303,6 +311,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="Evento DAO aggiornato" />
+    <option name="LAST_COMMIT_MESSAGE" value="Evento DAO aggiornato" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -310,16 +320,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pacchettoEntita/eventoSportivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pacchettoEntita/eventoMusicale.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -370,11 +370,14 @@
           <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#inserisciEvento#0;class#eventoDB#0" />
+            <element signature="method#inserisciEventoGenerico#0;class#eventoDB#0" />
             <element signature="method#inserisciEventoSpecifico#0;class#eventoDB#0" />
             <element signature="method#inserisciEventoSportivo#0;class#eventoDB#0" />
             <element signature="method#inserisciEventoMusicale#0;class#eventoDB#0" />
             <element signature="docComment;method#setPreparedStatementQuery#0;class#eventoDB#0" />
             <element signature="method#setPreparedStatementQuery#0;class#eventoDB#0" />
+            <element signature="method#setQueryInserisciEventoGenerico#0;class#eventoDB#0" />
             <element signature="method#eseguiQuery#0;class#eventoDB#0" />
           </folding>
         </state>
@@ -539,14 +542,6 @@
     <entry file="file://$PROJECT_DIR$/src/ticket-icon-300x300.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleScreen.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pacchettoViste/cambiaStage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -583,9 +578,7 @@
     </entry>
     <entry file="db://4d93879e-99b7-404d-8dc5-20b2d1f87ea6/consoles/Connection 1">
       <provider selected="true" editor-type-id="0.CONSOLE">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" current-schema="" session-id="MAIN">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" current-schema="" session-id="MAIN" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/src.zip!/java/sql/Connection.java">
@@ -654,22 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacchettoDB/eventoDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="83" column="69" lean-forward="true" selection-start-line="83" selection-start-column="69" selection-end-line="83" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#inserisciEventoSpecifico#0;class#eventoDB#0" />
-            <element signature="method#inserisciEventoSportivo#0;class#eventoDB#0" />
-            <element signature="method#inserisciEventoMusicale#0;class#eventoDB#0" />
-            <element signature="docComment;method#setPreparedStatementQuery#0;class#eventoDB#0" />
-            <element signature="method#setPreparedStatementQuery#0;class#eventoDB#0" />
-            <element signature="method#eseguiQuery#0;class#eventoDB#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pacchettoDB/autenticazioneConcreta.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -692,6 +669,41 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/menuPrincipaleScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacchettoDB/eventoDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#inserisciEvento#0;class#eventoDB#0" />
+            <element signature="method#inserisciEventoGenerico#0;class#eventoDB#0" />
+            <element signature="method#inserisciEventoSpecifico#0;class#eventoDB#0" />
+            <element signature="method#inserisciEventoSportivo#0;class#eventoDB#0" />
+            <element signature="method#inserisciEventoMusicale#0;class#eventoDB#0" />
+            <element signature="docComment;method#setPreparedStatementQuery#0;class#eventoDB#0" />
+            <element signature="method#setPreparedStatementQuery#0;class#eventoDB#0" />
+            <element signature="method#setQueryInserisciEventoGenerico#0;class#eventoDB#0" />
+            <element signature="method#eseguiQuery#0;class#eventoDB#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacchettoViste/inserisciEventoScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
   <component name="masterDetails">
