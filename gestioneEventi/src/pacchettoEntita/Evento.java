@@ -16,15 +16,15 @@ public abstract class Evento {
     private Enum<cittaEnum> citta;
     private LocalDate dataEvento;
 
-    public Evento(String luogoEvento, String descrizione, float prezzoBiglietto, Enum<tipologiaEnum> tipologiaEvento, String nome, LocalDate dataEvento) {
+    public Evento(luogoEnum luogoEvento, String descrizione, float prezzoBiglietto, Enum<tipologiaEnum> tipologiaEvento, String nome, LocalDate dataEvento) {
 
-        this.luogoEvento = luogoEnum.valueOf(luogoEvento);
-        this.capienzaMassima = luogoEnum.valueOf(luogoEvento).getNumPosti();
+        this.luogoEvento = luogoEvento;
+        this.capienzaMassima = luogoEvento.getNumPosti();
         Descrizione = descrizione;
         this.prezzoBiglietto = prezzoBiglietto;
         this.tipologiaEvento = tipologiaEvento;
         this.nome = nome;
-        this.citta = luogoEnum.valueOf(luogoEvento).getCittaLuogo();
+        this.citta = (luogoEvento).getCittaLuogo();
         this.dataEvento = dataEvento;
     }
 

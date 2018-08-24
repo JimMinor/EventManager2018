@@ -11,7 +11,7 @@ public class eventoSportivo extends  Evento {
     private Enum<sportEnum> sport;
     private ArrayList<String> partecipanti;
 
-    public eventoSportivo(String luogoEvento, String descrizione, float prezzoBiglietto, Enum<tipologiaEnum> tipologiaEvento,
+    public eventoSportivo(luogoEnum luogoEvento, String descrizione, float prezzoBiglietto, Enum<tipologiaEnum> tipologiaEvento,
                           String nome, LocalDate dataEvento, Enum<sportEnum> sport, ArrayList<String> partecipanti) {
         super(luogoEvento, descrizione, prezzoBiglietto, tipologiaEvento, nome, dataEvento);
         this.sport = sport;

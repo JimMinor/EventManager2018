@@ -23,7 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="eb2c8a0c-4419-40e2-8a75-a4d3b9fe0132">
+        <schema name="ticketdb" object-types="function, procedure, table, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="eb2c8a0c-4419-40e2-8a75-a4d3b9fe0132">

@@ -52,8 +52,6 @@ public class cambiaStage {
             if(scene!=null) {
                 setScene(scene);
             }
-
-
         }
         catch(Exception e){
             // DO-Something

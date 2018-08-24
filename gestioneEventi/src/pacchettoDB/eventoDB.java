@@ -6,15 +6,21 @@ import pacchettoEntita.eventoMusicale;
 import pacchettoEntita.eventoSportivo;
 import java.sql.*;
 import java.sql.Date;
-import java.util.*;
 
 public class eventoDB implements  eventoDAO {
 
+
+    public eventoDB(){}
     @Override
     public boolean eliminaEvento(Evento e) {
         return false;
     }
     @Override
+    /****************************************
+     *  Inserimento Eventi                  *
+     ****************************************
+     */
+
     public boolean inserisciEvento(Evento e) {
         if(e==null) return false;
         try{if(!inserisciEventoGenerico(e))throw new SQLException();}catch(SQLException sqlE){
@@ -27,7 +33,8 @@ public class eventoDB implements  eventoDAO {
         if(e==null)return false;
         String query ="INSERT INTO EVENTO VALUES(?,?,?,?,?,?,?)";
         //Inserisco l'evento generico
-        if(setEseguiQueryEventoGenerico(query,e)) return inserisciEventoSpecifico(e);
+        Connection connection=utilityDB.getConnessioneDB();
+        if(setQueryInserisciEventoGenerico(connection.prepareStatement(query),e,connection)) return inserisciEventoSpecifico(e);
         return false;
         }
     public boolean inserisciEventoSpecifico(Evento e) throws SQLException{
@@ -39,54 +46,67 @@ public class eventoDB implements  eventoDAO {
     public boolean inserisciEventoSportivo(eventoSportivo e) throws SQLException{
         if(e==null) return false;
         String query = "INSERT INTO EVENTO_SPORTIVO VALUES (?,?,?,?)";
-        return setEseguiQueryEventoSportivo(query,e);
+        Connection connection=utilityDB.getConnessioneDB();
+
+        return setQueryInserisciEventoSportivo(connection.prepareStatement(query),e,connection);
 
     }
     public boolean inserisciEventoMusicale(eventoMusicale e) throws SQLException{
         if(e==null) return false;
 
         String query = "INSERT INTO EVENTO_MUSICALE VALUES(?,?)";
-        return setEseguiQueryEventoMusicale(query,e);
+        Connection connection=utilityDB.getConnessioneDB();
+        return setQueryInserisciEventoMusicale(connection.prepareStatement(query),e,connection);
 
     }
-    public boolean setEseguiQueryEventoGenerico(String query,Evento e) throws SQLException{
 
-        PreparedStatement preparedStatement = connessioneDB.getConnessioneDB().prepareStatement(query);
-        // SETUP QUERY
+    /****************************************
+     *  Set PreparedStament per le Query     *
+     ****************************************
+     */
+    public PreparedStatement setPreparedStatementQuery(String query,Connection connection)throws SQLException{
+        return connection.prepareStatement(query);
+    }
+
+
+    /*******************************************
+     *  Set  valori per le Query di inserimento
+     ******************************************
+     */
+
+    public boolean setQueryInserisciEventoGenerico(PreparedStatement preparedStatement, Evento e,Connection connection) throws SQLException{
         preparedStatement.setInt(1,0);
-        preparedStatement.setDate(2, Date.valueOf(e.getDataEvento()));
-        preparedStatement.setString(3,e.getDescrizione());
-        preparedStatement.setString(4, e.getLuogoEvento().name());
-        preparedStatement.setString(5,e.getNome());
-        preparedStatement.setFloat(6,e.getPrezzoBiglietto());
+        preparedStatement.setDate(4 ,Date.valueOf(e.getDataEvento()));
+        preparedStatement.setString(6,e.getDescrizione());
+        preparedStatement.setString(3, e.getLuogoEvento().toString());
+        preparedStatement.setString(2,e.getNome());
+        preparedStatement.setFloat(5,e.getPrezzoBiglietto());
         preparedStatement.setString(7,e.getTipologiaEvento().name());
-        if(eseguiChiudiQuery(preparedStatement)>0)return true;
+        if(eseguiQuery(preparedStatement,connection)>0)return true;
         return false;
     }
-    public boolean setEseguiQueryEventoSportivo(String query,eventoSportivo e) throws SQLException{
-        PreparedStatement preparedStatement = connessioneDB.getConnessioneDB().prepareStatement(query);
-        //SETUP QUERY
+    public boolean setQueryInserisciEventoSportivo(PreparedStatement preparedStatement, eventoSportivo e,Connection connection) throws SQLException{
         preparedStatement.setInt(1,0);
         preparedStatement.setString(2,e.getPartecipanti().get(0));
         preparedStatement.setString(3,e.getPartecipanti().get(1));
         preparedStatement.setString(4,e.getSport().name());
-        if(eseguiChiudiQuery(preparedStatement)>0)return true;
+        if(eseguiQuery(preparedStatement,connection)>0)return true;
         return false;
     }
-    public boolean setEseguiQueryEventoMusicale(String query,eventoMusicale e)throws  SQLException{
-        PreparedStatement preparedStatement = connessioneDB.getConnessioneDB().prepareStatement(query);
+    public boolean setQueryInserisciEventoMusicale(PreparedStatement preparedStatement, eventoMusicale e,Connection connection)throws  SQLException{
         //SETUP QUERY
         preparedStatement.setInt(1,0);
-        preparedStatement.setString(2,e.getArtisti().get(0));//TODO: cambiare table Evento_Musicale?
-        if(eseguiChiudiQuery(preparedStatement)>0)return true;
+        preparedStatement.setString(2,e.getArtisti());//TODO: cambiare table Evento_Musicale?
+        if(eseguiQuery(preparedStatement,connection)>0)return true;
         return false;
     }
-    public int eseguiChiudiQuery(PreparedStatement preparedStatement)throws SQLException{
-         int ris=preparedStatement.executeUpdate();
-         preparedStatement.close();
-         return ris;
 
-    }
+    public int eseguiQuery(PreparedStatement preparedStatement,Connection connection)throws SQLException{
+         int ris=preparedStatement.executeUpdate();
+         utilityDB.closeDB(preparedStatement,connection);
+         return ris;
+     }
+
 
 
 
