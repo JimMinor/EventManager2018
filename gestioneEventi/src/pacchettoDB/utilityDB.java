@@ -3,7 +3,6 @@ package pacchettoDB;
 
 import pacchettoViste.mostraAlert;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 
 /**
@@ -54,5 +53,8 @@ public class utilityDB {
             callableStatement.close();
         }catch(SQLException e) {//Ignore
         }
+    }
+
+    public static void closeDB(PreparedStatement preparedStatement, Connection connection) {
     }
 }
