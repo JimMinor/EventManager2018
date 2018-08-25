@@ -37,7 +37,6 @@ public class mainApp extends Application {
     public void start(Stage stagePrincipale) throws Exception {
         this.stagePrincipale = stagePrincipale;
         myScreen = new cambiaStage(this);
-
         myScreen.mostraScreenLogin("menuPrincipaleScreen.fxml");
         stagePrincipale.show();
 

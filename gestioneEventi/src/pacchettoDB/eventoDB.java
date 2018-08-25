@@ -10,12 +10,17 @@ import java.sql.Date;
 public class eventoDB implements  eventoDAO {
 
 
+    Connection connection;
     public eventoDB(){}
+    public Connection setConnection(){return  this.connection=utilityDB.getConnessioneDB();}
     @Override
     public boolean eliminaEvento(Evento e) {
         return false;
     }
     @Override
+
+
+
     /****************************************
      *  Inserimento Eventi                  *
      ****************************************
@@ -23,40 +28,36 @@ public class eventoDB implements  eventoDAO {
 
     public boolean inserisciEvento(Evento e) {
         if(e==null) return false;
-        try{if(!inserisciEventoGenerico(e))throw new SQLException();}catch(SQLException sqlE){
+        try{
+            setCallInserisciEvento(setConnection(),e );}catch(SQLException sqlE){
             // mostraAlert.mostraErroreInserimento.
             sqlE.printStackTrace();
             }
          return false;
     }
-    public boolean inserisciEventoGenerico(Evento e) throws SQLException{
-        if(e==null)return false;
-        String query ="INSERT INTO EVENTO VALUES(?,?,?,?,?,?,?)";
-        //Inserisco l'evento generico
-        Connection connection=utilityDB.getConnessioneDB();
-        if(setQueryInserisciEventoGenerico(connection.prepareStatement(query),e,connection)) return inserisciEventoSpecifico(e);
-        return false;
-        }
-    public boolean inserisciEventoSpecifico(Evento e) throws SQLException{
-        if(e==null)return false;
-        if(e instanceof eventoMusicale) return inserisciEventoMusicale((eventoMusicale)e);
-        if(e instanceof  eventoSportivo)return inserisciEventoSportivo((eventoSportivo)e);
-        return false;
-    }
-    public boolean inserisciEventoSportivo(eventoSportivo e) throws SQLException{
-        if(e==null) return false;
-        String query = "INSERT INTO EVENTO_SPORTIVO VALUES (?,?,?,?)";
-        Connection connection=utilityDB.getConnessioneDB();
 
-        return setQueryInserisciEventoSportivo(connection.prepareStatement(query),e,connection);
+    private void setCallInserisciEvento(Connection connection,Evento e) throws  SQLException{
+        CallableStatement callableStatement=connection.prepareCall("{?=CALL ins_evento(?,?,?,?,?,?,?)}");
+        setParametriCallInserisciEvento(connection,callableStatement,e);
+
 
     }
-    public boolean inserisciEventoMusicale(eventoMusicale e) throws SQLException{
-        if(e==null) return false;
 
-        String query = "INSERT INTO EVENTO_MUSICALE VALUES(?,?)";
-        Connection connection=utilityDB.getConnessioneDB();
-        return setQueryInserisciEventoMusicale(connection.prepareStatement(query),e,connection);
+
+    public boolean inserisciEventoSpecifico(Evento e,int id) throws SQLException{
+        if(e==null)return false;
+        if(e instanceof eventoMusicale) return inserisciEventoMusicale((eventoMusicale)e,id);
+        if(e instanceof  eventoSportivo)return inserisciEventoSportivo((eventoSportivo)e,id);
+        return false;
+    }
+    public boolean inserisciEventoSportivo(eventoSportivo e,int id) throws SQLException{
+        if(e==null) return false;
+        return setQueryInserisciEventoSportivo(connection.prepareStatement("INSERT INTO EVENTO_SPORTIVO VALUES (?,?,?,?)"),e,id);
+
+    }
+    public boolean inserisciEventoMusicale(eventoMusicale e,int id) throws SQLException{
+        if(e==null) return false;
+        return setQueryInserisciEventoMusicale(connection.prepareStatement("INSERT INTO EVENTO_MUSICALE VALUES(?,?)"),e,id);
 
     }
 
@@ -71,42 +72,51 @@ public class eventoDB implements  eventoDAO {
 
     /*******************************************
      *  Set  valori per le Query di inserimento
-     ******************************************
+     *******************************************
      */
 
-    public boolean setQueryInserisciEventoGenerico(PreparedStatement preparedStatement, Evento e,Connection connection) throws SQLException{
-        preparedStatement.setInt(1,0);
-        preparedStatement.setDate(4 ,Date.valueOf(e.getDataEvento()));
-        preparedStatement.setString(6,e.getDescrizione());
-        preparedStatement.setString(3, e.getLuogoEvento().toString());
-        preparedStatement.setString(2,e.getNome());
-        preparedStatement.setFloat(5,e.getPrezzoBiglietto());
-        preparedStatement.setString(7,e.getTipologiaEvento().name());
-        if(eseguiQuery(preparedStatement,connection)>0)return true;
-        return false;
+    private void setParametriCallInserisciEvento(Connection connection, CallableStatement callableStatement,Evento e) throws SQLException{
+
+        callableStatement.registerOutParameter(1,Types.INTEGER);
+        callableStatement.setInt(2,0);
+        callableStatement.setString(3,e.getNome().toUpperCase());
+        callableStatement.setString(4,e.getLuogoEvento().name());//Gia' UppCase
+        callableStatement.setDate(5,Date.valueOf(e.getDataEvento()));//Converto LocalDate in Date.sql
+        callableStatement.setFloat(6,e.getPrezzoBiglietto());
+        callableStatement.setString(7,e.getDescrizione().toUpperCase());
+        callableStatement.setString(8,e.getTipologiaEvento().name());//Gia' UppCase
+        inserisciEventoSpecifico(e,eseguiCallInserisciEventoGenerico(callableStatement));//Esegue e ritorna l'id dell'evento
     }
-    public boolean setQueryInserisciEventoSportivo(PreparedStatement preparedStatement, eventoSportivo e,Connection connection) throws SQLException{
-        preparedStatement.setInt(1,0);
-        preparedStatement.setString(2,e.getPartecipanti().get(0));
-        preparedStatement.setString(3,e.getPartecipanti().get(1));
+
+
+    public boolean setQueryInserisciEventoSportivo(PreparedStatement preparedStatement, eventoSportivo e,int id) throws SQLException{
+
+        preparedStatement.setInt(1,id);
         preparedStatement.setString(4,e.getSport().name());
-        if(eseguiQuery(preparedStatement,connection)>0)return true;
+        if(eseguiQueryInserimentoEventoSpecifico(preparedStatement)>0)return true;
         return false;
     }
-    public boolean setQueryInserisciEventoMusicale(PreparedStatement preparedStatement, eventoMusicale e,Connection connection)throws  SQLException{
+    public boolean setQueryInserisciEventoMusicale(PreparedStatement preparedStatement, eventoMusicale e,int id)throws  SQLException{
         //SETUP QUERY
-        preparedStatement.setInt(1,0);
-        preparedStatement.setString(2,e.getArtisti());//TODO: cambiare table Evento_Musicale?
-        if(eseguiQuery(preparedStatement,connection)>0)return true;
+        preparedStatement.setInt(1,id);
+
+        if(eseguiQueryInserimentoEventoSpecifico(preparedStatement)>0)return true;
         return false;
     }
 
-    public int eseguiQuery(PreparedStatement preparedStatement,Connection connection)throws SQLException{
+    /*******************************************
+     *  Esecuzione sql Query
+     *******************************************
+     */
+    public int eseguiQueryInserimentoEventoSpecifico(PreparedStatement preparedStatement)throws SQLException{
          int ris=preparedStatement.executeUpdate();
-         utilityDB.closeDB(preparedStatement,connection);
+         utilityDB.closePreparedStaement(preparedStatement);
          return ris;
      }
-
+    public int eseguiCallInserisciEventoGenerico(CallableStatement callableStatement)throws SQLException{
+         callableStatement.executeUpdate();
+         return callableStatement.getInt(1);
+        }
 
 
 

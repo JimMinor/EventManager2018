@@ -46,4 +46,6 @@ public class utilityDB {
         }
     }
 
+    public static void closePreparedStaement(PreparedStatement preparedStatement) {
+    }
 }
