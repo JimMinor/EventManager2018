@@ -3,7 +3,11 @@ package pacchettoViste;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
-
+/** NON FUNZIONANTE:
+  Bisogna mantenere il riferimento ai nodi creati,
+  usando un HashMap<String,Node>, oppure un riferimento,
+  al Node attivo
+  */
 public class cambiaPane {
 
     public void mostraPane(AnchorPane pane, String risorsa){
