@@ -1,4 +1,4 @@
-create or replace function ins_evento_musicale (new_nome varchar2, new_luogo varchar2, new_data date, new_prezzo float, new_descrizione varchar2, new_tipologia varchar2, new_artista varchar2)
+create or replace procedure ins_evento_musicale (new_nome varchar2, new_luogo varchar2, new_data date, new_prezzo float, new_descrizione varchar2, new_tipologia varchar2, new_artista varchar2)
 
 return NUMBER is new_id NUMBER;
 
