@@ -35,15 +35,13 @@ public class mainApp extends Application {
      */
     @Override
     public void start(Stage stagePrincipale) throws Exception {
-        /*
         this.stagePrincipale = stagePrincipale;
         myScreen = new cambiaStage(this);
 
-        myScreen.mostraScreenLogin("loginScreen.fxml");
+        myScreen.mostraScreenLogin("menuPrincipaleScreen.fxml");
         stagePrincipale.show();
-        */
-        Evento e = new eventoMusicale(luogoEnum.SANCARLO,"",30,tipologiaEnum.MUSICALE,"calcutta",LocalDate.now(),"calcutta");
-        new eventoDB().inserisciEvento(e);
+
+
 
     }
 

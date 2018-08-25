@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
+<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
    <children>
       <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="1172.0" layoutY="50.0">
          <image>
@@ -21,16 +21,16 @@
       </ImageView>
       <Label layoutX="101.0" layoutY="41.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
       <Hyperlink layoutX="95.0" layoutY="74.0" text="Logout" />
-      <AnchorPane layoutX="40.0" layoutY="166.0" prefHeight="506.0" prefWidth="212.0" style="-fx-border-color: black;">
+      <AnchorPane layoutX="41.0" layoutY="166.0" prefHeight="506.0" prefWidth="212.0">
          <children>
-            <Button layoutY="336.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Cerca Dipendenti" />
-            <Button layoutY="261.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Inserisci Dipendenti" />
-            <Button layoutY="184.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Cerca Cliente" />
-            <Button layoutX="1.0" layoutY="26.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-background-color: whte; -fx-border-color: whte;" text="Inserisci Evento" />
+            <Button layoutY="336.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" text="Cerca Dipendenti" />
+            <Button layoutY="261.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" text="Inserisci Dipendenti" />
+            <Button layoutY="184.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" text="Cerca Cliente" />
+            <Button fx:id="inserisciEventoButton" layoutX="1.0" layoutY="26.0" mnemonicParsing="false" onAction="#inserisciEventoButtonPressed" prefHeight="84.0" prefWidth="210.0" style="-fx-background-color: white;" text="Inserisci Evento" textFill="#55a5dd" />
             <Button layoutY="420.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Button" />
-            <Button layoutY="104.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: whte; -fx-background-color: whte;" text="Cerca Evento" />
+            <Button layoutY="104.0" mnemonicParsing="false" onAction="#cercaEventoButtonPressed" prefHeight="84.0" prefWidth="210.0" text="Cerca Evento" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="253.0" layoutY="166.0" prefHeight="506.0" prefWidth="1013.0" />
+      <AnchorPane fx:id="switchPane" layoutX="253.0" layoutY="166.0" prefHeight="506.0" prefWidth="1013.0" />
    </children>
 </AnchorPane>
