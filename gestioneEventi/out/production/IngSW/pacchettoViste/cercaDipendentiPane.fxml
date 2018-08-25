@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane focusTraversable="true" layoutX="14.0" layoutY="216.0" prefHeight="276.0" prefWidth="678.0">
          <children>
@@ -17,10 +17,10 @@
             <Button layoutX="794.0" layoutY="230.0" mnemonicParsing="false" text="Elimina" />
             <TableView editable="true" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="880.0">
                <columns>
-                  <TableColumn prefWidth="259.99993896484375" text="Nome Evento" />
-                  <TableColumn prefWidth="271.2000732421875" text="Luogo" />
-                  <TableColumn prefWidth="200.79998779296875" text="Data " />
-                  <TableColumn minWidth="0.0" prefWidth="147.99993896484375" text="seleziona" />
+                  <TableColumn prefWidth="259.99993896484375" text="Nome Dipendente" />
+                  <TableColumn prefWidth="224.800048828125" text="Cognome Dipendente" />
+                  <TableColumn prefWidth="322.39996337890625" text="Codice Fiscale" />
+                  <TableColumn minWidth="0.0" prefWidth="73.5999755859375" text="seleziona" />
                </columns>
             </TableView>
          </children>
@@ -31,7 +31,7 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="87.0" text="Luogo">
+      <Label layoutX="83.0" layoutY="87.0" text="Cognome">
          <font>
             <Font size="19.0" />
          </font>
@@ -46,7 +46,7 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <Label layoutX="83.0" layoutY="132.0" text="Data">
+      <Label layoutX="83.0" layoutY="132.0" text="Data Nascita">
          <font>
             <Font size="19.0" />
          </font>

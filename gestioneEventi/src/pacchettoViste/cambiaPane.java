@@ -18,7 +18,7 @@ public class cambiaPane {
         }catch(Exception e){}
     }
     public void rimuoviPane(AnchorPane pane){
-        pane.getChildren().removeAll();
+        pane.getChildren().clear();//pulisce la scermata
     }
 
 
