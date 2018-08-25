@@ -2,13 +2,12 @@ package pacchettoViste;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import pacchettoDB.eventoDB;
+import pacchettoDB.inserisciEventoDB;
 import pacchettoEntita.Evento;
 import pacchettoEntita.eventoMusicale;
 import pacchettoEntita.luogoEnum;
 import pacchettoEntita.tipologiaEnum;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -35,11 +34,13 @@ public class mainApp extends Application {
      */
     @Override
     public void start(Stage stagePrincipale) throws Exception {
-        this.stagePrincipale = stagePrincipale;
+      /**  this.stagePrincipale = stagePrincipale;
         myScreen = new cambiaStage(this);
         myScreen.mostraScreenLogin("menuPrincipaleScreen.fxml");
         stagePrincipale.show();
-
+       */
+       Evento e = new eventoMusicale(luogoEnum.SANCARLO," ",0.0F,tipologiaEnum.MUSICALE,"prova inserimento",LocalDate.now(),new ArrayList<String>());
+       new inserisciEventoDB().inserisciEvento(e);
 
 
     }

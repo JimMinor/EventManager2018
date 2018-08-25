@@ -1,9 +1,9 @@
 package pacchettoDB;
 
 import pacchettoEntita.Evento;
-
-public interface eventoDAO {
+@FunctionalInterface
+public interface inserisciEventoDAO {
 
     public boolean inserisciEvento(Evento e);
-    public boolean eliminaEvento(Evento e);
+
 }
