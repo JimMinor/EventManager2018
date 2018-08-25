@@ -36,16 +36,23 @@ public class utilityDB {
 
      return connessione;
     }
-    public static void closeDB(ResultSet rs,PreparedStatement ps,Connection c){
-        try { rs.close();ps.close();c.close();} catch(SQLException e){
-            //ignora
-        }
-    }
-    public static void closeDB(PreparedStatement ps,Connection c){
-        try{ps.close();c.close();}catch(SQLException e) {//ignora
-        }
-    }
+    public static void closeConnection(Connection c){
+        try{
+            c.close();
 
+        }catch(SQLException e) {//Ignore
+        }
+    }
     public static void closePreparedStaement(PreparedStatement preparedStatement) {
+        try{
+            preparedStatement.close();
+        }catch(SQLException e) {//Ignore
+        }
+    }
+    public static void closeCallableStatement(CallableStatement callableStatement){
+        try{
+            callableStatement.close();
+        }catch(SQLException e) {//Ignore
+        }
     }
 }
