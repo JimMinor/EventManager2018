@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="cercaClientiPaneScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
    <children>
       <AnchorPane focusTraversable="true" layoutX="6.0" layoutY="171.0" prefHeight="276.0" prefWidth="950.0">
          <children>
@@ -20,7 +20,7 @@
                   <TableColumn minWidth="0.0" prefWidth="96.79998779296875" text="seleziona" />
                </columns>
             </TableView>
-            <Button layoutX="14.0" layoutY="235.0" mnemonicParsing="false" text="Visualizza dati" />
+            <Button fx:id="visualizzaDatiClienti" layoutX="14.0" layoutY="235.0" mnemonicParsing="false" onAction="#visualizzaDatiClientiButton" text="Visualizza dati" />
             <Button layoutX="869.0" layoutY="235.0" mnemonicParsing="false" text="Elimina" />
          </children>
       </AnchorPane>

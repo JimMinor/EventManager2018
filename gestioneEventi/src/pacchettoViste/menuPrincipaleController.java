@@ -18,7 +18,8 @@ public class menuPrincipaleController implements  Initializable,screenController
     @FXML private AnchorPane switchPane;
     @FXML private Button inserisciEventoButton;
     private cambiaStage myCambiaStage;
-
+    @FXML public Button visualizzaDatiClienti;
+    @FXML private AnchorPane cercaClientiPaneScreen;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {}
