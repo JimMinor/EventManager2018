@@ -32,7 +32,7 @@ public class gestioneQueryInserimentoEvento {
         callInserisciEvento.setDate(4,Date.valueOf(eventoDaInserire.getDataEvento()));//Converto LocalDate in Date.sql
         callInserisciEvento.setFloat(5,eventoDaInserire.getPrezzoBiglietto());
         callInserisciEvento.setString(6,eventoDaInserire.getDescrizione());
-        callInserisciEvento.setString(7,eventoDaInserire.getTipologiaEvento().name());
+        callInserisciEvento.setString(7,eventoDaInserire.getTipologiaEvento().name());//Gi' UppCase
     }
 
     private int eseguiQueryInserimentoGenerico(CallableStatement callInsericiEvento)throws SQLException{
