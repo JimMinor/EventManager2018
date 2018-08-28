@@ -1,8 +1,6 @@
 package pacchettoDB;
 
 
-import pacchettoViste.mostraAlert;
-
 import java.sql.*;
 
 /**
@@ -25,15 +23,14 @@ public class utilityDB {
                 return connessione;
             }
             // Creazione Connessione
-            connessione = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","admin","admin");
+            return connessione = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","admin","admin");
             }
             catch(SQLException E){
-            mostraAlert.mostraAlertErroreDB();
+            //mostraAlert.mostraAlertErroreDB();
             return connessione;
 
         }
 
-     return connessione;
     }
     public static void closeConnection(Connection c){
         try{

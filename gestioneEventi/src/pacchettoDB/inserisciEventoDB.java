@@ -1,58 +1,25 @@
 package pacchettoDB;
-
-
-import pacchettoEntita.Evento;
-import pacchettoEntita.eventoMusicale;
-import pacchettoEntita.eventoSportivo;
+import pacchettoEntita.*;
 import java.sql.*;
 
-/** Questa classe si occupa di inserire gli eventi
- *  in un DataBase Relazionale
- */
 public class inserisciEventoDB implements inserisciEventoDAO {
 
+    private Evento eventoDaInserire;
+    private gestioneQueryInserimentoEvento inserimentoEvento;
 
-    private Connection connection;
-    private setQueryInserisciEventoSportivo setQueryInserisciEventoSportivo;
-    public inserisciEventoDB(){
-        this.connection=utilityDB.getConnessioneDB();
+    public inserisciEventoDB(Evento eventoDaInserire){
+        this.eventoDaInserire=eventoDaInserire;
+        inserimentoEvento=new gestioneQueryInserimentoEvento(eventoDaInserire);
     }
-    public Connection setConnection(){return  this.connection=utilityDB.getConnessioneDB();}
-
-    /**************************************
-     *              METODI
-     * ************************************/
     @Override
-    /****************************************
-     *  Inserimento Eventi                  *
-     ****************************************
-     */
-    public boolean inserisciEvento(Evento e) {
-        if(e==null) return false;
+    // Entry Point della Classe
+    public void inserisciEvento() {
         try{
-            new setQueryInserisciEvento().setCallInserisciEvento(connection,e );}catch(Exception sqlE){
-            // mostraAlert.mostraErroreInserimento.
-            sqlE.printStackTrace();
-            }
-            utilityDB.closeConnection(this.connection);
-         return false;
+            int idEventoGenericoCreato=inserimentoEvento.inserimentoEventoGenerico();
+           }
+            catch (SQLException sqlE){}
     }
-    public boolean inserisciEventoSpecifico(Evento e,int id) throws SQLException,NullPointerException{
-        if(e==null)return false;
-        if(e instanceof eventoMusicale)  inserisciEventoMusicale((eventoMusicale)e,id);
-        if(e instanceof  eventoSportivo) inserisciEventoSportivo((eventoSportivo)e,id);
-        return false;
-    }
-    public void inserisciEventoSportivo(eventoSportivo e,int id) throws SQLException, NullPointerException{
-        if(e==null) throw new NullPointerException();
-       setQueryInserisciEventoSportivo.preparaEseguiQueryInserimentoEventoSportivo(connection,e,id);
-       setQueryInserisciEventoSportivo.preparaEseguiQueryInserimentoPartecipantiEventoSportivo(connection,e.getPartecipanti(),id);
-    }
-    public void inserisciEventoMusicale(eventoMusicale e,int id) throws SQLException,NullPointerException{
-        if(e==null) throw new NullPointerException();
-        new setQueryInserisciEventoMusicale().preparaEseguiQueryInserisciEventoMusicale(connection.prepareStatement("INSERT INTO EVENTO_MUSICALE VALUES(?,?)"),e,id);
 
-    }
 
 
 

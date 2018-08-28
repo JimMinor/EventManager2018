@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
+   <children>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="1172.0" layoutY="50.0">
+         <image>
+            <Image url="@../ticket-icon-300x300.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="33.0" layoutY="39.0">
+         <image>
+            <Image url="@../765-default-avatar_4.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="101.0" layoutY="41.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
+      <Hyperlink layoutX="95.0" layoutY="74.0" text="Logout" />
+      <AnchorPane layoutX="41.0" layoutY="166.0" prefHeight="506.0" prefWidth="212.0" style="-fx-border-color: black;">
+         <children>
+            <Button fx:id="cercaDipendenteButton" layoutX="1.0" layoutY="338.0" mnemonicParsing="false" onAction="#cercaDipendentiButtonPressed" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: NULL; -fx-background-color: NULL;" text="Cerca Dipendenti" />
+            <Button fx:id="inserisciDipendenteButton" layoutX="8.0" layoutY="259.0" mnemonicParsing="false" onAction="#inserisciDipendentiButtonPressed" prefHeight="32.0" prefWidth="202.0" style="-fx-border-color: NULL; -fx-background-color: NULL;" text="Inserisci Dipendenti" />
+            <Button fx:id="cercaClientiButton" layoutX="8.0" layoutY="184.0" mnemonicParsing="false" onAction="#CercaClientiButtonPressed" prefHeight="32.0" prefWidth="202.0" style="-fx-border-color: NULL; -fx-background-color: NULL;" text="Cerca Cliente" />
+            <Button fx:id="inserisciEventoButton" layoutX="1.0" layoutY="26.0" mnemonicParsing="false" onAction="#inserisciEventoButtonPressed" prefHeight="84.0" prefWidth="210.0" style="-fx-background-color: null; -fx-border-color: null;" text="Inserisci Evento" textFill="#55a5dd" />
+            <Button fx:id="statisticaButton" layoutY="420.0" mnemonicParsing="false" onAction="#statisticaButtonPressed" prefHeight="84.0" prefWidth="210.0" style="-fx-border-color: NULL; -fx-background-color: NULL;" text="Button" />
+            <Button fx:id="cercaEventoButton" layoutX="5.0" layoutY="103.0" mnemonicParsing="false" onAction="#cercaEventoButtonPressed" prefHeight="32.0" prefWidth="202.0" style="-fx-border-color: null; -fx-background-color: NULL;" text="Cerca Evento" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="switchPane" layoutX="253.0" layoutY="166.0" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;" />
+   </children>
+</AnchorPane>

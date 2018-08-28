@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="435.0" layoutY="28.0" text="Dati Cliente">
          <font>

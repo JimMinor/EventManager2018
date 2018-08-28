@@ -7,8 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.*;
-import pacchettoDB.autenticazione;
-import pacchettoDB.autenticazioneConcreta;
+import pacchettoDB.*;
 
 public class loginScreenController implements Initializable,screenController {
 
