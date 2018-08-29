@@ -31,18 +31,11 @@ public class mainApp extends Application {
      */
     @Override
     public void start(Stage stagePrincipale) throws Exception {
-      /**  this.stagePrincipale = stagePrincipale;
+        this.stagePrincipale = stagePrincipale;
         myScreen = new cambiaStage(this);
         myScreen.mostraScreenLogin("menuPrincipaleScreen.fxml");
         stagePrincipale.show();
-       */
-       ArrayList<String> atleti = new ArrayList<>();
-       atleti.add("Milano");
-       atleti.add("Napoli");
-       eventoSportivo e =
-               new eventoSportivo(luogoEnum.SANCARLO," ",0.0F,tipologiaEnum.SPORTIVO,"prova__inserimento",LocalDate.now(),sportEnum.CALCIO,atleti);
-       new inserisciEventoDB(e).inserisciEvento();
-
+      
 
     }
 
