@@ -9,24 +9,30 @@ public class inserisciEventoDB implements inserisciEventoDAO {
 
     public inserisciEventoDB(Evento eventoDaInserire){
         this.eventoDaInserire=eventoDaInserire;
-        inserimentoEvento=new gestioneQueryInserimentoEvento(eventoDaInserire);
+        inserimentoEvento=controllaTipoEvento(eventoDaInserire);
+
     }
     @Override
     // Entry Point della Classe
     public void inserisciEvento() {
-        try{
-            int idEventoGenericoCreato=inserimentoEvento.inserimentoEventoGenerico();
-           }
-            catch (SQLException sqlE){}
+        try {
+
+            inserimentoEvento.eseguiEPreparaQueryInserimentoEvento();
+            }
+            catch (SQLException sqlE){
+            sqlE.printStackTrace();
+            System.out.println("non inserito");
+            }
+       }
+
+    private gestioneQueryInserimentoEvento controllaTipoEvento(Evento eventoDaInserire) {
+
+
+        if (eventoDaInserire instanceof eventoSportivo)
+            return new gestioneQueryInserimentoEventoSportivo((eventoSportivo) eventoDaInserire);
+
+        return null;
     }
-
-
-
-
-
-
-
-
 
 
 

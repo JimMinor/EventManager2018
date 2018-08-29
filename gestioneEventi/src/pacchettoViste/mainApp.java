@@ -3,10 +3,7 @@ package pacchettoViste;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import pacchettoDB.inserisciEventoDB;
-import pacchettoEntita.Evento;
-import pacchettoEntita.eventoMusicale;
-import pacchettoEntita.luogoEnum;
-import pacchettoEntita.tipologiaEnum;
+import pacchettoEntita.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -39,8 +36,12 @@ public class mainApp extends Application {
         myScreen.mostraScreenLogin("menuPrincipaleScreen.fxml");
         stagePrincipale.show();
        */
-       Evento e = new eventoMusicale(luogoEnum.SANCARLO," ",0.0F,tipologiaEnum.MUSICALE,"prova inserimento",LocalDate.now(),new ArrayList<String>());
-       new inserisciEventoDB().inserisciEvento(e);
+       ArrayList<String> atleti = new ArrayList<>();
+       atleti.add("Milano");
+       atleti.add("Napoli");
+       eventoSportivo e =
+               new eventoSportivo(luogoEnum.SANCARLO," ",0.0F,tipologiaEnum.SPORTIVO,"prova__inserimento",LocalDate.now(),sportEnum.CALCIO,atleti);
+       new inserisciEventoDB(e).inserisciEvento();
 
 
     }

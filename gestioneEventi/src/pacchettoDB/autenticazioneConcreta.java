@@ -24,7 +24,7 @@ public class autenticazioneConcreta implements  autenticazione{
             //Esecuzione query
              ResultSet resultSet=preparedStatement.executeQuery();
             if(resultSet.next())ris=true;
-            utilityDB.closeDB(preparedStatement,connection);
+            utilityDB.closeDB(preparedStatement);
             return ris;
     }
     public PreparedStatement preparaQuery(String username, String password,Connection connection) throws SQLException{

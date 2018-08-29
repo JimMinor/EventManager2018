@@ -48,10 +48,25 @@ public class utilityDB {
     public static void closeCallableStatement(CallableStatement callableStatement){
         try{
             callableStatement.close();
+            callableStatement.getConnection().close();
         }catch(SQLException e) {//Ignore
         }
     }
 
-    public static void closeDB(PreparedStatement preparedStatement, Connection connection) {
+    public static void closeDB(PreparedStatement preparedStatement) {
+        try{
+            preparedStatement.close();
+            preparedStatement.getConnection().close();
+        }
+        catch(SQLException sqlE){
+            //Ignore
+        }
+    }
+
+    public static void closeResultSet(ResultSet resultSetDaChiudere) {
+        try {
+            resultSetDaChiudere.close();
+            } catch (SQLException sqlE) {//ignore
+        }
     }
 }

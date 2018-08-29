@@ -1,27 +1,28 @@
 package pacchettoDB;
 
-import jdk.nashorn.internal.codegen.CompilerConstants;
 import pacchettoEntita.Evento;
 
 import java.sql.*;
 
-public class gestioneQueryInserimentoEvento {
+public abstract class gestioneQueryInserimentoEvento {
 
 
-    private final Evento eventoDaInserire;
+    private  Evento eventoDaInserire;
+    private  int idEventoInserito;
 
-    public gestioneQueryInserimentoEvento(Evento eventoDainserire){
-        this.eventoDaInserire=eventoDainserire;
-    }
-    public int inserimentoEventoGenerico() throws SQLException,NullPointerException{
-        return eseguiQueryInserimentoGenerico(preparaQueryInserimentoGenerico());
+    public void setEventoDaInserire(Evento eventoDaInserire){this.eventoDaInserire=eventoDaInserire;}
+    public int getIdEventoInserito(){return this.idEventoInserito;}
+    public void eseguiEPreparaQueryInserimentoEvento() throws SQLException{
+        CallableStatement callInserisciEvento=preparaQueryInserimentoGenerico();
+        idEventoInserito=eseguiCallInserimentoEventoGenerico(callInserisciEvento);
+        utilityDB.closeCallableStatement(callInserisciEvento);
     }
 
     private CallableStatement preparaQueryInserimentoGenerico() throws SQLException{
         Connection connection=utilityDB.getConnessioneDB();
         CallableStatement callInserisciEvento = connection.prepareCall("{?= call ins_evento(?,?,?,?,?,?)}");
         setParementriCallInserimentoEvento(callInserisciEvento);
-        utilityDB.closeConnection(connection);
+
         return callInserisciEvento;
     }
 
@@ -35,7 +36,7 @@ public class gestioneQueryInserimentoEvento {
         callInserisciEvento.setString(7,eventoDaInserire.getTipologiaEvento().name());//Gi' UppCase
     }
 
-    private int eseguiQueryInserimentoGenerico(CallableStatement callInsericiEvento)throws SQLException{
+    private int eseguiCallInserimentoEventoGenerico(CallableStatement callInsericiEvento)throws SQLException{
         callInsericiEvento.executeUpdate();
         int ris= callInsericiEvento.getInt(1);
         utilityDB.closeCallableStatement(callInsericiEvento);
@@ -43,4 +44,8 @@ public class gestioneQueryInserimentoEvento {
     }
 
 
+
+    public void inserisciAttributiEventoMusicale() throws SQLException {
+
+    }
 }
