@@ -15,10 +15,7 @@ public class inserisciEventoDB implements inserisciEventoDAO {
     @Override
     // Entry Point della Classe
     public void inserisciEvento() {
-        try {
-
-            inserimentoEvento.eseguiEPreparaQueryInserimentoEvento();
-            }
+        try { inserimentoEvento.eseguiEPreparaQueryInserimentoEvento();}
             catch (SQLException sqlE){
             sqlE.printStackTrace();
             System.out.println("non inserito");
@@ -26,9 +23,7 @@ public class inserisciEventoDB implements inserisciEventoDAO {
        }
 
     private gestioneQueryInserimentoEvento controllaTipoEvento(Evento eventoDaInserire) {
-
-
-        if (eventoDaInserire instanceof eventoSportivo)
+         if (eventoDaInserire instanceof eventoSportivo)
             return new gestioneQueryInserimentoEventoSportivo((eventoSportivo) eventoDaInserire);
 
         return null;
