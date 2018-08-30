@@ -2,11 +2,6 @@ package pacchettoViste;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import pacchettoDB.inserisciEventoDB;
-import pacchettoEntita.*;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class mainApp extends Application {
 
@@ -35,7 +30,7 @@ public class mainApp extends Application {
         myScreen = new cambiaStage(this);
         myScreen.mostraScreenLogin("menuPrincipaleScreen.fxml");
         stagePrincipale.show();
-      
+
 
     }
 

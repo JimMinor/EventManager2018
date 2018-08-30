@@ -1,57 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: black;" stylesheets="@../CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane focusTraversable="true" layoutX="14.0" layoutY="216.0" prefHeight="276.0" prefWidth="678.0">
-         <children>
-            <Button layoutX="35.0" layoutY="230.0" mnemonicParsing="false" text="Modifica" />
-            <Button layoutX="794.0" layoutY="230.0" mnemonicParsing="false" text="Elimina" />
-            <TableView editable="true" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="880.0">
-               <columns>
-                  <TableColumn prefWidth="259.99993896484375" text="Nome Evento" />
-                  <TableColumn prefWidth="271.2000732421875" text="Luogo" />
-                  <TableColumn prefWidth="200.79998779296875" text="Data " />
-                  <TableColumn minWidth="0.0" prefWidth="147.99993896484375" text="seleziona" />
-               </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-      <Button layoutX="809.0" layoutY="179.0" mnemonicParsing="false" text="Cerca" />
-      <Label layoutX="84.0" layoutY="42.0" text="Nome">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="83.0" layoutY="87.0" text="Luogo">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <TextField layoutX="649.0" layoutY="39.0">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="649.0" layoutY="84.0">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
-      <Label layoutX="83.0" layoutY="132.0" text="Data">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <DatePicker layoutX="649.0" layoutY="131.0" prefHeight="55.0" prefWidth="189.0" />
-      <Button layoutX="50.0" layoutY="179.0" mnemonicParsing="false" text="Annulla" />
-   </children>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="506.0" prefWidth="1013.0" xmlns="http://javafx.com/javafx/8.0.181"
+            fx:controller="pacchettoViste.cercaEventoController">
+    <children>
+        <AnchorPane fx:id="cercaEventoPaneScreen" layoutX="6.0" prefHeight="506.0" prefWidth="1013.0">
+            <children>
+                <AnchorPane focusTraversable="true" layoutX="59.0" layoutY="204.0" prefHeight="276.0" prefWidth="678.0">
+                    <children>
+                        <Button fx:id="modificaEventoButton" layoutX="35.0" layoutY="230.0" mnemonicParsing="false"
+                                onAction="#modificaEventoButtonPressed" text="Modifica"/>
+                        <Button fx:id="eliminaEventoButton" layoutX="794.0" layoutY="230.0" mnemonicParsing="false"
+                                onAction="#eliminaEventoButtonPressed" text="Elimina"/>
+                        <TableView fx:id="tabellaCercaEventoTableView" editable="true" layoutX="14.0" layoutY="14.0"
+                                   prefHeight="200.0" prefWidth="880.0">
+                            <columns>
+                                <TableColumn prefWidth="259.99993896484375" text="Nome Evento"/>
+                                <TableColumn prefWidth="271.2000732421875" text="Luogo"/>
+                                <TableColumn prefWidth="200.79998779296875" text="Data "/>
+                                <TableColumn minWidth="0.0" prefWidth="147.99993896484375" text="seleziona"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+                <Button fx:id="cercaCercaEventoButton" layoutX="854.0" layoutY="167.0" mnemonicParsing="false"
+                        onAction="#cercaCercaEventoButtonPressed" text="Cerca"/>
+                <Label layoutX="129.0" layoutY="30.0" text="Nome">
+                    <font>
+                        <Font size="19.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="128.0" layoutY="75.0" text="Luogo">
+                    <font>
+                        <Font size="19.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="nomeCercaEventoTextField" layoutX="694.0" layoutY="27.0">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </TextField>
+                <TextField fx:id="luogoCercaEventoTextField" layoutX="694.0" layoutY="72.0">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </TextField>
+                <Label layoutX="128.0" layoutY="120.0" text="Data">
+                    <font>
+                        <Font size="19.0"/>
+                    </font>
+                </Label>
+                <DatePicker fx:id="dataCercaEventoDataPicker" layoutX="694.0" layoutY="119.0" prefHeight="31.0"
+                            prefWidth="190.0"/>
+                <Button fx:id="annullaCercaEventoButton" layoutX="95.0" layoutY="167.0" mnemonicParsing="false"
+                        onAction="#annullaCercaEventoButtonPressed" text="Annulla"/>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
