@@ -2,14 +2,15 @@ package pacchettoViste;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import pacchettoDB.autenticazione;
+import pacchettoDB.autenticazioneConcreta;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.scene.control.*;
-import pacchettoDB.*;
-
-public class loginScreenController implements Initializable,screenController {
+public class loginScreenController implements Initializable, screenController {
 
 
     @FXML
@@ -20,44 +21,44 @@ public class loginScreenController implements Initializable,screenController {
     private cambiaStage myCambiaStage;
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
-    @Override
-    public void setCambiaStage(cambiaStage cambiaStage){myCambiaStage=cambiaStage;}
 
-    /** entraButtonPressed()
-     *
-     *  Query al DB per la ricerca di un impiegato
-     *
+    @Override
+    public void setCambiaStage(cambiaStage cambiaStage) {
+        myCambiaStage = cambiaStage;
+    }
+
+    /**
+     * entraButtonPressed()
+     * <p>
+     * Query al DB per la ricerca di un impiegato
      */
     @FXML
-    public void entraButtonPressed(javafx.event.ActionEvent event)  {
+    public void entraButtonPressed(javafx.event.ActionEvent event) {
 
-       try{
-           // Verifica l'autenticazione dell'utente
-           autenticazione myAut = new autenticazioneConcreta();
-           if(!myAut.autenticaUtente(usernameTextField.getText(),passwordTextField.getText())) {
-               mostraAlert.mostraAlertLogin();
-               return;
-           }
+        try {
+            // Verifica l'autenticazione dell'utente
+            autenticazione myAut = new autenticazioneConcreta();
+            if (!myAut.autenticaUtente(usernameTextField.getText(), passwordTextField.getText())) {
+                mostraAlert.mostraAlertLogin();
+                return;
+            }
 
-         }
-       catch(Exception e){
-           mostraAlert.mostraAlertErroreDB();
-           return;
-       }
+        } catch (Exception e) {
+            mostraAlert.mostraAlertErroreDB();
+            return;
+        }
         myCambiaStage.mostraScreenMenuPrincipale("menuPrincipaleScreen.fxml");
     }
 
     /**
      * Pulisce le TextField
-     *
      */
     @FXML
-    public void annullaButtonPressed(){
+    public void annullaButtonPressed() {
         usernameTextField.clear();
         passwordTextField.clear();
     }

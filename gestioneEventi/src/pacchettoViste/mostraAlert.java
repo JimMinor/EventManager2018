@@ -2,9 +2,9 @@ package pacchettoViste;
 
 import javafx.scene.control.Alert;
 
-public  class mostraAlert {
+public class mostraAlert {
 
-    public static void mostraAlertLogin(){
+    public static void mostraAlertLogin() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore");
         alert.setHeaderText(null);
@@ -13,7 +13,8 @@ public  class mostraAlert {
 
         alert.showAndWait();
     }
-    public static void mostraAlertErroreDB(){
+
+    public static void mostraAlertErroreDB() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore");
         alert.setHeaderText(null);
