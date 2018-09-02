@@ -13,7 +13,7 @@ import lk.vivoxalabs.scenemanager.tools.FileLoader;
 public class mainApp extends Application {
 
 
-    private CustomStage stagePrincipale;
+    private Stage stagePrincipale;
     private cambiaStage myScreen;
 
 
@@ -34,20 +34,18 @@ public class mainApp extends Application {
     @Override
     public void start(Stage stagePrincipale) throws Exception {
 
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../FXML/menuPrincipaleScreen.fxml"));
+      /**  AnchorPane pane = FXMLLoader.load(getClass().getResource("../FXML/menuPrincipaleScreen.fxml"));
         CustomStageBuilder builder = new CustomStageBuilder();
         builder=builder.setWindowTitle("Gestione Vendita Biglietti");
         builder=builder.setTitleColor("blue");
         builder=builder.setWindowColor("white");
         builder = builder.setNavigationPane(NavigationType.TOP,pane);
         builder = builder.setStyleSheet(getClass().getResource("bootstrap3.css"));
-        CustomStage stagePrincipaleCustom = builder.build();
-        this.stagePrincipale = stagePrincipaleCustom;
-
-        //myScreen = new cambiaStage(this);
-        //myScreen.mostraScreenLogin("../FXML/menuPrincipaleScreen.fxml");
-
-        stagePrincipaleCustom.show();
+        CustomStage stagePrincipaleCustom = builder.build();*/
+        this.stagePrincipale = stagePrincipale;
+        myScreen = new cambiaStage(this);
+        myScreen.mostraScreenLogin("../FXML/menuPrincipaleScreen.fxml");
+        stagePrincipale.show();
 
 
 
