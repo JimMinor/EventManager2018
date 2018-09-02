@@ -47,7 +47,7 @@ public class menuPrincipaleController implements Initializable, screenController
 
     public void inserisciEventiButtonPressed() {
 
-        new paneController().mostraPanePulito(switchPane, "inserisciEventoPane.fxml");
+        new paneController().mostraPanePulito(switchPane, "../FXML/inserisciEventoPane.fxml");
     }
 
     public void cercaEventoButtonPressed() {

@@ -23,9 +23,11 @@ public class cambiaStage {
     }
 
     public void setScene(Scene scene) {
-        scene.getStylesheets().add("CSS/bootstrap3.css");
+        String css = "/pacchettoViste/bootstrap3.css";
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(css);
         myApp.getStagePrincipale().setScene(scene);
-        myApp.getStagePrincipale().show();
+        //myApp.getStagePrincipale().show();
     }
 
     public void mostraScreenLogin(String risorsaScreen) {

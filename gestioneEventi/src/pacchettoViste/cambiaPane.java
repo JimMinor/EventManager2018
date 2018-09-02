@@ -11,11 +11,15 @@ import javafx.scene.layout.AnchorPane;
 public class cambiaPane {
 
     public void mostraPane(AnchorPane pane, String risorsa){
+        System.out.println("../FXML/"+risorsa);
         try {
             rimuoviPane(pane);
-            Node node = (Node) FXMLLoader.load(getClass().getResource(risorsa));
+
+            Node node = (Node) FXMLLoader.load(getClass().getResource("../FXML/"+risorsa));
             pane.getChildren().add(node);
-        }catch(Exception e){}
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     public void rimuoviPane(AnchorPane pane){
         pane.getChildren().clear();//pulisce la scermata

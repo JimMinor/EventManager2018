@@ -1,12 +1,19 @@
 package pacchettoViste;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.vivoxalabs.customstage.CustomStage;
+import lk.vivoxalabs.customstage.CustomStageBuilder;
+import lk.vivoxalabs.customstage.tools.NavigationType;
+import lk.vivoxalabs.customstage.tools.Style;
+import lk.vivoxalabs.scenemanager.tools.FileLoader;
 
 public class mainApp extends Application {
 
 
-    private Stage stagePrincipale;
+    private CustomStage stagePrincipale;
     private cambiaStage myScreen;
 
 
@@ -26,15 +33,22 @@ public class mainApp extends Application {
      */
     @Override
     public void start(Stage stagePrincipale) throws Exception {
-        this.stagePrincipale = stagePrincipale;
-        myScreen = new cambiaStage(this);
-        myScreen.mostraScreenLogin("loginScreen.fxml");
-        stagePrincipale.show();
-<<<<<<< HEAD
 
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../FXML/menuPrincipaleScreen.fxml"));
+        CustomStageBuilder builder = new CustomStageBuilder();
+        builder=builder.setWindowTitle("Gestione Vendita Biglietti");
+        builder=builder.setTitleColor("blue");
+        builder=builder.setWindowColor("white");
+        builder = builder.setNavigationPane(NavigationType.TOP,pane);
+        builder = builder.setStyleSheet(getClass().getResource("bootstrap3.css"));
+        CustomStage stagePrincipaleCustom = builder.build();
+        this.stagePrincipale = stagePrincipaleCustom;
 
-=======
->>>>>>> 6cc4a7cdb984d0af3e26bded90cab16941dbc345
+        //myScreen = new cambiaStage(this);
+        //myScreen.mostraScreenLogin("../FXML/menuPrincipaleScreen.fxml");
+
+        stagePrincipaleCustom.show();
+
 
 
     }

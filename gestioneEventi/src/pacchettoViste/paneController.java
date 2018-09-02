@@ -16,7 +16,7 @@ public class paneController {
     public void mostraPanePulito(AnchorPane pane, String risorsa) {
         try {
             rimuoviPane(pane);
-            Node node = (Node) FXMLLoader.load(getClass().getResource(risorsa));
+            Node node = (Node) FXMLLoader.load(getClass().getResource("../FXML/"+risorsa));
             pane.getChildren().add(node);
 
         } catch (Exception e) {

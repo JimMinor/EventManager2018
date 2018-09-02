@@ -31,7 +31,8 @@ public class gestioneQueryInserimentoEventoMusicale extends  gestioneQueryInseri
     private PreparedStatement preparaQueryInserimentoEventoMusicale() throws  SQLException {
         PreparedStatement queryDaEseguire = preparaQueryDaEseguire("INSERT INTO EVENTO_MUSICALE VALUES (?,?");
         queryDaEseguire.setInt(1,getIdEventoInserito());
-        queryDaEseguire.setString(2,eventoMusicaleDaInserire.getArtisti());
+        //queryDaEseguire.setString(2,eventoMusicaleDaInserire.getArtisti());
+        return queryDaEseguire;
 
     }
 

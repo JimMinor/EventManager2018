@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cercaDipendentiScreenAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="1013.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.cercaDipendentiPaneController">
+    <children>
+        <AnchorPane focusTraversable="true" layoutX="14.0" layoutY="216.0" prefHeight="276.0" prefWidth="678.0">
+            <children>
+                <Button fx:id="modificaDipendenteButton" layoutX="35.0" layoutY="230.0" mnemonicParsing="false" onAction="#modificaDipendenteButtonPressed" text="Modifica" />
+                <Button fx:id="eliminaDipendentiButton" layoutX="794.0" layoutY="230.0" mnemonicParsing="false" onAction="#eliminaDipendentiButton" text="Elimina" />
+                <TableView fx:id="tabellaCercaDipendenteTableView" editable="true" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="880.0">
+                    <columns>
+                        <TableColumn prefWidth="259.99993896484375" text="Nome Dipendente" />
+                        <TableColumn prefWidth="224.800048828125" text="Cognome Dipendente" />
+                        <TableColumn prefWidth="322.39996337890625" text="Codice Fiscale" />
+                        <TableColumn minWidth="0.0" prefWidth="73.5999755859375" text="seleziona" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+        <Button fx:id="cercaCercaDipendenteButton" layoutX="809.0" layoutY="179.0" mnemonicParsing="false" onAction="#cercaCercaDipendenteButton" text="Cerca" />
+        <Label layoutX="84.0" layoutY="42.0" text="Nome">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="83.0" layoutY="87.0" text="Cognome">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nomeCercaDipendenteTextField" layoutX="649.0" layoutY="39.0">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="cognomeCercaDipendenteTextField" layoutX="649.0" layoutY="84.0">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </TextField>
+        <Label layoutX="83.0" layoutY="132.0" text="Data Nascita">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <DatePicker fx:id="dataNascitaCercaDipendenteDataPicker" layoutX="649.0" layoutY="131.0" prefHeight="39.0" prefWidth="190.0" />
+        <Button fx:id="annullaCercaDipendenteButton" layoutX="50.0" layoutY="179.0" mnemonicParsing="false" onAction="#annullaCercaDipendenteButtonPressed" text="Annulla" />
+    </children>
+</AnchorPane>
