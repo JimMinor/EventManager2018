@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="sportiviEventoAnchorPane" prefHeight="138.0"
-            prefWidth="587.0" xmlns="http://javafx.com/javafx/8.0.181" fx:controller="pacchettoViste.sportivoPaneController">
+            prefWidth="587.0" xmlns="http://javafx.com/javafx/8.0.181" fx:controller="Scaffale.sportivoPaneController">
     <children>
         <Label layoutX="26.0" layoutY="27.0" text="Tipo sport">
             <font>

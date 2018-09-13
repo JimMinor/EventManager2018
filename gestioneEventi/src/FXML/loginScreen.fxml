@@ -11,18 +11,18 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" snapToPixel="false" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.loginScreenController">
+<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" snapToPixel="false" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginStage">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-        <ImageView fitHeight="124.0" fitWidth="122.0" layoutX="274.0" layoutY="7.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="124.0" fitWidth="122.0" layoutX="106.0" layoutY="7.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../ticket-icon-300x300.png" />
             </image>
         </ImageView>
-      <JFXPasswordField focusColor="#3f78da" labelFloat="true" layoutX="76.0" layoutY="215.0" prefHeight="25.0" prefWidth="244.0" promptText="Password" />
-      <JFXTextField focusColor="#3f78da" labelFloat="true" layoutX="76.0" layoutY="175.0" prefHeight="25.0" prefWidth="244.0" promptText="Username" />
-      <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="344.0" prefHeight="25.0" prefWidth="99.0" ripplerFill="#3f78da" text="Annulla" />
-      <JFXButton buttonType="RAISED" layoutX="265.0" layoutY="344.0" prefHeight="25.0" prefWidth="70.0" ripplerFill="#3f78da" text="Entra" />
+      <JFXPasswordField fx:id="passwordTextField" focusColor="#3eb3da" labelFloat="true" layoutX="76.0" layoutY="215.0" prefHeight="25.0" prefWidth="244.0" promptText="Password" />
+      <JFXTextField fx:id="usernameTextField" focusColor="#3eb3da" labelFloat="true" layoutX="76.0" layoutY="175.0" prefHeight="25.0" prefWidth="244.0" promptText="Username" />
+      <JFXButton fx:id="annullaButton" buttonType="RAISED" layoutX="33.0" layoutY="344.0" onAction="#annullaButtonPressed" prefHeight="25.0" prefWidth="99.0" ripplerFill="#3f78da" style="-fx-background-color: #e23636#d74242;" text="Annulla" />
+      <JFXButton fx:id="entraButton" buttonType="RAISED" layoutX="265.0" layoutY="344.0" onAction="#entraButtonPressed" prefHeight="25.0" prefWidth="99.0" ripplerFill="#3f78da" style="-fx-background-color: #8cd742;" text="Entra" />
       <JFXBadge layoutX="50.0" layoutY="45.0" prefHeight="35.0" prefWidth="56.0" />
     </children>
     <opaqueInsets>

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="culturaTeatroEventoAnchorPane" prefHeight="122.0"
-            prefWidth="575.0" xmlns="http://javafx.com/javafx/8.0.181" fx:controller="pacchettoViste.culturaPaneController">
+            prefWidth="575.0" xmlns="http://javafx.com/javafx/8.0.181" fx:controller="Scaffale.culturaPaneController">
     <children>
         <Label layoutX="32.0" layoutY="10.0" text="Genere ">
             <font>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton fx:id="eventoSportivoButton" buttonType="RAISED" layoutX="73.0" layoutY="59.0" onAction="#eventoSportivoButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d9663f;" text="Evento Sportivo" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-soccer-ball-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="eventoMusicaleButton" buttonType="RAISED" layoutX="273.0" layoutY="59.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3fd9a5;" text="Evento Musicale" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-musical-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="eventoTeatraleButton" buttonType="RAISED" layoutX="73.0" layoutY="159.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3f78da;" text="Evento Teatrale" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-theatre-mask-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="eventoCinemaButton" buttonType="RAISED" layoutX="273.0" layoutY="159.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Cinema" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-film-reel-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

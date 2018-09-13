@@ -1,61 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="menuAnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../pacchettoViste/bootstrap3.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacchettoViste.menuPrincipaleController">
-    <children>
-        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="1172.0" layoutY="50.0">
-            <image>
-                <Image url="@../ticket-icon-300x300.png" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="33.0" layoutY="39.0">
-            <image>
-                <Image url="@../765-default-avatar_4.png" />
-            </image>
-        </ImageView>
-        <Label fx:id="username" layoutX="101.0" layoutY="41.0" prefHeight="18.0" prefWidth="135.0" text="Nome impiegato" />
-        <Hyperlink fx:id="logoutHyperlink" layoutX="95.0" layoutY="74.0" onAction="#logoutHyperlinkPressed" text="Logout" />
-        <AnchorPane layoutX="41.0" layoutY="166.0" prefHeight="506.0" prefWidth="212.0" style="-fx-border-color: gray;">
-            <children>
-                <Button fx:id="cercaDipendenteButton" layoutX="1.0" layoutY="338.0" mnemonicParsing="false" onAction="#cercaDipendentiButtonPressed" prefHeight="84.0" prefWidth="210.0" text="Cerca Dipendenti" underline="true">
-                    <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                    </font>
-                </Button>
-                <Button fx:id="inserisciDipendenteButton" layoutX="8.0" layoutY="259.0" mnemonicParsing="false" onAction="#inserisciDipendentiButtonPressed" prefHeight="32.0" prefWidth="202.0" text="Inserisci Dipendenti" underline="true">
-                    <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                    </font>
-                </Button>
-                <Button fx:id="cercaClientiButton" layoutX="8.0" layoutY="184.0" mnemonicParsing="false" onAction="#CercaClientiButtonPressed" prefHeight="32.0" prefWidth="202.0" text="Cerca Cliente" underline="true">
-                    <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                    </font>
-                </Button>
-                <Button fx:id="inserisciEventiButton" layoutX="1.0" layoutY="26.0" mnemonicParsing="false" onAction="#inserisciEventiButtonPressed" prefHeight="70.0" prefWidth="210.0" text="Inserisci Evento" textFill="#55a5dd" underline="true">
-                    <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                    </font>
-                </Button>
-                <Button fx:id="statisticaButton" layoutY="420.0" mnemonicParsing="false" onAction="#statisticaButtonPressed" prefHeight="84.0" prefWidth="210.0" text="Statistiche" underline="true">
-                    <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                    </font>
-                </Button>
-                <Button fx:id="cercaEventoButton" layoutX="5.0" layoutY="103.0" mnemonicParsing="false" onAction="#cercaEventoButtonPressed" prefHeight="32.0" prefWidth="202.0" text="Cerca Evento" underline="true">
-                    <font>
-                        <Font name="System Bold Italic" size="14.0" />
-                    </font>
-                </Button>
-            </children>
-        </AnchorPane>
-        <AnchorPane fx:id="switchPane" layoutX="253.0" layoutY="166.0" prefHeight="506.0" prefWidth="1013.0" style="-fx-border-color: gray;" />
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.62" prefHeight="568.0" prefWidth="923.0" style="-fx-background-color: #fffffc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuPrincipaleStage">
+   <children>
+      <AnchorPane layoutY="-2.0" prefHeight="87.0" prefWidth="817.0" style="-fx-background-color: #3eb3da; -fx-border-color: #99ccff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="72.0" layoutX="60.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="824.0" AnchorPane.topAnchor="14.0">
+               <image>
+                  <Image url="@../icons/icons8-male-user-64.png" />
+               </image>
+            </ImageView>
+            <JFXButton accessibleRole="PARENT" layoutX="720.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="100.0" snapToPixel="false" text="Logout" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="719.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="19.0">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-logout-rounded-up-64.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutY="52.0" prefHeight="15.0" prefWidth="158.0" text="Modifa Profilo" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="764.0" AnchorPane.topAnchor="52.0">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8-automatic-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="cercaEventoButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" layoutX="14.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" ripplerFill="#3fd9a5" style="-fx-background-color: #3fd9a5;" text="Cerca Evento" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="14.0" />
+      <JFXButton fx:id="inserisciEventiButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="14.0" layoutY="163.0" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#inserisciEventiButtonPressed" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #3f78da;" text="Inserisci Evento" textFill="WHITE" AnchorPane.leftAnchor="14.0" />
+      <JFXButton fx:id="gestioneClientiButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" layoutX="14.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #d9663f;" text="Gestione Cliente" textFill="WHITE" AnchorPane.leftAnchor="14.0" />
+      <JFXButton fx:id="visualizzaStaticheButton" accessibleRole="PARENT" alignment="CENTER" layoutX="14.0" layoutY="372.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #da3e3e;" text="Visualizza Statiche " textFill="WHITE" AnchorPane.leftAnchor="14.0" />
+      <JFXButton fx:id="gestionePersonaleButton" accessibleRole="PARENT" alignment="CENTER" layoutX="14.0" layoutY="449.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #dada3e;" text="Gestione Personale" textFill="WHITE" AnchorPane.leftAnchor="14.0" />
+      <AnchorPane fx:id="cambiaFormMenuPrincipale" accessibleRole="PARENT" layoutX="265.0" layoutY="158.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="628.0" AnchorPane.leftAnchor="265.0" AnchorPane.rightAnchor="30.0" />
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="36.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8-calendar-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="31.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8-search-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="31.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8-user-80.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8-combo-chart-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icons8-name-tag-64.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>

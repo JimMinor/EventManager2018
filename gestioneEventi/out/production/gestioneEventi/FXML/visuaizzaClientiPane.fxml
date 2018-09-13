@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
-<AnchorPane fx:id="visualizzaClientiAnchorPane" xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="506.0" prefWidth="1013.0"
+<AnchorPane fx:id="visualizzaClientiForm" xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="506.0" prefWidth="1013.0"
             xmlns="http://javafx.com/javafx/8.0.181" fx:controller="pacchettoViste.visualizzaClientiPaneController">
     <children>
         <Label layoutX="435.0" layoutY="28.0" text="Dati Cliente">
