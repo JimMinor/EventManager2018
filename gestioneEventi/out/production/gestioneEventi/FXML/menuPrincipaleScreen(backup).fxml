@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="menuAnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../pacchettoViste/bootstrap3.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FormEMenu.MenuPrincipaleStage">
+<AnchorPane id="AnchorPane" fx:id="menuAnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" snapToPixel="false" style="-fx-background-color: white;" stylesheets="@../Scaffale/bootstrap3.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuPrincipaleStage">
     <children>
         <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="1172.0" layoutY="50.0">
             <image>

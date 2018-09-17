@@ -1,10 +1,10 @@
 package Model;
 
-public enum TipologiaEnum {
+public  enum TipologiaEnum {
 
     MUSICALE,
-    CINEMAETEATRO,
+    TEATRO,
     SPORTIVO,
-    ALTRO;
+    MANIFESTAZIONI;
 
 }

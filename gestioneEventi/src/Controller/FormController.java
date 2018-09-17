@@ -1,5 +1,8 @@
 package Controller;
 
+import Model.GenereMusicaleEnum;
+import Model.GenereTeatroEnum;
+import View.EventoArtisticoForm;
 import View.EventoSportivoForm;
 import View.InserisciEventoForm;
 import View.SelezioneTipoEventoForm;
@@ -15,7 +18,7 @@ import java.util.Map;
 public class FormController {
 
     private Map<String,String> risorseForm;
-    private Map<TipologiaEnum,String> eventiSpecificiFormMap;
+    private Map<TipologiaEnum,String> eventiSpecificiFormMap; // EnumMap
     private AnchorPane formCorrente;
     private Node formAggiuntivo;
 
@@ -28,7 +31,7 @@ public class FormController {
     }
 
     private void caricaRisorseForm() {
-        risorseForm.put("inserisciEvento","../FXML/inserisciEventoPane.fxml");
+        risorseForm.put("creaEvento","../FXML/inserisciEventoPane.fxml");
         risorseForm.put("tipoEvento","../FXML/tipoEventoPane.fxml");
 
     }
@@ -52,14 +55,15 @@ public class FormController {
 
     private void inserisciFormEventoSpecifico() {
         eventiSpecificiFormMap = new EnumMap<>(TipologiaEnum.class);
-        eventiSpecificiFormMap.put(TipologiaEnum.MUSICALE,"../FXML/eventoMusicalePane.fxml");
+        eventiSpecificiFormMap.put(TipologiaEnum.MUSICALE,"../FXML/eventoArtisticoPane.fxml");
+        eventiSpecificiFormMap.put(TipologiaEnum.TEATRO,"../FXML/eventoArtisticoPane.fxml");
         eventiSpecificiFormMap.put(TipologiaEnum.SPORTIVO,"../FXML/eventoSportivoPane.fxml");
-        eventiSpecificiFormMap.put(TipologiaEnum.CINEMAETEATRO,"../FXML/eventoCinemaETeatroPane.fxml");
+
     }
 
     public void mostraFormInserisciEvento(TipologiaEnum tipologia){
-        FXMLLoader loader = caricaFormDaRisorsa("inserisciEvento");
-        DatiEventoController controllaDatiEvento = new DatiEventoController();
+        FXMLLoader loader = caricaFormDaRisorsa("creaEvento");
+        EventoController controllaDatiEvento = new EventoController();
         EventoSpecificoForm eventoSpecifico=creaFormEventoSpecifico(tipologia,controllaDatiEvento);
 
         try{
@@ -77,22 +81,23 @@ public class FormController {
         }catch(Exception e) {e.printStackTrace();}
     }
 
-    private EventoSpecificoForm creaFormEventoSpecifico(TipologiaEnum tipologia, DatiEventoController controllaDatiEvento) {
+    private EventoSpecificoForm creaFormEventoSpecifico(TipologiaEnum tipologia, EventoController controllaDatiEvento) {
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource(eventiSpecificiFormMap.get(tipologia)));
         EventoSpecificoForm eventoSpecifico=null;
 
-        switch (tipologia) {
-                case SPORTIVO:
-                    eventoSpecifico=setControllerEventoSpecifico(loader,new EventoSportivoForm(controllaDatiEvento));
-            case MUSICALE:
-              //  eventoSpecifico=setControllerEventoSpecifico(loader,controllaDatiEvento)
-            }
+        if(tipologia==TipologiaEnum.SPORTIVO)
+                    eventoSpecifico = setFXMLFileControllerEventoSpecifico(loader,new EventoSportivoForm(controllaDatiEvento));
+        if(tipologia==TipologiaEnum.MUSICALE)
+                    eventoSpecifico = setFXMLFileControllerEventoSpecifico(loader,new EventoArtisticoForm<GenereMusicaleEnum>(controllaDatiEvento, GenereMusicaleEnum.class));
+        if(tipologia == TipologiaEnum.TEATRO)
+                    eventoSpecifico = setFXMLFileControllerEventoSpecifico(loader,new EventoArtisticoForm<GenereTeatroEnum>(controllaDatiEvento, GenereTeatroEnum.class));
 
         return eventoSpecifico;
 
     }
 
-    private EventoSpecificoForm setControllerEventoSpecifico(FXMLLoader loader, EventoSpecificoForm eventoSpecificoForm) {
+    private EventoSpecificoForm setFXMLFileControllerEventoSpecifico(FXMLLoader loader, EventoSpecificoForm eventoSpecificoForm) {
         try {
             loader.setController(eventoSpecificoForm);
             formAggiuntivo= loader.load();
@@ -101,26 +106,6 @@ public class FormController {
         catch(Exception e ){ e.printStackTrace(); }
         return null;
     }
-
-    public  AnchorPane mostraFormEventoSpecifico(TipologiaEnum tipologia, DatiEventoController controllaDatiEvento){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(eventiSpecificiFormMap.get(tipologia)));
-        AnchorPane formEventoSpecifico;
-        return null;
-    }
-
-    private EventoSpecificoForm setControllerEventoSportivo(FXMLLoader loader, DatiEventoController controllaDatiEvento) {
-        try {
-            EventoSportivoForm esf=  new EventoSportivoForm(controllaDatiEvento);
-            loader.setController(esf);
-            formAggiuntivo= loader.load();
-            return esf;
-            }catch(Exception e ){
-            e.printStackTrace();
-        }
-     return null;
-    }
-
-
 
     public void mostraFormTipoEvento() {
         try {

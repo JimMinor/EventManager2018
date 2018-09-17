@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FormEMenu.InserisciEventoForm">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.InserisciEventoForm">
    <children>
       <JFXTextField fx:id="nomeEventoTextFiled" focusColor="#3eb3da" layoutX="21.0" layoutY="22.0" promptText="Nome Evento" />
       <JFXComboBox fx:id="luogoEventoComboBox" focusColor="#3eb3da" layoutX="21.0" layoutY="79.0" prefHeight="25.0" prefWidth="135.0" promptText="Luogo Evento" />

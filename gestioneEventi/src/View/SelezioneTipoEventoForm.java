@@ -23,4 +23,11 @@ public class SelezioneTipoEventoForm {
         cambiaForm.mostraFormInserisciEvento(TipologiaEnum.SPORTIVO);
 
     }
+
+    @FXML public void eventoMusicaleButtonPressed(){cambiaForm.mostraFormInserisciEvento(TipologiaEnum.MUSICALE);}
+
+    @FXML public void eventoTeatraleButtonPressed(){cambiaForm.mostraFormInserisciEvento(TipologiaEnum.TEATRO);}
+
+
+
 }

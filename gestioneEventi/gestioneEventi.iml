@@ -12,5 +12,6 @@
     <orderEntry type="library" name="ojdbc81" level="project" />
     <orderEntry type="library" name="CustomStage-1.3.1" level="project" />
     <orderEntry type="library" name="jfoenix-8.0.7" level="project" />
+    <orderEntry type="library" name="DialogFX-master" level="project" />
   </component>
 </module>

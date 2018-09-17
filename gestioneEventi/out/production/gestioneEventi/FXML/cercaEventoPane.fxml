@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="506.0" prefWidth="1013.0" xmlns="http://javafx.com/javafx/8.0.181"
-            fx:controller="pacchettoViste.cercaEventoController">
+            fx:controller="Scaffale.cercaEventoController">
     <children>
         <AnchorPane fx:id="cercaEventoPaneScreen" layoutX="6.0" prefHeight="506.0" prefWidth="1013.0">
             <children>

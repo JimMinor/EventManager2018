@@ -4,15 +4,15 @@ import View.MostraAlert;
 
 import java.sql.*;
 
-public class InserisciEventoDB implements InserisciEventoDAO {
+public class InserisciEventoDB<T extends  Evento> implements InserisciEventoDAO {
 
-    private Evento eventoDaInserire;
-    private CreaQueryInserimentoEvento inserimentoEvento;
+    private T eventoDaInserire;
+    private GestoreQueryInserimentoEvento<T> inserimentoEvento;
 
-    public InserisciEventoDB(Evento eventoDaInserire){
-        this.eventoDaInserire=eventoDaInserire;
-        inserimentoEvento=controllaTipoEvento(eventoDaInserire);
-
+    public InserisciEventoDB(T eventoDaInserire) {
+        this.eventoDaInserire = eventoDaInserire;
+        inserimentoEvento = BuilderGestoreQueryEvento.buildGestoreEvento(eventoDaInserire);
+        System.out.println(inserimentoEvento + " evento " + eventoDaInserire);
     }
     @Override
     // Entry Point della Classe
@@ -26,12 +26,6 @@ public class InserisciEventoDB implements InserisciEventoDAO {
 
        }
 
-    private CreaQueryInserimentoEvento controllaTipoEvento(Evento eventoDaInserire) {
-         if (eventoDaInserire instanceof EventoSportivo)
-            return new CreaQueryInserimentoEventoSportivo((EventoSportivo) eventoDaInserire);
-
-        return null;
-    }
 
 
 

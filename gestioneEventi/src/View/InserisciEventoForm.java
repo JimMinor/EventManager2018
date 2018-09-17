@@ -23,7 +23,7 @@ public class InserisciEventoForm {
     private TipologiaEnum tipologiaEvento;
     private ObservableList<LuogoEnum> listaLuoghiEvento;
     private FormController creaFormEventoSpecifico;
-    private DatiEventoController controllaDatiEvento;
+    private EventoController controllaDatiEvento;
     private EventoSpecificoForm datiEventoSpecifico;
 
    /**GETTER per i campi da Inserire nell'evento*/
@@ -63,7 +63,7 @@ public class InserisciEventoForm {
     public void initialize() {
       luogoEventoComboBox.setItems(FXCollections.observableArrayList(LuogoEnum.values()));
     }
-    public InserisciEventoForm(FormController creaFormEventoSpecifico, EventoSpecificoForm datiEventoSpecifico, DatiEventoController controllaDatiEvento) {
+    public InserisciEventoForm(FormController creaFormEventoSpecifico, EventoSpecificoForm datiEventoSpecifico, EventoController controllaDatiEvento) {
         this.controllaDatiEvento=controllaDatiEvento;
         this.creaFormEventoSpecifico = creaFormEventoSpecifico;
         this.datiEventoSpecifico=datiEventoSpecifico;
@@ -82,12 +82,24 @@ public class InserisciEventoForm {
        try{
            controllaDatiEvento.controllaDatiEventoGenerico(this);
            datiEventoSpecifico.inviaDatiEventoSpecifico();
+           pulisciForm();
+           datiEventoSpecifico.pulisciForm();
+           MostraAlert.mostraAlertEventoInserito();
+
        }
-       catch(NoValidEventDateException e){
+       catch(NoValidEventDataException e){
            MostraAlert.mostraAlertErroreInserimentoEvento(e.getMessagge());
        }
     }
-   @FXML public void annullaButtonPressed(ActionEvent actionEvent) {tastoAnnulla();}
+
+    private void pulisciForm() {
+        descrizioneEventoTextArea.clear();
+        nomeEventoTextField.clear();
+        prezzoBigliettoTextField.clear();
+
+    }
+
+    @FXML public void annullaButtonPressed(ActionEvent actionEvent) {tastoAnnulla();}
 
     public void tastoAnnulla() {
         // new FormController().caricaFormDaRisorsa(inserisciEventoAnchorPane, "cercaEventoPane.fxml");

@@ -1,8 +1,8 @@
 package View;
 
-import Controller.DatiEventoController;
+import Controller.EventoController;
 import Controller.EventoSpecificoForm;
-import Controller.NoValidEventDateException;
+import Controller.NoValidEventDataException;
 import Model.SportEnum;
 import javafx.collections.FXCollections;
 import javafx.fxml.*;
@@ -18,15 +18,14 @@ public class EventoSportivoForm implements EventoSpecificoForm {
     @FXML private ComboBox<SportEnum> sportEnumComboBox;
     @FXML private TextField partecipanteTextField;
     @FXML private Button inserisciPartecipanteButton;
-    private Set<String> partecipantiList;
-    private DatiEventoController controllaDati;
-
+    private Set<String> partecipanti;
+    private EventoController controllaDati;
 
     public EventoSportivoForm(){}
 
-    public EventoSportivoForm(DatiEventoController controllaDati){
+    public EventoSportivoForm(EventoController controllaDati){
         this.controllaDati=controllaDati;
-        partecipantiList=new HashSet<>();
+        partecipanti =new HashSet<>();
 
     }
 
@@ -35,25 +34,25 @@ public class EventoSportivoForm implements EventoSpecificoForm {
 
     }
 
-
-    @Override
-    public void inviaDatiEventoSpecifico() {
+    @Override public void inviaDatiEventoSpecifico() {
       try {
           controllaDati.controllaDatiEventoSportivo(this);
-          } catch (NoValidEventDateException e) {
+          } catch (NoValidEventDataException e) {
           MostraAlert.mostraAlertErroreInserimentoEvento(e.getMessagge());
           }
     }
 
-    @FXML
-    public void inserisciPartecipanteButtonPressed(){
+    @Override public void pulisciForm(){
+        partecipanteTextField.clear();
+        sportEnumComboBox.setValue(null);
+    }
+    @FXML public void inserisciPartecipanteButtonPressed(){
         String partecipante = partecipanteTextField.getText();
         if(partecipante.equals("") || partecipante==null)
-            //TODO:Creare nuovo alert
-            MostraAlert.mostraAlertLogin();
+            MostraAlert.mostraAlertErroreInserimentoEvento("Campo Partecipante Vuoto!!!");
         else
         {
-            partecipantiList.add(partecipante);
+            partecipanti.add(partecipante);
             partecipanteTextField.clear();
         }
     }
@@ -64,7 +63,7 @@ public class EventoSportivoForm implements EventoSpecificoForm {
         return sportEnumComboBox;
     }
 
-    public Set<String> getPartecipantiList() {
-        return partecipantiList;
+    public Set<String> getPartecipanti() {
+        return partecipanti;
     }
 }

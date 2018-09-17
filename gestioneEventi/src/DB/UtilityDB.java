@@ -7,6 +7,8 @@ import java.sql.*;
  * UtilityDB:
  * L'intento di questa classe e' stabilire una connessione con il DB Relazionale Oracle 11g
  *
+ * E fornire metodi per la chiusura della connessiona una volta concluse le operazioni
+ *
  */
 public class UtilityDB {
 

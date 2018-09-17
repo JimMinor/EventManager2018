@@ -25,9 +25,7 @@ public class mainApp extends Application {
         this.stagePrincipale = stagePrincipale;
         cambiaStagePrincipale = new CambiaStage(this);
         cambiaStagePrincipale.mostraStageMenuPrincipale();
-        for(LuogoEnum l: LuogoEnum.values()){
-            System.out.println(l);
-        }
+
         stagePrincipale.show();
     }
 

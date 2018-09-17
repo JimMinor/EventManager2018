@@ -2,6 +2,7 @@ package Model;
 
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public abstract class Evento implements Comparable<Evento> {
 
@@ -13,11 +14,6 @@ public abstract class Evento implements Comparable<Evento> {
     private String nome;
     private CittaEnum citta;
     private LocalDate dataEvento;
-
-    public void setIdEvento(int idEvento) {
-        this.idEvento = idEvento;
-    }
-
     private int idEvento;
 
     public Evento(LuogoEnum luogoEvento, String descrizione,
@@ -71,6 +67,11 @@ public abstract class Evento implements Comparable<Evento> {
         return tipologiaEvento;
     }
 
+    public void setIdEvento(int idEvento) {
+        this.idEvento = idEvento;
+    }
+
+
     /**
      *  Due Eventi verrano considerati uguali secondo equals se e solo se
      *  Data e Luogo dell'evento sono uguali.
@@ -97,7 +98,7 @@ public abstract class Evento implements Comparable<Evento> {
 
     @Override
     public String toString(){
-        return "Nome Evento: "+ nome +"Data:  "+ dataEvento+"Luogo: "+ luogoEvento;
+        return "Nome Evento: "+ nome +" Data:  "+ dataEvento+" Luogo: "+ luogoEvento;
     }
 
 
