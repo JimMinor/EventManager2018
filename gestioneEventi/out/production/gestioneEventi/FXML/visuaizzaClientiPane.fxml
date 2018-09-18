@@ -3,6 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <AnchorPane fx:id="visualizzaClientiForm" xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="506.0" prefWidth="1013.0"
             xmlns="http://javafx.com/javafx/8.0.181" fx:controller="Scaffale.visualizzaClientiPaneController">
     <children>
@@ -46,24 +48,24 @@
                 <Font size="19.0"/>
             </font>
         </Label>
-        <TextField fx:id="usernameClienteTextField" layoutX="529.0" layoutY="101.0"/>
-        <TextField fx:id="nomeClienteTextField" layoutX="529.0" layoutY="132.0"/>
-        <TextField fx:id="cognomeClienteTextField" layoutX="529.0" layoutY="166.0"/>
-        <TextField fx:id="codFiscaleClienteTextField" layoutX="529.0" layoutY="234.0"/>
-        <TextField fx:id="indirizzoClienteTextField" layoutX="529.0" layoutY="268.0"/>
-        <TextField fx:id="emailClienteTextField" layoutX="529.0" layoutY="304.0"/>
-        <RadioButton fx:id="sessoFClienteRadioButton" layoutX="591.0" layoutY="200.0" mnemonicParsing="false"
+        <JFXTextField fx:id="usernameClienteTextField" layoutX="529.0" layoutY="101.0"/>
+        <JFXTextField fx:id="nomeClienteTextField" layoutX="529.0" layoutY="132.0"/>
+        <JFXTextField fx:id="cognomeClienteTextField" layoutX="529.0" layoutY="166.0"/>
+        <JFXTextField fx:id="codFiscaleClienteTextField" layoutX="529.0" layoutY="234.0"/>
+        <JFXTextField fx:id="indirizzoClienteTextField" layoutX="529.0" layoutY="268.0"/>
+        <JFXTextField fx:id="emailClienteTextField" layoutX="529.0" layoutY="304.0"/>
+        <JFXRadioButton fx:id="sessoFClienteRadioButton" layoutX="591.0" layoutY="200.0" mnemonicParsing="false"
                      onAction="#sessoFClienteRadioButtonPressed" text="F">
             <font>
                 <Font size="19.0"/>
             </font>
-        </RadioButton>
-        <RadioButton fx:id="sessoMClienteRadioButton" layoutX="529.0" layoutY="200.0" mnemonicParsing="false"
+        </JFXRadioButton>
+        <JFXRadioButton fx:id="sessoMClienteRadioButton" layoutX="529.0" layoutY="200.0" mnemonicParsing="false"
                      onAction="#sessoMClienteRadioButtonPressed" text="M">
             <font>
                 <Font size="19.0"/>
             </font>
-        </RadioButton>
+        </JFXRadioButton>
         <Button fx:id="fineClientiButton" layoutX="455.0" layoutY="442.0" mnemonicParsing="false"
                 onAction="#fineClientiButtonPressed" text="Fine"/>
     </children>
