@@ -1,70 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
-<AnchorPane fx:id="visualizzaClientiForm" xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="506.0" prefWidth="1013.0"
-            xmlns="http://javafx.com/javafx/8.0.181" fx:controller="Scaffale.visualizzaClientiPaneController">
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="visualizzaClientiForm" prefHeight="370.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scaffale.visualizzaClientiPaneController">
     <children>
-        <Label layoutX="435.0" layoutY="28.0" text="Dati Cliente">
+        <Label layoutX="256.0" layoutY="14.0" text="Dati Cliente" />
+        <Label layoutX="80.0" layoutY="54.0" text="Username" />
+        <Label layoutX="80.0" layoutY="94.0" text="Nome" />
+        <Label layoutX="80.0" layoutY="134.0" text="Cognome" />
+        <Label layoutX="80.0" layoutY="176.0" text="Sesso">
             <font>
-                <Font size="17.0"/>
+                <Font />
             </font>
         </Label>
-        <Label layoutX="277.0" layoutY="105.0" text="Username">
+        <Label layoutX="80.0" layoutY="204.0" text="Cod.Fisc." />
+        <Label layoutX="80.0" layoutY="244.0" text="Indirizzo" />
+        <Label layoutX="80.0" layoutY="284.0" text="e-mail" />
+        <JFXTextField fx:id="usernameClienteTextField" layoutX="344.0" layoutY="50.0" />
+        <JFXTextField fx:id="nomeClienteTextField" layoutX="344.0" layoutY="90.0" />
+        <JFXTextField fx:id="cognomeClienteTextField" layoutX="344.0" layoutY="130.0" />
+        <JFXTextField fx:id="codFiscaleClienteTextField" layoutX="344.0" layoutY="200.0" />
+        <JFXTextField fx:id="indirizzoClienteTextField" layoutX="344.0" layoutY="240.0" />
+        <JFXTextField fx:id="emailClienteTextField" layoutX="344.0" layoutY="280.0" />
+        <JFXRadioButton fx:id="sessoFClienteRadioButton" layoutX="415.0" layoutY="170.0" mnemonicParsing="false" onAction="#sessoFClienteRadioButtonPressed" text="F">
             <font>
-                <Font size="19.0"/>
+                <Font size="19.0" />
             </font>
-        </Label>
-        <Label layoutX="280.0" layoutY="136.0" text="Nome">
+        </JFXRadioButton>
+        <JFXRadioButton fx:id="sessoMClienteRadioButton" layoutX="344.0" layoutY="170.0" mnemonicParsing="false" onAction="#sessoMClienteRadioButtonPressed" text="M">
             <font>
-                <Font size="19.0"/>
+                <Font size="19.0" />
             </font>
-        </Label>
-        <Label layoutX="278.0" layoutY="170.0" text="Cognome">
-            <font>
-                <Font size="19.0"/>
-            </font>
-        </Label>
-        <Label layoutX="281.0" layoutY="200.0" text="Sesso">
-            <font>
-                <Font size="19.0"/>
-            </font>
-        </Label>
-        <Label layoutX="281.0" layoutY="238.0" text="Cod.Fisc.">
-            <font>
-                <Font size="19.0"/>
-            </font>
-        </Label>
-        <Label layoutX="281.0" layoutY="272.0" text="Indirizzo">
-            <font>
-                <Font size="19.0"/>
-            </font>
-        </Label>
-        <Label layoutX="279.0" layoutY="308.0" text="e-mail">
-            <font>
-                <Font size="19.0"/>
-            </font>
-        </Label>
-        <TextField fx:id="usernameClienteTextField" layoutX="529.0" layoutY="101.0"/>
-        <TextField fx:id="nomeClienteTextField" layoutX="529.0" layoutY="132.0"/>
-        <TextField fx:id="cognomeClienteTextField" layoutX="529.0" layoutY="166.0"/>
-        <TextField fx:id="codFiscaleClienteTextField" layoutX="529.0" layoutY="234.0"/>
-        <TextField fx:id="indirizzoClienteTextField" layoutX="529.0" layoutY="268.0"/>
-        <TextField fx:id="emailClienteTextField" layoutX="529.0" layoutY="304.0"/>
-        <RadioButton fx:id="sessoFClienteRadioButton" layoutX="591.0" layoutY="200.0" mnemonicParsing="false"
-                     onAction="#sessoFClienteRadioButtonPressed" text="F">
-            <font>
-                <Font size="19.0"/>
-            </font>
-        </RadioButton>
-        <RadioButton fx:id="sessoMClienteRadioButton" layoutX="529.0" layoutY="200.0" mnemonicParsing="false"
-                     onAction="#sessoMClienteRadioButtonPressed" text="M">
-            <font>
-                <Font size="19.0"/>
-            </font>
-        </RadioButton>
-        <Button fx:id="fineClientiButton" layoutX="455.0" layoutY="442.0" mnemonicParsing="false"
-                onAction="#fineClientiButtonPressed" text="Fine"/>
+        </JFXRadioButton>
+        <JFXButton fx:id="fineClientiButton" layoutX="479.0" layoutY="331.0" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Indietro" textFill="WHITE" />
     </children>
 </AnchorPane>

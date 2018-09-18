@@ -3,6 +3,7 @@ package Model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.prefs.Preferences;
 
 public abstract class Evento implements Comparable<Evento> {
 
@@ -100,7 +101,6 @@ public abstract class Evento implements Comparable<Evento> {
     public String toString(){
         return "Nome Evento: "+ nome +" Data:  "+ dataEvento+" Luogo: "+ luogoEvento;
     }
-
 
 
 

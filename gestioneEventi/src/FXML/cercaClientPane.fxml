@@ -3,6 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             xmlns="http://javafx.com/javafx/8.0.181" fx:controller="Scaffale.cercaClientiPaneController">
     <children>
@@ -26,20 +28,20 @@
                                 onAction="#eliminaClientiButtonPressed" text="Elimina"/>
                     </children>
                 </AnchorPane>
-                <Button fx:id="cercaClienteButton" layoutX="750.0" layoutY="47.0" mnemonicParsing="false"
+                <JFXButton fx:id="cercaClienteButton" layoutX="750.0" layoutY="47.0" mnemonicParsing="false"
                         onAction="#cercaClienteButtonPressed" text="Cerca"/>
                 <Label layoutX="195.0" layoutY="49.0" text="Username">
                     <font>
                         <Font size="19.0"/>
                     </font>
                 </Label>
-                <TextField fx:id="usernameCercaClientiTextField" layoutX="371.0" layoutY="46.0" prefHeight="26.0"
+                <JFXTextField fx:id="usernameCercaClientiTextField" layoutX="371.0" layoutY="46.0" prefHeight="26.0"
                            prefWidth="272.0">
                     <font>
                         <Font size="15.0"/>
                     </font>
-                </TextField>
-                <Button fx:id="annullaCercaClientiButton" layoutX="43.0" layoutY="453.0" mnemonicParsing="false"
+                </JFXTextField>
+                <JFXButton fx:id="annullaCercaClientiButton" layoutX="43.0" layoutY="453.0" mnemonicParsing="false"
                         onAction="#annullaCercaClientiButtonPressed" text="Annulla"/>
             </children>
         </AnchorPane>
