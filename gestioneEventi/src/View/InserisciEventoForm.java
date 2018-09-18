@@ -102,7 +102,7 @@ public class InserisciEventoForm {
     @FXML public void annullaButtonPressed(ActionEvent actionEvent) {tastoAnnulla();}
 
     public void tastoAnnulla() {
-        // new FormController().caricaFormDaRisorsa(inserisciEventoAnchorPane, "cercaEventoPane.fxml");
+        creaFormEventoSpecifico.mostraFormTipoEvento();
     }
 
 
