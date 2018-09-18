@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.GenereManifestazioneEnum;
 import Model.GenereMusicaleEnum;
 import Model.GenereTeatroEnum;
 import View.EventoArtisticoForm;
@@ -58,6 +59,7 @@ public class FormController {
         eventiSpecificiFormMap.put(TipologiaEnum.MUSICALE,"../FXML/eventoArtisticoPane.fxml");
         eventiSpecificiFormMap.put(TipologiaEnum.TEATRO,"../FXML/eventoArtisticoPane.fxml");
         eventiSpecificiFormMap.put(TipologiaEnum.SPORTIVO,"../FXML/eventoSportivoPane.fxml");
+        eventiSpecificiFormMap.put(TipologiaEnum.MANIFESTAZIONI,"../FXML/eventoManifestazionePane.fxml");
 
     }
 
@@ -92,6 +94,8 @@ public class FormController {
                     eventoSpecifico = setFXMLFileControllerEventoSpecifico(loader,new EventoArtisticoForm<GenereMusicaleEnum>(controllaDatiEvento, GenereMusicaleEnum.class));
         if(tipologia == TipologiaEnum.TEATRO)
                     eventoSpecifico = setFXMLFileControllerEventoSpecifico(loader,new EventoArtisticoForm<GenereTeatroEnum>(controllaDatiEvento, GenereTeatroEnum.class));
+        if(tipologia == TipologiaEnum.MANIFESTAZIONI)
+            eventoSpecifico = setFXMLFileControllerEventoSpecifico(loader,new EventoArtisticoForm<GenereManifestazioneEnum>(controllaDatiEvento, GenereManifestazioneEnum.class));
 
         return eventoSpecifico;
 

@@ -45,10 +45,7 @@ public class MenuPrincipaleStage implements Initializable, ControlledStage {
         cambiaForm.mostraFormGestioneClienti();
     }
 
-    public void getsionePersonaleButtonPressed() {
-        cambiaForm.mostraFormGestioneDipendeti();
-
-    }
+    public void getsionePersonaleButtonPressed() { cambiaForm.mostraFormGestioneDipendeti(); }
 
     public void statisticaButtonPressed() {
         cambiaForm.mostraStaticheMenu();

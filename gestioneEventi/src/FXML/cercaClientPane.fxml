@@ -1,48 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            xmlns="http://javafx.com/javafx/8.0.181" fx:controller="Scaffale.cercaClientiPaneController">
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scaffale.cercaClientiPaneController">
     <children>
-        <AnchorPane fx:id="cercaClientiPaneScreen" layoutX="-1.0" prefHeight="506.0" prefWidth="1013.0">
+        <AnchorPane fx:id="cercaClientiPaneScreen" layoutX="-1.0" prefHeight="370.0" prefWidth="820.0">
             <children>
-                <AnchorPane focusTraversable="true" layoutX="31.0" layoutY="160.0" prefHeight="276.0" prefWidth="950.0">
+                <AnchorPane focusTraversable="true" layoutX="1.0" layoutY="75.0" prefHeight="256.0" prefWidth="811.0">
                     <children>
-                        <TableView fx:id="tabellaCercaClientiTableView" editable="true" layoutX="14.0" layoutY="14.0"
-                                   prefHeight="200.0" prefWidth="930.0">
+                        <TableView fx:id="tabellaCercaClientiTableView" editable="true" layoutX="32.0" prefHeight="195.0" prefWidth="770.0">
                             <columns>
-                                <TableColumn prefWidth="307.9999694824219" text="Username"/>
-                                <TableColumn prefWidth="301.60003662109375" text="Nome"/>
-                                <TableColumn prefWidth="223.99993896484375" text="Cognome"/>
-                                <TableColumn minWidth="0.0" prefWidth="96.79998779296875" text="seleziona"/>
+                                <TableColumn prefWidth="245.0" text="Username" />
+                                <TableColumn prefWidth="261.0" text="Nome" />
+                                <TableColumn minWidth="5.0" prefWidth="188.0" text="Cognome" />
+                                <TableColumn minWidth="0.0" prefWidth="75.0" text="seleziona" />
                             </columns>
                         </TableView>
-                        <Button fx:id="visualizzaDatiClientiButton" layoutX="14.0" layoutY="235.0"
-                                mnemonicParsing="false" onAction="#visualizzaDatiClientiButtonPressed"
-                                text="Visualizza dati"/>
-                        <Button fx:id="eliminaClientiButton" layoutX="869.0" layoutY="235.0" mnemonicParsing="false"
-                                onAction="#eliminaClientiButtonPressed" text="Elimina"/>
+                        <JFXButton fx:id="visualizzaDatiClientiButton" layoutX="23.0" layoutY="210.0" mnemonicParsing="false" onAction="#visualizzaDatiClientiButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Visualizza dati" textFill="WHITE" />
+                        <JFXButton fx:id="eliminaClientiButton" layoutX="704.0" layoutY="210.0" mnemonicParsing="false" onAction="#eliminaClientiButtonPressed" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Elimina" textFill="WHITE" />
                     </children>
                 </AnchorPane>
-                <JFXButton fx:id="cercaClienteButton" layoutX="750.0" layoutY="47.0" mnemonicParsing="false"
-                        onAction="#cercaClienteButtonPressed" text="Cerca"/>
-                <Label layoutX="195.0" layoutY="49.0" text="Username">
+                <JFXButton fx:id="cercaClienteButton" layoutX="683.0" layoutY="28.0" mnemonicParsing="false" onAction="#cercaClienteButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
+                <JFXTextField fx:id="usernameCercaClientiTextField" layoutX="184.0" layoutY="25.0" prefHeight="26.0" prefWidth="272.0" promptText="Username">
                     <font>
-                        <Font size="19.0"/>
-                    </font>
-                </Label>
-                <JFXTextField fx:id="usernameCercaClientiTextField" layoutX="371.0" layoutY="46.0" prefHeight="26.0"
-                           prefWidth="272.0">
-                    <font>
-                        <Font size="15.0"/>
+                        <Font size="15.0" />
                     </font>
                 </JFXTextField>
-                <JFXButton fx:id="annullaCercaClientiButton" layoutX="43.0" layoutY="453.0" mnemonicParsing="false"
-                        onAction="#annullaCercaClientiButtonPressed" text="Annulla"/>
+                <JFXButton fx:id="annullaCercaClientiButton" layoutX="25.0" layoutY="331.0" mnemonicParsing="false" onAction="#annullaCercaClientiButtonPressed" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Annulla" textFill="WHITE" />
             </children>
         </AnchorPane>
     </children>

@@ -34,7 +34,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="eventoCinemaButton" buttonType="RAISED" layoutX="300.0" layoutY="159.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="100.0">
+      <JFXButton fx:id="eventoManifestazioneButton" buttonType="RAISED" layoutX="300.0" layoutY="159.0" onAction="#eventoManifestazioneButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="100.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
