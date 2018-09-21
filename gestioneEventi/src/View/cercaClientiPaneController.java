@@ -1,7 +1,8 @@
-package Scaffale;
+package View;
 
 import Controller.CambiaStage;
 import Controller.ControlledStage;
+import Controller.FormController;
 import Controller.ModificaPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,37 +12,40 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class cercaClientiPaneController implements ControlledStage, Initializable {
 
     @FXML
-    private AnchorPane cercaClientiPaneScreen;
-    @FXML
+   
     public Button visualizzaDatiClientiButton;
-    @FXML
     public TableView tabellaCercaClientiTableView;
-    @FXML
     public Button eliminaClientiButton;
-    @FXML
     public Button annullaCercaClientiButton;
-    @FXML
     public Button cercaClienteButton;
-    @FXML 
     public TextField usernameCercaClientiTextField;
+    public AnchorPane cercaClientiPaneScreen;
+    private FormController cambiaForm;
+
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        cambiaForm=new FormController(cercaClientiPaneScreen);
+
+
     }
 
     @Override
     public void setCambiaStage(CambiaStage cambiaStage) {
     }
 
-    public void visualizzaDatiClientiButtonPressed() {
-        new ModificaPane().visualizzapaneclienti(cercaClientiPaneScreen, "visuaizzaClientiPane.fxml");
+
+    public void visualizzaDatiClientiButtonPressed(ActionEvent actionEvent) {
+        cambiaForm.visualizzaPaneClienti();
 
     }
     public void annullaCercaClientiButtonPressed(){
@@ -52,6 +56,6 @@ public class cercaClientiPaneController implements ControlledStage, Initializabl
     public void cercaClienteButtonPressed() {
     }
 
-    public void eliminaClientiButtonPressed(ActionEvent actionEvent) {
+    public void eliminaClientiButtonPressed() {
     }
 }

@@ -25,7 +25,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="cercaEventoButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" layoutX="32.0" layoutY="302.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" ripplerFill="#3fd9a5" style="-fx-background-color: #3fd9a5;" text="Cerca Evento" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="32.0">
+      <JFXButton fx:id="cercaEventoButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" layoutX="32.0" layoutY="302.0" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#cercaEventoButtonPressed" prefHeight="50.0" prefWidth="197.0" ripplerFill="#3fd9a5" style="-fx-background-color: #3fd9a5;" text="Cerca Evento" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="32.0">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -34,7 +34,7 @@
             </ImageView>
          </graphic></JFXButton>
       <JFXButton fx:id="inserisciEventiButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="32.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#inserisciEventiButtonPressed" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #3f78da;" text="Inserisci Evento" textFill="WHITE" AnchorPane.leftAnchor="32.0" />
-      <JFXButton fx:id="gestionePersonaleButton" accessibleRole="PARENT" alignment="CENTER" layoutX="32.0" layoutY="374.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #dada3e;" text="Gestione Personale" textFill="WHITE" AnchorPane.leftAnchor="32.0">
+      <JFXButton fx:id="gestionePersonaleButton" accessibleRole="PARENT" alignment="CENTER" layoutX="32.0" layoutY="374.0" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#getsionePersonaleButtonPressed" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #dada3e;" text="Gestione Personale" textFill="WHITE" AnchorPane.leftAnchor="32.0">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -42,7 +42,7 @@
                </image>
             </ImageView>
          </graphic></JFXButton>
-      <AnchorPane fx:id="cambiaFormMenuPrincipale" accessibleRole="PARENT" layoutX="348.0" layoutY="131.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="821.0" AnchorPane.leftAnchor="348.0" AnchorPane.rightAnchor="20.0" />
+      <AnchorPane fx:id="cambiaFormMenuPrincipale" accessibleRole="PARENT" layoutX="286.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="49.0" />
       <JFXButton fx:id="visualizzaStaticheButton" alignment="CENTER" layoutX="32.0" layoutY="447.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #da3e3e;" text="Visualizza Statiche " textFill="WHITE" AnchorPane.leftAnchor="32.0">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -52,7 +52,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="gestioneClientiButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" layoutX="32.0" layoutY="227.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #d9663f;" text="Gestione Cliente" textFill="WHITE" AnchorPane.leftAnchor="32.0">
+      <JFXButton fx:id="gestioneClientiButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" layoutX="32.0" layoutY="227.0" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#CercaClientiButtonPressed" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #d9663f;" text="Gestione Cliente" textFill="WHITE" AnchorPane.leftAnchor="32.0">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>

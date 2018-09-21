@@ -2,6 +2,7 @@ package View;
 
 import Controller.CambiaStage;
 import Controller.ControlledStage;
+import DB.GestoreQueryCerca;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -39,6 +40,7 @@ public class MenuPrincipaleStage implements Initializable, ControlledStage {
 
     public void cercaEventoButtonPressed() {
         cambiaForm.mostraFormCercaEvento();
+
     }
 
     public void CercaClientiButtonPressed() {
@@ -47,9 +49,7 @@ public class MenuPrincipaleStage implements Initializable, ControlledStage {
 
     public void getsionePersonaleButtonPressed() { cambiaForm.mostraFormGestioneDipendeti(); }
 
-    public void statisticaButtonPressed() {
-        cambiaForm.mostraStaticheMenu();
-    }
+    public void statisticaButtonPressed() { cambiaForm.mostraStaticheMenu(); }
 
     public void logoutHyperlinkPressed() {
 

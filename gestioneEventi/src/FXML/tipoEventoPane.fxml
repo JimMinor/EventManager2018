@@ -5,9 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXButton fx:id="eventoSportivoButton" buttonType="RAISED" layoutX="73.0" layoutY="41.0" onAction="#eventoSportivoButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d9663f;" text="Evento Sportivo" textFill="WHITE" AnchorPane.leftAnchor="50.0">
+      <JFXButton fx:id="eventoSportivoButton" buttonType="RAISED" layoutX="158.0" layoutY="76.0" onAction="#eventoSportivoButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d9663f;" text="Evento Sportivo" textFill="WHITE" AnchorPane.leftAnchor="158.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -16,7 +16,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="eventoMusicaleButton" buttonType="RAISED" layoutX="300.0" layoutY="41.0" onAction="#eventoMusicaleButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3fd9a5;" text="Evento Musicale" textFill="WHITE" AnchorPane.rightAnchor="100.0">
+      <JFXButton fx:id="eventoMusicaleButton" buttonType="RAISED" layoutX="496.0" layoutY="76.0" onAction="#eventoMusicaleButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3fd9a5;" text="Evento Musicale" textFill="WHITE" AnchorPane.rightAnchor="158.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -25,7 +25,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="eventoTeatraleButton" buttonType="RAISED" layoutX="73.0" layoutY="159.0" onAction="#eventoTeatraleButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3f78da;" text="Evento Teatrale" textFill="WHITE" AnchorPane.leftAnchor="50.0">
+      <JFXButton fx:id="eventoTeatraleButton" buttonType="RAISED" layoutX="158.0" layoutY="194.0" onAction="#eventoTeatraleButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3f78da;" text="Evento Teatrale" textFill="WHITE" AnchorPane.leftAnchor="158.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -34,7 +34,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="eventoManifestazioneButton" buttonType="RAISED" layoutX="300.0" layoutY="159.0" onAction="#eventoManifestazioneButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="100.0">
+      <JFXButton fx:id="eventoManifestazioneButton" buttonType="RAISED" layoutX="496.0" layoutY="194.0" onAction="#eventoManifestazioneButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="158.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <image>

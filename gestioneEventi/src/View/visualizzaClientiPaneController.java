@@ -1,5 +1,7 @@
-package Scaffale;
+package View;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -14,24 +16,6 @@ public class visualizzaClientiPaneController {
     public TextField indirizzoClienteTextField;
     public TextField emailClienteTextField;
     public RadioButton sessoFClienteRadioButton;
-    public RadioButton sessoMClienteRadioButton;
-    public Button fineClientiButton;
-    public AnchorPane visualizzaClientiForm;
-
-    public void sessoFClienteRadioButtonPressed(ActionEvent actionEvent) {
-        sessoMClienteRadioButton.setSelected(false);
-    }
-
-
-    public void sessoMClienteRadioButtonPressed(ActionEvent actionEvent) {
-        sessoFClienteRadioButton.setSelected(false);
-    }
-
-    public void fineClientiButtonPressed(ActionEvent actionEvent) {
-      //  new FormController(visualizzaClientiForm).caricaFormDaRisorsa(visualizzaClientiForm, "cercaClientiPane.fxml");
-
-
-    }
 
     public TextField getUsernameClienteTextField() {
         return usernameClienteTextField;
@@ -65,7 +49,36 @@ public class visualizzaClientiPaneController {
         return sessoMClienteRadioButton;
     }
 
-    public Button getFineClientiButton() {
+    public AnchorPane getVisualizzaClientiForm() {
+        return visualizzaClientiForm;
+    }
+
+    public JFXButton getFineClientiButton() {
         return fineClientiButton;
     }
+
+    public JFXTextField getBigliettiAcquistatiTextField() {
+        return bigliettiAcquistatiTextField;
+    }
+
+    public JFXTextField getSpesaTotaleTextField() {
+        return spesaTotaleTextField;
+    }
+
+    public RadioButton sessoMClienteRadioButton;
+    public AnchorPane visualizzaClientiForm;
+    public JFXButton fineClientiButton;
+    public JFXTextField bigliettiAcquistatiTextField;
+    public JFXTextField spesaTotaleTextField;
+
+    public void sessoFClienteRadioButtonPressed(ActionEvent actionEvent) {
+        sessoMClienteRadioButton.setSelected(false);
+    }
+
+
+    public void sessoMClienteRadioButtonPressed(ActionEvent actionEvent) {
+        sessoFClienteRadioButton.setSelected(false);
+    }
+
+
 }

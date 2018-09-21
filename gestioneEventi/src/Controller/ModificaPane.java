@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import Scaffale.inserisciDipendentePaneController;
-import Scaffale.visualizzaClientiPaneController;
+import View.visualizzaClientiPaneController;
 
 /**
  * NON FUNZIONANTE:
