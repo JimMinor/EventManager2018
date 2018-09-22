@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="cercaClientiPaneScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.cercaClientiPaneController" >
+<AnchorPane fx:id="cercaClientiPaneScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.cercaClientiPaneController">
     <children>
-        <AnchorPane layoutX="-1.0" prefHeight="370.0" prefWidth="820.0">
+        <AnchorPane layoutX="-1.0" prefHeight="370.0" prefWidth="852.0">
             <children>
                 <AnchorPane focusTraversable="true" layoutX="1.0" layoutY="75.0" prefHeight="256.0" prefWidth="811.0">
                     <children>
