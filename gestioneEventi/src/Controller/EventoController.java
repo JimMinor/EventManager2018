@@ -7,6 +7,8 @@ import View.EventoArtisticoForm;
 import View.EventoSportivoForm;
 import View.InserisciEventoForm;
 import View.EventoManifestazioneForm;
+
+import javax.swing.text.TableView;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -18,6 +20,7 @@ public class EventoController {
     private TipologiaEnum tipologiaEvento;
     private LuogoEnum luogoEvento;
     private String descrizioneEvento;
+
 
     public void controllaDatiEventoGenerico(InserisciEventoForm dati) throws NoValidEventDataException
     {
