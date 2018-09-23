@@ -8,30 +8,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="cercaDipendentiScreenAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scaffale.cercaDipendentiPaneController">
+<AnchorPane fx:id="cercaDipendentiScreenAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scaffale.cercaDipendentiPaneController">
     <children>
-        <JFXButton fx:id="cercaCercaDipendenteButton" layoutX="680.0" layoutY="84.0" mnemonicParsing="false" onAction="#cercaCercaDipendenteButton" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
-        <JFXTextField fx:id="nomeCercaDipendenteTextField" layoutX="55.0" layoutY="30.0" promptText="Nome">
+        <JFXButton fx:id="cercaCercaDipendenteButton" layoutX="727.0" layoutY="84.0" mnemonicParsing="false" onAction="#cercaCercaDipendenteButton" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
+        <JFXTextField fx:id="nomeCercaDipendenteTextField" layoutX="49.0" layoutY="30.0" promptText="Nome">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="cognomeCercaDipendenteTextField" layoutX="311.0" layoutY="30.0" promptText="Cognome">
+        <JFXTextField fx:id="cognomeCercaDipendenteTextField" layoutX="346.0" layoutY="26.0" promptText="Cognome">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXDatePicker fx:id="dataNascitaCercaDipendenteDataPicker" layoutX="560.0" layoutY="26.0" prefHeight="39.0" prefWidth="190.0" promptText="Data Nascita" />
-        <JFXButton fx:id="annullaCercaDipendenteButton" layoutX="42.0" layoutY="84.0" mnemonicParsing="false" onAction="#annullaCercaDipendenteButtonPressed" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Annulla" textFill="WHITE" />
-          <TableView fx:id="tabellaCercaDipendenteTableView" editable="true" layoutX="23.0" layoutY="123.0" prefHeight="200.0" prefWidth="774.0">
+        <JFXDatePicker fx:id="dataNascitaCercaDipendenteDataPicker" layoutX="632.0" layoutY="26.0" prefHeight="39.0" prefWidth="190.0" promptText="Data Nascita" />
+        <JFXButton fx:id="annullaCercaDipendenteButton" layoutX="23.0" layoutY="84.0" mnemonicParsing="false" onAction="#annullaCercaDipendenteButtonPressed" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Annulla" textFill="WHITE" />
+          <TableView fx:id="tabellaCercaDipendenteTableView" editable="true" layoutX="23.0" layoutY="123.0" prefHeight="200.0" prefWidth="814.0">
               <columns>
                   <TableColumn prefWidth="205.0" text="Nome Dipendente" />
-                  <TableColumn prefWidth="216.0" text="Cognome Dipendente" />
-                  <TableColumn prefWidth="268.0" text="Codice Fiscale" />
-                  <TableColumn minWidth="0.0" prefWidth="84.0" text="seleziona" />
+                  <TableColumn prefWidth="262.0" text="Cognome Dipendente" />
+                  <TableColumn prefWidth="248.0" text="Codice Fiscale" />
+                  <TableColumn minWidth="0.0" prefWidth="98.0" text="seleziona" />
               </columns>
           </TableView>
           <JFXButton fx:id="modificaDipendenteButton" layoutX="23.0" layoutY="334.0" mnemonicParsing="false" onAction="#modificaDipendenteButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Modifica" textFill="WHITE" />
-          <JFXButton fx:id="eliminaDipendentiButton" layoutX="704.0" layoutY="334.0" mnemonicParsing="false" onAction="#eliminaDipendentiButton" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Elimina" textFill="WHITE" />
+          <JFXButton fx:id="eliminaDipendentiButton" layoutX="744.0" layoutY="334.0" mnemonicParsing="false" onAction="#eliminaDipendentiButton" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Elimina" textFill="WHITE" />
     </children>
 </AnchorPane>

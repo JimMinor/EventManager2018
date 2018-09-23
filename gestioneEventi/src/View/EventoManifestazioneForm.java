@@ -5,7 +5,7 @@ import Controller.EventoSpecificoForm;
 import Controller.NoValidEventDataException;
 import Model.SportEnum;
 import javafx.collections.FXCollections;
-import javafx.fxml.*;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import java.util.HashSet;
 import java.util.Set;
 
-public class EventoSportivoForm implements EventoSpecificoForm {
+public class EventoManifestazioneForm extends EventoSportivoForm implements EventoSpecificoForm {
 
     @FXML private ComboBox<SportEnum> sportEnumComboBox;
     @FXML private TextField partecipanteTextField;
@@ -21,14 +21,13 @@ public class EventoSportivoForm implements EventoSpecificoForm {
     private Set<String> partecipanti;
     private EventoController controllaDati;
 
-    public EventoSportivoForm(){}
+    public EventoManifestazioneForm(){}
 
-    public EventoSportivoForm(EventoController controllaDati){
+    public EventoManifestazioneForm(EventoController controllaDati){
         this.controllaDati=controllaDati;
         partecipanti =new HashSet<>();
 
     }
-
 
     public void initialize(){
         sportEnumComboBox.setItems(FXCollections.observableArrayList(SportEnum.values()));

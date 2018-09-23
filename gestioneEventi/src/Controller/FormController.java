@@ -184,6 +184,8 @@ public class FormController {
             c.getIndirizzoClienteTextField().setDisable(true);
             c.getSessoFClienteRadioButton().setDisable(true);
             c.getSessoMClienteRadioButton().setDisable(true);
+            c.getBigliettiAcquistatiTextField().setDisable(true);
+            c.getSpesaTotaleTextField().setDisable(true);
         } catch (Exception e) {
             e.printStackTrace();
 

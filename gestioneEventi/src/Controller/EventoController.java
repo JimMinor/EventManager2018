@@ -6,7 +6,7 @@ import Model.*;
 import View.EventoArtisticoForm;
 import View.EventoSportivoForm;
 import View.InserisciEventoForm;
-
+import View.EventoManifestazioneForm;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -70,6 +70,7 @@ public class EventoController {
         eventoDAO.inserisciEvento();
 
     }
+
 
     public void controllaDatiEventoArtistico(EventoArtisticoForm eventoArtisticoForm)throws NoValidEventDataException {
         // Controllo GENERE : Deve essere stato selezionato un genere

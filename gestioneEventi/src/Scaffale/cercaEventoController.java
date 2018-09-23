@@ -1,36 +1,33 @@
 package Scaffale;
 
 import Controller.ModificaPane;
+import Model.LuogoEnum;
+import com.jfoenix.controls.JFXComboBox;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 
 public class cercaEventoController {
     @FXML
     public Button modificaEventoButton;
-    @FXML
     public Button eliminaEventoButton;
-    @FXML
     public TableView tabellaCercaEventoTableView;
-    @FXML
     public Button cercaCercaEventoButton;
-    @FXML
     public TextField nomeCercaEventoTextField;
-    @FXML
-    public TextField luogoCercaEventoTextField;
-
-    @FXML
     public Button annullaCercaEventoButton;
-    @FXML
     public DatePicker dataCercaEventoDataPicker;
-    @FXML
+    public JFXComboBox luogoEventoComboBox;
     private AnchorPane cercaEventoPaneScreen;
 
+    public ComboBox<LuogoEnum> getLuogoEventoComboBox() {
+        return luogoEventoComboBox;
+    }
+    public void initialize() {
+        luogoEventoComboBox.setItems(FXCollections.observableArrayList(LuogoEnum.values()));
+    }
 
     public void modificaEventoButtonPressed(ActionEvent actionEvent) {
         new ModificaPane().mostraPaneEvento(cercaEventoPaneScreen, "inserisciEventoPane.fxml");
@@ -45,7 +42,7 @@ public class cercaEventoController {
 
     public void annullaCercaEventoButtonPressed(ActionEvent actionEvent) {
         nomeCercaEventoTextField.clear();
-        luogoCercaEventoTextField.clear();
+        luogoEventoComboBox.setValue(null);
         dataCercaEventoDataPicker.setValue(null);
 
     }
