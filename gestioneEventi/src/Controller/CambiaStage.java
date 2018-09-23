@@ -17,8 +17,8 @@ public class CambiaStage {
 
     public CambiaStage(mainApp myApp) {
         screens=new HashMap<>();
-        screens.put("menuPrincipale","../FXML/menuPrincipaleScreen.fxml");
-        screens.put("login","../FXML/loginScreen.fxml");
+        screens.put("menuPrincipale","../FXMLView/menuPrincipaleScreen.fxml");
+        screens.put("login","../FXMLView/loginScreen.fxml");
         this.myApp = myApp;
     }
     public <S extends ControlledStage> Scene caricaScene(String risorsaScreen) throws Exception {

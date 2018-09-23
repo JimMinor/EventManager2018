@@ -1,14 +1,14 @@
 package Controller;
 
-import DB.InserisciEventoDAO;
-import DB.InserisciEventoDB;
+import DB.EventoDAO;
+import DB.EventoDAOImp;
 import Model.Evento;
 
 public class CreaEvento {
 
 
     public void creaEvento(Evento e) {
-        InserisciEventoDAO inserisciEventoDAO = new InserisciEventoDB(e);
-        inserisciEventoDAO.inserisciEvento();
+        EventoDAO eventoDAO = new EventoDAOImp(e);
+
     }
 }

@@ -1,11 +1,11 @@
 package Controller;
 
-import View.InserisciEventoForm;
+import ControllerView.InserisciEventoController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import Scaffale.inserisciDipendentePaneController;
-import Scaffale.visualizzaClientiPaneController;
+import View.visualizzaClientiPaneController;
 
 /**
  * NON FUNZIONANTE:
@@ -22,7 +22,7 @@ public class ModificaPane {
             rimuoviPane(pane);
             Node node = (Node) loader.load();
             pane.getChildren().add(node);
-            InserisciEventoForm c = (InserisciEventoForm) loader.getController();
+            InserisciEventoController c = (InserisciEventoController) loader.getController();
            /** c.getCittaEventoTextField().setDisable(true);
             c.getNomeEventoTextField().setDisable(true);
             c.getCapienzaMaxEventoTextField().setDisable(true);

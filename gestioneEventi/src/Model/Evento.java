@@ -3,9 +3,10 @@ package Model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Set;
 import java.util.prefs.Preferences;
 
-public abstract class Evento implements Comparable<Evento> {
+public  class Evento implements Comparable<Evento> {
 
     private LuogoEnum luogoEvento;
     private int capienzaMassima;
@@ -16,10 +17,13 @@ public abstract class Evento implements Comparable<Evento> {
     private CittaEnum citta;
     private LocalDate dataEvento;
     private int idEvento;
+    private String genereEvento;
+    private Set<String> partecipantiEvento;
+
 
     public Evento(LuogoEnum luogoEvento, String descrizione,
                   float prezzoBiglietto, TipologiaEnum tipologiaEvento,
-                  String nome, LocalDate dataEvento) {
+                  String nome, LocalDate dataEvento, String genereEvento, Set<String> partecipantiEvento) {
 
         idEvento=0;// Viene gestito nel DB
         this.luogoEvento = luogoEvento;
@@ -30,7 +34,13 @@ public abstract class Evento implements Comparable<Evento> {
         this.nome = nome;
         this.citta = luogoEvento.getCittaLuogo();
         this.dataEvento = dataEvento;
+        this.genereEvento=genereEvento;
+        this.partecipantiEvento=partecipantiEvento;
+
     }
+
+
+
 
     /*********************
      *  Getters          *
@@ -68,10 +78,65 @@ public abstract class Evento implements Comparable<Evento> {
         return tipologiaEvento;
     }
 
+    public int getIdEvento() {
+        return idEvento;
+    }
+
+    /*********************
+     *  Setters         *
+     *********************
+     */
     public void setIdEvento(int idEvento) {
         this.idEvento = idEvento;
     }
 
+    public void setLuogoEvento(LuogoEnum luogoEvento) {
+        this.luogoEvento = luogoEvento;
+    }
+
+    public void setCapienzaMassima(int capienzaMassima) {
+        this.capienzaMassima = capienzaMassima;
+    }
+
+    public void setDescrizione(String descrizione) {
+        Descrizione = descrizione;
+    }
+
+    public void setPrezzoBiglietto(float prezzoBiglietto) {
+        this.prezzoBiglietto = prezzoBiglietto;
+    }
+
+    public void setTipologiaEvento(TipologiaEnum tipologiaEvento) {
+        this.tipologiaEvento = tipologiaEvento;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCitta(CittaEnum citta) {
+        this.citta = citta;
+    }
+
+    public void setDataEvento(LocalDate dataEvento) {
+        this.dataEvento = dataEvento;
+    }
+
+    public String getGenereEvento() {
+        return genereEvento;
+    }
+
+    public void setGenereEvento(String genereEvento) {
+        this.genereEvento = genereEvento;
+    }
+
+    public Set<String> getPartecipantiEvento() {
+        return partecipantiEvento;
+    }
+
+    public void setPartecipantiEvento(Set<String> partecipantiEvento) {
+        this.partecipantiEvento = partecipantiEvento;
+    }
 
     /**
      *  Due Eventi verrano considerati uguali secondo equals se e solo se

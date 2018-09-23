@@ -29,6 +29,7 @@ public class EventoSportivoForm implements EventoSpecificoForm {
 
     }
 
+
     public void initialize(){
         sportEnumComboBox.setItems(FXCollections.observableArrayList(SportEnum.values()));
 

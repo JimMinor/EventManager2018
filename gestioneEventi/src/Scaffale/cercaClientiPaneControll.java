@@ -11,15 +11,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class cercaClientiPaneControll implements ControlledStage, Initializable {
+
     @FXML public Button visualizzaDatiClienti;
     @FXML private AnchorPane cercaClientiPaneScreen;
 
+    @Override public void initialize(URL url, ResourceBundle rb) {}
 
+    @Override public void setCambiaStage(CambiaStage cambiaStage){}
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {}
-    @Override
-    public void setCambiaStage(CambiaStage cambiaStage){}
     public void visualizzaDatiClientiButton(){
         new cambiaPane().mostraPane(cercaClientiPaneScreen,"visuaizzaClientiScreen.fxml");
     }

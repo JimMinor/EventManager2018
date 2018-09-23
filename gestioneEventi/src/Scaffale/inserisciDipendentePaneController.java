@@ -164,7 +164,7 @@ public class inserisciDipendentePaneController implements Initializable {
             tipoContrattoPtimeDipendenteRatioButton.setSelected(false);
             tipoContrattoFtimeDipendenteRatioButton.setSelected(false);
         }else {
-          //  new FormController(formInserisciDipedente).caricaFormDaRisorsa(formInserisciDipedente, "cercaDipendentiPane.fxml");
+          //  new CambiaView(formInserisciDipedente).caricaFormDaRisorsa(formInserisciDipedente, "cercaDipendentiPane.fxml");
         }
     }
 }

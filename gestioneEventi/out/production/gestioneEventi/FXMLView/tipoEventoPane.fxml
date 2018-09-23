@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/tipoEventoPane.fxml
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+>>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/src/FXML/tipoEventoPane.fxml
+   <children>
+      <JFXButton fx:id="eventoSportivoButton" buttonType="RAISED" layoutX="158.0" layoutY="76.0" onAction="#eventoSportivoButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d9663f;" text="Evento Sportivo" textFill="WHITE" AnchorPane.leftAnchor="158.0">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-soccer-ball-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="eventoMusicaleButton" buttonType="RAISED" layoutX="496.0" layoutY="76.0" onAction="#eventoMusicaleButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3fd9a5;" text="Evento Musicale" textFill="WHITE" AnchorPane.rightAnchor="158.0">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-musical-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="eventoTeatraleButton" buttonType="RAISED" layoutX="158.0" layoutY="194.0" onAction="#eventoTeatraleButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3f78da;" text="Evento Teatrale" textFill="WHITE" AnchorPane.leftAnchor="158.0">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-theatre-mask-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+<<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/tipoEventoPane.fxml
+      <JFXButton fx:id="eventoCinemaButton" buttonType="RAISED" layoutX="300.0" layoutY="159.0" onAction="#eventoManifestazioneButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="100.0">
+=======
+      <JFXButton fx:id="eventoManifestazioneButton" buttonType="RAISED" layoutX="496.0" layoutY="194.0" onAction="#eventoManifestazioneButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="158.0">
+>>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/src/FXML/tipoEventoPane.fxml
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-arena-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

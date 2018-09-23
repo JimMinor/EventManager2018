@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="174.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXComboBox fx:id="genereManifestazioneComboBox" focusColor="#3eb3da" layoutX="20.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="147.0" promptText="Manifestazione" />
+      <JFXTextField fx:id="artistaTextField" focusColor="#3eb3da" layoutX="20.0" layoutY="63.0" prefHeight="25.0" prefWidth="147.0" promptText="Artisti" />
+      <JFXButton fx:id="aggiungiButton" layoutX="191.0" layoutY="76.0" onAction="#inserisciPartecipanteButtonPressed" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #8cd742;" text="Aggiungi" textFill="WHITE" />
+      <JFXTextArea editable="false" focusColor="#3eb3da" labelFloat="true" layoutX="20.0" layoutY="101.0" prefHeight="61.0" prefWidth="159.0" text="Campo Descrizione Obbligatorio.&#10;" wrapText="true" />
+   </children>
+</AnchorPane>

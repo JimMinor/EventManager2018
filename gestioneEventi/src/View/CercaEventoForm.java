@@ -5,7 +5,10 @@ import Model.Evento;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 
-public class CercaEventoForm {
+import java.util.Observable;
+import java.util.Observer;
+
+public class CercaEventoForm implements Observer {
 
     @FXML
     private TextField nomeEventoTextField;
@@ -23,4 +26,8 @@ public class CercaEventoForm {
     @FXML public void cercaEventiButtonPressed(){}
     @FXML public void eliminaEventoButtonPressed(){}
 
+    @Override
+    public void update(Observable o, Object arg) {
+
+    }
 }

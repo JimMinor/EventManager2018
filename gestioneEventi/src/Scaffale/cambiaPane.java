@@ -11,10 +11,10 @@ import javafx.scene.layout.AnchorPane;
 public class cambiaPane {
 
     public void mostraPane(AnchorPane pane, String risorsa){
-        System.out.println("../FXML/"+risorsa);
+        System.out.println("../FXMLView/"+risorsa);
         try {
             rimuoviPane(pane);
-            Node node = (Node) FXMLLoader.load(getClass().getResource("../FXML/"+risorsa));
+            Node node = (Node) FXMLLoader.load(getClass().getResource("../FXMLView/"+risorsa));
             pane.getChildren().add(node);
         }catch(Exception e){
             e.printStackTrace();
