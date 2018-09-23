@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cercaClientiPaneScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.cercaClientiPaneController">
+    <children>
+          <JFXButton fx:id="cercaClienteButton" layoutX="704.0" layoutY="23.0" mnemonicParsing="false" onAction="#cercaClienteButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
+          <JFXTextField fx:id="usernameCercaClientiTextField" layoutX="291.0" layoutY="23.0" prefHeight="26.0" prefWidth="272.0" promptText="Username">
+              <font>
+                  <Font size="15.0" />
+              </font>
+          </JFXTextField>
+          <JFXButton fx:id="annullaCercaClientiButton" layoutX="45.0" layoutY="23.0" mnemonicParsing="false" onAction="#annullaCercaClientiButtonPressed" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Pulisci" textFill="WHITE" />
+            <TableView fx:id="tabellaCercaClientiTableView" editable="true" layoutX="37.0" layoutY="80.0" prefHeight="195.0" prefWidth="780.0">
+                <columns>
+                    <TableColumn prefWidth="245.0" text="Username" />
+                    <TableColumn prefWidth="261.0" text="Nome" />
+                    <TableColumn minWidth="5.0" prefWidth="188.0" text="Cognome" />
+                    <TableColumn minWidth="0.0" prefWidth="75.0" text="seleziona" />
+                </columns>
+            </TableView>
+            <JFXButton fx:id="visualizzaDatiClientiButton" layoutX="38.0" layoutY="309.0" mnemonicParsing="false" onAction="#visualizzaDatiClientiButtonPressed" prefHeight="31.0" prefWidth="134.0" style="-fx-background-color: #8cd742;" text="Visualizza dati" textFill="WHITE" />
+            <JFXButton fx:id="eliminaClientiButton" layoutX="701.0" layoutY="317.0" mnemonicParsing="false" onAction="#eliminaClientiButtonPressed" prefHeight="31.0" prefWidth="116.0" style="-fx-background-color: #e23636#d74242;" text="Elimina" textFill="WHITE" />
+    </children>
+</AnchorPane>
