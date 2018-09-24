@@ -1,6 +1,5 @@
 package Scaffale;
 
-import Controller.ModificaPane;
 import Model.LuogoEnum;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;

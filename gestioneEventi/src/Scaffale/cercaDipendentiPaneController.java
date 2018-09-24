@@ -1,6 +1,5 @@
 package Scaffale;
 
-import Controller.ModificaPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

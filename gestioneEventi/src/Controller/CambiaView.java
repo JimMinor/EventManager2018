@@ -81,5 +81,26 @@ public class CambiaView {
     public void mostraStaticheMenu() {
     }
 
+    public void visualizzaPaneClienti() {
+        try {
+            FXMLLoader loader = caricaFormDaRisorsa("visualizzaDatiClienti");
+            Node form = loader.load();
+            formCorrente.getChildren().add(form);
+            VisualizzaClientiControllerView c =  loader.getController();
+            c.getUsernameClienteTextField().setDisable(true);
+            c.getCodFiscaleClienteTextField().setDisable(true);
+            c.getCognomeClienteTextField().setDisable(true);
+            c.getNomeClienteTextField().setDisable(true);
+            c.getEmailClienteTextField().setDisable(true);
+            c.getIndirizzoClienteTextField().setDisable(true);
+            c.getSessoFClienteRadioButton().setDisable(true);
+            c.getSessoMClienteRadioButton().setDisable(true);
+            c.getBigliettiAcquistatiTextField().setDisable(true);
+            c.getSpesaTotaleTextField().setDisable(true);
+        } catch (Exception e) {
+            e.printStackTrace();
 
+        }
+
+    }
 }

@@ -7,7 +7,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/inserisciEventoPane.fxml
+<<<<<<< HEAD:gestioneEventi/src/FXMLView/inserisciEventoPane.fxml
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <JFXTextField fx:id="nomeEventoTextField" focusColor="#3eb3da" layoutX="21.0" layoutY="22.0" promptText="Nome Evento" />
@@ -36,6 +36,6 @@
       <JFXTextField fx:id="prezzoBigliettoTextField" focusColor="#3eb3da" layoutX="269.0" layoutY="203.0" promptText="Prezzo Biglietto €" />
       <AnchorPane fx:id="genereEventoAnchorPane" layoutX="498.0" layoutY="141.0" prefHeight="150.0" prefWidth="300.0" />
       <JFXTextField fx:id="capienzaMassimaTextField" layoutX="269.0" layoutY="258.0" promptText="Capienza Massima" />
->>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/src/FXML/inserisciEventoPane.fxml
+>>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/out/production/gestioneEventi/FXML/inserisciEventoPane.fxml
    </children>
 </AnchorPane>
