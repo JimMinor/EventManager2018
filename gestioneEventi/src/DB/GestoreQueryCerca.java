@@ -6,11 +6,13 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
 import java.sql.*;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 
 public class GestoreQueryCerca {//query generica per cercare tutti gli elementi appena apre la schermata
 
 
-    public ResultSet cerca(String tabella,String colonnaTW1 ,String colonnaTW2 , String colonnaTW3, String attributo1 ,String attributo2 , Date attributo3 ) {
+    public ResultSet cerca(String tabella,String colonnaTW1 ,String colonnaTW2 , String colonnaTW3, String attributo1 ,String attributo2 , Date attributo3 ) throws SQLException{
 
         // Connect to database
         //non ho capito com si fa xD
@@ -19,20 +21,63 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             Connection connection = UtilityDB.getConnessioneDB();
             // Create tutti i risultati in una tabella
             String selectSql="";
-            if (attributo1==null) {
+
+            //(1)
+            if (attributo1!=null && attributo2==null && attributo3==null) {
                 selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella+ ";";
-            }else if (attributo2==null) {
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella + "WHERE" + colonnaTW1 + "=" + attributo1 + ";";
-            }else if (attributo3==null){
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella + "WHERE" +colonnaTW1+"="+attributo1+" AND "+colonnaTW2+"="+attributo2+";";
-            }else {
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella + "WHERE" +colonnaTW1+"="+attributo1+" AND "+colonnaTW2+"="+attributo2+" AND "+"DATA"+"="+attributo2+";";
+                        "FROM " + tabella +
+                        "WHERE" + colonnaTW1 + "=" + attributo1 + ";";
             }
 
+            //(2)
+            else if (attributo1==null && attributo2!=null && attributo3==null) {
+                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        "FROM " + tabella +
+                        "WHERE" + colonnaTW2 + "=" + attributo2 + ";";
+            }
+
+            //(3)
+            else if (attributo1==null && attributo2==null && attributo3!=null) {
+                Format formatter = new SimpleDateFormat("dd-MM-yy");
+                String dataRicerca = formatter.format(attributo3);
+                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        "FROM " + tabella +
+                        "WHERE" + colonnaTW3 + "=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+            }
+
+            //(1,2)
+            else if (attributo1!=null && attributo2!=null && attributo3==null) {
+                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        "FROM " + tabella +
+                        "WHERE" + colonnaTW1 + "=" + attributo1 + " AND " + colonnaTW2 + "=" + attributo2 + ";";
+            }
+
+            //(1,3)
+            else if (attributo1!=null && attributo2==null && attributo3!=null) {
+                Format formatter = new SimpleDateFormat("dd-MM-yy");
+                String dataRicerca = formatter.format(attributo3);
+                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        "FROM " + tabella +
+                        "WHERE" + colonnaTW1 + "=" + attributo1 + " AND " + colonnaTW3 + "=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+            }
+
+            //(2,3)
+            else if (attributo1==null && attributo2!=null && attributo3!=null) {
+                Format formatter = new SimpleDateFormat("dd-MM-yy");
+                String dataRicerca = formatter.format(attributo3);
+                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        "FROM " + tabella +
+                        "WHERE" + colonnaTW2 + "=" + attributo2 + " AND " + colonnaTW3 + "=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+            }
+
+            //(1,2,3)
+            else if (attributo1!=null && attributo2!=null && attributo3!=null) {
+                Format formatter = new SimpleDateFormat("dd-MM-yy");
+                String dataRicerca = formatter.format(attributo3);
+                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        "FROM " + tabella +
+                        "WHERE" + colonnaTW1 + "=" + attributo1 + " AND "+ colonnaTW2 + "=" + attributo2 + " AND " + colonnaTW3 + "=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+            }
 
 
             try (Statement statement = connection.createStatement();
@@ -42,7 +87,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
                 return rS;
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
