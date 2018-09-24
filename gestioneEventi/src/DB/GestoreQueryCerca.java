@@ -24,59 +24,59 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
             //(1)
             if (attributo1!=null && attributo2==null && attributo3==null) {
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella +
-                        "WHERE" + colonnaTW1 + "=" + attributo1 + ";";
+                selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        " FROM " + tabella +
+                        " WHERE " + colonnaTW1 + "=" + attributo1 + ";";
             }
 
             //(2)
             else if (attributo1==null && attributo2!=null && attributo3==null) {
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella +
-                        "WHERE" + colonnaTW2 + "=" + attributo2 + ";";
+                selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        " FROM " + tabella +
+                        " WHERE " + colonnaTW2 + "=" + attributo2 + ";";
             }
 
             //(3)
             else if (attributo1==null && attributo2==null && attributo3!=null) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(attributo3);
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella +
-                        "WHERE" + colonnaTW3 + "=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        " FROM " + tabella +
+                        " WHERE DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
 
             //(1,2)
             else if (attributo1!=null && attributo2!=null && attributo3==null) {
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella +
-                        "WHERE" + colonnaTW1 + "=" + attributo1 + " AND " + colonnaTW2 + "=" + attributo2 + ";";
+                selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        " FROM " + tabella +
+                        " WHERE " + colonnaTW1 + "=" + attributo1 + " AND " + colonnaTW2 + "=" + attributo2 + ";";
             }
 
             //(1,3)
             else if (attributo1!=null && attributo2==null && attributo3!=null) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(attributo3);
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella +
-                        "WHERE" + colonnaTW1 + "=" + attributo1 + " AND " + colonnaTW3 + "=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        " FROM " + tabella +
+                        " WHERE " + colonnaTW1 + "=" + attributo1 + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
 
             //(2,3)
             else if (attributo1==null && attributo2!=null && attributo3!=null) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(attributo3);
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella +
-                        "WHERE" + colonnaTW2 + "=" + attributo2 + " AND " + colonnaTW3 + "=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        " FROM " + tabella +
+                        " WHERE " + colonnaTW2 + "=" + attributo2 + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
 
             //(1,2,3)
             else if (attributo1!=null && attributo2!=null && attributo3!=null) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(attributo3);
-                selectSql = "SELECT  " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
-                        "FROM " + tabella +
-                        "WHERE" + colonnaTW1 + "=" + attributo1 + " AND "+ colonnaTW2 + "=" + attributo2 + " AND " + colonnaTW3 + "=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        " FROM " + tabella +
+                        " WHERE " + colonnaTW1 + "=" + attributo1 + " AND "+ colonnaTW2 + "=" + attributo2 + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
 
 
