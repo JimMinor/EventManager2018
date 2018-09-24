@@ -1,4 +1,4 @@
-package Controller;
+ package Controller;
 
 import Model.GenereManifestazioneEnum;
 import Model.GenereMusicaleEnum;
@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FormController {
-
+/*
     private Map<String, String> risorseForm;
     private Map<TipologiaEnum, String> eventiSpecificiFormMap; // EnumMap
     private AnchorPane formCorrente;
@@ -54,7 +54,7 @@ public class FormController {
      *      CREAZIONE FORM INSERISCI EVENTO         *
      *                                              *
      * **********************************************
-     */
+     *
 
     private void inserisciFormEventoSpecifico() {
         eventiSpecificiFormMap = new EnumMap<>(TipologiaEnum.class);
@@ -191,5 +191,5 @@ public class FormController {
 
         }
 
-    }
+    }*/
 }

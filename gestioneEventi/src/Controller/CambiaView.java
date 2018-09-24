@@ -26,6 +26,10 @@ public class CambiaView {
     private void caricaRisorseForm() {
         risorseForm.put("creaEvento","../FXMLView/inserisciEventoPane.fxml");
         risorseForm.put("tipoEvento","../FXMLView/tipoEventoPane.fxml");
+        risorseForm.put("gestioneClienti", "../FXMLView/cercaClientPane.fxml");
+        risorseForm.put("gestioneDipedenti", "../FXMLView/cercaDipendentiPane.fxml");
+        risorseForm.put("cercaEvento", "../FXMLView/cercaEventoPane.fxml");
+        risorseForm.put("visualizzaDatiClienti", "../FXMLView/visualizzaClientiPane.fxml");
     }
 
     private FXMLLoader caricaFormDaRisorsa(String risorsa) {

@@ -29,7 +29,7 @@ public class cercaDipendentiPaneController {
     public Button annullaCercaDipendenteButton;
 
     public void modificaDipendenteButtonPressed(ActionEvent actionEvent) {
-        new ModificaPane().modificaPaneDipendenti(cercaDipendentiScreenAnchorPane, "inserisciDipendentePane.fxml");
+        
     }
 
     public void eliminaDipendentiButton(ActionEvent actionEvent) {

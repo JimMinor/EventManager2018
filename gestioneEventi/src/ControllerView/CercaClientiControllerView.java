@@ -1,6 +1,7 @@
 package View;
 
 import Controller.CambiaStage;
+import Controller.CambiaView;
 import Controller.ControlledStage;
 import Controller.FormController;
 import javafx.event.ActionEvent;
@@ -26,14 +27,14 @@ public class CercaClientiControllerView implements ControlledStage, Initializabl
     public Button cercaClienteButton;
     public TextField usernameCercaClientiTextField;
     public AnchorPane cercaClientiPaneScreen;
-    private FormController cambiaForm;
+    private CambiaView cambiaForm;
 
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        cambiaForm=new FormController(cercaClientiPaneScreen);
+        cambiaForm=new CambiaView(cercaClientiPaneScreen);
 
 
     }
