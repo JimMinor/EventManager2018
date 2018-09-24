@@ -53,6 +53,7 @@ public class CambiaView {
     public void mostraFormInserisciEvento(){
 
         try {
+
             FXMLLoader loader = caricaFormDaRisorsa("creaEvento");
             InserisciEventoController ief=new InserisciEventoController(this);
             loader.setController(ief);
