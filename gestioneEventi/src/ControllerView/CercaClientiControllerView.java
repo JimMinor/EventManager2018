@@ -3,7 +3,6 @@ package View;
 import Controller.CambiaStage;
 import Controller.CambiaView;
 import Controller.ControlledStage;
-import Controller.FormController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,14 +18,19 @@ import java.util.ResourceBundle;
 public class CercaClientiControllerView implements ControlledStage, Initializable {
 
     @FXML
-   
-    public Button visualizzaDatiClientiButton;
-    public TableView tabellaCercaClientiTableView;
-    public Button eliminaClientiButton;
-    public Button annullaCercaClientiButton;
-    public Button cercaClienteButton;
-    public TextField usernameCercaClientiTextField;
-    public AnchorPane cercaClientiPaneScreen;
+    private Button visualizzaDatiClientiButton;
+    @FXML
+    private TableView tabellaCercaClientiTableView;
+    @FXML
+    private Button eliminaClientiButton;
+    @FXML
+    private Button annullaCercaClientiButton;
+    @FXML
+    private Button cercaClienteButton;
+    @FXML
+    private TextField usernameCercaClientiTextField;
+    @FXML
+    private AnchorPane cercaClientiPaneScreen;
     private CambiaView cambiaForm;
 
 
@@ -57,5 +61,33 @@ public class CercaClientiControllerView implements ControlledStage, Initializabl
     }
 
     public void eliminaClientiButtonPressed() {
+    }
+
+    public Button getVisualizzaDatiClientiButton() {
+        return visualizzaDatiClientiButton;
+    }
+
+    public TableView getTabellaCercaClientiTableView() {
+        return tabellaCercaClientiTableView;
+    }
+
+    public Button getEliminaClientiButton() {
+        return eliminaClientiButton;
+    }
+
+    public Button getAnnullaCercaClientiButton() {
+        return annullaCercaClientiButton;
+    }
+
+    public Button getCercaClienteButton() {
+        return cercaClienteButton;
+    }
+
+    public TextField getUsernameCercaClientiTextField() {
+        return usernameCercaClientiTextField;
+    }
+
+    public AnchorPane getCercaClientiPaneScreen() {
+        return cercaClientiPaneScreen;
     }
 }
