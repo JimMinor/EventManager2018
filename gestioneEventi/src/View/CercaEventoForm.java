@@ -16,18 +16,8 @@ public class CercaEventoForm implements Observer {
     private TextField luogoEventoTextField;
     @FXML
     private DatePicker dataEventoDatePicker;
-
-    public TableView<? extends Evento> getEventiTableView() {
-        return eventiTableView;
-    }
-
-    public void setEventiTableView(TableView<? extends Evento> eventiTableView) {
-        this.eventiTableView = eventiTableView;
-    }
-
     @FXML
     private TableView<? extends Evento> eventiTableView;
-
     private EventoController eventoController;
     private FormController formController;
 
