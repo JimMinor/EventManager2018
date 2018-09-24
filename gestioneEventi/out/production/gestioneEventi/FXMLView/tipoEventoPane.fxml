@@ -6,10 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/tipoEventoPane.fxml
+<<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/tipoEventoPane.fxml
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
 =======
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
 >>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/src/FXML/tipoEventoPane.fxml
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+>>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/out/production/gestioneEventi/FXML/tipoEventoPane.fxml
    <children>
       <JFXButton fx:id="eventoSportivoButton" buttonType="RAISED" layoutX="158.0" layoutY="76.0" onAction="#eventoSportivoButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d9663f;" text="Evento Sportivo" textFill="WHITE" AnchorPane.leftAnchor="158.0">
          <graphic>
@@ -39,10 +43,14 @@
          </graphic>
       </JFXButton>
 <<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/tipoEventoPane.fxml
+<<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/tipoEventoPane.fxml
       <JFXButton fx:id="eventoCinemaButton" buttonType="RAISED" layoutX="300.0" layoutY="159.0" onAction="#eventoManifestazioneButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="100.0">
 =======
       <JFXButton fx:id="eventoManifestazioneButton" buttonType="RAISED" layoutX="496.0" layoutY="194.0" onAction="#eventoManifestazioneButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="158.0">
 >>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/src/FXML/tipoEventoPane.fxml
+=======
+      <JFXButton fx:id="eventoManifestazioneButton" buttonType="RAISED" layoutX="496.0" layoutY="194.0" onAction="#eventoManifestazioneButtonPressed" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #da3e3e;" text="Manifestazione" textFill="WHITE" AnchorPane.rightAnchor="158.0">
+>>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/out/production/gestioneEventi/FXML/tipoEventoPane.fxml
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <image>

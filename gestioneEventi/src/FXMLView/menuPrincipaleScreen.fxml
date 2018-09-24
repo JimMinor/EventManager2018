@@ -6,10 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <<<<<<< HEAD:gestioneEventi/src/FXMLView/menuPrincipaleScreen.fxml
+<<<<<<< HEAD:gestioneEventi/src/FXMLView/menuPrincipaleScreen.fxml
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.62" prefHeight="568.0" prefWidth="1189.0" style="-fx-background-color: #fffffc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerView.MenuPrincipaleStage">
 =======
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.62" prefHeight="568.0" prefWidth="1189.0" style="-fx-background-color: #fffffc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuPrincipaleStage">
 >>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/src/FXML/menuPrincipaleScreen.fxml
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.62" prefHeight="568.0" prefWidth="1189.0" style="-fx-background-color: #fffffc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuPrincipaleStage">
+>>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/out/production/gestioneEventi/FXML/menuPrincipaleScreen.fxml
    <children>
       <AnchorPane prefHeight="87.0" prefWidth="817.0" style="-fx-background-color: #3eb3da; -fx-border-color: #99ccff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>

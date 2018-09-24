@@ -12,10 +12,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/loginScreen.fxml
+<<<<<<< HEAD:gestioneEventi/out/production/gestioneEventi/FXMLView/loginScreen.fxml
 <AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" snapToPixel="false" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerView.LoginStage">
 =======
 <AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" snapToPixel="false" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginStage">
 >>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/out/production/gestioneEventi/FXML/loginScreen.fxml
+=======
+<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" snapToPixel="false" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginStage">
+>>>>>>> 23f06ea01ecbcd7587c88faf7d1872d73a751931:gestioneEventi/src/FXML/loginScreen.fxml
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
         <ImageView fitHeight="124.0" fitWidth="122.0" layoutX="134.0" layoutY="7.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
