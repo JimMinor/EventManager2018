@@ -3,10 +3,13 @@ package View;
 import Controller.CambiaStage;
 import Controller.CambiaView;
 import Controller.ControlledStage;
+import DB.GestoreQueryCerca;
+import Model.Clienti;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -20,7 +23,13 @@ public class CercaClientiControllerView implements ControlledStage, Initializabl
     @FXML
     private Button visualizzaDatiClientiButton;
     @FXML
-    private TableView tabellaCercaClientiTableView;
+    private TableView<Clienti> tabellaCercaClientiTableView;
+    @FXML
+    private TableColumn<Clienti , String> username;
+   @FXML
+    private TableColumn<Clienti , String> nome;
+   @FXML
+   private TableColumn<Clienti , String> cognome;
     @FXML
     private Button eliminaClientiButton;
     @FXML
@@ -39,6 +48,7 @@ public class CercaClientiControllerView implements ControlledStage, Initializabl
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cambiaForm=new CambiaView(cercaClientiPaneScreen);
+
 
 
     }

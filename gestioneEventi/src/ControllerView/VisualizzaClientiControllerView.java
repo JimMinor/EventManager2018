@@ -11,8 +11,11 @@ import javafx.scene.layout.AnchorPane;
 
 public class VisualizzaClientiControllerView {
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c6d38f69abc6b0b77205b1836aaeea18aa959245
    @FXML
     private TextField usernameClienteTextField;
   @FXML
@@ -21,6 +24,23 @@ public class VisualizzaClientiControllerView {
     private TextField cognomeClienteTextField;
    @FXML
    private TextField codFiscaleClienteTextField;
+   @FXML
+   private TextField indirizzoClienteTextField;
+   @FXML
+   private TextField emailClienteTextField;
+   @FXML
+   private RadioButton sessoFClienteRadioButton;
+   @FXML
+   private RadioButton sessoMClienteRadioButton;
+   @FXML
+   private Button fineClientiButton;
+   @FXML
+   private AnchorPane visualizzaClientiForm;
+   @FXML
+   private JFXTextField bigliettiAcquistatiTextField;
+   @FXML
+   private JFXTextField spesaTotaleTextField;
+
 
     public TextField getUsernameClienteTextField() {
         return usernameClienteTextField;
@@ -70,6 +90,7 @@ public class VisualizzaClientiControllerView {
         return spesaTotaleTextField;
     }
 
+<<<<<<< HEAD
     @FXML
    private TextField indirizzoClienteTextField;
    @FXML
@@ -88,6 +109,8 @@ public class VisualizzaClientiControllerView {
    private JFXTextField spesaTotaleTextField;
 
 
+=======
+>>>>>>> c6d38f69abc6b0b77205b1836aaeea18aa959245
 
     public void sessoFClienteRadioButtonPressed(ActionEvent actionEvent) {
         sessoMClienteRadioButton.setSelected(false);

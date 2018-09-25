@@ -1,26 +1,50 @@
 package Scaffale;
 
 import Controller.CambiaView;
+import Model.Evento;
 import Model.LuogoEnum;
 import com.jfoenix.controls.JFXComboBox;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
+import java.time.LocalDate;
+
+import static Model.LuogoEnum.*;
+import static Model.TipologiaEnum.*;
+
 
 public class cercaEventoController {
     @FXML
-    public Button modificaEventoButton;
-    public Button eliminaEventoButton;
-    public TableView tabellaCercaEventoTableView;
-    public Button cercaCercaEventoButton;
-    public TextField nomeCercaEventoTextField;
-    public Button annullaCercaEventoButton;
-    public DatePicker dataCercaEventoDataPicker;
-    public JFXComboBox luogoEventoComboBox;
+    private Button modificaEventoButton;
+    @FXML
+    private Button eliminaEventoButton;
+    @FXML
+    private TableView<Evento> tabellaCercaEventoTableView;
+    @FXML
+    private TableColumn<Evento, String> colonnaNomeEvento;
+    @FXML
+    private TableColumn<Evento, String> colonnaLuogoEvento;
+    @FXML
+    private TableColumn<Evento, String> colonnaDataEvento;
+    @FXML
+    private Button cercaCercaEventoButton;
+    @FXML
+    private TextField nomeCercaEventoTextField;
+    @FXML
+    private Button annullaCercaEventoButton;
+    @FXML
+    private DatePicker dataCercaEventoDataPicker;
+    @FXML
+    private JFXComboBox luogoEventoComboBox;
+    @FXML
     private AnchorPane cercaEventoPaneScreen;
+
+    private ObservableList<Evento> eventiCercati = FXCollections.observableArrayList();
 
     public ComboBox<LuogoEnum> getLuogoEventoComboBox() {
         return luogoEventoComboBox;
@@ -37,7 +61,15 @@ public class cercaEventoController {
     }
 
     public void cercaCercaEventoButtonPressed(ActionEvent actionEvent) {
+        tabellaCercaEventoTableView.setItems(eventiCercati);
+        //Qui va inserito il codice che, dopo aver fatto la query al database, crea gli oggetti evento da visualizzare nella tableview
 
+        /////Codice Test - Inizio
+        Evento eventoProva = new Evento(SANCARLO, "Evento di prova al San Carlo", 30, TEATRO, "Evento di teatro al San Carlo", LocalDate.of(2018, 9, 25), "Teatrale", null);
+        eventiCercati.add(eventoProva);
+        ////Codice Test - Fine
+
+        mostraTabella();
     }
 
     public void annullaCercaEventoButtonPressed(ActionEvent actionEvent) {
@@ -48,6 +80,15 @@ public class cercaEventoController {
     }
 
     public void eliminaEventoButtonPressed(ActionEvent actionEvent) {
+    }
+
+    private void mostraTabella() {
+        colonnaNomeEvento.setCellValueFactory(
+                cellData -> new ReadOnlyStringWrapper(cellData.getValue().getNome()));
+        colonnaLuogoEvento.setCellValueFactory(
+                cellData -> new ReadOnlyObjectWrapper(cellData.getValue().getLuogoEvento()));
+        colonnaDataEvento.setCellValueFactory(
+                cellData -> new ReadOnlyObjectWrapper(cellData.getValue().getDataEvento()));
     }
 }
 
