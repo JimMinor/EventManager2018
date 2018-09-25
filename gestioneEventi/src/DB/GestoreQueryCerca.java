@@ -34,50 +34,53 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
         return null;
     }
-    public ResultSet cercaImpiegato (String nome, String cognome , Date datanascita){
+    public ResultSet cercaImpiegato (String nome, String cognome , Date datanascita) {
         try {
             Connection connection = UtilityDB.getConnessioneDB();
             // Create tutti i risultati in una tabella
-            String selectSql="SELECT NOME , COGNOME , CODICE_FISCALE FROM IMPIGATO NATURAL JOIN PERSONA";
+            String selectSql = "SELECT NOME , COGNOME , CODICE_FISCALE FROM IMPIGATO NATURAL JOIN PERSONA";
             //{1,2,3}
-            if (nome!=null && cognome!=null && datanascita!=null) {
+            if (nome != null && cognome != null && datanascita != null) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(datanascita);
-                selectSql +=" WHERE " + "NOME" + "=" + nome + " AND "+ "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + "NOME" + "=" + nome + " AND " + "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{1,2}
-            else if (nome!=null && cognome!=null && datanascita=null) {
+            else if (nome != null && cognome != null && datanascita = null) {
 
-                selectSql +=" WHERE " + "NOME" + "=" + nome + " AND "+ "COGNOME" + "=" + cognome + ";";
+                selectSql += " WHERE " + "NOME" + "=" + nome + " AND " + "COGNOME" + "=" + cognome + ";";
             }
             //{1,3}
-            else if (nome!=null && cognome=null && datanascita!=null) {
+            else if (nome != null && cognome = null && datanascita != null) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(datanascita);
-                selectSql +=" WHERE " + "NOME" + "=" + nome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + "NOME" + "=" + nome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{2,3}
-            else if (nome=null && cognome!=null && datanascita!=null) {
+            else if (nome = null && cognome != null && datanascita != null) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(datanascita);
-                selectSql +=" WHERE "+ "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{1}
-            else if (nome!=null && cognome=null && datanascita=null) {
+            else if (nome != null && cognome = null && datanascita = null) {
 
-                selectSql +=" WHERE " + "NOME" + "=" + nome +" ;";
+                selectSql += " WHERE " + "NOME" + "=" + nome + " ;";
             }
             //{2}
-            else if (nome=null && cognome!=null && datanascita=null) {
+            else if (nome = null && cognome != null && datanascita = null) {
 
-                selectSql +=" WHERE " + "COGNOME" + "=" + cognome + ";";
+                selectSql += " WHERE " + "COGNOME" + "=" + cognome + ";";
             }
             //{3}
-            else if (nome!=null && cognome!=null && datanascita!=null) {
+            else if (nome != null && cognome != null && datanascita != null) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(datanascita);
-                selectSql +=" WHERE " + "NOME" + "=" + nome + " AND "+ "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + "NOME" + "=" + nome + " AND " + "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
+
+        } catch (SQLException e) {
+        }
 
     }
 

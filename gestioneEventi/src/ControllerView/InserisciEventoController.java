@@ -52,9 +52,7 @@ public class InserisciEventoController {
 
     }
 
-
     /**GETTER per i campi da Inserire nell'evento*/
-
 
     public TextField getPrezzoBigliettoTextField() {
         return prezzoBigliettoTextField;
@@ -83,9 +81,6 @@ public class InserisciEventoController {
     public void setTipologiaEvento(TipologiaEnum tipologiaEvento) {
         this.tipologiaEvento = tipologiaEvento;
     }
-
-
-
 
     /**
      *  Metodi eventi ControllerView
