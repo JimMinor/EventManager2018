@@ -51,6 +51,7 @@ public class MenuPrincipaleStage implements Initializable, ControlledStage {
 
     public void statisticaButtonPressed() { cambiaForm.mostraStaticheMenu(); }
 
+
     public void logoutHyperlinkPressed() {
 
 

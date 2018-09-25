@@ -9,7 +9,7 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 
 public class GestoreQueryCerca {//query generica per cercare tutti gli elementi appena apre la schermata
-
+/*
     public ResultSet cercaCliente(String username){
         try {
             Connection connection = UtilityDB.getConnessioneDB();
@@ -194,6 +194,6 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         }
     }
 
-
+*/
 }
 

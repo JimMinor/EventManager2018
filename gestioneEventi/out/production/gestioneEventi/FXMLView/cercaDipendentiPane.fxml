@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="cercaDipendentiScreenAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scaffale.cercaDipendentiPaneController">
+<AnchorPane fx:id="cercaDipendentiScreenAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <JFXButton fx:id="cercaCercaDipendenteButton" layoutX="727.0" layoutY="84.0" mnemonicParsing="false" onAction="#cercaCercaDipendenteButton" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
         <JFXTextField fx:id="nomeCercaDipendenteTextField" layoutX="49.0" layoutY="30.0" promptText="Nome">
@@ -32,6 +32,7 @@
               </columns>
           </TableView>
           <JFXButton fx:id="modificaDipendenteButton" layoutX="23.0" layoutY="334.0" mnemonicParsing="false" onAction="#modificaDipendenteButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Modifica" textFill="WHITE" />
+      <JFXButton fx:id="nuovoDipendenteButton" layoutX="376.0" layoutY="334.0" mnemonicParsing="false" onAction="#nuovoDipendenteButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Nuovo" textFill="WHITE" />
           <JFXButton fx:id="eliminaDipendentiButton" layoutX="744.0" layoutY="334.0" mnemonicParsing="false" onAction="#eliminaDipendentiButton" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Elimina" textFill="WHITE" />
     </children>
 </AnchorPane>
