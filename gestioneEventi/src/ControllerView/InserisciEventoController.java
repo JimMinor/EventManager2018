@@ -4,7 +4,6 @@ import Controller.*;
 import DB.EventoDAO;
 import DB.EventoDAOImp;
 import Model.Evento;
-import Model.GenereManifestazioneEnum;
 import Model.LuogoEnum;
 import Model.TipologiaEnum;
 import javafx.collections.FXCollections;
@@ -12,7 +11,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -29,7 +27,7 @@ public class InserisciEventoController {
     @FXML private TextField prezzoBigliettoTextField;
     @FXML private TextField partecipanteEventoTextField;
     @FXML private ComboBox<String> genereEventoComboBox;
-    @FXML private ComboBox<TipologiaEnum> tipologiaEnumComboBox;
+    @FXML private ComboBox<TipologiaEnum> tipologiaEventoComboBox;
     // Utilies Fields---------------------------------
     private TipologiaEnum tipologiaEvento;
     private ObservableList<LuogoEnum> listaLuoghiEvento;
@@ -45,7 +43,7 @@ public class InserisciEventoController {
 
     public void initialize() {
         luogoEventoComboBox.setItems(FXCollections.observableArrayList(LuogoEnum.values()));
-        tipologiaEnumComboBox.setItems(FXCollections.observableArrayList(TipologiaEnum.values()));
+        tipologiaEventoComboBox.setItems(FXCollections.observableArrayList(TipologiaEnum.values()));
     }
 
     public InserisciEventoController(CambiaView cambiaView) {
@@ -121,7 +119,7 @@ public class InserisciEventoController {
 
     @FXML public void selezioneTipologia()
     {
-        genereEventoComboBox.setItems(FXCollections.observableArrayList(tipologiaEnumComboBox.getValue().getListaGeneri()));
+        genereEventoComboBox.setItems(FXCollections.observableArrayList(tipologiaEventoComboBox.getValue().getListaGeneri()));
     }
 
     @FXML public void aggiungiButtonPressed(){
@@ -154,7 +152,7 @@ public class InserisciEventoController {
             throw new NoValidEventDataException("Prezzo biglietto non valido");
 
         // Controllo che TipologiaEvento e LuogoEvento non siano vuoti(non selezionati)
-        TipologiaEnum tipologiaEvento = tipologiaEnumComboBox.getValue();
+        TipologiaEnum tipologiaEvento = tipologiaEventoComboBox.getValue();
         if (tipologiaEvento == null || tipologiaEvento.equals("")) throw new NoValidEventDataException("Inserire tipologia di evento");
 
        LuogoEnum  luogoEvento = luogoEventoComboBox.getValue();
