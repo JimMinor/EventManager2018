@@ -9,8 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class VisualizzaClientiControllerView {
-   @FXML public TextField usernameClienteTextField;
-   @FXML public TextField nomeClienteTextField;
+    public TextField usernameClienteTextField;
+    public TextField nomeClienteTextField;
     public TextField cognomeClienteTextField;
     public TextField codFiscaleClienteTextField;
     public TextField indirizzoClienteTextField;

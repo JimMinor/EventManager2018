@@ -2,7 +2,6 @@ package View;
 
 import Controller.CambiaStage;
 import Controller.ControlledStage;
-import Controller.FormController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
