@@ -23,9 +23,9 @@
             <JFXButton fx:id="eliminaEventoButton" layoutX="738.0" layoutY="326.0" mnemonicParsing="false" onAction="#eliminaEventoButtonPressed" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Elimina" textFill="WHITE" />
             <TableView fx:id="tabellaCercaEventoTableView" editable="true" layoutX="29.0" layoutY="116.0" prefHeight="200.0" prefWidth="802.0">
                 <columns>
-                    <TableColumn prefWidth="226.0" text="Nome Evento" />
-                    <TableColumn prefWidth="233.0" text="Luogo" />
-                    <TableColumn prefWidth="221.0" text="Data " />
+                    <TableColumn fx:id="colonnaNomeEvento" prefWidth="226.0" text="Nome Evento" />
+                    <TableColumn fx:id="colonnaLuogoEvento" prefWidth="233.0" text="Luogo" />
+                    <TableColumn fx:id="colonnaDataEvento" prefWidth="221.0" text="Data " />
                     <TableColumn minWidth="0.0" prefWidth="121.0" text="seleziona" />
                 </columns>
             </TableView>
