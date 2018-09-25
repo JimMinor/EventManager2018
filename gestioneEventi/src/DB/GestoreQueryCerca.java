@@ -13,16 +13,19 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
     public ResultSet cerca(String tabella,String colonnaTW1 ,String colonnaTW2 , String colonnaTW3, String attributo1 ,String attributo2 , Date attributo3 ) throws SQLException{
 
-        // Connect to database
-        //non ho capito com si fa xD
 
         try {
             Connection connection = UtilityDB.getConnessioneDB();
             // Create tutti i risultati in una tabella
             String selectSql="";
-
-            //(1)
-            if (attributo1!=null && attributo2==null && attributo3==null) {
+            //{0}
+            if (attributo1==null && attributo2==null && attributo3==null) {
+                selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
+                        " FROM " + tabella +
+                        " WHERE " + colonnaTW1 + "=" + attributo1 + ";";
+            }
+            //{1}
+            else if (attributo1!=null && attributo2==null && attributo3==null) {
                 selectSql = "SELECT " + colonnaTW1 + "," + colonnaTW2 + "," + colonnaTW3 +
                         " FROM " + tabella +
                         " WHERE " + colonnaTW1 + "=" + attributo1 + ";";

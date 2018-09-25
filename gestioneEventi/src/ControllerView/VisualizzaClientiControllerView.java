@@ -19,8 +19,7 @@ public class VisualizzaClientiControllerView {
     private TextField cognomeClienteTextField;
    @FXML
    private TextField codFiscaleClienteTextField;
-
-    @FXML
+   @FXML
    private TextField indirizzoClienteTextField;
    @FXML
    private TextField emailClienteTextField;
