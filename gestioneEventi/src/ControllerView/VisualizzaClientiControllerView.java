@@ -12,8 +12,11 @@ import javafx.scene.layout.AnchorPane;
 public class VisualizzaClientiControllerView {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c6d38f69abc6b0b77205b1836aaeea18aa959245
 =======
 >>>>>>> c6d38f69abc6b0b77205b1836aaeea18aa959245
    @FXML
@@ -91,6 +94,7 @@ public class VisualizzaClientiControllerView {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @FXML
    private TextField indirizzoClienteTextField;
    @FXML
@@ -108,6 +112,8 @@ public class VisualizzaClientiControllerView {
    @FXML
    private JFXTextField spesaTotaleTextField;
 
+=======
+>>>>>>> c6d38f69abc6b0b77205b1836aaeea18aa959245
 
 =======
 >>>>>>> c6d38f69abc6b0b77205b1836aaeea18aa959245
