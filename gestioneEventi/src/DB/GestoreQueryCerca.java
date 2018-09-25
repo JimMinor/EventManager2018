@@ -4,7 +4,6 @@ package DB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
-
 import java.sql.*;
 import java.text.Format;
 import java.text.SimpleDateFormat;

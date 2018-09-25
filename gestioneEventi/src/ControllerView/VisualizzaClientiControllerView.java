@@ -10,20 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class VisualizzaClientiControllerView {
-<<<<<<< HEAD
-    public TextField usernameClienteTextField;
-    public TextField nomeClienteTextField;
-    public TextField cognomeClienteTextField;
-    public TextField codFiscaleClienteTextField;
-    public TextField indirizzoClienteTextField;
-    public TextField emailClienteTextField;
-    public RadioButton sessoFClienteRadioButton;
-    public RadioButton sessoMClienteRadioButton;
-    public Button fineClientiButton;
-    public AnchorPane visualizzaClientiForm;
-    public JFXTextField bigliettiAcquistatiTextField;
-    public JFXTextField spesaTotaleTextField;
-=======
+
    @FXML
     private TextField usernameClienteTextField;
   @FXML
@@ -32,6 +19,24 @@ public class VisualizzaClientiControllerView {
     private TextField cognomeClienteTextField;
    @FXML
    private TextField codFiscaleClienteTextField;
+
+    @FXML
+   private TextField indirizzoClienteTextField;
+   @FXML
+   private TextField emailClienteTextField;
+   @FXML
+   private RadioButton sessoFClienteRadioButton;
+   @FXML
+   private RadioButton sessoMClienteRadioButton;
+   @FXML
+   private Button fineClientiButton;
+   @FXML
+   private AnchorPane visualizzaClientiForm;
+   @FXML
+   private JFXTextField bigliettiAcquistatiTextField;
+   @FXML
+   private JFXTextField spesaTotaleTextField;
+
 
     public TextField getUsernameClienteTextField() {
         return usernameClienteTextField;
@@ -80,24 +85,6 @@ public class VisualizzaClientiControllerView {
     public JFXTextField getSpesaTotaleTextField() {
         return spesaTotaleTextField;
     }
-
-    @FXML
-   private TextField indirizzoClienteTextField;
-   @FXML
-   private TextField emailClienteTextField;
-   @FXML
-   private RadioButton sessoFClienteRadioButton;
-   @FXML
-   private RadioButton sessoMClienteRadioButton;
-   @FXML
-   private Button fineClientiButton;
-   @FXML
-   private AnchorPane visualizzaClientiForm;
-   @FXML
-   private JFXTextField bigliettiAcquistatiTextField;
-   @FXML
-   private JFXTextField spesaTotaleTextField;
->>>>>>> 3bfba6ab623b3c912a45863a57135903ee83e7f4
 
 
     public void sessoFClienteRadioButtonPressed(ActionEvent actionEvent) {
