@@ -8,15 +8,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerView.InserisciEventoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXTextField fx:id="nomeEventoTextFiled" focusColor="#3eb3da" layoutX="21.0" layoutY="22.0" promptText="Nome Evento" />
-      <JFXComboBox fx:id="luogoEventoComboBox" focusColor="#3eb3da" layoutX="21.0" layoutY="79.0" prefHeight="25.0" prefWidth="135.0" promptText="Luogo Evento" />
-      <JFXDatePicker fx:id="dataEventoDatePicker" defaultColor="#3eb3da" layoutX="21.0" layoutY="131.0" promptText="Data Evento" />
-      <JFXComboBox fx:id="tipologiaEventoComboBox" focusColor="#3eb3da" layoutX="21.0" layoutY="196.0" prefHeight="25.0" prefWidth="153.0" promptText="Tipologia Evento" />
-      <JFXTextArea focusColor="#3eb3da" layoutX="21.0" layoutY="236.0" prefHeight="120.0" prefWidth="232.0" promptText="Descrizione Evento" />
-      <AnchorPane layoutX="291.0" layoutY="14.0" prefHeight="152.0" prefWidth="301.0" />
-      <JFXButton layoutX="335.0" layoutY="331.0" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Annulla" />
-      <JFXButton fx:id="inserisciEv" layoutX="453.0" layoutY="331.0" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Inserisci" />
+      <JFXTextField fx:id="nomeEventoTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="30.0" promptText="Nome Evento" />
+      <JFXComboBox fx:id="luogoEventoComboBox" focusColor="#3eb3da" layoutX="42.0" layoutY="87.0" prefHeight="25.0" prefWidth="135.0" promptText="Luogo Evento" />
+      <JFXDatePicker fx:id="dataEventoDatePicker" defaultColor="#3eb3da" layoutX="42.0" layoutY="139.0" promptText="Data Evento" />
+      <JFXButton layoutX="389.0" layoutY="349.0" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Indietro" textFill="WHITE" />
+      <JFXButton fx:id="inserisciButton" layoutX="572.0" layoutY="349.0" onAction="#inserisciEventoButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Inserisci" textFill="WHITE" />
+      <JFXTextField fx:id="prezzoBigliettoTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="193.0" promptText="Prezzo Biglietto €" />
+      <JFXComboBox fx:id="tipologiaEventoComboBox" focusColor="#3eb3da" layoutX="42.0" layoutY="261.0" prefHeight="25.0" prefWidth="135.0" promptText="Tipologia Evento" />
+      <JFXComboBox fx:id="genereEventoComboBox" focusColor="#3eb3da" layoutX="42.0" layoutY="324.0" prefHeight="25.0" prefWidth="135.0" promptText="Genere Evento" />
+      <JFXTextArea fx:id="descrizioneEventoTextArea" focusColor="#3eb3da" layoutX="354.0" layoutY="151.0" prefHeight="135.0" prefWidth="356.0" promptText="Descrizione Evento" />
+      <JFXTextField fx:id="partecipanteEventoTextField" layoutX="355.0" layoutY="30.0" prefHeight="25.0" prefWidth="203.0" promptText="Artisti/Team/Sportivi/Partecipanti" />
+      <JFXButton fx:id="aggiungiButton" layoutX="578.0" layoutY="30.0" onAction="#aggiungiButtonPressed" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #3eb3da;" text="Aggiungi" textFill="WHITE" />
+
    </children>
 </AnchorPane>

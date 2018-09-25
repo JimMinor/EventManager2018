@@ -124,7 +124,6 @@ public class CambiaView {
         }
     }
 
-
     public void mostraStaticheMenu() {
     }
 
