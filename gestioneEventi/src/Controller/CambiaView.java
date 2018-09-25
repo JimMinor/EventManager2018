@@ -26,6 +26,10 @@ public class CambiaView {
     private void caricaRisorseForm() {
         risorseForm.put("creaEvento","../FXMLView/inserisciEventoPane.fxml");
         risorseForm.put("tipoEvento","../FXMLView/tipoEventoPane.fxml");
+        risorseForm.put("gestioneClienti", "../FXMLView/cercaClientPane.fxml");
+        risorseForm.put("gestioneDipedenti", "../FXMLView/cercaDipendentiPane.fxml");
+        risorseForm.put("cercaEvento", "../FXMLView/cercaEventoPane.fxml");
+        risorseForm.put("visualizzaDatiClienti", "../FXMLView/visualizzaClientiPane.fxml");
     }
 
     private FXMLLoader caricaFormDaRisorsa(String risorsa) {
@@ -47,8 +51,10 @@ public class CambiaView {
 
 
     public void mostraFormInserisciEvento(){
-        FXMLLoader loader = caricaFormDaRisorsa("creaEvento");
+
         try {
+
+            FXMLLoader loader = caricaFormDaRisorsa("creaEvento");
             InserisciEventoController ief=new InserisciEventoController(this);
             loader.setController(ief);
             Node form = loader.load();
@@ -67,16 +73,43 @@ public class CambiaView {
     }
 
     public void mostraFormCercaEvento() {
-        caricaFormDaRisorsa("cercaEvento");
+        try {
+            FXMLLoader loader = caricaFormDaRisorsa("cercaEvento");
+            Node form = loader.load();
+            formCorrente.getChildren().add(form);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
     }
 
     public void mostraFormGestioneClienti() {
-        caricaFormDaRisorsa("gestioneClienti");
+        try {
+            FXMLLoader loader = caricaFormDaRisorsa("gestioneClienti");
+            Node form = loader.load();
+            formCorrente.getChildren().add(form);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+
     }
 
     public void mostraFormGestioneDipendeti() {
-        caricaFormDaRisorsa("gestioneDipedenti");
+        try {
+            FXMLLoader loader = caricaFormDaRisorsa("gestioneDipedenti");
+            Node form = loader.load();
+            formCorrente.getChildren().add(form);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
     }
+
 
     public void mostraStaticheMenu() {
     }

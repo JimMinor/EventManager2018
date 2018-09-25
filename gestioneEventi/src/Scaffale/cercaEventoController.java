@@ -1,5 +1,6 @@
 package Scaffale;
 
+import Controller.CambiaView;
 import Model.LuogoEnum;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
@@ -29,7 +30,7 @@ public class cercaEventoController {
     }
 
     public void modificaEventoButtonPressed(ActionEvent actionEvent) {
-        new ModificaPane().mostraPaneEvento(cercaEventoPaneScreen, "inserisciEventoPane.fxml");
+
 
 
 

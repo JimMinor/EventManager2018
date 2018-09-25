@@ -20,6 +20,6 @@ public class cercaClientiPaneControll implements ControlledStage, Initializable 
     @Override public void setCambiaStage(CambiaStage cambiaStage){}
 
     public void visualizzaDatiClientiButton(){
-        new cambiaPane().mostraPane(cercaClientiPaneScreen,"visuaizzaClientiScreen.fxml");
+     //   new cambiaPane().mostraPane(cercaClientiPaneScreen);
     }
 }
