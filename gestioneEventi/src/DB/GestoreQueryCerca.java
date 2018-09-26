@@ -14,18 +14,22 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         try {
             Connection connection = UtilityDB.getConnessioneDB();
             // Create tutti i risultati in una tabella
-            String selectSql="";
+            String selectSql =String.format("SELECT USERNAME, NOME, COGNOME FROM CLIENTE NATURAL JOIN PERSONA ") ;
             //{0}
-            if (username.equals("")) {
-                selectSql = "SELECT USERNAME, NOME, COGNOME FROM CLIENTE NATURAL JOIN PERSONA ;";
+            if (!username.equals("")) {
+                selectSql += "WHERE CLIENTE.USERNAME ='"+username+"'";
             }
             //{1}
-            else  selectSql = "SELECT USERNAME, NOME, COGNOME FROM CLIENTE NATURAL JOIN PERSONA WHERE USERNAME="+ username+";";
+
             try (Statement statement = connection.createStatement();
                  ResultSet rS = statement.executeQuery(selectSql)) {
-
+                System.out.println(rS.isBeforeFirst());
+                while(rS.next()){
+                    System.out.println(rS.getString(1));
+                }
                 connection.close();
                 return rS;
+
             }
 
         } catch (SQLException e) {
@@ -44,40 +48,40 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             if (!nome.equals("") && !cognome.equals("") && !datanascita.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(datanascita);
-                selectSql += " WHERE " + "NOME" + "=" + nome + " AND " + "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + "NOME" + "='" + nome+"'" + " AND " + "COGNOME" + "='" + cognome+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
 
                 //{1,2}
 
             }else if (!nome.equals("") && !cognome.equals("") && datanascita.equals(null)) {
-                selectSql +=" WHERE " + "NOME" + "=" + nome + " AND "+ "COGNOME" + "=" + cognome + ";";
+                selectSql +=" WHERE " + "NOME" + "='" + nome+"'" + " AND "+ "COGNOME" + "='" + cognome+"'" + ";";
             }
             //{1,3}
             else if (!nome.equals("") && cognome.equals("") && !datanascita.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(datanascita);
-                selectSql += " WHERE " + "NOME" + "=" + nome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + "NOME" + "='" + nome+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{2,3}
             else if (nome.equals("") && !cognome.equals("") && !datanascita.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(datanascita);
-                selectSql += " WHERE " + "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + "COGNOME" + "='" + cognome+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{1}
             else if (!nome.equals("") && cognome.equals("") && datanascita.equals(null)) {
 
-                selectSql += " WHERE " + "NOME" + "=" + nome + " ;";
+                selectSql += " WHERE " + "NOME" + "='" + nome+"'";
             }
             //{2}
             else if (nome.equals("") && !cognome.equals("") && datanascita.equals(null)) {
 
-                selectSql += " WHERE " + "COGNOME" + "=" + cognome + ";";
+                selectSql += " WHERE " + "COGNOME" + "='" + cognome+"'" ;
             }
             //{3}
             else if (nome.equals("") && cognome.equals("") && !datanascita.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(datanascita);
-                selectSql += " WHERE " + "NOME" + "=" + nome + " AND " + "COGNOME" + "=" + cognome + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + " DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             try (Statement statement = connection.createStatement();
                  ResultSet rS = statement.executeQuery(selectSql)) {
@@ -103,24 +107,24 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             if (!nomeevento.equals("") && !luogo.equals("") && !dataevento.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(dataevento);
-                selectSql += " WHERE " + "NOME" + "=" + nomeevento + " AND " + "LUOGO" + "=" + luogo + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql += " WHERE " + "NOME" + "='" + nomeevento+"'" + " AND " + "LUOGO" + "='" + luogo+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy')";
 
                 //{1,2}
 
             }else if (!nomeevento.equals("") && !luogo.equals("") && dataevento.equals(null)) {
-                selectSql +=" WHERE " + "NOME" + "=" + nomeevento + " AND "+ "LUOGO" + "=" + luogo + ";";
+                selectSql +=" WHERE " + "NOME" + "='" + nomeevento+"'" + " AND "+ "LUOGO" + "='" + luogo + "'";
             }
             //{1,3}
             else if (!nomeevento.equals("") && luogo.equals("") && !dataevento.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(dataevento);
-                selectSql +=" WHERE " + "NOME" + "=" + nomeevento + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql +=" WHERE " + "NOME" + "='" + nomeevento +"'"+ " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{2,3}
             else if (nomeevento.equals("") && !luogo.equals("") && !dataevento.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
                 String dataRicerca = formatter.format(dataevento);
-                selectSql +=" WHERE "+ "LUOGO" + "=" + luogo + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                selectSql +=" WHERE "+ "LUOGO" + "='" + luogo+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{1}
             else if (!nomeevento.equals("") && luogo.equals("") && dataevento.equals(null)) {
