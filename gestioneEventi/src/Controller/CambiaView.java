@@ -2,6 +2,7 @@ package Controller;
 
 import ControllerView.*;
 import Model.TipologiaEnum;
+import Model.VisualizzaEventiModel;
 import Scaffale.cercaDipendentiPaneController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -77,6 +78,7 @@ public class CambiaView {
     public void mostraFormCercaEvento() {
         try {
             FXMLLoader loader = caricaFormDaRisorsa("cercaEvento");
+            loader.setController(new CercaEventoControllerView(this, new VisualizzaEventiModel()));
             Node form = loader.load();
             formCorrente.getChildren().add(form);
         } catch (Exception e) {

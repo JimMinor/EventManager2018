@@ -32,4 +32,5 @@ public class EventoDAOImp implements EventoDAO {
        }
        return false;
     }
+    public boolean eliminaEvento() throws SQLException{return false;}
 }
