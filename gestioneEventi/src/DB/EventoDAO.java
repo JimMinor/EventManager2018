@@ -9,6 +9,5 @@ public interface EventoDAO {
 
     public void inserisciEvento() throws Exception;
     public Collection<Evento> cercaEvento() throws Exception;
-
-
+    public boolean eliminaEvento() throws Exception;
 }

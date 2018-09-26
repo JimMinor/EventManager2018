@@ -1,10 +1,9 @@
-package View;
+package ControllerView;
 
 import Controller.CambiaStage;
 import Controller.CambiaView;
 import Controller.ControlledStage;
-import DB.GestoreQueryCerca;
-import Model.Clienti;
+import Model.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,30 +19,17 @@ import java.util.ResourceBundle;
 
 public class CercaClientiControllerView implements ControlledStage, Initializable {
 
-    @FXML
-    private Button visualizzaDatiClientiButton;
-    @FXML
-    private TableView<Clienti> tabellaCercaClientiTableView;
-    @FXML
-    private TableColumn<Clienti , String> username;
-   @FXML
-    private TableColumn<Clienti , String> nome;
-   @FXML
-   private TableColumn<Clienti , String> cognome;
-    @FXML
-    private Button eliminaClientiButton;
-    @FXML
-    private Button annullaCercaClientiButton;
-    @FXML
-    private Button cercaClienteButton;
-    @FXML
-    private TextField usernameCercaClientiTextField;
-    @FXML
-    private AnchorPane cercaClientiPaneScreen;
+    @FXML private Button visualizzaDatiClientiButton;
+    @FXML private TableView<Cliente> tabellaCercaClientiTableView;
+    @FXML private TableColumn<Cliente, String> username;
+    @FXML private TableColumn<Cliente, String> nome;
+    @FXML private TableColumn<Cliente, String> cognome;
+    @FXML private Button eliminaClientiButton;
+    @FXML private Button annullaCercaClientiButton;
+    @FXML private Button cercaClienteButton;
+    @FXML private TextField usernameCercaClientiTextField;
+    @FXML private AnchorPane cercaClientiPaneScreen;
     private CambiaView cambiaForm;
-
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -62,6 +48,7 @@ public class CercaClientiControllerView implements ControlledStage, Initializabl
         cambiaForm.visualizzaPaneClienti();
 
     }
+
     public void annullaCercaClientiButtonPressed(){
         usernameCercaClientiTextField.clear();
         

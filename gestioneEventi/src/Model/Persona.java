@@ -14,4 +14,36 @@ public abstract class Persona {
         this.cognome = cognome;
         this.CF = CF;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public LocaleData getDataNascita() {
+        return dataNascita;
+    }
+
+    public void setDataNascita(LocaleData dataNascita) {
+        this.dataNascita = dataNascita;
+    }
+
+    public String getCF() {
+        return CF;
+    }
+
+    public void setCF(String CF) {
+        this.CF = CF;
+    }
 }
