@@ -1,4 +1,4 @@
-package View;
+package ControllerView;
 
 import Controller.CambiaStage;
 import Controller.CambiaView;
