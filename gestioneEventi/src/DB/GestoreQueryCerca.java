@@ -1,20 +1,24 @@
 
 package DB;
 
+import Model.Cliente;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 import java.sql.*;
 import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class GestoreQueryCerca {//query generica per cercare tutti gli elementi appena apre la schermata
 
-    public ResultSet cercaCliente(String username){
+    public ArrayList<Cliente> cercaCliente(String username){
+        ArrayList<Cliente> clienti =new ArrayList<Cliente>();
+        Cliente row=null;
         try {
             Connection connection = UtilityDB.getConnessioneDB();
             // Create tutti i risultati in una tabella
-            String selectSql =String.format("SELECT USERNAME, NOME, COGNOME FROM CLIENTE NATURAL JOIN PERSONA ") ;
+            String selectSql =String.format("SELECT * FROM CLIENTE NATURAL JOIN PERSONA ") ;
             //{0}
             if (!username.equals("")) {
                 selectSql += "WHERE CLIENTE.USERNAME ='"+username+"'";
@@ -23,12 +27,18 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
             try (Statement statement = connection.createStatement();
                  ResultSet rS = statement.executeQuery(selectSql)) {
-                System.out.println(rS.isBeforeFirst());
-                while(rS.next()){
-                    System.out.println(rS.getString(1));
-                }
+
                 connection.close();
-                return rS;
+                while (rS.next()) {
+                 row.setUsername(rS.getString("USERNAME"));
+                 row.setNome(rS.getString("NOME"));
+                 row.setCognome(rS.getString("COGNOME"));
+                 row.setIndirizzo(rS.getString("INDIRIZZO"));
+                 row.setMail(rS.getString("EMAIL"));
+                 row.setCF(rS.getString("CODICE_FISCALE"));
+                 clienti.add(row);
+                }
+                return clienti;
 
             }
 
