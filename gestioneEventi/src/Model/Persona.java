@@ -2,16 +2,25 @@ package Model;
 
 import sun.util.resources.LocaleData;
 
+import java.time.LocalDate;
+
 public abstract class Persona {
 
     private String nome;
     private String cognome;
-    private LocaleData dataNascita;
+    private LocalDate dataNascita;
     private String CF;
 
     public Persona(String nome, String cognome, String CF) {
         this.nome = nome;
         this.cognome = cognome;
+        this.CF = CF;
+    }
+	
+	public Persona(String nome, String cognome, LocalDate dataNascita, String CF) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.dataNascita = dataNascita;
         this.CF = CF;
     }
 
@@ -31,11 +40,11 @@ public abstract class Persona {
         this.cognome = cognome;
     }
 
-    public LocaleData getDataNascita() {
+    public LocalDate getDataNascita() {
         return dataNascita;
     }
 
-    public void setDataNascita(LocaleData dataNascita) {
+    public void setDataNascita(LocalDate dataNascita) {
         this.dataNascita = dataNascita;
     }
 

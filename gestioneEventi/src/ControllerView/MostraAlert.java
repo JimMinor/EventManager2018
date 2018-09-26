@@ -36,4 +36,11 @@ public class MostraAlert {
         alert.setContentText("L'evento e' stato inserito con successo");
         alert.showAndWait();
     }
+
+    public static void mostraAlertImpiegatoInserito(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Successo");
+        alert.setContentText("L'impiegato e' stato inserito con successo");
+        alert.showAndWait();
+    }
 }
