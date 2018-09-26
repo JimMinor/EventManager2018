@@ -1,4 +1,4 @@
-package Scaffale;
+package ControllerView;
 
 import Controller.CambiaView;
 import ControllerView.MenuPrincipaleStage;

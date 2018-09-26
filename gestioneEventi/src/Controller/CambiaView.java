@@ -3,7 +3,7 @@ package Controller;
 import ControllerView.*;
 import Model.TipologiaEnum;
 import Model.VisualizzaEventiModel;
-import Scaffale.cercaDipendentiPaneController;
+import ControllerView.cercaDipendentiPaneController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
