@@ -12,12 +12,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class inserisciDipendentePaneController implements Initializable {
-    @FXML
-    public TextField stipendioDipendenteTextField;
+
     @FXML
     public TextField nomeDipendenteTextField;
     @FXML
     public TextField cognomeDipendenteTextField;
+    @FXML
+    public DatePicker dataNascitaDipendenteDatePicker;
     @FXML
     public TextField codFiscaleDipendenteTextField;
     @FXML
@@ -35,13 +36,13 @@ public class inserisciDipendentePaneController implements Initializable {
     @FXML
     public DatePicker dataContrattoDipendenteDatePicker;
     @FXML
+    public TextField stipendioDipendenteTextField;
+    @FXML
     public TextField telefonoDipendenteTextField;
     @FXML
     public TextField emailDipendenteTextField;
     @FXML
     public TextField ibanDipendenteTextField;
-    @FXML
-    public DatePicker dataNascitaDipendenteDatePicker;
     @FXML
     public Button annullaDipendenteButton;
     @FXML

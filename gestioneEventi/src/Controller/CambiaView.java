@@ -2,6 +2,7 @@ package Controller;
 
 import ControllerView.*;
 import Model.TipologiaEnum;
+import Scaffale.cercaDipendentiPaneController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
@@ -30,6 +31,7 @@ public class CambiaView {
         risorseForm.put("gestioneDipedenti", "../FXMLView/cercaDipendentiPane.fxml");
         risorseForm.put("cercaEvento", "../FXMLView/cercaEventoPane.fxml");
         risorseForm.put("visualizzaDatiClienti", "../FXMLView/visualizzaClientiPane.fxml");
+        risorseForm.put("nuovoDipendente", "../FXMLView/inserisciDipendentePane.fxml");
     }
 
     private FXMLLoader caricaFormDaRisorsa(String risorsa) {
@@ -99,15 +101,27 @@ public class CambiaView {
     }
 
     public void mostraFormGestioneDipendeti() {
+            try {
+                FXMLLoader loader = caricaFormDaRisorsa("gestioneDipedenti");
+                cercaDipendentiPaneController dipendentiController = new cercaDipendentiPaneController(this);
+                loader.setController(dipendentiController);
+                Node form = loader.load();
+                formCorrente.getChildren().add(form);
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+    }
+
+    public void mostraFormNuovoDipendente() {
         try {
-            FXMLLoader loader = caricaFormDaRisorsa("gestioneDipedenti");
+            FXMLLoader loader = caricaFormDaRisorsa("nuovoDipendente");
             Node form = loader.load();
             formCorrente.getChildren().add(form);
         } catch (Exception e) {
             e.printStackTrace();
 
         }
-
     }
 
     public void mostraStaticheMenu() {

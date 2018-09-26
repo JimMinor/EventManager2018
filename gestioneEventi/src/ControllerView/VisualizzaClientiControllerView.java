@@ -11,30 +11,19 @@ import javafx.scene.layout.AnchorPane;
 
 public class VisualizzaClientiControllerView {
 
-   @FXML
-    private TextField usernameClienteTextField;
-  @FXML
-   private TextField nomeClienteTextField;
-   @FXML
-    private TextField cognomeClienteTextField;
-   @FXML
-   private TextField codFiscaleClienteTextField;
-   @FXML
-   private TextField indirizzoClienteTextField;
-   @FXML
-   private TextField emailClienteTextField;
-   @FXML
-   private RadioButton sessoFClienteRadioButton;
-   @FXML
-   private RadioButton sessoMClienteRadioButton;
-   @FXML
-   private Button fineClientiButton;
-   @FXML
-   private AnchorPane visualizzaClientiForm;
-   @FXML
-   private JFXTextField bigliettiAcquistatiTextField;
-   @FXML
-   private JFXTextField spesaTotaleTextField;
+
+   @FXML private TextField usernameClienteTextField;
+   @FXML private TextField nomeClienteTextField;
+   @FXML private TextField cognomeClienteTextField;
+   @FXML private TextField codFiscaleClienteTextField;
+   @FXML private TextField indirizzoClienteTextField;
+   @FXML private TextField emailClienteTextField;
+   @FXML private RadioButton sessoFClienteRadioButton;
+   @FXML private RadioButton sessoMClienteRadioButton;
+   @FXML private Button fineClientiButton;
+   @FXML private AnchorPane visualizzaClientiForm;
+   @FXML private JFXTextField bigliettiAcquistatiTextField;
+   @FXML private JFXTextField spesaTotaleTextField;
 
 
     public TextField getUsernameClienteTextField() {
@@ -84,6 +73,7 @@ public class VisualizzaClientiControllerView {
     public JFXTextField getSpesaTotaleTextField() {
         return spesaTotaleTextField;
     }
+
 
 
     public void sessoFClienteRadioButtonPressed(ActionEvent actionEvent) {

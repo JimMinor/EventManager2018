@@ -1,5 +1,8 @@
 package Scaffale;
 
+import Controller.CambiaView;
+import ControllerView.MenuPrincipaleStage;
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,23 +13,32 @@ import javafx.scene.layout.AnchorPane;
 
 public class cercaDipendentiPaneController {
     @FXML
-    public AnchorPane cercaDipendentiScreenAnchorPane;
-   @FXML
-    public Button modificaDipendenteButton;
-   @FXML
-   public Button eliminaDipendentiButton;
-   @FXML
-    public TableView tabellaCercaDipendenteTableView;
-   @FXML
-    public Button cercaCercaDipendenteButton;
-   @FXML
-    public TextField nomeCercaDipendenteTextField;
-   @FXML
-    public TextField cognomeCercaDipendenteTextField;
-   @FXML
-    public DatePicker dataNascitaCercaDipendenteDataPicker;
-   @FXML
-    public Button annullaCercaDipendenteButton;
+    private AnchorPane cercaDipendentiScreenAnchorPane;
+    @FXML
+    private Button modificaDipendenteButton;
+    @FXML
+    private Button eliminaDipendentiButton;
+    @FXML
+    private TableView tabellaCercaDipendenteTableView;
+    @FXML
+    private Button cercaCercaDipendenteButton;
+    @FXML
+    private TextField nomeCercaDipendenteTextField;
+    @FXML
+    private TextField cognomeCercaDipendenteTextField;
+    @FXML
+    private DatePicker dataNascitaCercaDipendenteDataPicker;
+    @FXML
+    private Button annullaCercaDipendenteButton;
+    @FXML
+    private Button nuovoDipendenteButton;
+
+    private CambiaView creaFormNuovoDipendente;
+
+
+    public cercaDipendentiPaneController(CambiaView cambiaView) {
+        this.creaFormNuovoDipendente = cambiaView;
+    }
 
     public void modificaDipendenteButtonPressed(ActionEvent actionEvent) {
         
@@ -42,5 +54,9 @@ public class cercaDipendentiPaneController {
         nomeCercaDipendenteTextField.clear();
         cognomeCercaDipendenteTextField.clear();
         dataNascitaCercaDipendenteDataPicker.setValue(null);
+    }
+
+    public void nuovoDipendenteButtonPressed(ActionEvent actionEvent) {
+        creaFormNuovoDipendente.mostraFormNuovoDipendente();
     }
 }

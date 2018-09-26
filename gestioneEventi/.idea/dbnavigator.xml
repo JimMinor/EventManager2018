@@ -23,12 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="94e91fb9-4cb5-49a9-bf27-8fb9a062ac5c">
-        <schema name="ADMIN" object-types="argument, cluster, dblink, dimension, function, materialized view, package, procedure, sequence, synonym, table, database trigger, type, view" />
-        <schema name="PUBLIC" object-types="procedure, synonym" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="eb2c8a0c-4419-40e2-8a75-a4d3b9fe0132">
@@ -45,6 +40,9 @@
     <connection id="eb2c8a0c-4419-40e2-8a75-a4d3b9fe0132" />
     <connection id="4d93879e-99b7-404d-8dc5-20b2d1f87ea6" />
     <connection id="94e91fb9-4cb5-49a9-bf27-8fb9a062ac5c" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-list connection-id="94e91fb9-4cb5-49a9-bf27-8fb9a062ac5c" dataset="ADMIN.ATLETA" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />

@@ -2,14 +2,17 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java" />
-    <bookmark url="file://$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java" line="16" />
+    <bookmark url="file://$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java" line="18" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="750a9f28-ca74-4457-adb2-b042a1d22234" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/VisualizzaEventoControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/CercaEventiModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Analisi_Requisiti_Dominio/gestioneEventi.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/../Analisi_Requisiti_Dominio/gestioneEventi.mdj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/ControllerView/VisualizzaClientiControllerView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/DB/GestoreQueryCerca.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/gestioneEventi/Scaffale/cercaEventoController.class" beforeDir="false" />
@@ -17,6 +20,12 @@
       <change beforePath="$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DB/GestoreQueryCerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/GestoreQueryCerca.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/Controller/CambiaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CambiaView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FormController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControllerView/CercaClientiControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerView/CercaClientiControllerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java" afterDir="false" />
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,20 +45,19 @@
       <file leaf-file-name="CambiaView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CambiaView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="846">
+              <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
               <folding>
                 <element signature="method#CambiaView#0;class#CambiaView#0" />
+                <element signature="method#mostraFormInserisciEvento#0;class#CambiaView#0" />
                 <element signature="method#mostraFormTipoEvento#0;class#CambiaView#0" />
-                <element signature="method#mostraFormCercaEvento#0;class#CambiaView#0" />
-                <element signature="method#mostraFormGestioneClienti#0;class#CambiaView#0" />
-                <element signature="method#mostraFormGestioneDipendeti#0;class#CambiaView#0" />
                 <element signature="method#visualizzaPaneClienti#0;class#CambiaView#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="InserisciEventoController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -104,10 +112,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
               <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+=======
+      <file leaf-file-name="CercaEventiModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/CercaEventiModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="73" lean-forward="true" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="VisualizzaClientiControllerView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -139,6 +158,25 @@
                 <element signature="e#2322#2323#0" expanded="true" />
                 <element signature="e#2365#2366#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="VisualizzaEventoControl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/VisualizzaEventoControl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Evento.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Evento.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1638">
+              <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
             </state>
           </provider>
         </entry>
@@ -187,6 +225,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/DB/UtilityDB.java" />
+        <option value="$PROJECT_DIR$/src/Model/GenereMusicaleEnum.java" />
+        <option value="$PROJECT_DIR$/src/DB/GestoreQueryEventoSpecifico.java" />
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
         <option value="$PROJECT_DIR$/src/DB/FactoryGestoreQueryEvento.java" />
         <option value="$PROJECT_DIR$/src/Controller/DatiEventoController.java" />
         <option value="$PROJECT_DIR$/src/Main/mainApp.java" />
@@ -228,16 +272,22 @@
         <option value="$PROJECT_DIR$/src/DB/EventoDAO.java" />
         <option value="$PROJECT_DIR$/src/DB/EventoDAOImp.java" />
         <option value="$PROJECT_DIR$/src/DB/GestoreQueryInserimentoEvento.java" />
+        <option value="$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java" />
         <option value="$PROJECT_DIR$/src/ControllerView/visualizzaClientiPaneController.java" />
         <option value="$PROJECT_DIR$/src/Controller/EventoController.java" />
+        <option value="$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java" />
+        <option value="$PROJECT_DIR$/src/Controller/CambiaView.java" />
         <option value="$PROJECT_DIR$/src/Model/CercaEventiModel.java" />
         <option value="$PROJECT_DIR$/src/Controller/VisualizzaEventoControl.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Controller/CambiaView.java" />
         <option value="$PROJECT_DIR$/src/FXMLView/inserisciEventoPane.fxml" />
         <option value="$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java" />
         <option value="$PROJECT_DIR$/src/DB/GestoreQueryCerca.java" />
         <option value="$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java" />
         <option value="$PROJECT_DIR$/src/ControllerView/CercaEventoControllerView.java" />
+=======
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
       </list>
     </option>
   </component>
@@ -253,8 +303,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,13 +322,7 @@
               <item name="gestioneEventi" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestioneEventi" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gestioneEventi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gestioneEventi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FXMLView" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gestioneEventi" type="b2602c69:ProjectViewProjectNode" />
@@ -289,7 +334,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,11 +350,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="pacchettoDB" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\Drivers" />
-      <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\src\Scaffale" />
-      <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\src\FXML" />
-      <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\src\pacchettoViste" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="View" />
+      <recent name="Model" />
+      <recent name="Controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\src\icons" />
@@ -319,10 +362,11 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="View" />
-      <recent name="Model" />
-      <recent name="Controller" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\Drivers" />
+      <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\src\Scaffale" />
+      <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\src\FXML" />
+      <recent name="C:\Users\giamo\Documents\GitHub\IngSW\gestioneEventi\src\pacchettoViste" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -344,47 +388,29 @@
       <option name="MAIN_CLASS_NAME" value="Main.mainApp" />
       <module name="gestioneEventi" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -452,32 +478,45 @@
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.1271777" />
       <window_info id="DB Browser" order="7" weight="0.1990916" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.8168054" weight="0.21087681" />
+=======
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
       <window_info anchor="right" id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.18319455" side_tool="true" weight="0.3292683" />
       <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.88947767" weight="0.5069686" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3240418" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="7" sideWeight="0.88947767" weight="0.3295711" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="0" />
       <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4991511" visible="true" weight="0.4678274" />
       <window_info anchor="bottom" id="Find" order="6" sideWeight="0.4988645" weight="0.32505643" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="0" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.4991511" weight="0.29598787" />
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="1" sideWeight="0.5008489" side_tool="true" weight="0.29144588" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info id="Favorites" order="1" sideWeight="0.5008489" side_tool="true" weight="0.29144588" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.329296" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.8168054" weight="0.085365854" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.4988645" weight="0.32578397" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -532,13 +571,25 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
       <option name="time" value="129" />
+=======
+      <option name="time" value="125" />
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Model/EventoMusicale.java" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa9908.2358/PriorityExecutor.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/EventoSportivo.java" />
+    <entry file="file://$PROJECT_DIR$/src/FXMLView/cercaEventoPane.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="133" selection-start-line="5" selection-start-column="133" selection-end-line="5" selection-end-column="133" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Scaffale/cercaClientiPaneControll.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -557,12 +608,12 @@
     <entry file="file://$PROJECT_DIR$/src/DB/GestoreQueryInserimentoEventoTeatrale.java" />
     <entry file="file://$PROJECT_DIR$/src/DB/GestoreQueryInserimentoEventoSportivo.java" />
     <entry file="file://$PROJECT_DIR$/src/FXMLView/eventoTeatralePane.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FXMLView/eventoMusicalePane.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_162/javafx-src.zip!/javafx/scene/control/ToggleButton.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -579,24 +630,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FXMLView/eventoManifestazionePane.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="12" column="116" selection-start-line="12" selection-start-column="116" selection-end-line="12" selection-end-column="116" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/EventoMusicaleForm.java" />
     <entry file="file://$PROJECT_DIR$/src/View/EventoTeatraleForm.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/EventoManifestazione.java" />
     <entry file="file://$PROJECT_DIR$/src/View/EventoManifestazioneForm.java" />
     <entry file="file://$PROJECT_DIR$/src/FXMLView/tipoEventoPane.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CambiaStage.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -642,6 +693,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DB/GestoreQueryEventoFactory.java" />
+    <entry file="file://$PROJECT_DIR$/src/ControllerView/CercaEventoControllerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ControllerView/SelezioneTipoEventoForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -656,64 +714,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ControllerView/MenuPrincipaleStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/TipologiaEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FXMLView/menuPrincipaleScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
           <caret line="27" column="172" selection-start-line="27" selection-start-column="172" selection-end-line="27" selection-end-column="172" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CreaEvento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB/EventoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControllerView/EventoManifestazioneForm.java" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/EventoController.java" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/ModificaPane.java" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java" />
-    <entry file="file://$PROJECT_DIR$/src/Model/Evento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1638">
-          <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/CercaEventiModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/VisualizzaEventoControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FXMLView/cercaEventoPane.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FXMLView/inserisciEventoPane.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        <state relative-caret-position="353">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/DB/GestoreQueryInserimentoEvento.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -733,6 +764,19 @@
             <element signature="method#mostraFormGestioneDipendeti#0;class#CambiaView#0" />
             <element signature="method#visualizzaPaneClienti#0;class#CambiaView#0" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/Controller/CreaEvento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB/EventoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
         </state>
       </provider>
     </entry>
@@ -743,16 +787,29 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/FXMLView/inserisciEventoPane.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="117" column="118" selection-start-line="117" selection-start-column="118" selection-end-line="117" selection-end-column="118" />
+          <folding>
+            <element signature="method#selezioneTipologia#0;class#InserisciEventoController#0" />
+            <element signature="method#aggiungiButtonPressed#0;class#InserisciEventoController#0" />
+            <element signature="method#pulisciForm#0;class#InserisciEventoController#0" />
+          </folding>
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java">
+    <entry file="file://$PROJECT_DIR$/src/DB/GestoreQueryCerca.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1422">
           <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
           <folding>
@@ -798,11 +855,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="37" selection-start-line="37" selection-end-line="37" />
+=======
+        <state relative-caret-position="72">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ControllerView/EventoManifestazioneForm.java" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/EventoController.java" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/ModificaPane.java" />
+    <entry file="file://$PROJECT_DIR$/src/DB/GestoreQueryInserimentoEvento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="131" column="120" selection-start-line="131" selection-start-column="120" selection-end-line="131" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/FormController.java" />
+    <entry file="file://$PROJECT_DIR$/src/ControllerView/VisualizzaClientiControllerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ControllerView/InserisciEventoController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="810">
           <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
           <folding>
@@ -817,10 +897,20 @@
             <element signature="method#aggiungiButtonPressed#0;class#InserisciEventoController#0" />
             <element signature="method#pulisciForm#0;class#InserisciEventoController#0" />
             <element signature="method#controllaDatiEvento#0;class#InserisciEventoController#0" />
+=======
+        <state relative-caret-position="846">
+          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+          <folding>
+            <element signature="method#CambiaView#0;class#CambiaView#0" />
+            <element signature="method#mostraFormInserisciEvento#0;class#CambiaView#0" />
+            <element signature="method#mostraFormTipoEvento#0;class#CambiaView#0" />
+            <element signature="method#visualizzaPaneClienti#0;class#CambiaView#0" />
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/DB/EventoDAOImp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -832,6 +922,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Model/Evento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1638">
+          <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/VisualizzaEventoControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CercaEventiModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="73" lean-forward="true" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 0952eeee6fb997def9b5c7bde83ff624e497c45c
         </state>
       </provider>
     </entry>
