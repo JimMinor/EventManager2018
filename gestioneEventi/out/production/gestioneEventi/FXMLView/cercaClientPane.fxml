@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="cercaClientiPaneScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.CercaClientiControllerView">
+<AnchorPane fx:id="cercaClientiPaneScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerView.CercaClientiControllerView">
     <children>
           <JFXButton fx:id="cercaClienteButton" layoutX="704.0" layoutY="23.0" mnemonicParsing="false" onAction="#cercaClienteButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
           <JFXTextField fx:id="usernameCercaClientiTextField" layoutX="291.0" layoutY="23.0" prefHeight="26.0" prefWidth="272.0" promptText="Username">
