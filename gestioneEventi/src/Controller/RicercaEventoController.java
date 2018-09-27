@@ -35,9 +35,9 @@ public class RicercaEventoController {
         return false;
     }
 
-    public void cercaEventi(){
+    public void cercaEventi(String nomeEvento,LocalDate dataEvento, LuogoEnum luogoEvento){
         EventoDAO eventoDAO = new EventoDAOImp();
-        visualizzaEventiModel.setListaEventiView(((EventoDAOImp) eventoDAO).cercaEvento());
+        visualizzaEventiModel.setListaEventiView(((EventoDAOImp) eventoDAO).cercaEvento(nomeEvento,dataEvento,luogoEvento));
     }
 
 

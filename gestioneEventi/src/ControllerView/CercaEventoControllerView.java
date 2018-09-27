@@ -52,7 +52,12 @@ public class CercaEventoControllerView implements Observer {
 
     /** Metodi FXML per gli eventi */
     @FXML public void cercaEventoButtonPressed(){
-        ricercaEventoController.cercaEventi();
+
+        String nomeEvento = nomeCercaEventoTextField.getText();
+        LuogoEnum luogoEnum = luogoEventoComboBox.getValue();
+        LocalDate dataEvento = dataCercaEventoDataPicker.getValue();
+
+        ricercaEventoController.cercaEventi(nomeEvento,dataEvento,luogoEnum);
     }
 
     @FXML public void eliminaEventoButtonPressed(){

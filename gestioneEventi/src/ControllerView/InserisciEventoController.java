@@ -107,7 +107,7 @@ public class InserisciEventoController {
         EventoDAO eventoDAO = new EventoDAOImp();
         LocalDate data  = dataEventoDatePicker.getValue();
         LuogoEnum luogo = luogoEventoComboBox.getValue();
-        if(((EventoDAOImp) eventoDAO).cercaEvento(data,luogo))
+        if(((EventoDAOImp) eventoDAO).cercaEvento("",data,luogo)!=null)
             throw  new NoValidEventDataException("Luogo occupato nella data selezionata, scegliere altra data o luogo ");
 
     }

@@ -9,28 +9,26 @@ import java.util.List;
 public class EventoDAOImp implements EventoDAO {
 
     private Evento eventoDaInserire;
+    private GestoreQueryInserimentoEvento gestoreQueryInserimentoEvento;
+    private GestoreQueryCerca gestoreQueryCerca;
 
     public EventoDAOImp(){}
 
     public EventoDAOImp(Evento eventoDaInserire) {
+
         this.eventoDaInserire = eventoDaInserire;
+        gestoreQueryInserimentoEvento =  new GestoreQueryInserimentoEvento(eventoDaInserire);
+        gestoreQueryCerca = new GestoreQueryCerca();
     }
 
     @Override public void inserisciEvento() throws SQLException {
-        new GestoreQueryInserimentoEvento(eventoDaInserire).eseguiEPreparaQueryInserimentoEvento(); }
+       gestoreQueryInserimentoEvento.eseguiEPreparaQueryInserimentoEvento(); }
 
-    @Override public List<Evento> cercaEvento(){
+    @Override public List<Evento> cercaEvento(String nomeEvento,LocalDate dataEvento, LuogoEnum luogoEvento){
+
+       // return gestoreQueryCerca.cercaEvento(nomeEvento,luogoEvento,dataEvento);
         return null;
     }
 
-    public boolean cercaEvento(LocalDate data,LuogoEnum luogo){
-       try{
-           return new GestoreQueryInserimentoEvento().cercaEventoDB(data,luogo);
-       }
-       catch (SQLException e) {
-            e.printStackTrace();
-       }
-       return false;
-    }
     public boolean eliminaEvento() throws SQLException{return false;}
 }
