@@ -159,7 +159,8 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
                  ResultSet rS = statement.executeQuery(selectSql)) {
                 connection.close();
                 while(rS.next()){
-                 enumerazione è inccompatibile   row.setCitta(rS.getString("CITTA").name());
+                    
+                    row.setCitta(rS.getString("CITTA").name());
                     row.setCapienzaMassima(rS.getInt("CAPIENZA_EVENTO" ));
                     row.setDataEvento(rS.getDate("DATA" ).toLocalDate());
                     row.setNome(rS.getString("NOME" ));
