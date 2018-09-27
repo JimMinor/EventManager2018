@@ -109,8 +109,8 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
     }
 
-    public ArrayList<Evento> cercaEvento (String nomeevento, String luogo , Date dataevento){
-        ArrayList<Evento> evento =new ArrayList<Evento>();
+    public List<Evento> cercaEvento (String nomeevento, String luogo , Date dataevento){
+        List<Evento> evento =new ArrayList<Evento>();
         Evento row=null;
         try {
             Connection connection = UtilityDB.getConnessioneDB();
@@ -159,16 +159,18 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
                  ResultSet rS = statement.executeQuery(selectSql)) {
                 connection.close();
                 while(rS.next()){
-                 //enumerazione è inccompatibile   row.setCitta(rS.getString("CITTA"));
+                 enumerazione è inccompatibile   row.setCitta(rS.getString("CITTA").name());
                     row.setCapienzaMassima(rS.getInt("CAPIENZA_EVENTO" ));
-                //pure con la data     row.setDataEvento(rS.getDate("DATA" ));
+                    row.setDataEvento(rS.getDate("DATA" ).toLocalDate());
                     row.setNome(rS.getString("NOME" ));
-              //ho problemi con le enumerazioni      row.setLuogoEvento(rS.getString("LUOGO" ));
+                    row.setLuogoEvento(rS.getString("LUOGO" ).name());
                     row.setPrezzoBiglietto(rS.getFloat("PREZZO" ));
                     row.setDescrizione(rS.getString("DESCRIZIONE" ));
                     row.setGenereEvento(rS.getString("TIPOLOGIA" ));
                     row.setIdEvento(rS.getInt("ID"));
                     //non sono sicuro row.setPartecipantiEvento();
+                    // Questa informazione è in un altra tabella,
+                    // Possiamo settarlo a null e stica'
 
                     evento.add(row);
 
