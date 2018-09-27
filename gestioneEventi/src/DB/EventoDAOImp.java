@@ -26,8 +26,8 @@ public class EventoDAOImp implements EventoDAO {
 
     @Override public List<Evento> cercaEvento(String nomeEvento,LocalDate dataEvento, LuogoEnum luogoEvento){
 
-       // return gestoreQueryCerca.cercaEvento(nomeEvento,luogoEvento,dataEvento);
-        return null;
+       return gestoreQueryCerca.cercaEvento(nomeEvento,luogoEvento,dataEvento);
+
     }
 
     public boolean eliminaEvento() throws SQLException{return false;}
