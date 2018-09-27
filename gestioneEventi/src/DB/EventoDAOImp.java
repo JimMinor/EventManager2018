@@ -12,7 +12,9 @@ public class EventoDAOImp implements EventoDAO {
     private GestoreQueryInserimentoEvento gestoreQueryInserimentoEvento;
     private GestoreQueryCerca gestoreQueryCerca;
 
-    public EventoDAOImp(){}
+    public EventoDAOImp(){
+        gestoreQueryCerca = new GestoreQueryCerca();
+    }
 
     public EventoDAOImp(Evento eventoDaInserire) {
 
@@ -26,7 +28,13 @@ public class EventoDAOImp implements EventoDAO {
 
     @Override public List<Evento> cercaEvento(String nomeEvento,LocalDate dataEvento, LuogoEnum luogoEvento){
 
-       return gestoreQueryCerca.cercaEvento(nomeEvento,luogoEvento,dataEvento);
+        List<Evento> list=null;
+        try {
+            list = gestoreQueryCerca.cercaEvento();
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
+        return list;
 
     }
 

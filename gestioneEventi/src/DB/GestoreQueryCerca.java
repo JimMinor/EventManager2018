@@ -5,6 +5,8 @@ import Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
+
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -110,8 +112,53 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
     }
 
+
+    public List<Evento> cercaEvento(){
+
+        String sql = " SELECT * FROM EVENTO ";
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+        Connection connection = null;
+        List<Evento> listaEventi = new ArrayList<>();
+        try {
+            connection = UtilityDB.getConnessioneDB();
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                System.out.println("rs");
+                LuogoEnum luogoEvento = (LuogoEnum.valueOf(resultSet.getString("LUOGO")));
+                LocalDate date = (resultSet.getDate("DATA").toLocalDate());
+                String nome = (resultSet.getString("NOME"));
+                LuogoEnum luogoEnum = (LuogoEnum.valueOf(resultSet.getString("LUOGO")));
+                Float prezzo = (resultSet.getFloat("PREZZO"));
+                String descrizione = (resultSet.getString("DESCRIZIONE"));
+                TipologiaEnum tipologia = (TipologiaEnum.valueOf(resultSet.getString("TIPOLOGIA")));
+                String genere = (resultSet.getString("GENERE"));
+                int id = (resultSet.getInt("ID"));
+                Evento rigaEvento = new Evento(luogoEvento, descrizione, prezzo, tipologia, nome, date, genere, null);
+                //non sono sicuro row.setPartecipantiEvento();
+                // Questa informazione è in un altra tabella,
+                // Possiamo settarlo a null e stica'
+                System.out.println(rigaEvento);
+                listaEventi.add(rigaEvento);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+            return listaEventi;
+        }
+        catch( SQLException e){
+            e.printStackTrace();
+        }
+
+
+        return listaEventi;
+
+    }
     public List<Evento> cercaEvento (String nomeEvento, LuogoEnum luogoEvento , LocalDate dataEvento){
-        List<Evento> listaEventi =new ArrayList<>();
+        List<Evento> listaEventi = new ArrayList<>();
         ResultSet resultSet=null;
         String luogo=null;
         if(luogoEvento!=null) {
@@ -126,7 +173,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             // Create tutti i risultati in una tabella
              selectSql="SELECT * FROM EVENTO";
             //{1,2,3}
-            if (( !nomeEvento.equals("")) && (!luogo.equals("") ) && !(dataEvento==null)){
+            if (( !nomeEvento.equals("")) && !(luogo==null ) && !(dataEvento==null)){
                 queryWhere = " WHERE NOME=? AND LUOGO=? AND DATA=? ";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
@@ -137,7 +184,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
             }
             //{1,2}
-            else if (( !nomeEvento.equals("")) && (!luogo.equals("") ) && (dataEvento==null)){
+            else if (( !nomeEvento.equals("")) && (!(luogo==null ) ) && (dataEvento==null)){
 
                 queryWhere = " WHERE NOME=? AND LUOGO=? ";
                 System.out.println(queryWhere);
@@ -147,7 +194,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
                 resultSet = preparedStatement.executeQuery();
             }
             //{1,3}
-            else if (( !nomeEvento.equals("")) && (luogo.equals("") ) && !(dataEvento==null)){
+            else if (( !nomeEvento.equals("")) && ((luogo==null ) ) && !(dataEvento==null)){
                 queryWhere = " WHERE NOME =? AND DATA=? ";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
@@ -157,7 +204,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             }
 
             //{2,3}
-            else if (( nomeEvento.equals("")) && (!luogo.equals("") ) && !(dataEvento==null)) {
+            else if (( nomeEvento.equals("")) && (!(luogo==null ) ) && !(dataEvento==null)) {
                 queryWhere = " WHERE LUOGO = ? AND DATA = ? ";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
@@ -166,7 +213,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
                 resultSet = preparedStatement.executeQuery();
             }
             //{1}
-            else if (( !nomeEvento.equals("")) && (luogo.equals("") ) && (dataEvento==null)) {
+            else if (( !nomeEvento.equals("")) && ((luogo==null ) ) && (dataEvento==null)) {
                 queryWhere = " WHERE NOME = ? ";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
@@ -175,7 +222,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
             }
             //{2}
-            else if (((nomeEvento==null) || nomeEvento.equals("")) && (!luogo.equals("") || !(luogo==null)) && (dataEvento==null)) {
+            else if (((nomeEvento==null) || nomeEvento.equals("")) && (!(luogo==null )) && (dataEvento==null)) {
                 queryWhere= " WHERE LUOGO = ?";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
@@ -183,14 +230,20 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
                 resultSet = preparedStatement.executeQuery();
             }
             //{3}
-            else if (((nomeEvento==null) || nomeEvento.equals("")) && (luogo.equals("") || (luogo==null)) && !(dataEvento==null)) {
+            else if (((nomeEvento==null) || nomeEvento.equals("")) && ((luogo==null )) && !(dataEvento==null)) {
                 queryWhere = " WHERE DATA = ?";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setDate(1,Date.valueOf(dataEvento));
                 resultSet = preparedStatement.executeQuery();
             }
+            else {
+                preparedStatement = connection.prepareStatement(selectSql);
+                resultSet = preparedStatement.executeQuery();
+            }
+
             System.out.println(resultSet.isBeforeFirst());
+
             while(resultSet.next()){
                 System.out.println("rs");
                    LocalDate date=(resultSet.getDate("DATA" ).toLocalDate());

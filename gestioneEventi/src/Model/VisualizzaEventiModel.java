@@ -15,7 +15,10 @@ public class VisualizzaEventiModel extends Observable {
     private List<Evento> listaEventi;
     private ObjectProperty<Evento> eventoSelezionato;
 
-    public void setListaEventiView(List<Evento> list){
+    public void setListaEventiView(List<Evento> list)
+    {
+        listaEventi = list;
+        setChanged();
         notifyObservers(listaEventi);
     }
     public List<Evento> getListaEventi(){ return listaEventi; }

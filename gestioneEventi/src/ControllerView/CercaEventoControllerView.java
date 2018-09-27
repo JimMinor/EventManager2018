@@ -9,6 +9,7 @@ import Model.LuogoEnum;
 import javafx.collections.FXCollections;
 import javafx.fxml.*;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 import java.time.LocalDate;
@@ -23,8 +24,8 @@ public class CercaEventoControllerView implements Observer {
     @FXML private Button eliminaEventoButton;
     @FXML private TableView<Evento> tabellaCercaEventoTableView;
     @FXML private TableColumn<Evento, String> colonnaNomeEvento;
-    @FXML private TableColumn<Evento, String> colonnaLuogoEvento;
-    @FXML private TableColumn<Evento, String> colonnaDataEvento;
+    @FXML private TableColumn<Evento, LuogoEnum> colonnaLuogoEvento;
+    @FXML private TableColumn<Evento, LocalDate> colonnaDataEvento;
     @FXML private Button cercaEventoButton;
     @FXML private TextField nomeCercaEventoTextField;
     @FXML private Button annullaCercaEventoButton;
@@ -47,7 +48,9 @@ public class CercaEventoControllerView implements Observer {
     }
 
     public void initialize() {
+
         luogoEventoComboBox.setItems(FXCollections.observableArrayList(LuogoEnum.values()));
+
     }
 
     /** Metodi FXML per gli eventi */
@@ -94,6 +97,10 @@ public class CercaEventoControllerView implements Observer {
     public void update(Observable observerModel, Object lista ){
         List<Evento> list = (List<Evento>)lista;
         tabellaCercaEventoTableView.setItems(FXCollections.observableArrayList(list));
+        colonnaLuogoEvento.setCellValueFactory(new PropertyValueFactory<Evento, LuogoEnum>("LuogoEvento"));
+        colonnaNomeEvento.setCellValueFactory(new PropertyValueFactory<Evento, String>("Nome"));
+        colonnaDataEvento.setCellValueFactory(new PropertyValueFactory<Evento, LocalDate>("DataEvento"));
+
     }
 
 }
