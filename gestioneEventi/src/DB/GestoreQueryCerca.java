@@ -1,10 +1,7 @@
 
 package DB;
 
-import Model.CittaEnum;
-import Model.Cliente;
-import Model.Evento;
-import Model.LuogoEnum;
+import Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
@@ -115,10 +112,13 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
     public List<Evento> cercaEvento (String nomeEvento, LuogoEnum luogoEvento , LocalDate dataEvento){
         List<Evento> listaEventi =new ArrayList<>();
-        Evento rigaEvento=null;
-        String luogo = luogoEvento.name();
-        String selectSql;
-        String queryWhere;
+        ResultSet resultSet=null;
+        String luogo=null;
+        if(luogoEvento!=null) {
+             luogo = luogoEvento.name();
+        }
+        String selectSql=null;
+        String queryWhere=null;
 
         try {
             Connection connection = UtilityDB.getConnessioneDB();
@@ -126,79 +126,90 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             // Create tutti i risultati in una tabella
              selectSql="SELECT * FROM EVENTO";
             //{1,2,3}
-            if ((!(nomeEvento==null) || !nomeEvento.equals("")) && (!luogo.equals("") || !(luogo==null)) && !(dataEvento==null)){
+            if (( !nomeEvento.equals("")) && (!luogo.equals("") ) && !(dataEvento==null)){
                 queryWhere = " WHERE NOME=? AND LUOGO=? AND DATA=? ";
+                System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,nomeEvento);
                 preparedStatement.setString(2,luogo);
                 preparedStatement.setDate(3,Date.valueOf(dataEvento));
+                resultSet = preparedStatement.executeQuery();
 
             }
             //{1,2}
-            else if ((!(nomeEvento==null) || nomeEvento.equals("")) && (!luogo.equals("") || !(luogo==null)) && (dataEvento==null)){
+            else if (( !nomeEvento.equals("")) && (!luogo.equals("") ) && (dataEvento==null)){
+
                 queryWhere = " WHERE NOME=? AND LUOGO=? ";
+                System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,nomeEvento);
                 preparedStatement.setString(2,luogo);
+                resultSet = preparedStatement.executeQuery();
             }
             //{1,3}
-            else if ((!(nomeEvento==null) || !nomeEvento.equals("")) && (luogo.equals("") || (luogo==null)) && !(dataEvento==null)){
+            else if (( !nomeEvento.equals("")) && (luogo.equals("") ) && !(dataEvento==null)){
                 queryWhere = " WHERE NOME =? AND DATA=? ";
+                System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,nomeEvento);
                 preparedStatement.setDate(2,Date.valueOf(dataEvento));
+                resultSet = preparedStatement.executeQuery();
             }
 
             //{2,3}
-            else if (((nomeEvento==null) || nomeEvento.equals("")) && (!luogo.equals("") || !(luogo==null)) && !(dataEvento==null)) {
+            else if (( nomeEvento.equals("")) && (!luogo.equals("") ) && !(dataEvento==null)) {
                 queryWhere = " WHERE LUOGO = ? AND DATA = ? ";
+                System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,luogo);
                 preparedStatement.setDate(2,Date.valueOf(dataEvento));
+                resultSet = preparedStatement.executeQuery();
             }
             //{1}
-            else if ((!(nomeEvento==null) || !nomeEvento.equals("")) && (luogo.equals("") || (luogo==null)) && (dataEvento==null)) {
+            else if (( !nomeEvento.equals("")) && (luogo.equals("") ) && (dataEvento==null)) {
                 queryWhere = " WHERE NOME = ? ";
+                System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,nomeEvento);
+                resultSet = preparedStatement.executeQuery();
 
             }
             //{2}
             else if (((nomeEvento==null) || nomeEvento.equals("")) && (!luogo.equals("") || !(luogo==null)) && (dataEvento==null)) {
                 queryWhere= " WHERE LUOGO = ?";
+                System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,luogo);
+                resultSet = preparedStatement.executeQuery();
             }
             //{3}
             else if (((nomeEvento==null) || nomeEvento.equals("")) && (luogo.equals("") || (luogo==null)) && !(dataEvento==null)) {
                 queryWhere = " WHERE DATA = ?";
+                System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setDate(1,Date.valueOf(dataEvento));
-
+                resultSet = preparedStatement.executeQuery();
             }
-
-            ResultSet rS = preparedStatement.executeQuery(selectSql);
-
-
-                while(rS.next()){
-                    rigaEvento.setCitta(CittaEnum.valueOf(rS.getString("CITTA")));
-                    rigaEvento.setCapienzaMassima(rS.getInt("CAPIENZA_EVENTO" ));
-                    rigaEvento.setDataEvento(rS.getDate("DATA" ).toLocalDate());
-                    rigaEvento.setNome(rS.getString("NOME" ));
-                    rigaEvento.setLuogoEvento(LuogoEnum.valueOf(rS.getString("LUOGO" )));
-                    rigaEvento.setPrezzoBiglietto(rS.getFloat("PREZZO" ));
-                    rigaEvento.setDescrizione(rS.getString("DESCRIZIONE" ));
-                    rigaEvento.setGenereEvento(rS.getString("TIPOLOGIA" ));
-                    rigaEvento.setIdEvento(rS.getInt("ID"));
+            System.out.println(resultSet.isBeforeFirst());
+            while(resultSet.next()){
+                System.out.println("rs");
+                   LocalDate date=(resultSet.getDate("DATA" ).toLocalDate());
+                    String nome=(resultSet.getString("NOME" ));
+                    LuogoEnum luogoEnum=(LuogoEnum.valueOf(resultSet.getString("LUOGO" )));
+                    Float prezzo =(resultSet.getFloat("PREZZO" ));
+                    String descrizione = (resultSet.getString("DESCRIZIONE" ));
+                    TipologiaEnum tipologia =(TipologiaEnum.valueOf(resultSet.getString("TIPOLOGIA" )));
+                    String genere = (resultSet.getString("GENERE"));
+                    int id=(resultSet.getInt("ID"));
+                    Evento rigaEvento = new Evento(luogoEvento,descrizione,prezzo,tipologia,nome,dataEvento,genere,null);
                     //non sono sicuro row.setPartecipantiEvento();
                     // Questa informazione è in un altra tabella,
                     // Possiamo settarlo a null e stica'
-
+                    System.out.println(rigaEvento);
                     listaEventi.add(rigaEvento);
+            }
 
-                }
-
-                rS.close();
+                resultSet.close();
                 preparedStatement.close();
                 connection.close();
                 return listaEventi;

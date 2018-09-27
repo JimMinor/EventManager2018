@@ -56,7 +56,6 @@ public class CercaEventoControllerView implements Observer {
         String nomeEvento = nomeCercaEventoTextField.getText();
         LuogoEnum luogoEnum = luogoEventoComboBox.getValue();
         LocalDate dataEvento = dataCercaEventoDataPicker.getValue();
-
         ricercaEventoController.cercaEventi(nomeEvento,dataEvento,luogoEnum);
     }
 

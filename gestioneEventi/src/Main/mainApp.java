@@ -31,7 +31,7 @@ public class mainApp extends Application {
         cambiaStagePrincipale = new CambiaStage(this);
         cambiaStagePrincipale.mostraStageMenuPrincipale();
 
-        List<Evento> lista = new GestoreQueryCerca().cercaEvento("King Krule - Live",LuogoEnum.PALAPARTENOPE, LocalDate.of(2018,9,30));
+        List<Evento> lista = new GestoreQueryCerca().cercaEvento("",LuogoEnum.PALAPARTENOPE,null);
         for(Evento e : lista)
             System.out.println(e);
         stagePrincipale.show();
