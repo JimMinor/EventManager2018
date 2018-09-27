@@ -56,6 +56,7 @@ public class CercaEventoControllerView implements Observer {
         String nomeEvento = nomeCercaEventoTextField.getText();
         LuogoEnum luogoEnum = luogoEventoComboBox.getValue();
         LocalDate dataEvento = dataCercaEventoDataPicker.getValue();
+        System.out.println(nomeEvento + luogoEnum + dataEvento);
         ricercaEventoController.cercaEventi(nomeEvento,dataEvento,luogoEnum);
     }
 
@@ -91,7 +92,8 @@ public class CercaEventoControllerView implements Observer {
 
     @Override
     public void update(Observable observerModel, Object lista ){
-        tabellaCercaEventoTableView.setItems(FXCollections.observableArrayList((List<Evento>)lista));
+        List<Evento> list = (List<Evento>)lista;
+        tabellaCercaEventoTableView.setItems(FXCollections.observableArrayList(list));
     }
 
 }

@@ -31,9 +31,8 @@ public class mainApp extends Application {
         cambiaStagePrincipale = new CambiaStage(this);
         cambiaStagePrincipale.mostraStageMenuPrincipale();
 
-        List<Evento> lista = new GestoreQueryCerca().cercaEvento("",LuogoEnum.PALAPARTENOPE,null);
-        for(Evento e : lista)
-            System.out.println(e);
+        //List<Evento> lista = new GestoreQueryCerca().cercaEvento("",LuogoEnum.PALAPARTENOPE,null);
+
         stagePrincipale.show();
     }
 

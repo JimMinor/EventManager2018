@@ -219,7 +219,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             e.printStackTrace();
         }
 
-        return null;
+        return listaEventi;
 
     }
 
