@@ -2,6 +2,7 @@
 package DB;
 
 import Model.Cliente;
+import Model.Evento;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
@@ -108,11 +109,13 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
     }
 
-    public ResultSet cercaEvento (String nomeevento, String luogo , Date dataevento){
+    public ArrayList<Evento> cercaEvento (String nomeevento, String luogo , Date dataevento){
+        ArrayList<Evento> evento =new ArrayList<Evento>();
+        Evento row=null;
         try {
             Connection connection = UtilityDB.getConnessioneDB();
             // Create tutti i risultati in una tabella
-            String selectSql="SELECT NOME , LUOGO , DATA FROM EVENTO";
+            String selectSql="SELECT * FROM EVENTO";
             //{1,2,3}
             if (!nomeevento.equals("") && !luogo.equals("") && !dataevento.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
@@ -154,9 +157,24 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             }
             try (Statement statement = connection.createStatement();
                  ResultSet rS = statement.executeQuery(selectSql)) {
-
                 connection.close();
-                return rS;
+                while(rS.next()){
+                 //enumerazione è inccompatibile   row.setCitta(rS.getString("CITTA"));
+                    row.setCapienzaMassima(rS.getInt("CAPIENZA_EVENTO" ));
+                //pure con la data     row.setDataEvento(rS.getDate("DATA" ));
+                    row.setNome(rS.getString("NOME" ));
+              //ho problemi con le enumerazioni      row.setLuogoEvento(rS.getString("LUOGO" ));
+                    row.setPrezzoBiglietto(rS.getFloat("PREZZO" ));
+                    row.setDescrizione(rS.getString("DESCRIZIONE" ));
+                    row.setGenereEvento(rS.getString("TIPOLOGIA" ));
+                    row.setIdEvento(rS.getInt("ID"));
+                    //non sono sicuro row.setPartecipantiEvento();
+
+                    evento.add(row);
+
+                }
+
+                return evento;
             }
 
         } catch (SQLException e) {
