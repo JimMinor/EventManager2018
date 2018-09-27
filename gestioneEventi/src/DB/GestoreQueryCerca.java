@@ -1,15 +1,19 @@
 
 package DB;
 
+import Model.CittaEnum;
 import Model.Cliente;
 import Model.Evento;
+import Model.LuogoEnum;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 import java.sql.*;
 import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GestoreQueryCerca {//query generica per cercare tutti gli elementi appena apre la schermata
 
@@ -109,76 +113,80 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
     }
 
-    public List<Evento> cercaEvento (String nomeevento, String luogo , Date dataevento){
-        List<Evento> evento =new ArrayList<Evento>();
-        Evento row=null;
+    public List<Evento> cercaEvento (String nomeEvento, LuogoEnum luogoEvento , LocalDate dataEvento){
+        List<Evento> listaEventi =new ArrayList<Evento>();
+        Evento rigaEvento=null;
+        String luogo = luogoEvento.name();
         try {
             Connection connection = UtilityDB.getConnessioneDB();
             // Create tutti i risultati in una tabella
             String selectSql="SELECT * FROM EVENTO";
             //{1,2,3}
-            if (!nomeevento.equals("") && !luogo.equals("") && !dataevento.equals(null)) {
+            if (!nomeEvento.equals("") && !luogo.equals("") && !dataEvento.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
-                String dataRicerca = formatter.format(dataevento);
-                selectSql += " WHERE " + "NOME" + "='" + nomeevento+"'" + " AND " + "LUOGO" + "='" + luogo+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy')";
+                String dataRicerca = formatter.format(dataEvento);
+                selectSql += " WHERE " + "NOME" + "='" + nomeEvento+"'" + " AND " + "LUOGO" + "='" + luogo+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy')";
 
                 //{1,2}
 
-            }else if (!nomeevento.equals("") && !luogo.equals("") && dataevento.equals(null)) {
-                selectSql +=" WHERE " + "NOME" + "='" + nomeevento+"'" + " AND "+ "LUOGO" + "='" + luogo + "'";
+            }else if (!nomeEvento.equals("") && !luogo.equals("") && dataEvento.equals(null)) {
+                selectSql +=" WHERE " + "NOME" + "='" + nomeEvento+"'" + " AND "+ "LUOGO" + "='" + luogo + "'";
             }
             //{1,3}
-            else if (!nomeevento.equals("") && luogo.equals("") && !dataevento.equals(null)) {
+            else if (!nomeEvento.equals("") && luogo.equals("") && !dataEvento.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
-                String dataRicerca = formatter.format(dataevento);
-                selectSql +=" WHERE " + "NOME" + "='" + nomeevento +"'"+ " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                String dataRicerca = formatter.format(dataEvento);
+                selectSql +=" WHERE " + "NOME" + "='" + nomeEvento +"'"+ " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{2,3}
-            else if (nomeevento.equals("") && !luogo.equals("") && !dataevento.equals(null)) {
+            else if (nomeEvento.equals("") && !luogo.equals("") && !dataEvento.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
-                String dataRicerca = formatter.format(dataevento);
+                String dataRicerca = formatter.format(dataEvento);
                 selectSql +=" WHERE "+ "LUOGO" + "='" + luogo+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
             //{1}
-            else if (!nomeevento.equals("") && luogo.equals("") && dataevento.equals(null)) {
+            else if (!nomeEvento.equals("") && luogo.equals("") && dataEvento.equals(null)) {
 
-                selectSql +=" WHERE " + "NOME" + "=" + nomeevento +" ;";
+                selectSql +=" WHERE " + "NOME" + "=" + nomeEvento +" ;";
             }
             //{2}
-            else if (nomeevento.equals("") && !luogo.equals("") && dataevento.equals(null)) {
+            else if (nomeEvento.equals("") && !luogo.equals("") && dataEvento.equals(null)) {
 
                 selectSql +=" WHERE " + "LUOGO" + "=" + luogo + ";";
             }
             //{3}
-            else if (nomeevento.equals("") && luogo.equals("") && !dataevento.equals(null)) {
+            else if (nomeEvento.equals("") && luogo.equals("") && !dataEvento.equals(null)) {
                 Format formatter = new SimpleDateFormat("dd-MM-yy");
-                String dataRicerca = formatter.format(dataevento);
-                selectSql +=" WHERE " + "NOME" + "=" + nomeevento + " AND "+ "LUOGO" + "=" + luogo + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+                String dataRicerca = formatter.format(dataEvento);
+                selectSql +=" WHERE " + "NOME" + "=" + nomeEvento + " AND "+ "LUOGO" + "=" + luogo + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
             }
-            try (Statement statement = connection.createStatement();
-                 ResultSet rS = statement.executeQuery(selectSql)) {
-                connection.close();
+
+            Statement statement = connection.createStatement();
+            ResultSet rS = statement.executeQuery(selectSql);
+
+
                 while(rS.next()){
-                    
-                    row.setCitta(rS.getString("CITTA").name());
-                    row.setCapienzaMassima(rS.getInt("CAPIENZA_EVENTO" ));
-                    row.setDataEvento(rS.getDate("DATA" ).toLocalDate());
-                    row.setNome(rS.getString("NOME" ));
-                    row.setLuogoEvento(rS.getString("LUOGO" ).name());
-                    row.setPrezzoBiglietto(rS.getFloat("PREZZO" ));
-                    row.setDescrizione(rS.getString("DESCRIZIONE" ));
-                    row.setGenereEvento(rS.getString("TIPOLOGIA" ));
-                    row.setIdEvento(rS.getInt("ID"));
+                    String citta = (rS.getString("CITTA"));
+                    rigaEvento.setCitta(CittaEnum.valueOf(citta));
+                    rigaEvento.setCapienzaMassima(rS.getInt("CAPIENZA_EVENTO" ));
+                    rigaEvento.setDataEvento(rS.getDate("DATA" ).toLocalDate());
+                    rigaEvento.setNome(rS.getString("NOME" ));
+                    rigaEvento.setLuogoEvento(LuogoEnum.valueOf(rS.getString("LUOGO" )));
+                    rigaEvento.setPrezzoBiglietto(rS.getFloat("PREZZO" ));
+                    rigaEvento.setDescrizione(rS.getString("DESCRIZIONE" ));
+                    rigaEvento.setGenereEvento(rS.getString("TIPOLOGIA" ));
+                    rigaEvento.setIdEvento(rS.getInt("ID"));
                     //non sono sicuro row.setPartecipantiEvento();
                     // Questa informazione è in un altra tabella,
                     // Possiamo settarlo a null e stica'
 
-                    evento.add(row);
+                    listaEventi.add(rigaEvento);
 
                 }
 
-                return evento;
-            }
+                connection.close();
+                return listaEventi;
+
 
         } catch (SQLException e) {
             e.printStackTrace();

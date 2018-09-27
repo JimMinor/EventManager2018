@@ -121,7 +121,9 @@ public  class GestoreQueryInserimentoEvento {
 
     /** METODI DI UTILITA' */
     public ResultSet eseguiQuery(PreparedStatement queryDaEseguire)throws SQLException{ return queryDaEseguire.executeQuery(); }
+
     public int eseguiUpdate(PreparedStatement queryDaEseguire)throws SQLException{return queryDaEseguire.executeUpdate();}
+
     public PreparedStatement preparaQueryDaEseguire(String query)throws SQLException{
         Connection connection=UtilityDB.getConnessioneDB();
         PreparedStatement queryDaEseguire = connection.prepareCall(query);

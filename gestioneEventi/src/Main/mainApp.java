@@ -1,9 +1,14 @@
 package Main;
 
 import Controller.CambiaStage;
+import DB.GestoreQueryCerca;
+import Model.Evento;
 import Model.LuogoEnum;
 import javafx.application.Application;
 import javafx.stage.Stage;
+
+import java.time.LocalDate;
+import java.util.List;
 
 public class mainApp extends Application {
     private Stage stagePrincipale;
@@ -26,6 +31,9 @@ public class mainApp extends Application {
         cambiaStagePrincipale = new CambiaStage(this);
         cambiaStagePrincipale.mostraStageMenuPrincipale();
 
+        List<Evento> lista = new GestoreQueryCerca().cercaEvento("King Krule - Live",LuogoEnum.PALAPARTENOPE, LocalDate.of(2018,9,30));
+        for(Evento e : lista)
+            System.out.println(e);
         stagePrincipale.show();
     }
 
