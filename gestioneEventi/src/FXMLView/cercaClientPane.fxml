@@ -18,9 +18,9 @@
           <JFXButton fx:id="annullaCercaClientiButton" layoutX="45.0" layoutY="23.0" mnemonicParsing="false" onAction="#annullaCercaClientiButtonPressed" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Pulisci" textFill="WHITE" />
             <TableView fx:id="tabellaCercaClientiTableView" editable="true" layoutX="37.0" layoutY="80.0" prefHeight="195.0" prefWidth="780.0">
                 <columns>
-                    <TableColumn fx:id="username" prefWidth="245.0" text="Username" />
-                    <TableColumn fx:id="nome" prefWidth="261.0" text="Nome" />
-                    <TableColumn fx:id="cognome" minWidth="5.0" prefWidth="188.0" text="Cognome" />
+                    <TableColumn fx:id="colonnausername" prefWidth="245.0" text="Username" />
+                    <TableColumn fx:id="colonnanome" prefWidth="261.0" text="Nome" />
+                    <TableColumn fx:id="colonnacognome" minWidth="5.0" prefWidth="188.0" text="Cognome" />
                     <TableColumn minWidth="0.0" prefWidth="75.0" text="seleziona" />
                 </columns>
             </TableView>

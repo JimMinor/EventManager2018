@@ -268,12 +268,12 @@ public class inserisciDipendentePaneController implements Initializable {
 
 
         //Creazione oggetto impiegato
-        Impiegato impiegato = new Impiegato(nomeDipendente, cognomeDipendente, dataNascita, codiceFiscale,
-                username, password, LocalDate.now(), stipendio);
-        ImpiegatoDAO impiegatoDAO = new ImpiegatoDAOImp(impiegato);
+     //   Impiegato impiegato = new Impiegato(nomeDipendente, cognomeDipendente, dataNascita, codiceFiscale,
+         //       username, password, LocalDate.now(), stipendio);
+       // ImpiegatoDAO impiegatoDAO = new ImpiegatoDAOImp(impiegato);
 
 
-        impiegatoDAO.inserisciImpiegato(impiegato);
+        //impiegatoDAO.inserisciImpiegato(impiegato);
 
 
         return true;

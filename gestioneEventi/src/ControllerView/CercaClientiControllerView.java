@@ -1,9 +1,8 @@
 package ControllerView;
 
-import Controller.CambiaStage;
-import Controller.CambiaView;
-import Controller.ControlledStage;
+import Controller.*;
 import Model.Cliente;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,25 +10,29 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-
+import java.util.Observer;
 
 import java.net.URL;
+import java.util.List;
+import java.util.Observable;
 import java.util.ResourceBundle;
 
-public class CercaClientiControllerView implements ControlledStage, Initializable {
+public class CercaClientiControllerView implements ControlledStage, Initializable,Observer {
 
     @FXML private Button visualizzaDatiClientiButton;
     @FXML private TableView<Cliente> tabellaCercaClientiTableView;
-    @FXML private TableColumn<Cliente, String> username;
-    @FXML private TableColumn<Cliente, String> nome;
-    @FXML private TableColumn<Cliente, String> cognome;
+    @FXML private TableColumn<Cliente, String> colonnausername;
+    @FXML private TableColumn<Cliente, String> colonnanome;
+    @FXML private TableColumn<Cliente, String> colonnacognome;
     @FXML private Button eliminaClientiButton;
     @FXML private Button annullaCercaClientiButton;
     @FXML private Button cercaClienteButton;
     @FXML private TextField usernameCercaClientiTextField;
     @FXML private AnchorPane cercaClientiPaneScreen;
     private CambiaView cambiaForm;
+    private RicercaClienteController ricercaController;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -55,6 +58,9 @@ public class CercaClientiControllerView implements ControlledStage, Initializabl
     }
 
     public void cercaClienteButtonPressed() {
+        String username=usernameCercaClientiTextField.getText();
+       ricercaController.cercaCliente(username);
+
     }
 
     public void eliminaClientiButtonPressed() {
@@ -87,4 +93,14 @@ public class CercaClientiControllerView implements ControlledStage, Initializabl
     public AnchorPane getCercaClientiPaneScreen() {
         return cercaClientiPaneScreen;
     }
+
+@Override
+    public void update(Observable observableModel,Object lista){
+    List<Cliente> list = (List<Cliente>) lista;
+    tabellaCercaClientiTableView.setItems(FXCollections.observableArrayList(list));
+    colonnacognome.setCellValueFactory(new PropertyValueFactory<Cliente,String>("Cognome"));
+    colonnanome.setCellValueFactory(new PropertyValueFactory<Cliente, String>("Nome"));
+    colonnausername.setCellValueFactory(new PropertyValueFactory<Cliente,String>("Username"));
 }
+}
+

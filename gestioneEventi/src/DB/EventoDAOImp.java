@@ -30,7 +30,7 @@ public class EventoDAOImp implements EventoDAO {
 
         List<Evento> list=null;
         try {
-            list = gestoreQueryCerca.cercaEvento();
+            list = gestoreQueryCerca.cercaEvento(nomeEvento,luogoEvento,dataEvento);
         } catch (NullPointerException e){
             e.printStackTrace();
         }
