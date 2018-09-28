@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
+import javax.print.DocFlavor;
 import javax.xml.transform.Result;
 import java.sql.*;
 import java.text.Format;
@@ -16,41 +17,51 @@ import java.util.List;
 
 public class GestoreQueryCerca {//query generica per cercare tutti gli elementi appena apre la schermata
 
-    public ArrayList<Cliente> cercaCliente(String username){
-        ArrayList<Cliente> clienti =new ArrayList<Cliente>();
-        Cliente row=null;
+    public List<Cliente> cercaCliente(String username){
+        ArrayList<Cliente> listaclienti =new ArrayList<>();
+        ResultSet resultSet=null;
+        String selectSql=null;
+        String queryWhere=null;
+
         try {
             Connection connection = UtilityDB.getConnessioneDB();
-            // Create tutti i risultati in una tabella
-            String selectSql =String.format("SELECT * FROM CLIENTE NATURAL JOIN PERSONA ") ;
+            PreparedStatement preparedStatement=null;
+            selectSql="SELECT * FROM CLIENTE";
             //{0}
             if (!username.equals("")) {
-                selectSql += "WHERE CLIENTE.USERNAME ='"+username+"'";
-            }
+                queryWhere=" WHERE USERNAME = ? ";
+                preparedStatement = connection.prepareStatement(selectSql+queryWhere);
+                preparedStatement.setString(1,username);
+                resultSet = preparedStatement.executeQuery();
+            }else
+                preparedStatement = connection.prepareStatement(selectSql);
+            resultSet = preparedStatement.executeQuery();
             //{1}
 
-            try (Statement statement = connection.createStatement();
-                 ResultSet rS = statement.executeQuery(selectSql)) {
 
-                connection.close();
-                while (rS.next()) {
-                 row.setUsername(rS.getString("USERNAME"));
-                 row.setNome(rS.getString("NOME"));
-                 row.setCognome(rS.getString("COGNOME"));
-                 row.setIndirizzo(rS.getString("INDIRIZZO"));
-                 row.setMail(rS.getString("EMAIL"));
-                 row.setCF(rS.getString("CODICE_FISCALE"));
-                 clienti.add(row);
+                while (resultSet.next()) {
+                    String username1=(resultSet.getString("USERNAME"));
+                    String nome=(resultSet.getString("NOME"));
+                    String cognome=(resultSet.getString("COGNOME"));
+                    String indirizzo =(resultSet.getString("INDIRIZZO"));
+                    String email =(resultSet.getString("EMAIL"));
+                    String cf=(resultSet.getString("CODICE_FISCALE"));
+                    Cliente rigaCliente=new Cliente(nome,cognome,cf,username1,"",indirizzo,email);//cosa facciamo con il sesso non è meglio mettere data di nascita e calcoliamo l'età
+                    listaclienti.add(rigaCliente)   ;
+//che poi dobbiamo aggiungere il totale speso e i biglietti acquistati ?
                 }
-                return clienti;
+                resultSet.close();
+                preparedStatement.close();
+                connection.close();
+                return listaclienti;
 
-            }
+
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return null;
+        return listaclienti;
     }
 
     public ResultSet cercaImpiegato (String nome, String cognome , Date datanascita){
@@ -275,6 +286,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         return listaEventi;
 
     }
+
 
 /*
     public void getAllInfo(TableView tabella,String nomeTabella,String colonnaTW1 ,String colonnaTW2 , String colonnaTW3, String attributo1 ,String attributo2 , Date attributo3 ,ObservableList data) {
