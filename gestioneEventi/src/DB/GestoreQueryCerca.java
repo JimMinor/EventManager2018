@@ -2,6 +2,7 @@
 package DB;
 
 import Model.*;
+import com.sun.org.apache.xml.internal.security.Init;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
@@ -26,10 +27,10 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         try {
             Connection connection = UtilityDB.getConnessioneDB();
             PreparedStatement preparedStatement=null;
-            selectSql="SELECT * FROM CLIENTE";
+            selectSql="SELECT * FROM CLIENTE NATURAL JOIN PERSONA";
             //{0}
             if (!username.equals("")) {
-                queryWhere=" WHERE USERNAME = ? ";
+                queryWhere=" WHERE USERNAME LIKE '%?%' ";
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,username);
                 resultSet = preparedStatement.executeQuery();
@@ -46,9 +47,15 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
                     String indirizzo =(resultSet.getString("INDIRIZZO"));
                     String email =(resultSet.getString("EMAIL"));
                     String cf=(resultSet.getString("CODICE_FISCALE"));
-                    Cliente rigaCliente=new Cliente(nome,cognome,cf,username1,"",indirizzo,email);//cosa facciamo con il sesso non è meglio mettere data di nascita e calcoliamo l'età
-                    listaclienti.add(rigaCliente)   ;
-//che poi dobbiamo aggiungere il totale speso e i biglietti acquistati ?
+                    LocalDate dataNascita=(resultSet.getDate("DATA_NASCITA"  ).toLocalDate());
+                    Float spesaTot =(resultSet.getFloat("SPESA_TOT "));
+                    Float spesaCarta =(resultSet.getFloat("SPESA_CARTA"));
+                    int n_bigietti=(resultSet.getInt("NUM_BIGLIETTI" ));
+                    int id=(resultSet.getInt("ID"));
+
+                    Cliente rigaCliente=new Cliente(nome,cognome,cf,username1,indirizzo,email,dataNascita,spesaTot,spesaCarta,n_bigietti,id);
+                    listaclienti.add(rigaCliente)  ;
+
                 }
                 resultSet.close();
                 preparedStatement.close();
@@ -64,67 +71,106 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         return listaclienti;
     }
 
-    public ResultSet cercaImpiegato (String nome, String cognome , Date datanascita){
+    public List<Impiegato> cercaImpiegato (String nome, String cognome , LocalDate datanascita){
+        List<Impiegato> listaImpiegato = new ArrayList<>();
+        ResultSet resultSet=null;
+        String selectsql1=null;
+        String queryWhere=null;
+
         try {
             Connection connection = UtilityDB.getConnessioneDB();
-            // Create tutti i risultati in una tabella
-            String selectSql = "SELECT NOME , COGNOME , CODICE_FISCALE FROM IMPIGATO NATURAL JOIN PERSONA";
+            PreparedStatement preparedStatement=null;
+            String selectSql = "SELECT * FROM IMPIGATO NATURAL JOIN PERSONA";
             //{1,2,3}
-            if (!nome.equals("") && !cognome.equals("") && !datanascita.equals(null)) {
-                Format formatter = new SimpleDateFormat("dd-MM-yy");
-                String dataRicerca = formatter.format(datanascita);
-                selectSql += " WHERE " + "NOME" + "='" + nome+"'" + " AND " + "COGNOME" + "='" + cognome+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
-
+            if (!nome.equals("") && !cognome.equals("") && !(datanascita==null)) {
+                queryWhere=" WHERE NOME LIKE '%?%' AND COGNOME=? AND DATA_NASCITA=?";
+                preparedStatement = connection.prepareStatement(selectSql+queryWhere);
+                preparedStatement.setString(1,nome);
+                preparedStatement.setString(2,cognome);
+                preparedStatement.setDate(3,Date.valueOf(datanascita));
+                resultSet = preparedStatement.executeQuery();
                 //{1,2}
 
-            }else if (!nome.equals("") && !cognome.equals("") && datanascita.equals(null)) {
-                selectSql +=" WHERE " + "NOME" + "='" + nome+"'" + " AND "+ "COGNOME" + "='" + cognome+"'" + ";";
+            }else  if (!nome.equals("") && !cognome.equals("") && (datanascita==null)) {
+                queryWhere=" WHERE NOME LIKE '%?%' AND COGNOME=? ";
+                preparedStatement = connection.prepareStatement(selectSql+queryWhere);
+                preparedStatement.setString(1,nome);
+                preparedStatement.setString(2,cognome);
+                resultSet = preparedStatement.executeQuery();
             }
             //{1,3}
-            else if (!nome.equals("") && cognome.equals("") && !datanascita.equals(null)) {
-                Format formatter = new SimpleDateFormat("dd-MM-yy");
-                String dataRicerca = formatter.format(datanascita);
-                selectSql += " WHERE " + "NOME" + "='" + nome+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+            else if (!nome.equals("") && cognome.equals("") && !(datanascita==null)) {
+                queryWhere=" WHERE NOME LIKE '%?%' AND DATA_NASCITA=?";
+                preparedStatement = connection.prepareStatement(selectSql+queryWhere);
+                preparedStatement.setString(1,nome);
+                preparedStatement.setDate(2,Date.valueOf(datanascita));
+                resultSet = preparedStatement.executeQuery();
             }
             //{2,3}
-            else if (nome.equals("") && !cognome.equals("") && !datanascita.equals(null)) {
-                Format formatter = new SimpleDateFormat("dd-MM-yy");
-                String dataRicerca = formatter.format(datanascita);
-                selectSql += " WHERE " + "COGNOME" + "='" + cognome+"'" + " AND DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
+            else if (nome.equals("") && !cognome.equals("") && !(datanascita==null)) {
+                queryWhere=" WHERE COGNOME LIKE '%?%' AND DATA_NASCITA=?";
+                preparedStatement = connection.prepareStatement(selectSql+queryWhere);
+                preparedStatement.setString(1,cognome);
+                preparedStatement.setDate(2,Date.valueOf(datanascita));
+                resultSet = preparedStatement.executeQuery();
             }
             //{1}
-            else if (!nome.equals("") && cognome.equals("") && datanascita.equals(null)) {
-
-                selectSql += " WHERE " + "NOME" + "='" + nome+"'";
+            else  if (!nome.equals("") && cognome.equals("") && (datanascita==null)) {
+                queryWhere=" WHERE NOME LIKE '%?%' ";
+                preparedStatement = connection.prepareStatement(selectSql+queryWhere);
+                preparedStatement.setString(1,nome);
+                resultSet = preparedStatement.executeQuery();
             }
             //{2}
-            else if (nome.equals("") && !cognome.equals("") && datanascita.equals(null)) {
-
-                selectSql += " WHERE " + "COGNOME" + "='" + cognome+"'" ;
+            else if (nome.equals("") && !cognome.equals("") && (datanascita==null)) {
+                queryWhere= "WHERE COGNOME LIKE '%?%' ";
+                preparedStatement = connection.prepareStatement(selectSql+queryWhere);
+                preparedStatement.setString(1,cognome);
+                resultSet = preparedStatement.executeQuery();
             }
             //{3}
-            else if (nome.equals("") && cognome.equals("") && !datanascita.equals(null)) {
-                Format formatter = new SimpleDateFormat("dd-MM-yy");
-                String dataRicerca = formatter.format(datanascita);
-                selectSql += " WHERE " + " DATA=TO_DATE('" + dataRicerca + "','dd-MM-yy');";
-            }
-            try (Statement statement = connection.createStatement();
-                 ResultSet rS = statement.executeQuery(selectSql)) {
-
-                connection.close();
-                return rS;
+            else if (nome.equals("") && cognome.equals("") && !(datanascita==null)) {
+                queryWhere=" WHERE  DATA_NASCITA=?";
+                preparedStatement = connection.prepareStatement(selectSql+queryWhere);
+                preparedStatement.setDate(1,Date.valueOf(datanascita));
+                resultSet = preparedStatement.executeQuery();
+            }else {
+                preparedStatement = connection.prepareStatement(selectSql);
+                resultSet = preparedStatement.executeQuery();
             }
 
+            while(resultSet.next()){
+                String nome1=(resultSet.getString("NOME" ));
+                String cognome1=(resultSet.getString("COGNOME" ));
+                LocalDate dataNascita=(resultSet.getDate("DATA_NASCITA"  ).toLocalDate());
+                String CF=(resultSet.getString("CODICE_FISCALE" ));
+                String username=(resultSet.getString("USERNAME" ));
+                String password=(resultSet.getString("PASSWORD" ));
+                LocalDate dataAssunzione=(resultSet.getDate("DATA_ASSUNZIONE").toLocalDate());
+                Float stipendio=(resultSet.getFloat("STIPENDIO" ));
+                String amministratore=(resultSet.getString("ADMIN" ));
+                String telefono=(resultSet.getString("TELEFONO" ));
+                String iban=(resultSet.getString("IBAN" ));
+                String email=(resultSet.getString("EMAIL"));
+                int id=(resultSet.getInt("ID"));
+
+                Impiegato rigaImpiegato = new Impiegato(nome1,cognome1,dataNascita,CF,username,password,dataAssunzione,stipendio,amministratore,telefono,iban,email,id);
+                listaImpiegato.add(rigaImpiegato);
+            }
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+            return listaImpiegato;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return null;
+        return listaImpiegato;
 
     }
 
 
-    public List<Evento> cercaEvento(){
+  /*  public List<Evento> cercaEvento(){
 
         String sql = " SELECT * FROM EVENTO ";
         ResultSet resultSet = null;
@@ -168,6 +214,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         return listaEventi;
 
     }
+    */
     public List<Evento> cercaEvento (String nomeEvento, LuogoEnum luogoEvento , LocalDate dataEvento){
         List<Evento> listaEventi = new ArrayList<>();
         ResultSet resultSet=null;
@@ -185,7 +232,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
              selectSql="SELECT * FROM EVENTO";
             //{1,2,3}
             if (( !nomeEvento.equals("")) && !(luogo==null ) && !(dataEvento==null)){
-                queryWhere = " WHERE NOME=? AND LUOGO=? AND DATA=? ";
+                queryWhere = " WHERE NOME LIKE '%?%' AND LUOGO=? AND DATA=? ";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,nomeEvento);
@@ -197,7 +244,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             //{1,2}
             else if (( !nomeEvento.equals("")) && (!(luogo==null ) ) && (dataEvento==null)){
 
-                queryWhere = " WHERE NOME=? AND LUOGO=? ";
+                queryWhere = " WHERE NOME LIKE '%?%' AND LUOGO=? ";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,nomeEvento);
@@ -206,7 +253,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             }
             //{1,3}
             else if (( !nomeEvento.equals("")) && ((luogo==null ) ) && !(dataEvento==null)){
-                queryWhere = " WHERE NOME =? AND DATA=? ";
+                queryWhere = " WHERE NOME LIKE '%?%' AND DATA=? ";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,nomeEvento);
@@ -225,7 +272,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             }
             //{1}
             else if (( !nomeEvento.equals("")) && ((luogo==null ) ) && (dataEvento==null)) {
-                queryWhere = " WHERE NOME = ? ";
+                queryWhere = " WHERE NOME LIKE '%?%' ";
                 System.out.println(queryWhere);
                 preparedStatement = connection.prepareStatement(selectSql+queryWhere);
                 preparedStatement.setString(1,nomeEvento);

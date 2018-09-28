@@ -1,19 +1,28 @@
 package Model;
 
+import java.time.LocalDate;
+
 public class Cliente extends Persona implements Comparable<Cliente> {
 
     private String username;
     private String sesso;
     private String indirizzo;
     private String mail;
+    private Float spesaTot;
+    private Float spesaCarta;
+    private int numBiglietti;
+    private int id;
 
 
-    public Cliente(String nome, String cognome, String CF, String username, String sesso, String indirizzo, String mail) {
-        super(nome, cognome, CF);
+    public Cliente(String nome, String cognome, String CF, String username, String indirizzo, String mail, LocalDate dataNascita, Float spesaTot, Float spesaCarta,int numBiglietti,int id ) {
+        super(nome, cognome, dataNascita,CF);
         this.username = username;
         this.indirizzo = indirizzo;
-        this.sesso = sesso;
         this.mail = mail;
+        this.spesaTot=spesaTot;
+        this.numBiglietti=numBiglietti;
+        this.spesaCarta=spesaCarta;
+        this.id=id;
 
     }
 
@@ -30,9 +39,6 @@ public class Cliente extends Persona implements Comparable<Cliente> {
         this.username = username;
     }
 
-    public String getSesso() {
-        return sesso;
-    }
 
     public void setSesso(String sesso) {
         this.sesso = sesso;
