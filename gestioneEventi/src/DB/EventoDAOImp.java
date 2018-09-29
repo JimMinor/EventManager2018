@@ -1,6 +1,5 @@
 package DB;
 import Model.*;
-import ControllerView.MostraAlert;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -11,9 +10,11 @@ public class EventoDAOImp implements EventoDAO {
     private Evento eventoDaInserire;
     private GestoreQueryInserimentoEvento gestoreQueryInserimentoEvento;
     private GestoreQueryCerca gestoreQueryCerca;
+    private GestoreQueryModificaElimina gestoreQueryModificaElimina;
 
     public EventoDAOImp(){
         gestoreQueryCerca = new GestoreQueryCerca();
+        gestoreQueryModificaElimina = new GestoreQueryModificaElimina();
     }
 
     public EventoDAOImp(Evento eventoDaInserire) {
@@ -21,22 +22,24 @@ public class EventoDAOImp implements EventoDAO {
         this.eventoDaInserire = eventoDaInserire;
         gestoreQueryInserimentoEvento =  new GestoreQueryInserimentoEvento(eventoDaInserire);
         gestoreQueryCerca = new GestoreQueryCerca();
+        gestoreQueryModificaElimina = new GestoreQueryModificaElimina();
     }
 
-    @Override public void inserisciEvento() throws SQLException {
-       gestoreQueryInserimentoEvento.eseguiEPreparaQueryInserimentoEvento(); }
+    @Override public void inserisciEvento () throws SQLException {
+        gestoreQueryInserimentoEvento.eseguiEPreparaQueryInserimentoEvento(); }
 
-    @Override public List<Evento> cercaEvento(String nomeEvento,LocalDate dataEvento, LuogoEnum luogoEvento){
-
-        List<Evento> list=null;
-        try {
-            list = gestoreQueryCerca.cercaEvento(nomeEvento,luogoEvento,dataEvento);
-        } catch (NullPointerException e){
-            e.printStackTrace();
-        }
-        return list;
-
+    @Override public List<Evento> cercaEvento (String nomeEvento,LocalDate dataEvento, LuogoEnum luogoEvento) throws SQLException {
+        return gestoreQueryCerca.eseguiQueryRicercaEventi(nomeEvento,luogoEvento,dataEvento);
     }
 
-    public boolean eliminaEvento() throws SQLException{return false;}
+     public List<Evento> cercaEvento () throws SQLException {
+        return gestoreQueryCerca.eseguiQueryRicercaEventi();
+    }
+    @Override public void eliminaEvento (Evento eventoDaEliminare) throws SQLException{
+        gestoreQueryModificaElimina.eseguiQueryEliminaEvento(eventoDaEliminare);
+    }
+
+    @Override public void modificaEvento (int eventoID, LocalDate data, LuogoEnum luogo ) throws SQLException {
+        gestoreQueryModificaElimina.eseguiQueryModificaEvento(eventoID,data,luogo);
+    }
 }

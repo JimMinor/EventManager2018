@@ -64,7 +64,10 @@ public class CercaEventoControllerView implements Observer {
     }
 
     @FXML public void eliminaEventoButtonPressed(){
-        ricercaEventoController.eliminaEventoSelezionato(tabellaCercaEventoTableView.getSelectionModel().getSelectedItem());
+        Evento evento = tabellaCercaEventoTableView.getSelectionModel().getSelectedItem();
+        System.out.println(evento);
+        ricercaEventoController.eliminaEventoSelezionato(evento);
+
     }
 
     @FXML public void modificaEventoButtonPressed(){

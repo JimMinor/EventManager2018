@@ -19,8 +19,8 @@ public class ClienteDAOImp implements ClientiDAO {
 
         List<Cliente> list = null;
         try {
-            list = gestoreQueryCerca.cercaCliente(username);
-        } catch (NullPointerException e) {
+            list = gestoreQueryCerca.eseguiQueryRicercaClienti(username);
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return list;

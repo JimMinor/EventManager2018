@@ -11,5 +11,6 @@ public interface EventoDAO {
 
     public void inserisciEvento() throws Exception;
     public Collection<Evento> cercaEvento(String nomeEvento, LocalDate dataEvento, LuogoEnum luogoEvento) throws Exception;
-    public boolean eliminaEvento() throws Exception;
+    public void eliminaEvento(Evento evento) throws Exception;
+    public void modificaEvento(int eventoID, LocalDate data, LuogoEnum luogo) throws  Exception;
 }

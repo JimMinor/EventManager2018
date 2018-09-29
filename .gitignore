@@ -20,3 +20,7 @@ gestioneEventi/.idea/workspace.xml
 *.xml
 gestioneEventi/.idea/workspace.xml
 gestioneEventi/.idea/dbnavigator.xml
+
+\.idea/
+
+gestioneEventi/out/

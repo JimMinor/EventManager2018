@@ -3,7 +3,6 @@
 import Model.GenereManifestazioneEnum;
 import Model.GenereMusicaleEnum;
 import Model.GenereTeatroEnum;
-import View.*;
 import Model.TipologiaEnum;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

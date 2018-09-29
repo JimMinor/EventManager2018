@@ -87,11 +87,10 @@ public class InserisciEventoController {
      */
     @FXML public void inserisciEventoButtonPressed() {
        try {
-           controllaDisponibilita();
+
            controllaDatiEvento();
            MostraAlert.mostraAlertEventoInserito();
            pulisciForm();
-
        }
        catch (NoValidEventDataException e) {
            MostraAlert.mostraAlertErroreInserimentoEvento(e.getMessagge());
@@ -100,15 +99,6 @@ public class InserisciEventoController {
            e.printStackTrace();
            MostraAlert.mostraAlertErroreInserimentoEvento("Errore Inserimento Evento");
        }
-
-    }
-
-    private void controllaDisponibilita() throws NoValidEventDataException {
-        EventoDAO eventoDAO = new EventoDAOImp();
-        LocalDate data  = dataEventoDatePicker.getValue();
-        LuogoEnum luogo = luogoEventoComboBox.getValue();
-        if(((EventoDAOImp) eventoDAO).cercaEvento("",data,luogo)!=null)
-            throw  new NoValidEventDataException("Luogo occupato nella data selezionata, scegliere altra data o luogo ");
 
     }
 
@@ -126,7 +116,9 @@ public class InserisciEventoController {
         descrizioneEventoTextArea.clear();
         nomeEventoTextField.clear();
         prezzoBigliettoTextField.clear();
-
+        tipologiaEventoComboBox.setValue(null);
+        luogoEventoComboBox.setValue(null);
+        genereEventoComboBox.setValue(null);
     }
 
     private boolean controllaDatiEvento() throws NoValidEventDataException, Exception {
