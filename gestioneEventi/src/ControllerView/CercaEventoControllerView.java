@@ -93,6 +93,11 @@ public class CercaEventoControllerView implements Observer,Initializable {
 
     @FXML public void annullaCercaEventoButtonPressed(){}
 
+    @FXML public void visualizzaDatiEventoButtonPressed(){
+        eventoSelezionato = tabellaCercaEventoTableView.getSelectionModel().getSelectedItem();
+        cambiaView.mostraFormVisualizzaEvento(eventoSelezionato);
+    }
+
     private void cambiaModalita(boolean isDisable){
         luogoEventoComboBox.setValue(null);
         dataCercaEventoDataPicker.setValue(null);
@@ -104,8 +109,7 @@ public class CercaEventoControllerView implements Observer,Initializable {
         tabellaCercaEventoTableView.setDisable(isDisable);
     }
 
-    @Override
-    public void update(Observable observerModel, Object lista ){
+    @Override public void update(Observable observerModel, Object lista ){
         List<Evento> list = (List<Evento>)lista;
         tabellaCercaEventoTableView.setItems(FXCollections.observableArrayList(list));
         colonnaLuogoEvento.setCellValueFactory(new PropertyValueFactory<Evento, LuogoEnum>("LuogoEvento"));

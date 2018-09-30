@@ -7,7 +7,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <JFXTextField fx:id="nomeEventoTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="30.0" promptText="Nome Evento" />
@@ -18,7 +17,7 @@
       <JFXTextField fx:id="prezzoBigliettoTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="193.0" promptText="Prezzo Biglietto €" />
       <JFXComboBox fx:id="tipologiaEventoComboBox" focusColor="#3eb3da" layoutX="42.0" layoutY="261.0" onAction="#selezioneTipologia" prefHeight="25.0" prefWidth="135.0" promptText="Tipologia Evento" />
       <JFXComboBox fx:id="genereEventoComboBox" focusColor="#3eb3da" layoutX="42.0" layoutY="324.0" prefHeight="25.0" prefWidth="135.0" promptText="Genere Evento" />
-      <JFXTextArea fx:id="descrizioneEventoTextArea" focusColor="#3eb3da" layoutX="354.0" layoutY="151.0" prefHeight="135.0" prefWidth="356.0" promptText="Descrizione Evento" />
+      <JFXTextArea fx:id="descrizioneEventoTextArea" focusColor="#3eb3da" layoutX="354.0" layoutY="151.0" prefHeight="135.0" prefWidth="356.0" promptText="Descrizione Evento ( Opzionale ) " />
       <JFXTextField fx:id="partecipanteEventoTextField" layoutX="355.0" layoutY="30.0" prefHeight="25.0" prefWidth="203.0" promptText="Artisti/Team/Sportivi/Partecipanti" />
       <JFXButton fx:id="aggiungiButton" layoutX="578.0" layoutY="30.0" onAction="#aggiungiButtonPressed" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #3eb3da;" text="Aggiungi" textFill="WHITE" />
 
