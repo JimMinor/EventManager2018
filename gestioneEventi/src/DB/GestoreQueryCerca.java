@@ -144,7 +144,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
             String password = (resultSet.getString("PASSWORD"));
             LocalDate dataAssunzione = (resultSet.getDate("DATA_ASSUNZIONE").toLocalDate());
             Float stipendio = (resultSet.getFloat("STIPENDIO"));
-            String amministratore = (resultSet.getString("ADMIN"));
+            MansioneEnum amministratore = MansioneEnum.valueOf(resultSet.getString("ADMIN"));
             String telefono = (resultSet.getString("TELEFONO"));
             String iban = (resultSet.getString("IBAN"));
             String email = (resultSet.getString("EMAIL"));

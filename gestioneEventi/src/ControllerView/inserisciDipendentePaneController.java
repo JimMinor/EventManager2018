@@ -4,6 +4,7 @@ import ControllerView.MostraAlert;
 import DB.ImpiegatoDAO;
 import DB.ImpiegatoDAOImp;
 import Model.Impiegato;
+import Model.MansioneEnum;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -54,7 +55,7 @@ public class inserisciDipendentePaneController implements Initializable {
     @FXML
     private Button annullaDipendenteButton;
     @FXML
-    private ComboBox mansioneDipendenteComboBox;
+    private ComboBox<MansioneEnum> mansioneDipendenteComboBox;
     @FXML
     private TextField usernameDipendenteTextField;
     @FXML
@@ -64,10 +65,7 @@ public class inserisciDipendentePaneController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        mansioneDipendenteComboBox.setItems(list);
-
-
-
+        mansioneDipendenteComboBox.setItems(FXCollections.observableArrayList(MansioneEnum.values()));
     }
     public void annullaDipendenteButtonPressed(ActionEvent actionEvent) {
         tastoAnnullaInserisciDipendenti(operazione);
@@ -174,6 +172,8 @@ public class inserisciDipendentePaneController implements Initializable {
         return list;
     }
 
+
+
     public void tastoAnnullaInserisciDipendenti(String operazione){
         if (operazione=="pulisci") {
             nomeDipendenteTextField.clear();
@@ -218,7 +218,7 @@ public class inserisciDipendentePaneController implements Initializable {
 
     private boolean controllaDatiDipendente() throws NoValidEventDataException, Exception {
         /***
-         * Da implementare TIPO CONTRATTO, MANSIONE, IBAN
+         * Da implementare MANSIONE, IBAN
          ****/
 
         // Controllo nome dipendente: Diverso da NULL
@@ -255,25 +255,31 @@ public class inserisciDipendentePaneController implements Initializable {
         if (stipendio == null || stipendio <= 0.00)
             throw new NoValidEventDataException("Stipendio non valido");
 
-        // Controllo username: Diverso da NULL
+        //Controllo username: Diverso da NULL
         String username = usernameDipendenteTextField.getText();
         if (username == null || username.equals(""))
             throw new NoValidEventDataException("Username non inserito");
 
-        // Controllo password: Diverso da NULL
+        //Controllo password: Diverso da NULL
         String password = passwordDipendentePasswordField.getText();
         if (password == null || password.equals(""))
             throw new NoValidEventDataException("Password non inserita");
 
+        //Controllo Mansione
+        MansioneEnum  mansione = mansioneDipendenteComboBox.getValue();
+        if (mansione == null) throw new NoValidEventDataException("Inserire una mansione");
 
+        //Controllo IBAN
+        //Da implementare
+        String iban = ibanDipendenteTextField.getText();
 
         //Creazione oggetto impiegato
-     //   Impiegato impiegato = new Impiegato(nomeDipendente, cognomeDipendente, dataNascita, codiceFiscale,
-         //       username, password, LocalDate.now(), stipendio);
-       // ImpiegatoDAO impiegatoDAO = new ImpiegatoDAOImp(impiegato);
+        Impiegato impiegato = new Impiegato(nomeDipendente, cognomeDipendente, dataNascita, codiceFiscale,
+                username, password, LocalDate.now(), stipendio, mansione, telefono, iban, email, 0);
+        ImpiegatoDAO impiegatoDAO = new ImpiegatoDAOImp(impiegato);
 
 
-        //impiegatoDAO.inserisciImpiegato(impiegato);
+        impiegatoDAO.inserisciImpiegato();
 
 
         return true;

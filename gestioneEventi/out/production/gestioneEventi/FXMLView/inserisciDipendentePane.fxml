@@ -4,10 +4,7 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="formInserisciDipedente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerView.inserisciDipendentePaneController">
@@ -16,30 +13,16 @@
       <JFXTextField fx:id="cognomeDipendenteTextField" layoutX="42.0" layoutY="82.0" promptText="Cognome" />
       <JFXDatePicker fx:id="dataNascitaDipendenteDatePicker" defaultColor="#3eb3da" layoutX="42.0" layoutY="142.0" promptText="Data di Nascita" />
       <JFXTextField fx:id="codFiscaleDipendenteTextField" layoutX="42.0" layoutY="192.0" promptText="Codice Fiscale" />
-      <Label layoutX="42.0" layoutY="249.0" text="Sesso" />
-      <Group layoutX="87.0" layoutY="237.0">
-         <children>
-            <JFXRadioButton fx:id="sessoMDipendenteRadioButton" layoutX="14.0" layoutY="12.0" onAction="#sessoMDipendenteRadioButtonPressed" text="M" />
-            <JFXRadioButton fx:id="sessoFDipendenteRadioButton" layoutX="65.0" layoutY="12.0" onAction="#sessoFDipendenteRadioButtonPressed" text="F" />
-         </children>
-      </Group>
       <JFXTextField fx:id="indirizzoDipendenteTextField" layoutX="42.0" layoutY="349.0" prefHeight="25.0" prefWidth="210.0" promptText="Indirizzo" visible="false" />
       <JFXTextField fx:id="telefonoDipendenteTextField" layoutX="349.0" layoutY="30.0" prefHeight="25.0" prefWidth="135.0" promptText="Telefono" />
       <JFXTextField fx:id="emailDipendenteTextField" layoutX="350.0" layoutY="82.0" prefHeight="25.0" prefWidth="171.0" promptText="e-mail" />
       <JFXTextField fx:id="ibanDipendenteTextField" layoutX="348.0" layoutY="142.0" prefHeight="25.0" prefWidth="210.0" promptText="IBAN" />
-      <Label layoutX="349.0" layoutY="196.0" text="Contratto" />
-      <Group layoutX="415.0" layoutY="184.0">
-         <children>
-            <JFXRadioButton fx:id="tipoContrattoPtimeDipendenteRatioButton" layoutX="14.0" layoutY="12.0" onAction="#tipoContrattoPtimeDipendenteRadioButtonPressed" text="Part Time" />
-            <JFXRadioButton fx:id="tipoContrattoFtimeDipendenteRatioButton" layoutX="118.0" layoutY="12.0" onAction="#tipoContrattoFtimeDipendenteRadioButtonPressed" prefHeight="17.0" prefWidth="87.0" text="Full Time" />
-         </children>
-      </Group>
-      <JFXComboBox fx:id="mansioneDipendenteComboBox" focusColor="#3eb3da" layoutX="348.0" layoutY="245.0" prefHeight="25.0" prefWidth="147.0" promptText="Mansione" />
-      <JFXTextField fx:id="stipendioDipendenteTextField" layoutX="531.0" layoutY="245.0" prefHeight="25.0" prefWidth="96.0" promptText="Stipendio" />
+      <JFXComboBox fx:id="mansioneDipendenteComboBox" focusColor="#3eb3da" layoutX="350.0" layoutY="205.0" prefHeight="25.0" prefWidth="147.0" promptText="Mansione" />
+      <JFXTextField fx:id="stipendioDipendenteTextField" layoutX="531.0" layoutY="205.0" prefHeight="25.0" prefWidth="96.0" promptText="Stipendio" />
       <JFXButton fx:id="annullaDipendenteButton" layoutX="389.0" layoutY="349.0" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Annulla" textFill="WHITE" />
       <JFXButton fx:id="inserisciDipendenteButton" layoutX="572.0" layoutY="349.0" onAction="#inserisciDipendenteButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Inserisci" textFill="WHITE" />
-      <JFXTextField fx:id="usernameDipendenteTextField" layoutX="348.0" layoutY="291.0" promptText="Username" />
-      <JFXPasswordField fx:id="passwordDipendentePasswordField" layoutX="531.0" layoutY="291.0" promptText="Password" />
+      <JFXTextField fx:id="usernameDipendenteTextField" layoutX="349.0" layoutY="266.0" promptText="Username" />
+      <JFXPasswordField fx:id="passwordDipendentePasswordField" layoutX="531.0" layoutY="266.0" promptText="Password" />
 
    </children>
 </AnchorPane>
