@@ -11,10 +11,9 @@ import java.util.Set;
 
 public class GestoreQueryModificaElimina {
 
-    public void eseguiQueryModificaEvento(int evendoID, LocalDate data, LuogoEnum luogo)throws SQLException
-    {
+    public void eseguiQueryModificaEvento(int evendoID, LocalDate data, LuogoEnum luogo)throws SQLException {
 
-            String query = " UPDATE EVENTO SET DATA = ? AND LUOGO = ? WHERE ID = ? ";
+            String query = " UPDATE EVENTO SET DATA = ? , LUOGO = ? WHERE ID = ? ";
             PreparedStatement preparedStatement = UtilityDB.getConnessioneDB().prepareStatement(query);
             preparedStatement.setDate(1, Date.valueOf(data));
             preparedStatement.setString(2,luogo.name());

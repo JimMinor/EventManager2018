@@ -19,31 +19,37 @@ import java.util.Observer;
 
 public class CercaEventoControllerView implements Observer {
 
-    //FXML Fields------------------------------
+    //------------FXML Fields-------------------
+
+    // ----- BUTTONS  ------
     @FXML private Button modificaEventoButton;
     @FXML private Button eliminaEventoButton;
+    @FXML private Button cercaEventoButton;
+    @FXML private Button annullaCercaEventoButton;
+    @FXML private Button okButton;
+    @FXML private Button visualizzaDatiEventoButton;
+    //  ----   TABLES  -----
     @FXML private TableView<Evento> tabellaCercaEventoTableView;
     @FXML private TableColumn<Evento, String> colonnaNomeEvento;
     @FXML private TableColumn<Evento, LuogoEnum> colonnaLuogoEvento;
     @FXML private TableColumn<Evento, LocalDate> colonnaDataEvento;
-    @FXML private Button cercaEventoButton;
+   //  ---- DATE FIELDS ----
     @FXML private TextField nomeCercaEventoTextField;
-    @FXML private Button annullaCercaEventoButton;
     @FXML private DatePicker dataCercaEventoDataPicker;
     @FXML private ComboBox<LuogoEnum> luogoEventoComboBox;
     @FXML private AnchorPane cercaEventoPaneScreen;
-    @FXML private Button okButton;
     // Utilites e Altri Fields---------------------
     private CambiaView cambiaView;
     private VisualizzaEventiModel eventiModel;
     private RicercaEventoController ricercaEventoController;
+    private Evento eventoSelezionato;
 
     /** Metodi per l'inizializzazione della classe */
 
     public CercaEventoControllerView(CambiaView cambiaView, VisualizzaEventiModel eventiModel) {
         this.cambiaView = cambiaView;
         this.eventiModel = eventiModel;
-        ricercaEventoController = new RicercaEventoController(eventiModel,this);
+        ricercaEventoController = new RicercaEventoController(eventiModel);
         eventiModel.addObserver(this);
     }
 
@@ -71,6 +77,7 @@ public class CercaEventoControllerView implements Observer {
     }
 
     @FXML public void modificaEventoButtonPressed(){
+         eventoSelezionato = tabellaCercaEventoTableView.getSelectionModel().getSelectedItem();
         cambiaModalita(true);
     }
 
@@ -78,8 +85,8 @@ public class CercaEventoControllerView implements Observer {
         // Invia i dati al controller
         LocalDate data = dataCercaEventoDataPicker.getValue();
         LuogoEnum luogo = luogoEventoComboBox.getValue();
-        Evento evento = tabellaCercaEventoTableView.getSelectionModel().getSelectedItem();
-        ricercaEventoController.modificaEventoSelezionato(evento,data,luogo);
+
+        ricercaEventoController.modificaEventoSelezionato(eventoSelezionato,data,luogo);
         cambiaModalita(false);
         // Riattiva gli altri buttoni
     }
@@ -94,6 +101,7 @@ public class CercaEventoControllerView implements Observer {
         modificaEventoButton.setDisable(isDisable);
         eliminaEventoButton.setDisable(isDisable);
         annullaCercaEventoButton.setDisable(isDisable);
+        tabellaCercaEventoTableView.setDisable(isDisable);
     }
 
     @Override

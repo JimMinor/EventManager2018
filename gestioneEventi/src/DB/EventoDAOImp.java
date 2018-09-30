@@ -12,7 +12,12 @@ public class EventoDAOImp implements EventoDAO {
     private GestoreQueryCerca gestoreQueryCerca;
     private GestoreQueryModificaElimina gestoreQueryModificaElimina;
 
+    public void setEventoDaInserire(Evento eventoDaInserire) {
+        this.eventoDaInserire = eventoDaInserire;
+    }
+
     public EventoDAOImp(){
+
         gestoreQueryCerca = new GestoreQueryCerca();
         gestoreQueryModificaElimina = new GestoreQueryModificaElimina();
     }
@@ -35,6 +40,7 @@ public class EventoDAOImp implements EventoDAO {
      public List<Evento> cercaEvento () throws SQLException {
         return gestoreQueryCerca.eseguiQueryRicercaEventi();
     }
+
     @Override public void eliminaEvento (Evento eventoDaEliminare) throws SQLException{
         gestoreQueryModificaElimina.eseguiQueryEliminaEvento(eventoDaEliminare);
     }
