@@ -65,8 +65,7 @@ public class cercaEventoController {
         //Qui va inserito il codice che, dopo aver fatto la query al database, crea gli oggetti evento da visualizzare nella tableview
 
         /////Codice Test - Inizio
-        Evento eventoProva = new Evento(SANCARLO, "Evento di prova al San Carlo", 30, TEATRO, "Evento di teatro al San Carlo", LocalDate.of(2018, 9, 25), "Teatrale", null);
-        eventiCercati.add(eventoProva);
+
         ////Codice Test - Fine
 
         mostraTabella();

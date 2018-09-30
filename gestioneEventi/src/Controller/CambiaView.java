@@ -1,12 +1,16 @@
 package Controller;
 
 import ControllerView.*;
+import Model.Evento;
 import Model.TipologiaEnum;
 import Model.VisualizzaEventiModel;
 import ControllerView.cercaDipendentiPaneController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,12 +37,13 @@ public class CambiaView {
         risorseForm.put("cercaEvento", "../FXMLView/cercaEventoPane.fxml");
         risorseForm.put("visualizzaDatiClienti", "../FXMLView/visualizzaClientiPane.fxml");
         risorseForm.put("nuovoDipendente", "../FXMLView/inserisciDipendentePane.fxml");
+        risorseForm.put("visualizzaEvento","../FXMLView/VisualizzaEventoPane.fxml");
     }
 
     private FXMLLoader caricaFormDaRisorsa(String risorsa) {
             pulisciForm();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource((risorseForm.get(risorsa))));
-            return fxmlLoader;
+            return  new FXMLLoader(getClass().getResource((risorseForm.get(risorsa))));
+
     }
 
     public void pulisciForm() {
@@ -47,7 +52,7 @@ public class CambiaView {
 
     /************************************************
      *                                              *
-     *      CREAZIONE FORM INSERISCI EVENTO         *
+     *            CREAZIONE FORM                    *
      *                                              *
      * **********************************************
      */
@@ -137,5 +142,18 @@ public class CambiaView {
 
         }
 
+    }
+
+    public void mostraFormVisualizzaEvento(Evento eventoSelezionato) {
+
+        try {
+             FXMLLoader loader = caricaFormDaRisorsa("visualizzaEvento");
+             VisualizzaEventoControllerView vec = new VisualizzaEventoControllerView(this,eventoSelezionato);
+             loader.setController(vec);
+             Parent root =loader.load();
+             formCorrente.getChildren().add(root);
+
+
+        } catch ( Exception e ){ e.printStackTrace(); }
     }
 }

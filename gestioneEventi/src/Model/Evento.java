@@ -11,7 +11,7 @@ public  class Evento implements Comparable<Evento> {
     private LuogoEnum luogoEvento;
     private int capienzaMassima;
     private String Descrizione;
-    private float prezzoBiglietto;
+    private Float prezzoBiglietto;
     private TipologiaEnum tipologiaEvento;
     private String nome;
     private CittaEnum citta;
@@ -22,7 +22,7 @@ public  class Evento implements Comparable<Evento> {
 
 
     public Evento(LuogoEnum luogoEvento, String descrizione,
-                  float prezzoBiglietto, TipologiaEnum tipologiaEvento,
+                  Float prezzoBiglietto, TipologiaEnum tipologiaEvento,
                   String nome, LocalDate dataEvento, String genereEvento, Set<String> partecipantiEvento) {
 
         idEvento=0;// Viene gestito nel DB
@@ -70,7 +70,7 @@ public  class Evento implements Comparable<Evento> {
         return Descrizione;
     }
 
-    public float getPrezzoBiglietto() {
+    public Float getPrezzoBiglietto() {
         return prezzoBiglietto;
     }
 
@@ -102,7 +102,7 @@ public  class Evento implements Comparable<Evento> {
         Descrizione = descrizione;
     }
 
-    public void setPrezzoBiglietto(float prezzoBiglietto) {
+    public void setPrezzoBiglietto(Float prezzoBiglietto) {
         this.prezzoBiglietto = prezzoBiglietto;
     }
 
