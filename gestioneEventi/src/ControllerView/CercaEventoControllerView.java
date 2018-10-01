@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class CercaEventoControllerView implements Observer,Initializable {
+public class CercaEventoControllerView implements Observer{
 
     //------------FXML Fields-------------------
 
