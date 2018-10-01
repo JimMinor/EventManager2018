@@ -1,7 +1,6 @@
 package DB;
 
 import Model.Impiegato;
-import Model.MansioneEnum;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -26,9 +25,9 @@ public class ImpiegatoDAOImp implements ImpiegatoDAO {
     @Override
     public boolean inserisciImpiegato() throws SQLException {
 
-        if (impiegatoDaInserire.getAmministratore() == MansioneEnum.Amministratore)
+        if (impiegatoDaInserire.getAmministratore() == "Amministratore")
             mansioneDaInserire = 'V';
-        else if (impiegatoDaInserire.getAmministratore() == MansioneEnum.Utente)
+        else if (impiegatoDaInserire.getAmministratore() == "Operatore")
             mansioneDaInserire = 'X';
 
         Connection connection = UtilityDB.getConnessioneDB();

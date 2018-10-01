@@ -15,14 +15,14 @@ public class Impiegato extends  Persona {
     private Float stipendio;
     private String email;
     private String telefono;
-    private MansioneEnum amministratore;
+    private String amministratore;
     private int id;
     private String iban;
 
 
     public Impiegato(String nome, String cognome, LocalDate dataNascita,
                      String CF, String username, String password, LocalDate dataAssunzione,
-                     Float stipendio, MansioneEnum amministratore, String telefono, String iban, String email, int id) {
+                     Float stipendio, String amministratore, String telefono, String iban, String email, int id) {
         super(nome, cognome, dataNascita, CF);
         this.username = username;
         this.password = password;
@@ -60,7 +60,7 @@ public class Impiegato extends  Persona {
         return telefono;
     }
 
-    public MansioneEnum getAmministratore() {
+    public String getAmministratore() {
         return amministratore;
     }
 

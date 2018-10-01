@@ -1,10 +1,10 @@
 package ControllerView;
 
-import ControllerView.MostraAlert;
 import DB.ImpiegatoDAO;
 import DB.ImpiegatoDAOImp;
 import Model.Impiegato;
-import Model.MansioneEnum;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,178 +18,103 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import static Controller.ControlloSintassi.controllaSintassiCF;
+import static Controller.ControlloSintassi.controllaSintassiEmail;
+import static Controller.ControlloSintassi.controllaSintassiIban;
+
 public class inserisciDipendentePaneController implements Initializable {
 
-    @FXML
-    private AnchorPane formInserisciDipedente;
-    @FXML
-    private TextField nomeDipendenteTextField;
-    @FXML
-    private TextField cognomeDipendenteTextField;
-    @FXML
-    private DatePicker dataNascitaDipendenteDatePicker;
-    @FXML
-    private TextField codFiscaleDipendenteTextField;
-    //@FXML
-    //private TextField indirizzoDipendenteTextField;
-    @FXML
-    private RadioButton sessoFDipendenteRadioButton;
-    @FXML
-    private RadioButton sessoMDipendenteRadioButton;
-    @FXML
-    private Button inserisciDipendenteButton;
-    @FXML
-    private RadioButton tipoContrattoFtimeDipendenteRatioButton;
-    @FXML
-    private RadioButton tipoContrattoPtimeDipendenteRatioButton;
-    //@FXML
-    //private DatePicker dataContrattoDipendenteDatePicker;
-    @FXML
-    private TextField stipendioDipendenteTextField;
-    @FXML
-    private TextField telefonoDipendenteTextField;
-    @FXML
-    private TextField emailDipendenteTextField;
-    @FXML
-    private TextField ibanDipendenteTextField;
-    @FXML
-    private Button annullaDipendenteButton;
-    @FXML
-    private ComboBox<MansioneEnum> mansioneDipendenteComboBox;
-    @FXML
-    private TextField usernameDipendenteTextField;
-    @FXML
-    private PasswordField passwordDipendentePasswordField;
+    @FXML private AnchorPane formInserisciDipedente;
+    @FXML private TextField nomeDipendenteTextField;
+    @FXML private TextField cognomeDipendenteTextField;
+    @FXML private DatePicker dataNascitaDipendenteDatePicker;
+    @FXML private TextField codFiscaleDipendenteTextField;
+    @FXML private Button inserisciDipendenteButton;
+    @FXML private TextField stipendioDipendenteTextField;
+    @FXML private TextField telefonoDipendenteTextField;
+    @FXML private TextField emailDipendenteTextField;
+    @FXML private TextField ibanDipendenteTextField;
+    @FXML private Button annullaDipendenteButton;
+    @FXML private ComboBox mansioneDipendenteComboBox;
+    @FXML private TextField usernameDipendenteTextField;
+    @FXML private PasswordField passwordDipendentePasswordField;
 
     public String operazione="pulisci";
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        mansioneDipendenteComboBox.setItems(FXCollections.observableArrayList(MansioneEnum.values()));
-    }
-    public void annullaDipendenteButtonPressed(ActionEvent actionEvent) {
-        tastoAnnullaInserisciDipendenti(operazione);
-
-    }
-    //lista tipo evento
+    //lista mansioni
     ObservableList<String> list = FXCollections.observableArrayList("Amministratore","Operatore");
 
-    @FXML
-    private void tipoContrattoPtimeDipendenteRadioButtonPressed(ActionEvent actionEvent) {
-        tipoContrattoFtimeDipendenteRatioButton.setSelected(false);
-    }
-    @FXML
-    private void tipoContrattoFtimeDipendenteRadioButtonPressed(ActionEvent actionEvent) {
-        tipoContrattoPtimeDipendenteRatioButton.setSelected(false);
-    }
-    @FXML
-    private void sessoMDipendenteRadioButtonPressed(ActionEvent actionEvent) {
-        sessoFDipendenteRadioButton.setSelected(false);
-    }
-    @FXML
-    private void sessoFDipendenteRadioButtonPressed(ActionEvent actionEvent) {
-        sessoMDipendenteRadioButton.setSelected(false);
-    }
-
-
-    public TextField getStipendioDipendenteTextField() {
-        return stipendioDipendenteTextField;
-    }
-
-    public TextField getNomeDipendenteTextField() {
-        return nomeDipendenteTextField;
-    }
-
-    public TextField getCognomeDipendenteTextField() {
-        return cognomeDipendenteTextField;
-    }
-
-    public TextField getCodFiscaleDipendenteTextField() {
-        return codFiscaleDipendenteTextField;
-    }
-
-    /*public TextField getIndirizzoDipendenteTextField() {
-        return indirizzoDipendenteTextField;
-    }*/
-
-    public RadioButton getSessoFDipendenteRatioButton() {
-        return sessoFDipendenteRadioButton;
-    }
-
-    public RadioButton getSessoMDipendenteRadioButton() {
-        return sessoMDipendenteRadioButton;
-    }
-
-    public Button getInserisciDipendenteButton() {
-        return inserisciDipendenteButton;
-    }
-
-    public RadioButton getTipoContrattoFtimeDipendenteRatioButton() {
-        return tipoContrattoFtimeDipendenteRatioButton;
-    }
-
-    public RadioButton getTipoContrattoPtimeDipendenteRatioButton() {
-        return tipoContrattoPtimeDipendenteRatioButton;
-    }
-
-    //public DatePicker getDataContrattoDipendenteDatePicker() {
-    //    return dataContrattoDipendenteDatePicker;
-    //}
-
-    public TextField getTelefonoDipendenteTextField() {
-        return telefonoDipendenteTextField;
-    }
-
-    public TextField getEmailDipendenteTextField() {
-        return emailDipendenteTextField;
-    }
-
-    public TextField getIbanDipendenteTextField() {
-        return ibanDipendenteTextField;
-    }
-
-    public DatePicker getDataNascitaDipendenteDatePicker() {
-        return dataNascitaDipendenteDatePicker;
-    }
-
-    public Button getAnnullaDipendenteButton() {
-        return annullaDipendenteButton;
-    }
-
-    public ComboBox getMansioneDipendenteComboBox() {
-        return mansioneDipendenteComboBox;
-    }
-
-    public AnchorPane getFormInserisciDipedente() {
-        return formInserisciDipedente;
-    }
-
-    public String getOperazione() {
-        return operazione;
-    }
 
     public ObservableList<String> getList() {
         return list;
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        mansioneDipendenteComboBox.setItems(list);
+
+        //Forza l'inserimento di valori numerici nel campo "Telefono"
+        telefonoDipendenteTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    telefonoDipendenteTextField.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+        //Forza l'inserimento di valori float nel campo "Stipendio"
+        stipendioDipendenteTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d\\.\\d")) {
+                    stipendioDipendenteTextField.setText(newValue.replaceAll("[^\\d\\.\\d]", ""));
+                }
+            }
+        });
+
+        //Forza l'inserimento di caratteri maiuscoli nel campo "Codice Fiscale"
+        codFiscaleDipendenteTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    codFiscaleDipendenteTextField.setText(newValue.toUpperCase());
+                }
+            }
+        });
+
+        //Forza l'inserimento di caratteri maiuscoli nel campo "IBAN"
+        ibanDipendenteTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    ibanDipendenteTextField.setText(newValue.toUpperCase());
+                }
+            }
+        });
+    }
+
+
+
+    public void annullaDipendenteButtonPressed(ActionEvent actionEvent) {
+        tastoAnnullaInserisciDipendenti(operazione);
+    }
 
     public void tastoAnnullaInserisciDipendenti(String operazione){
         if (operazione=="pulisci") {
             nomeDipendenteTextField.clear();
             cognomeDipendenteTextField.clear();
             codFiscaleDipendenteTextField.clear();
-            //indirizzoDipendenteTextField.clear();
             dataNascitaDipendenteDatePicker.setValue(null);
-            //dataContrattoDipendenteDatePicker.setValue(null);
             stipendioDipendenteTextField.clear();
             telefonoDipendenteTextField.clear();
             emailDipendenteTextField.clear();
             ibanDipendenteTextField.clear();
-            sessoFDipendenteRadioButton.setSelected(false);
-            sessoMDipendenteRadioButton.setSelected(false);
-            tipoContrattoPtimeDipendenteRatioButton.setSelected(false);
-            tipoContrattoFtimeDipendenteRatioButton.setSelected(false);
         }else {
           //  new CambiaView(formInserisciDipedente).caricaFormDaRisorsa(formInserisciDipedente, "cercaDipendentiPane.fxml");
         }
@@ -199,6 +124,7 @@ public class inserisciDipendentePaneController implements Initializable {
     public void inserisciDipendenteButtonPressed() {
         try {
             controllaDatiDipendente();
+            //controlla();
             MostraAlert.mostraAlertImpiegatoInserito();
             //funzione per tornare al menu precedente
         }
@@ -217,18 +143,15 @@ public class inserisciDipendentePaneController implements Initializable {
     }*/
 
     private boolean controllaDatiDipendente() throws NoValidEventDataException, Exception {
-        /***
-         * Da implementare MANSIONE, IBAN
-         ****/
 
         // Controllo nome dipendente: Diverso da NULL
         String nomeDipendente = nomeDipendenteTextField.getText();
-        if (nomeDipendente == null || nomeDipendente.equals(""))
+        if (nomeDipendente.equals(""))
             throw new NoValidEventDataException("Nome non inserito");
 
         // Controllo cognome dipendente: Diverso da NULL
         String cognomeDipendente = cognomeDipendenteTextField.getText();
-        if (cognomeDipendente == null || cognomeDipendente.equals(""))
+        if (cognomeDipendente.equals(""))
             throw new NoValidEventDataException("Cognome non inserito");
 
         // Controllo data di nascita: Diverso da NULL
@@ -236,42 +159,51 @@ public class inserisciDipendentePaneController implements Initializable {
         if (dataNascita == null)
             throw new NoValidEventDataException("Data non inserita");
 
-        // Controllo codice fiscale: Diverso da NULL e lenght!=16
-        // Si potrebbe implementare un controllo più accurato per verificare che tutti i caratteri siano plausibili
+        // Controllo codice fiscale: lenght = 16 e controllo regex
         String codiceFiscale = codFiscaleDipendenteTextField.getText();
-        if (codiceFiscale == null || codiceFiscale.equals("") || codiceFiscale.length() != 16)
+        if (codiceFiscale.length() != 16 || !controllaSintassiCF(codiceFiscale))
             throw new NoValidEventDataException("Codice Fiscale non valido");
 
         //Controllo telefono
-        //Da implementare
         String telefono = telefonoDipendenteTextField.getText();
+        if (telefono.equals("") || telefono.length() < 9)
+            throw new NoValidEventDataException("Telefono non valido");
 
-        //Controllo email
-        //Da implementare
+        //Controllo email: controllo regex
         String email = emailDipendenteTextField.getText();
+        if (!controllaSintassiEmail(email))
+            throw new NoValidEventDataException("Email non valida");
 
-        //Controllo stipendio Diverso da NULL e >0 e che deve essere un Double
-        Float stipendio = Float.valueOf(stipendioDipendenteTextField.getText());
-        if (stipendio == null || stipendio <= 0.00)
+        //Controllo IBAN
+        String iban = ibanDipendenteTextField.getText();
+        if (iban.length() != 27 || !controllaSintassiIban(iban))
+            throw new NoValidEventDataException("IBAN non valido");
+
+        //Controllo Mansione != NULL
+        String  mansione;
+        if (mansioneDipendenteComboBox.getValue() == null)
+            throw new NoValidEventDataException("Inserire una mansione");
+        else
+            mansione = mansioneDipendenteComboBox.getValue().toString();
+
+        //Controllo stipendio Diverso da NULL (non è necessario controllo segno perché l'input è limitato)
+        Float stipendio;
+        if (stipendioDipendenteTextField.getText().equals(""))
             throw new NoValidEventDataException("Stipendio non valido");
+        else
+            stipendio = Float.valueOf(stipendioDipendenteTextField.getText());
 
         //Controllo username: Diverso da NULL
         String username = usernameDipendenteTextField.getText();
-        if (username == null || username.equals(""))
+        if (username.equals(""))
             throw new NoValidEventDataException("Username non inserito");
 
         //Controllo password: Diverso da NULL
         String password = passwordDipendentePasswordField.getText();
-        if (password == null || password.equals(""))
+        if (password.equals(""))
             throw new NoValidEventDataException("Password non inserita");
 
-        //Controllo Mansione
-        MansioneEnum  mansione = mansioneDipendenteComboBox.getValue();
-        if (mansione == null) throw new NoValidEventDataException("Inserire una mansione");
 
-        //Controllo IBAN
-        //Da implementare
-        String iban = ibanDipendenteTextField.getText();
 
         //Creazione oggetto impiegato
         Impiegato impiegato = new Impiegato(nomeDipendente, cognomeDipendente, dataNascita, codiceFiscale,
