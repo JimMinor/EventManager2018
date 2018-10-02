@@ -5,6 +5,7 @@ import Model.Evento;
 import Model.TipologiaEnum;
 import Model.VisualizzaEventiModel;
 import ControllerView.cercaDipendentiPaneController;
+import Model.VisualizzaclientiModel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -97,16 +98,16 @@ public class CambiaView {
     public void mostraFormGestioneClienti() {
         try {
             FXMLLoader loader = caricaFormDaRisorsa("gestioneClienti");
+            loader.setController(new CercaClientiControllerView(this, new VisualizzaclientiModel()));
             Node form = loader.load();
             formCorrente.getChildren().add(form);
-
         } catch (Exception e) {
             e.printStackTrace();
 
         }
 
-
     }
+
 
     public void mostraFormGestioneDipendeti() {
             try {
