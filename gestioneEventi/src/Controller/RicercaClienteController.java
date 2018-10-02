@@ -1,7 +1,6 @@
 package Controller;
 
 
-import ControllerView.CercaClientiControllerView;
 import DB.ClienteDAOImp;
 import DB.ClientiDAO;
 import Model.Cliente;
@@ -12,10 +11,10 @@ import java.sql.SQLException;
 
 public class RicercaClienteController {
 
-    private VisualizzaclientiModel visualizzaclientiModel;
+    private VisualizzaClientiModel visualizzaclientiModel;
    private ClientiDAO clientiDAO=new ClienteDAOImp();
 
-    public RicercaClienteController(VisualizzaclientiModel cercaClientiModel1){
+    public RicercaClienteController(VisualizzaClientiModel cercaClientiModel1){
             this.visualizzaclientiModel = cercaClientiModel1;
 
 

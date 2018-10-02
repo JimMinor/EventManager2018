@@ -21,6 +21,8 @@ public  class Evento implements Comparable<Evento> {
     private Set<String> partecipantiEvento;
 
 
+    public Evento (){}
+
     public Evento(LuogoEnum luogoEvento, String descrizione,
                   Float prezzoBiglietto, TipologiaEnum tipologiaEvento,
                   String nome, LocalDate dataEvento, String genereEvento, Set<String> partecipantiEvento) {

@@ -1,8 +1,6 @@
-package ControllerView;
+package View;
 import Controller.CambiaView;
 import Controller.RicercaEventoController;
-import DB.EventoDAO;
-import DB.EventoDAOImp;
 import Model.VisualizzaEventiModel;
 import Model.Evento;
 import Model.LuogoEnum;
@@ -17,7 +15,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class CercaEventoControllerView implements Observer{
+public class CercaEventoView  extends AnchorPane implements Observer {
 
     //------------FXML Fields-------------------
 
@@ -46,10 +44,9 @@ public class CercaEventoControllerView implements Observer{
 
     /** Metodi per l'inizializzazione della classe */
 
-    public CercaEventoControllerView(CambiaView cambiaView, VisualizzaEventiModel eventiModel) {
+    public CercaEventoView(CambiaView cambiaView, VisualizzaEventiModel eventiModel) {
         this.cambiaView = cambiaView;
         this.eventiModel = eventiModel;
-        ricercaEventoController = new RicercaEventoController(eventiModel);
         eventiModel.addObserver(this);
     }
 
@@ -59,57 +56,88 @@ public class CercaEventoControllerView implements Observer{
 
     }
 
+
+
     /** Metodi FXML per gli eventi */
-    @FXML public void cercaEventoButtonPressed(){
 
-        String nomeEvento = nomeCercaEventoTextField.getText();
-        LuogoEnum luogoEnum = luogoEventoComboBox.getValue();
-        LocalDate dataEvento = dataCercaEventoDataPicker.getValue();
-        System.out.println(nomeEvento + luogoEnum + dataEvento);
-        ricercaEventoController.cercaEventi(nomeEvento,dataEvento,luogoEnum);
+
+
+    public Button getModificaEventoButton() {
+        return modificaEventoButton;
     }
 
-    @FXML public void eliminaEventoButtonPressed(){
-        Evento evento = tabellaCercaEventoTableView.getSelectionModel().getSelectedItem();
-        System.out.println(evento);
-        ricercaEventoController.eliminaEventoSelezionato(evento);
-
+    public Button getEliminaEventoButton() {
+        return eliminaEventoButton;
     }
 
-    @FXML public void modificaEventoButtonPressed(){
-         eventoSelezionato = tabellaCercaEventoTableView.getSelectionModel().getSelectedItem();
-        cambiaModalita(true);
+    public Button getCercaEventoButton() {
+        return cercaEventoButton;
     }
 
-    @FXML public void okButtonPressed(){
-        // Invia i dati al controller
-        LocalDate data = dataCercaEventoDataPicker.getValue();
-        LuogoEnum luogo = luogoEventoComboBox.getValue();
-
-        ricercaEventoController.modificaEventoSelezionato(eventoSelezionato,data,luogo);
-        cambiaModalita(false);
-        // Riattiva gli altri buttoni
+    public Button getAnnullaCercaEventoButton() {
+        return annullaCercaEventoButton;
     }
 
-    @FXML public void annullaCercaEventoButtonPressed(){}
-
-    @FXML public void visualizzaDatiEventoButtonPressed(){
-        eventoSelezionato = tabellaCercaEventoTableView.getSelectionModel().getSelectedItem();
-        cambiaView.mostraFormVisualizzaEvento(eventoSelezionato);
+    public Button getOkButton() {
+        return okButton;
     }
 
-    private void cambiaModalita(boolean isDisable){
-        luogoEventoComboBox.setValue(null);
-        dataCercaEventoDataPicker.setValue(null);
-        okButton.setDisable(!isDisable);
-        cercaEventoButton.setDisable(isDisable);
-        modificaEventoButton.setDisable(isDisable);
-        eliminaEventoButton.setDisable(isDisable);
-        annullaCercaEventoButton.setDisable(isDisable);
-        tabellaCercaEventoTableView.setDisable(isDisable);
+    public Button getVisualizzaDatiEventoButton() {
+        return visualizzaDatiEventoButton;
     }
+
+    public TableView<Evento> getTabellaCercaEventoTableView() {
+        return tabellaCercaEventoTableView;
+    }
+
+    public TableColumn<Evento, String> getColonnaNomeEvento() {
+        return colonnaNomeEvento;
+    }
+
+    public TableColumn<Evento, LuogoEnum> getColonnaLuogoEvento() {
+        return colonnaLuogoEvento;
+    }
+
+    public TableColumn<Evento, LocalDate> getColonnaDataEvento() {
+        return colonnaDataEvento;
+    }
+
+    public TextField getNomeCercaEventoTextField() {
+        return nomeCercaEventoTextField;
+    }
+
+    public DatePicker getDataCercaEventoDataPicker() {
+        return dataCercaEventoDataPicker;
+    }
+
+    public ComboBox<LuogoEnum> getLuogoEventoComboBox() {
+        return luogoEventoComboBox;
+    }
+
+    public AnchorPane getCercaEventoPaneScreen() {
+        return cercaEventoPaneScreen;
+    }
+
+    public CambiaView getCambiaView() {
+        return cambiaView;
+    }
+
+    public VisualizzaEventiModel getEventiModel() {
+        return eventiModel;
+    }
+
+    public RicercaEventoController getRicercaEventoController() {
+        return ricercaEventoController;
+    }
+
+    public Evento getEventoSelezionato() {
+        return eventoSelezionato;
+    }
+
+    /**    GETTERS  */
 
     @Override public void update(Observable observerModel, Object lista ){
+
         List<Evento> list = (List<Evento>)lista;
         tabellaCercaEventoTableView.setItems(FXCollections.observableArrayList(list));
         colonnaLuogoEvento.setCellValueFactory(new PropertyValueFactory<Evento, LuogoEnum>("LuogoEvento"));

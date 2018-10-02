@@ -1,4 +1,4 @@
-package ControllerView;
+package View;
 
 import Controller.CambiaView;
 import Model.Evento;

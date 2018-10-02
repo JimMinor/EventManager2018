@@ -1,11 +1,9 @@
-package ControllerView;
+package View;
 
 import Controller.CambiaStage;
 import Controller.ControlledStage;
 import DB.Autenticazione;
 import DB.AutenticazioneConcreta;
-import DB.ImpiegatoDAO;
-import DB.LoginCommand;
 import Model.Impiegato;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

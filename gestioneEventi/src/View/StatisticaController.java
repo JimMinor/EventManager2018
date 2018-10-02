@@ -1,11 +1,10 @@
-package ControllerView;
+package View;
 
 import Model.LuogoEnum;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 
 import java.net.URL;

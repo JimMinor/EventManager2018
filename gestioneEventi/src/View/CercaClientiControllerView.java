@@ -1,12 +1,11 @@
-package ControllerView;
+package View;
 
 import Controller.*;
 import Model.Cliente;
-import Model.VisualizzaclientiModel;
+import Model.VisualizzaClientiModel;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -15,10 +14,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import java.util.Observer;
 
-import java.net.URL;
 import java.util.List;
 import java.util.Observable;
-import java.util.ResourceBundle;
 
 public class CercaClientiControllerView implements Observer {
 
@@ -38,10 +35,10 @@ public class CercaClientiControllerView implements Observer {
     //-----------UTILITY--------------
     private CambiaView cambiaView;
     private RicercaClienteController ricercaController;
-    private VisualizzaclientiModel visualizzaclientiModel;
+    private VisualizzaClientiModel visualizzaclientiModel;
     private Cliente cliente;
 
-    public CercaClientiControllerView(CambiaView cambiaView, VisualizzaclientiModel visualizzaclientiModel) {
+    public CercaClientiControllerView(CambiaView cambiaView, VisualizzaClientiModel visualizzaclientiModel) {
         this.cambiaView = cambiaView;
         this.visualizzaclientiModel = visualizzaclientiModel;
         ricercaController = new RicercaClienteController(visualizzaclientiModel);

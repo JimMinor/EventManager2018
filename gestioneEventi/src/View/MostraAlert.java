@@ -1,4 +1,4 @@
-package ControllerView;
+package View;
 
 import javafx.scene.control.Alert;
 

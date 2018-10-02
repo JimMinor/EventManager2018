@@ -1,7 +1,7 @@
 package Controller;
 
-import ControllerView.LoginStage;
-import ControllerView.MenuPrincipaleStage;
+import View.LoginStage;
+import View.MenuPrincipaleStage;
 import Model.Impiegato;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

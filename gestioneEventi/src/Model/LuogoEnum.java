@@ -3,7 +3,11 @@ package Model;
 public enum LuogoEnum {
 
     SANCARLO(CittaEnum.NAPOLI,30000),
-    PALAPARTENOPE(CittaEnum.NAPOLI,3000);
+    PALAPARTENOPE(CittaEnum.NAPOLI,3000),
+    DIANA(CittaEnum.NAPOLI, 2000),
+    SANPAOLO(CittaEnum.NAPOLI, 60000);
+
+
 
     private CittaEnum cittaLuogo;
     private int numPosti;

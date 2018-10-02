@@ -7,7 +7,7 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerView.StatisticaController">
+<AnchorPane prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.StatisticaController">
    <children>
       <LineChart fx:id="statisticheMensili" layoutX="102.0" layoutY="80.0" prefHeight="247.0" prefWidth="681.0">
         <xAxis>

@@ -1,7 +1,6 @@
-package ControllerView;
+package View;
 
 import Controller.CambiaView;
-import Model.TipologiaEnum;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 

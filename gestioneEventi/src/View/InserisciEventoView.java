@@ -1,20 +1,17 @@
-package ControllerView;
+package View;
 
 import Controller.*;
-import DB.EventoDAO;
-import DB.EventoDAOImp;
-import Model.Evento;
 import Model.LuogoEnum;
 import Model.TipologiaEnum;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
-import java.time.LocalDate;
 import java.util.*;
 
-public class InserisciEventoControllerView {
+public class InserisciEventoView extends AnchorPane {
 
     //FXMLView Fields---------------------------
     @FXML private Button annullaButton;
@@ -46,7 +43,7 @@ public class InserisciEventoControllerView {
         tipologiaEventoComboBox.setItems(FXCollections.observableArrayList(TipologiaEnum.values()));
     }
 
-    public InserisciEventoControllerView(CambiaView cambiaView) {
+    public InserisciEventoView(CambiaView cambiaView) {
         this.cambiaView = cambiaView;
         partecipantiEvento= new HashSet<>();
 
@@ -84,38 +81,38 @@ public class InserisciEventoControllerView {
 
     public Set<String> getPartecipantiEvento () { return partecipantiEvento; }
 
+    public TextField getPartecipanteEventoTextField() {
+        return partecipanteEventoTextField;
+    }
+
+    public Button getAnnullaButton() {
+        return annullaButton;
+    }
+
+    public Button getAggiungiButton() {
+        return aggiungiButton;
+    }
+
+    public Button getInserisciButton() {
+        return inserisciButton;
+
+    }
+
 
 
 
     /**
-     *  Metodi eventi ControllerView
+     *  Metodi eventi View
      */
-    @FXML public void inserisciEventoButtonPressed() {
-       try {
 
-           new DatiEventoController(this).controllaDatiEvento();
-           MostraAlert.mostraAlertEventoInserito();
-           pulisciForm();
-       }
-       catch (NoValidEventDataException e) {
-           MostraAlert.mostraAlertErroreInserimentoEvento(e.getMessagge());
-       }
-       catch( Exception e){
-           e.printStackTrace();
-           MostraAlert.mostraAlertErroreInserimentoEvento("Errore Inserimento Evento");
-       }
 
-    }
 
-    @FXML public void selezioneTipologia()
+     public void selezioneTipologia()
     {
-        genereEventoComboBox.setItems(FXCollections.observableArrayList(tipologiaEventoComboBox.getValue().getListaGeneri()));
+
     }
 
-    @FXML public void aggiungiButtonPressed(){
-        partecipantiEvento.add(partecipanteEventoTextField.getText());
-        partecipanteEventoTextField.clear();
-    }
+
 
     private void pulisciForm() {
         descrizioneEventoTextArea.clear();

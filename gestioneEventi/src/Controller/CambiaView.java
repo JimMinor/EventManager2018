@@ -1,11 +1,11 @@
 package Controller;
 
-import ControllerView.*;
+import View.*;
 import Model.Evento;
 import Model.TipologiaEnum;
 import Model.VisualizzaEventiModel;
-import ControllerView.cercaDipendentiPaneController;
-import Model.VisualizzaclientiModel;
+import View.cercaDipendentiPaneController;
+import Model.VisualizzaClientiModel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -64,29 +64,26 @@ public class CambiaView {
         try {
 
             FXMLLoader loader = caricaFormDaRisorsa("creaEvento");
-            InserisciEventoControllerView ief=new InserisciEventoControllerView(this);
-            loader.setController(ief);
-            Node form = loader.load();
-            formCorrente.getChildren().add(form);
+            InserisciEventoView inserisciEventoForm=new InserisciEventoView(this);
+            loader.setController(inserisciEventoForm);
+            AnchorPane pane = loader.load();
+            InserisciEventoController inserisciEventoController = new InserisciEventoController(new Evento(),inserisciEventoForm);
+            formCorrente.getChildren().add(pane);
 
         } catch( Exception e ) { e.printStackTrace(); }
     }
 
-    public void mostraFormTipoEvento() {
-        try {
-           FXMLLoader loader = caricaFormDaRisorsa("tipoEvento");
-           loader.setController(new SelezioneTipoEventoForm(this));
-           Node form = loader.load();
-           formCorrente.getChildren().add(form);
-       } catch(Exception e) { e.printStackTrace(); }
-    }
+
 
     public void mostraFormCercaEvento() {
         try {
 
             FXMLLoader loader = caricaFormDaRisorsa("cercaEvento");
-            loader.setController(new CercaEventoControllerView(this, new VisualizzaEventiModel()));
-            Node form = loader.load();
+            VisualizzaEventiModel visualizzaEventiModel = new VisualizzaEventiModel();
+            CercaEventoView cercaEventoView = new CercaEventoView(this,visualizzaEventiModel);
+            loader.setController(cercaEventoView);
+            AnchorPane form = loader.load();
+            RicercaEventoController ricercaEventoController = new RicercaEventoController(visualizzaEventiModel,cercaEventoView,this);
             formCorrente.getChildren().add(form);
         } catch (Exception e) {
             e.printStackTrace();
@@ -98,7 +95,7 @@ public class CambiaView {
     public void mostraFormGestioneClienti() {
         try {
             FXMLLoader loader = caricaFormDaRisorsa("gestioneClienti");
-            loader.setController(new CercaClientiControllerView(this, new VisualizzaclientiModel()));
+            loader.setController(new CercaClientiControllerView(this, new VisualizzaClientiModel()));
             Node form = loader.load();
             formCorrente.getChildren().add(form);
         } catch (Exception e) {

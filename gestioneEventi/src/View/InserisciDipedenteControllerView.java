@@ -1,4 +1,4 @@
-package ControllerView;
+package View;
 
 import DB.ImpiegatoDAO;
 import DB.ImpiegatoDAOImp;

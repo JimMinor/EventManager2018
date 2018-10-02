@@ -3,6 +3,8 @@ package Model;
 import javafx.beans.InvalidationListener;
 
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 
@@ -12,8 +14,8 @@ import java.util.*;
 
 public class VisualizzaEventiModel extends Observable {
 
-    private List<Evento> listaEventi;
-    private ObjectProperty<Evento> eventoSelezionato;
+    private volatile List<Evento> listaEventi = new ArrayList<>();
+    private volatile Evento eventoSelezionato = new Evento();
 
     public void setListaEventiView(List<Evento> list)
     {
@@ -24,4 +26,11 @@ public class VisualizzaEventiModel extends Observable {
     public List<Evento> getListaEventi(){ return listaEventi; }
 
 
+    public synchronized Evento getEventoSelezionato() {
+        return eventoSelezionato;
+    }
+
+    public synchronized void setEventoSelezionato(Evento evento) {
+        eventoSelezionato = evento;
+    }
 }
