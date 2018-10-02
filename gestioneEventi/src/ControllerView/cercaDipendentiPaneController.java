@@ -12,26 +12,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class cercaDipendentiPaneController {
-    @FXML
-    private AnchorPane cercaDipendentiScreenAnchorPane;
-    @FXML
-    private Button modificaDipendenteButton;
-    @FXML
-    private Button eliminaDipendentiButton;
-    @FXML
-    private TableView tabellaCercaDipendenteTableView;
-    @FXML
-    private Button cercaCercaDipendenteButton;
-    @FXML
-    private TextField nomeCercaDipendenteTextField;
-    @FXML
-    private TextField cognomeCercaDipendenteTextField;
-    @FXML
-    private DatePicker dataNascitaCercaDipendenteDataPicker;
-    @FXML
-    private Button annullaCercaDipendenteButton;
-    @FXML
-    private Button nuovoDipendenteButton;
+    @FXML private AnchorPane cercaDipendentiScreenAnchorPane;
+    @FXML private Button modificaDipendenteButton;
+    @FXML private Button eliminaDipendentiButton;
+    @FXML private TableView tabellaCercaDipendenteTableView;
+    @FXML private Button cercaCercaDipendenteButton;
+    @FXML private TextField nomeCercaDipendenteTextField;
+    @FXML private TextField cognomeCercaDipendenteTextField;
+    @FXML private DatePicker dataNascitaCercaDipendenteDataPicker;
+    @FXML private Button annullaCercaDipendenteButton;
+    @FXML private Button nuovoDipendenteButton;
 
     private CambiaView creaFormNuovoDipendente;
 

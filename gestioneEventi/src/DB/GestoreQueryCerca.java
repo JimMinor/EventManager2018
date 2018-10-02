@@ -163,6 +163,34 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
     }
 
+    public List<Cliente> eseguiQueryRicercaClienti() throws SQLException{
+        List<Cliente> listaClienti = new ArrayList<>();
+        ResultSet resultSet = null;
+        Connection connection = UtilityDB.getConnessioneDB();
+        PreparedStatement preparedStatement = null;
+        String selectSql = " SELECT * FROM IMPIGATO NATURAL JOIN PERSONA ";
+        preparedStatement = connection.prepareStatement(selectSql);
+        resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()){
+            String username1 = (resultSet.getString("USERNAME"));
+            String nome = (resultSet.getString("NOME"));
+            String cognome = (resultSet.getString("COGNOME"));
+            String indirizzo = (resultSet.getString("INDIRIZZO"));
+            String email = (resultSet.getString("EMAIL"));
+            String cf = (resultSet.getString("CODICE_FISCALE"));
+            LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
+            Float spesaTot = (resultSet.getFloat("SPESA_TOT "));
+            Float spesaCarta = (resultSet.getFloat("SPESA_CARTA"));
+            int n_bigietti = (resultSet.getInt("NUM_BIGLIETTI"));
+            int id = (resultSet.getInt("ID"));
+
+        }
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+        return listaClienti;
+    }
+
     public List<Evento> eseguiQueryRicercaEventi() throws SQLException {
 
         String sql = " SELECT * FROM EVENTO ";

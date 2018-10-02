@@ -14,7 +14,9 @@ public class Cliente extends Persona implements Comparable<Cliente> {
     private int id;
 
 
-    public Cliente(String nome, String cognome, String CF, String username, String indirizzo, String mail, LocalDate dataNascita, Float spesaTot, Float spesaCarta,int numBiglietti,int id ) {
+
+
+    public Cliente(String nome, String cognome, String CF, String username, String indirizzo, String mail, LocalDate dataNascita, Float spesaTot, Float spesaCarta, int numBiglietti, int id ) {
         super(nome, cognome, dataNascita,CF);
         this.username = username;
         this.indirizzo = indirizzo;
@@ -58,6 +60,10 @@ public class Cliente extends Persona implements Comparable<Cliente> {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override

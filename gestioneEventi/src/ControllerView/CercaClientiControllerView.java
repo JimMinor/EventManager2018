@@ -2,6 +2,7 @@ package ControllerView;
 
 import Controller.*;
 import Model.Cliente;
+import Model.VisualizzaclientiModel;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,51 +20,60 @@ import java.util.List;
 import java.util.Observable;
 import java.util.ResourceBundle;
 
-public class CercaClientiControllerView implements ControlledStage, Initializable,Observer {
+public class CercaClientiControllerView implements Observer {
 
-    @FXML private Button visualizzaDatiClientiButton;
+    //----------------TABELLA-------------
     @FXML private TableView<Cliente> tabellaCercaClientiTableView;
     @FXML private TableColumn<Cliente, String> colonnausername;
     @FXML private TableColumn<Cliente, String> colonnanome;
     @FXML private TableColumn<Cliente, String> colonnacognome;
+    //--------------BOTTONI-----------------
+    @FXML private Button visualizzaDatiClientiButton;
     @FXML private Button eliminaClientiButton;
     @FXML private Button annullaCercaClientiButton;
     @FXML private Button cercaClienteButton;
+    //-----------DATA fIELDS------------------
     @FXML private TextField usernameCercaClientiTextField;
     @FXML private AnchorPane cercaClientiPaneScreen;
-    private CambiaView cambiaForm;
+    //-----------UTILITY--------------
+    private CambiaView cambiaView;
     private RicercaClienteController ricercaController;
+    private VisualizzaclientiModel visualizzaclientiModel;
+    private Cliente cliente;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        cambiaForm=new CambiaView(cercaClientiPaneScreen);
+    public CercaClientiControllerView(CambiaView cambiaView, VisualizzaclientiModel visualizzaclientiModel) {
+        this.cambiaView = cambiaView;
+        this.visualizzaclientiModel = visualizzaclientiModel;
+        ricercaController = new RicercaClienteController(visualizzaclientiModel);
+        visualizzaclientiModel.addObserver(this);
+    }
 
+    public void initialize() {
 
 
     }
 
-    @Override
-    public void setCambiaStage(CambiaStage cambiaStage) {
-    }
 
-
-    public void visualizzaDatiClientiButtonPressed(ActionEvent actionEvent) {
-        cambiaForm.visualizzaPaneClienti();
+    @FXML public void visualizzaDatiClientiButtonPressed(ActionEvent actionEvent) {
+        cambiaView.visualizzaPaneClienti();
 
     }
 
-    public void annullaCercaClientiButtonPressed(){
+    @FXML public void annullaCercaClientiButtonPressed(){
         usernameCercaClientiTextField.clear();
         
     }
 
-    public void cercaClienteButtonPressed() {
+    @FXML public void cercaClienteButtonPressed() {
         String username=usernameCercaClientiTextField.getText();
        ricercaController.cercaCliente(username);
 
     }
 
     public void eliminaClientiButtonPressed() {
+        Cliente cliente=tabellaCercaClientiTableView.getSelectionModel().getSelectedItem();
+        ricercaController.eliminClienteSelezionato(cliente);
+
     }
 
     public Button getVisualizzaDatiClientiButton() {

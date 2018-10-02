@@ -4,6 +4,7 @@ import Model.AnnoEnum;
 import Model.LuogoEnum;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -46,6 +47,16 @@ public class StatisticaController implements Initializable, Observable {
     public void initialize(URL url, ResourceBundle rb) {
         luogoComboBox.setItems(FXCollections.observableArrayList(LuogoEnum.values()));
         annoComboBox.setItems(FXCollections.observableArrayList(AnnoEnum.values()));
+
+    }
+
+    @Override
+    public void addListener(InvalidationListener listener) {
+
+    }
+
+    @Override
+    public void removeListener(InvalidationListener listener) {
 
     }
 }

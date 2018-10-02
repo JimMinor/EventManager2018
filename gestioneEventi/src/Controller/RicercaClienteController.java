@@ -7,35 +7,44 @@ import DB.ClientiDAO;
 import Model.Cliente;
 import Model.VisualizzaclientiModel;
 
+import java.sql.SQLException;
+
 
 public class RicercaClienteController {
 
     private VisualizzaclientiModel visualizzaclientiModel;
-    private CercaClientiControllerView cercaClientiControllerView;
+   private ClientiDAO clientiDAO=new ClienteDAOImp();
 
-    public RicercaClienteController(VisualizzaclientiModel cercaClientiModel1,
-                                    CercaClientiControllerView cercaClientiControllerView){
-        this.visualizzaclientiModel =cercaClientiModel1;
-        this.cercaClientiControllerView=cercaClientiControllerView;
+    public RicercaClienteController(VisualizzaclientiModel cercaClientiModel1){
+            this.visualizzaclientiModel = cercaClientiModel1;
+
 
     }
 
-    public boolean eliminClienteSelezionato (Cliente clienteSelezionato){
-        ClientiDAO clientiDAO = new ClienteDAOImp();
+    public void eliminClienteSelezionato (Cliente clienteSelezionato){
+
         try {
-            return clientiDAO.eliminaCliente();
+            if(clienteSelezionato!=null) {
+                clientiDAO.eliminaCliente(clienteSelezionato);
+                visualizzaclientiModel.setListaClientiView(((ClienteDAOImp) clientiDAO).cercaCliente());
+
+            }
         } catch (Exception e){
             e.printStackTrace();
         }
-        return false;
+
     }
 
 
 
     public void cercaCliente(String username){
-        ClientiDAO clientiDAO = new ClienteDAOImp();
+        try{
         visualizzaclientiModel.setListaClientiView(((ClienteDAOImp) clientiDAO).cercaCliente(username));
+    }catch (SQLException e){
+        e.printStackTrace();
+        }
     }
+
 
 
 }
