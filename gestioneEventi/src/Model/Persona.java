@@ -11,6 +11,9 @@ public abstract class Persona {
     private LocalDate dataNascita;
     private String CF;
 
+
+    public Persona (){}
+
     public Persona(String nome, String cognome, String CF) {
         this.nome = nome;
         this.cognome = cognome;

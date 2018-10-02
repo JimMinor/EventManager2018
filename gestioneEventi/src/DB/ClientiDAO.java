@@ -12,5 +12,5 @@ public interface ClientiDAO {
 
 
     public Collection<Cliente> cercaCliente(String username) throws Exception;
-    public boolean eliminaCliente() throws Exception;
+    public void eliminaCliente(Cliente cù) throws Exception;
 }

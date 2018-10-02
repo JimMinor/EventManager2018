@@ -7,7 +7,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="formInserisciDipedente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerView.inserisciDipendentePaneController">
+<AnchorPane fx:id="formInserisciDipedente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerView.InserisciDipedenteControllerView">
    <children>
       <JFXTextField fx:id="nomeDipendenteTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="30.0" promptText="Nome" />
       <JFXTextField fx:id="cognomeDipendenteTextField" layoutX="42.0" layoutY="82.0" promptText="Cognome" />

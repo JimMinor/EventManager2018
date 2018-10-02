@@ -45,6 +45,7 @@ public  class GestoreQueryInserimentoEvento {
 
     private CallableStatement preparaQueryInserimentoGenerico() throws SQLException{
         Connection connection=UtilityDB.getConnessioneDB();
+        System.out.println(connection);
         CallableStatement callInserisciEvento = connection.prepareCall("{?= call ins_evento(?,?,?,?,?,?,?,?,?)}");
         setParementriCallInserimentoEvento(callInserisciEvento);
         return callInserisciEvento;

@@ -1,10 +1,14 @@
 package DB;
 
+import Model.Impiegato;
+
 import java.sql.SQLException;
 import java.sql.*;
 
 
 public class AutenticazioneConcreta implements Autenticazione {
+
+    private ImpiegatoDAO impiegatoDAO = new ImpiegatoDAOImp();
 
     @Override
     /**
@@ -14,26 +18,12 @@ public class AutenticazioneConcreta implements Autenticazione {
      * @throws SQLException in caso di errore con il DB o dati
      * errati
      *     */
-    public  boolean autenticaUtente(String username, String password) throws Exception {
+    public Impiegato autenticaUtente(String username, String password) throws Exception {
         boolean ris=false;
-        // Effettua la connessione al DB se almeno un campo non e' vuoto
-        if(username==null || password==null || username.equals("") || password.equals("")) return false;
-        Connection connection = UtilityDB.getConnessioneDB();
-            // Preparazione query
-            PreparedStatement preparedStatement=preparaQuery(username,password,connection);
-            //Esecuzione query
-             ResultSet resultSet=preparedStatement.executeQuery();
-            if(resultSet.next())ris=true;
-            UtilityDB.closeDB(preparedStatement);
-            return ris;
-    }
-    public PreparedStatement preparaQuery(String username, String password,Connection connection) throws SQLException{
+        // Effettua la query al DB se almeno un campo non e' vuoto
+        if(username==null || password==null || username.equals("") || password.equals("")) throw new Exception();
 
-        // Preparazione query
-        String query = "SELECT ID FROM Impiegato WHERE username=? AND " + "password=?";
-        PreparedStatement statement = connection.prepareStatement(query);
-        statement.setString(1, username);
-        statement.setString(2, password);
-        return statement;
+        return impiegatoDAO.connettiImpiegato(username,password);
     }
+
 }

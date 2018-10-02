@@ -13,6 +13,7 @@ public class ImpiegatoDAOImp implements ImpiegatoDAO {
 
     private Impiegato impiegatoDaInserire;
     private char mansioneDaInserire;
+    private GestoreQueryCerca gestoreQueryCerca = new GestoreQueryCerca();
 
     public ImpiegatoDAOImp(){
 
@@ -22,8 +23,7 @@ public class ImpiegatoDAOImp implements ImpiegatoDAO {
         this.impiegatoDaInserire = impiegatoDaInserire;
     }
 
-    @Override
-    public boolean inserisciImpiegato() throws SQLException {
+    @Override public boolean inserisciImpiegato() throws SQLException {
 
         if (impiegatoDaInserire.getAmministratore() == "Amministratore")
             mansioneDaInserire = 'V';
@@ -52,14 +52,17 @@ public class ImpiegatoDAOImp implements ImpiegatoDAO {
         return true;
     }
 
-    @Override
-    public Collection<Impiegato> cercaImpiegato(String nome, String cognome, LocalDate dataNascita) throws Exception {
+    @Override public Collection<Impiegato> cercaImpiegato(String nome, String cognome, LocalDate dataNascita) throws Exception {
         return null;
     }
 
-    @Override
-    public boolean eliminaImpiegato(Impiegato impiegatoDaInserire)  {
+    @Override public boolean eliminaImpiegato(Impiegato impiegatoDaInserire)  {
         return true;
+    }
+
+    @Override public Impiegato connettiImpiegato(String username, String password) throws Exception {
+        return gestoreQueryCerca.eseguiQueryRicercaImpiegatoConnesso(username,password);
+
     }
 
 }

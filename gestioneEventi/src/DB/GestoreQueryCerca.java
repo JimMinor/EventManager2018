@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
+import javax.naming.PartialResultException;
 import javax.print.DocFlavor;
 import javax.xml.transform.Result;
 import java.sql.*;
@@ -76,7 +77,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
         Connection connection = UtilityDB.getConnessioneDB();
         PreparedStatement preparedStatement = null;
-        String selectSql = "SELECT * FROM IMPIGATO NATURAL JOIN PERSONA";
+        String selectSql = "SELECT * FROM IMPIEGATO NATURAL JOIN PERSONA";
         //{1,2,3}
         if (!nome.equals("") && !cognome.equals("") && !(datanascita == null)) {
             queryWhere = " WHERE NOME LIKE '%?%' AND COGNOME=? AND DATA_NASCITA=?";
@@ -161,6 +162,34 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         return listaImpiegato;
 
 
+    }
+
+    public List<Cliente> eseguiQueryRicercaClienti() throws SQLException{
+        List<Cliente> listaClienti = new ArrayList<>();
+        ResultSet resultSet = null;
+        Connection connection = UtilityDB.getConnessioneDB();
+        PreparedStatement preparedStatement = null;
+        String selectSql = " SELECT * FROM IMPIGATO NATURAL JOIN PERSONA ";
+        preparedStatement = connection.prepareStatement(selectSql);
+        resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()){
+            String username1 = (resultSet.getString("USERNAME"));
+            String nome = (resultSet.getString("NOME"));
+            String cognome = (resultSet.getString("COGNOME"));
+            String indirizzo = (resultSet.getString("INDIRIZZO"));
+            String email = (resultSet.getString("EMAIL"));
+            String cf = (resultSet.getString("CODICE_FISCALE"));
+            LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
+            Float spesaTot = (resultSet.getFloat("SPESA_TOT "));
+            Float spesaCarta = (resultSet.getFloat("SPESA_CARTA"));
+            int n_bigietti = (resultSet.getInt("NUM_BIGLIETTI"));
+            int id = (resultSet.getInt("ID"));
+
+        }
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+        return listaClienti;
     }
 
     public List<Evento> eseguiQueryRicercaEventi() throws SQLException {
@@ -324,6 +353,40 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         preparedStatement.close();
         connection.close();
         return listaEventi;
+    }
+
+    public Impiegato eseguiQueryRicercaImpiegatoConnesso(String username, String password) throws SQLException {
+
+      PreparedStatement preparedStatement = null;
+      ResultSet resultSet = null;
+      String query = " SELECT * FROM IMPIEGATO JOIN PERSONA WHERE USERNAME = ? AND PASSWORD = ? ";
+
+      preparedStatement = UtilityDB.getConnessioneDB().prepareStatement(query);
+      resultSet = preparedStatement.executeQuery();
+        Impiegato imp = null;
+        while (resultSet.next()) {
+
+          String nome1 = (resultSet.getString("NOME"));
+          String cognome1 = (resultSet.getString("COGNOME"));
+          LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
+          String CF = (resultSet.getString("CODICE_FISCALE"));
+          String usernameI = (resultSet.getString("USERNAME"));
+          String passwordI = (resultSet.getString("PASSWORD"));
+          LocalDate dataAssunzione = (resultSet.getDate("DATA_ASSUNZIONE").toLocalDate());
+          Float stipendio = (resultSet.getFloat("STIPENDIO"));
+          String amministratore = (resultSet.getString("ADMIN"));
+          String telefono = (resultSet.getString("TELEFONO"));
+          String iban = (resultSet.getString("IBAN"));
+          String email = (resultSet.getString("EMAIL"));
+          int id = (resultSet.getInt("ID"));
+
+
+          imp = new Impiegato(nome1, cognome1, dataNascita, CF, usernameI,
+                  passwordI, dataAssunzione, stipendio, amministratore, telefono, iban, email, id);
+
+      }
+      return imp;
+
     }
 
 }

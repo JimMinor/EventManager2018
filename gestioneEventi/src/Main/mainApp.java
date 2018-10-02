@@ -3,6 +3,7 @@ package Main;
 import Controller.CambiaStage;
 import DB.GestoreQueryCerca;
 import Model.Evento;
+import Model.Impiegato;
 import Model.LuogoEnum;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -23,17 +24,22 @@ public class mainApp extends Application {
     public Stage getStagePrincipale() {
         return stagePrincipale;
     }
+
+
     /**
      * Carica il primo stage con la schermata di login
      */
     @Override
     public void start(Stage stagePrincipale) throws Exception {
+
         this.stagePrincipale = stagePrincipale;
         cambiaStagePrincipale = new CambiaStage(this);
-        cambiaStagePrincipale.mostraStageMenuPrincipale();
-
-        //List<Evento> lista = new GestoreQueryCerca().cercaEvento("",LuogoEnum.PALAPARTENOPE,null);
-
+        // TEST - BEGIN 
+        Impiegato i = new Impiegato();
+        i.setAmministratore("Amministratore");
+        i.setUsername("JimMinor");
+        // TEST - END
+        cambiaStagePrincipale.mostraStageMenuPrincipale(i);
         stagePrincipale.show();
     }
 

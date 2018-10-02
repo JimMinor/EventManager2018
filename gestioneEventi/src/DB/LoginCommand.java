@@ -12,7 +12,6 @@ public class LoginCommand implements Command {
 
     @Override
     public void execute() throws Exception{
-        Autenticazione auth= new AutenticazioneConcreta();
-        if(!auth.autenticaUtente(username, password)) throw new Exception();
+
     }
 }

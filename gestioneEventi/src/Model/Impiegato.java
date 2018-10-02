@@ -19,6 +19,9 @@ public class Impiegato extends  Persona {
     private int id;
     private String iban;
 
+    public Impiegato () {
+        super();
+    }
 
     public Impiegato(String nome, String cognome, LocalDate dataNascita,
                      String CF, String username, String password, LocalDate dataAssunzione,
@@ -71,4 +74,44 @@ public class Impiegato extends  Persona {
     public String getIban() {
         return iban;
     }
-}
+
+    // SETTERS
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setDataAssunzione(LocalDate dataAssunzione) {
+        this.dataAssunzione = dataAssunzione;
+    }
+
+    public void setStipendio(Float stipendio) {
+        this.stipendio = stipendio;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public void setAmministratore(String amministratore) {
+        this.amministratore = amministratore;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
+    }
+
+
+    }

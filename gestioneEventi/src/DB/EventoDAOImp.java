@@ -7,30 +7,21 @@ import java.util.List;
 
 public class EventoDAOImp implements EventoDAO {
 
-    private Evento eventoDaInserire;
+
     private GestoreQueryInserimentoEvento gestoreQueryInserimentoEvento;
     private GestoreQueryCerca gestoreQueryCerca;
     private GestoreQueryModificaElimina gestoreQueryModificaElimina;
 
-    public void setEventoDaInserire(Evento eventoDaInserire) {
-        this.eventoDaInserire = eventoDaInserire;
-    }
-
     public EventoDAOImp(){
 
+        gestoreQueryInserimentoEvento =  new GestoreQueryInserimentoEvento();
         gestoreQueryCerca = new GestoreQueryCerca();
         gestoreQueryModificaElimina = new GestoreQueryModificaElimina();
     }
 
-    public EventoDAOImp(Evento eventoDaInserire) {
 
-        this.eventoDaInserire = eventoDaInserire;
-        gestoreQueryInserimentoEvento =  new GestoreQueryInserimentoEvento(eventoDaInserire);
-        gestoreQueryCerca = new GestoreQueryCerca();
-        gestoreQueryModificaElimina = new GestoreQueryModificaElimina();
-    }
-
-    @Override public void inserisciEvento () throws SQLException {
+    @Override public void inserisciEvento (Evento evento) throws SQLException {
+        gestoreQueryInserimentoEvento.setEventoDaInserire(evento);
         gestoreQueryInserimentoEvento.eseguiEPreparaQueryInserimentoEvento(); }
 
     @Override public List<Evento> cercaEvento (String nomeEvento,LocalDate dataEvento, LuogoEnum luogoEvento) throws SQLException {

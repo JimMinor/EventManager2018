@@ -1,5 +1,6 @@
 package DB;
 
+import Model.Cliente;
 import Model.Evento;
 import Model.LuogoEnum;
 
@@ -47,4 +48,11 @@ public class GestoreQueryModificaElimina {
     }
 
 
+    public void eseguiQueryEliminaCliente(Cliente clienteSelezionato)throws SQLException {
+        String query = " DELETE FROM CLIENTE NATURAL JOIN PERSONA WHERE ID = ? ";
+        PreparedStatement preparedStatement = UtilityDB.getConnessioneDB().prepareStatement(query);
+        preparedStatement.setInt(1,clienteSelezionato.getId());
+        preparedStatement.executeUpdate();
+        UtilityDB.closeDB(preparedStatement);
+    }
 }

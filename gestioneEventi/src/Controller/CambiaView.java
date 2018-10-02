@@ -8,9 +8,7 @@ import ControllerView.cercaDipendentiPaneController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,9 +48,11 @@ public class CambiaView {
         formCorrente.getChildren().clear();
     }
 
+
+
     /************************************************
      *                                              *
-     *            CREAZIONE FORM                    *
+     *            CREAZIONE FORMS                    *
      *                                              *
      * **********************************************
      */
@@ -63,7 +63,7 @@ public class CambiaView {
         try {
 
             FXMLLoader loader = caricaFormDaRisorsa("creaEvento");
-            InserisciEventoController ief=new InserisciEventoController(this);
+            InserisciEventoControllerView ief=new InserisciEventoControllerView(this);
             loader.setController(ief);
             Node form = loader.load();
             formCorrente.getChildren().add(form);
@@ -82,6 +82,7 @@ public class CambiaView {
 
     public void mostraFormCercaEvento() {
         try {
+
             FXMLLoader loader = caricaFormDaRisorsa("cercaEvento");
             loader.setController(new CercaEventoControllerView(this, new VisualizzaEventiModel()));
             Node form = loader.load();
