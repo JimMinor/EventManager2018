@@ -1,4 +1,4 @@
-package Controller;
+package Control;
 
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
@@ -19,13 +19,8 @@ public class ControlloSintassi {
             lastToken = st.nextToken();
         }
 
-        if (matchFound && lastToken.length() >= 2
-                && email.length() - 1 != lastToken.length()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return matchFound && lastToken.length() >= 2
+                && email.length() - 1 != lastToken.length();
 
     }
 
@@ -36,10 +31,7 @@ public class ControlloSintassi {
 
         boolean matchFound = m.matches();
 
-        if (matchFound)
-            return true;
-        else
-            return false;
+        return matchFound;
     }
 
     public static boolean controllaSintassiIban(String iban) {
@@ -47,11 +39,6 @@ public class ControlloSintassi {
 
         Matcher m = p.matcher(iban);
 
-        if (m.matches()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return m.matches();
     }
 }

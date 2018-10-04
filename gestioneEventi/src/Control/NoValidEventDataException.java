@@ -1,4 +1,4 @@
-package Controller;
+package Control;
 
 public class NoValidEventDataException extends Exception {
   private String messagge;

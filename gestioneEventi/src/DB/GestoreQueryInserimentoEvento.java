@@ -23,16 +23,14 @@ public  class GestoreQueryInserimentoEvento {
 
     public GestoreQueryInserimentoEvento(){}
 
-    public GestoreQueryInserimentoEvento(Evento eventoDaInserire){this.eventoDaInserire=eventoDaInserire;}
-
     public void setEventoDaInserire(Evento eventoDaInserire){this.eventoDaInserire=eventoDaInserire;}
 
-    public int getIdEventoInserito(){return this.idEventoInserito;}
 
     /***************************************
-     * METODI CONCRETI,
      *
-     * INSERIMENTO DATI EVENTO GENERICO DB
+     *
+     *      INSERIMENTO DATI EVENTO DB
+     *
      *
      * *************************************/
     public void eseguiEPreparaQueryInserimentoEvento() throws SQLException{
@@ -97,33 +95,8 @@ public  class GestoreQueryInserimentoEvento {
         return preparedStatement;
     }
 
-    private PreparedStatement prepaQueryDaEseguireInserimentoPartecipantiEvento(String query,String partecipante) throws SQLException{
-        PreparedStatement queryDaEseguire=preparaQueryDaEseguire(query);
-        queryDaEseguire.setInt(1,getIdEventoInserito());
-        queryDaEseguire.setString(2,partecipante);
-        return queryDaEseguire;
-    }
-
-    private ResultSet verificaPartecipante(String query,String partecipante)throws  SQLException {
-        PreparedStatement queryDaEseguire = preparaQueryDaEseguire(query);
-        queryDaEseguire.setString(1,partecipante);
-        return eseguiQuery(queryDaEseguire);
-    }
-
-    private void inserisciPartecipante(String query,String partecipante) throws SQLException{
-        eseguiQuery((prepaQueryDaEseguireInserisciPartecipante(query,partecipante)));
-    }
-
-    private PreparedStatement prepaQueryDaEseguireInserisciPartecipante(String query, String partecipante) throws SQLException{
-        PreparedStatement queryDaEseguire=preparaQueryDaEseguire(query);
-        queryDaEseguire.setString(1,partecipante);
-        return queryDaEseguire;
-    }
-
     /** METODI DI UTILITA' */
     public ResultSet eseguiQuery(PreparedStatement queryDaEseguire)throws SQLException{ return queryDaEseguire.executeQuery(); }
-
-    public int eseguiUpdate(PreparedStatement queryDaEseguire)throws SQLException{return queryDaEseguire.executeUpdate();}
 
     public PreparedStatement preparaQueryDaEseguire(String query)throws SQLException{
         Connection connection=UtilityDB.getConnessioneDB();

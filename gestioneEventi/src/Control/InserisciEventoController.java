@@ -1,4 +1,4 @@
-package Controller;
+package Control;
 
 import View.InserisciEventoView;
 import View.MostraAlert;
@@ -11,6 +11,7 @@ import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.concurrent.Task;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -175,13 +176,26 @@ public class InserisciEventoController {
         evento.setIdEvento(0);
 
 
-        try {
-            eventoDAO.inserisciEvento(evento);
-            MostraAlert.mostraAlertEventoInserito();
-        } catch (Exception ee) {
-            ee.printStackTrace();
-            MostraAlert.mostraAlertErroreInserimentoEvento(ee.getMessage());
-        }
+        Task inserisciEventoTask = new Task() {
+            @Override
+            protected Object call() throws Exception {
+                try {
+                    eventoDAO.inserisciEvento(evento);
+                    MostraAlert.mostraAlertEventoInserito();
+                } catch (Exception ee) {
+                    ee.printStackTrace();
+                    MostraAlert.mostraAlertErroreInserimentoEvento(ee.getMessage());
+                }
+                return null;
+            }
+        };
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                inserisciEventoTask.run();
+            }
+        });
+
     }
 
     /** Oggetti e metodi DAO */

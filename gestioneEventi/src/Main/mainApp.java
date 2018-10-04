@@ -1,15 +1,9 @@
 package Main;
 
-import Controller.CambiaStage;
-import DB.GestoreQueryCerca;
-import Model.Evento;
+import Control.CambiaStage;
 import Model.Impiegato;
-import Model.LuogoEnum;
 import javafx.application.Application;
 import javafx.stage.Stage;
-
-import java.time.LocalDate;
-import java.util.List;
 
 public class mainApp extends Application {
     private Stage stagePrincipale;
@@ -30,7 +24,7 @@ public class mainApp extends Application {
      * Carica il primo stage con la schermata di login
      */
     @Override
-    public void start(Stage stagePrincipale) throws Exception {
+    public void start(Stage stagePrincipale) {
 
         this.stagePrincipale = stagePrincipale;
         cambiaStagePrincipale = new CambiaStage(this);

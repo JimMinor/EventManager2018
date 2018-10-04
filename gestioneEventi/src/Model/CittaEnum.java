@@ -9,5 +9,5 @@ public enum CittaEnum {
     TORINO,
     VENENZIA,
     VERONA,
-    FIRENZE;
+    FIRENZE
 }

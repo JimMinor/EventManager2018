@@ -10,8 +10,8 @@ import java.util.Collection;
 
 public interface ImpiegatoDAO {
 
-    public boolean inserisciImpiegato() throws SQLException;
-    public Collection<Impiegato> cercaImpiegato(String nome, String cognome, LocalDate dataNascita) throws Exception;
-    public boolean eliminaImpiegato(Impiegato i);
-    public Impiegato connettiImpiegato(String username, String password) throws Exception;
+    boolean inserisciImpiegato() throws SQLException;
+    Collection<Impiegato> cercaImpiegato(String nome, String cognome, LocalDate dataNascita) throws Exception;
+    boolean eliminaImpiegato(Impiegato i);
+    Impiegato connettiImpiegato(String username, String password) throws Exception;
 }

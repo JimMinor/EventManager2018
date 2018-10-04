@@ -1,4 +1,4 @@
-package Controller;
+package Control;
 
 @FunctionalInterface
 /**
@@ -9,6 +9,6 @@ package Controller;
  */
 public interface ControlledStage {
 
-    public void setCambiaStage(CambiaStage cambiaStage);
+    void setCambiaStage(CambiaStage cambiaStage);
 
 }

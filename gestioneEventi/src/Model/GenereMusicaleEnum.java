@@ -6,5 +6,5 @@ public enum GenereMusicaleEnum {
     JAZZ,
     POP,
     CLASSICA,
-    ALTRO;
+    ALTRO
 }

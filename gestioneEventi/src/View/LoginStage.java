@@ -1,7 +1,7 @@
 package View;
 
-import Controller.CambiaStage;
-import Controller.ControlledStage;
+import Control.CambiaStage;
+import Control.ControlledStage;
 import DB.Autenticazione;
 import DB.AutenticazioneConcreta;
 import Model.Impiegato;
@@ -28,6 +28,8 @@ public class LoginStage implements Initializable, ControlledStage {
     public void initialize(URL url, ResourceBundle rb) {}
     @Override
     public void setCambiaStage(CambiaStage cambiaStage) { this.cambiaStage = cambiaStage;}
+
+
 
     /**
      * entraButtonPressed()

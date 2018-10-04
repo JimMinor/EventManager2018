@@ -1,7 +1,7 @@
-package Controller;
+package Control;
 
 import View.LoginStage;
-import View.MenuPrincipaleStage;
+import View.MenuPrincipaleView;
 import Model.Impiegato;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -53,7 +53,7 @@ public class CambiaStage {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(screens.get("menuPrincipale")));
             Parent root = loader.load();
-            MenuPrincipaleStage screenController = loader.getController();
+            MenuPrincipaleView screenController = loader.getController();
             screenController.setCambiaStage(this);
             screenController.setUtenteConnesso(utenteConnesso);
             Scene scene = new Scene(root);

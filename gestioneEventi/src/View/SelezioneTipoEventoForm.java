@@ -1,6 +1,6 @@
 package View;
 
-import Controller.CambiaView;
+import Control.MenuPrincipaleController;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 
@@ -11,9 +11,9 @@ public class SelezioneTipoEventoForm {
     @FXML private Button eventoMusicaleButton;
     @FXML private Button eventoTeatraleButton;
     @FXML private Button eventoCinemaButton;
-    private CambiaView cambiaForm;
+    private MenuPrincipaleController cambiaForm;
 
-    public SelezioneTipoEventoForm(CambiaView cambiaForm) { this.cambiaForm=cambiaForm; }
+    public SelezioneTipoEventoForm(MenuPrincipaleController cambiaForm) { this.cambiaForm=cambiaForm; }
 
     @FXML public void eventoSportivoButtonPressed() { cambiaForm.mostraFormInserisciEvento(); }
 

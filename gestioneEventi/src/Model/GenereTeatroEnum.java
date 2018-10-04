@@ -6,5 +6,5 @@ public  enum GenereTeatroEnum {
     COMMEDIA,
     CABARET,
     OPERA,
-    MUSICAL;
+    MUSICAL
 }

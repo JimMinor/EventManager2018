@@ -1,6 +1,5 @@
-package Controller;
+package Control;
 
-import Model.Cerca;
 import View.CercaEventoView;
 import View.MostraAlert;
 import DB.EventoDAO;
@@ -9,10 +8,12 @@ import Model.VisualizzaEventiModel;
 import Model.Evento;
 import Model.LuogoEnum;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 
+import javax.xml.ws.Action;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -22,15 +23,19 @@ public class RicercaEventoController {
 
     private VisualizzaEventiModel visualizzaEventiModel;
     private CercaEventoView cercaEventoView;
-    private EventoDAO eventoDAO = new EventoDAOImp();
-    private CambiaView cambiaView;
+    private EventoDAO eventoDAO;
+    private MenuPrincipaleController menuPrincipaleController;
 
-    public RicercaEventoController(VisualizzaEventiModel cercaEventoModel, CercaEventoView cercaEventoView,CambiaView cambiaView){
+    public RicercaEventoController(VisualizzaEventiModel cercaEventoModel, CercaEventoView cercaEventoView, MenuPrincipaleController menuPrincipaleController){
         this.visualizzaEventiModel =cercaEventoModel;
         this.cercaEventoView = cercaEventoView;
-        this.cambiaView = cambiaView;
+        this.menuPrincipaleController = menuPrincipaleController;
+        this.eventoDAO = new EventoDAOImp();
         setListenerCercaEventoView();
+        cercaEventi();
     }
+
+    public void initialize (){}
 
     /**
      *   Setting dei Listeners per la classe (View) CercaEventoView
@@ -41,6 +46,7 @@ public class RicercaEventoController {
         setListenerModificaButton();
         setListenerEliminaButton();
         setListenerVisualizzaDatiButton();
+        setListenerTabellaEventi();
     }
 
     private void setListenerCercaEventoButton() {
@@ -104,15 +110,36 @@ public class RicercaEventoController {
         visualizzaDatiButton.addEventHandler(ActionEvent.ACTION , event -> Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                visualizzaEventiModel.setEventoSelezionato(cercaEventoView.
+                Evento evento = (cercaEventoView.
                         getTabellaCercaEventoTableView().
                         getSelectionModel().
                         getSelectedItem());
-                cambiaView.mostraFormVisualizzaEvento(visualizzaEventiModel.getEventoSelezionato());
+                if(evento!=null) {
+                    visualizzaEventiModel.setEventoSelezionato(evento);
+                    menuPrincipaleController.mostraFormVisualizzaEvento(visualizzaEventiModel);
+                }
 
             }
         }));
     }
+
+    private void setListenerTabellaEventi(){
+        cercaEventoView.getTabellaCercaEventoTableView().addEventHandler(
+                ActionEvent.ACTION, event -> Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        Evento evento = (cercaEventoView.
+                                getTabellaCercaEventoTableView().
+                                getSelectionModel().
+                                getSelectedItem());
+                        visualizzaEventiModel.setEventoSelezionato(evento);
+                        System.out.println(evento);
+                    }
+                })
+        );
+    }
+
+
 
     /** Metodi comunicanti con il  DAO */
 
@@ -143,10 +170,8 @@ public class RicercaEventoController {
             if ( luogo == null ) throw  new NoValidEventDataException("Selezionare Luogo");
 
             Evento e = visualizzaEventiModel.getEventoSelezionato();
-            System.out.println(e +" id ->" + e.getIdEvento());
             eventoDAO.modificaEvento(e.getIdEvento(),data, luogo);
             visualizzaEventiModel.setEventoSelezionato(e);
-            System.out.println(e +" id ->" + e.getIdEvento());
             visualizzaEventiModel.setListaEventiView(((EventoDAOImp) eventoDAO).cercaEvento());
             cambiaModalita(false);
 
@@ -166,21 +191,24 @@ public class RicercaEventoController {
         LocalDate dataEvento = cercaEventoView.getDataCercaEventoDataPicker().getValue();
 
 
-            Thread cercaT = new Thread() {
-                @Override
-                        public void run() { try {
-                        visualizzaEventiModel.setListaEventiView(((EventoDAOImp) eventoDAO).
-
-                                cercaEvento(nomeEvento, dataEvento, luogoEnum));
-                        } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+        Task cercaEventiTask = new Task() {
+            @Override
+            protected Object call() throws Exception {
+                try {
+                    visualizzaEventiModel.setListaEventiView(((EventoDAOImp) eventoDAO).
+                            cercaEvento(nomeEvento, dataEvento, luogoEnum));
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+                return true;
+            }
+        };
+        new Thread(cercaEventiTask).start();
 
-            };
-            cercaT.start();
 
     }
+
+
 
     private synchronized void cambiaModalita(boolean isDisable){
         cercaEventoView.getLuogoEventoComboBox().setValue(null);

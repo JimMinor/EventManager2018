@@ -19,7 +19,6 @@ public class EventoDAOImp implements EventoDAO {
         gestoreQueryModificaElimina = new GestoreQueryModificaElimina();
     }
 
-
     @Override public void inserisciEvento (Evento evento) throws SQLException {
         gestoreQueryInserimentoEvento.setEventoDaInserire(evento);
         gestoreQueryInserimentoEvento.eseguiEPreparaQueryInserimentoEvento(); }

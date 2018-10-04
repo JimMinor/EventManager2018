@@ -151,9 +151,7 @@ public  class Evento implements Comparable<Evento> {
         if (other == null || other.getClass()!=getClass()) return false;
         if(other==this) return true;
         Evento e = (Evento)other;
-        if(e.getDataEvento()==this.getDataEvento() && e.getLuogoEvento()==this.getLuogoEvento())
-            return true;
-        return false;
+        return e.getDataEvento() == this.getDataEvento() && e.getLuogoEvento() == this.getLuogoEvento();
     }
 
     /** L'ordine naturale da seguire per eventi

@@ -11,5 +11,5 @@ public enum SportEnum {
     BASEBALL,
     FOOTBALL_AMERICANO,
     CICLISMO,
-    ATELTICA;
+    ATELTICA
 }

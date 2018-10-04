@@ -5,26 +5,30 @@ import java.time.LocalDate;
 public class Cliente extends Persona implements Comparable<Cliente> {
 
     private String username;
-    private String sesso;
-    private String indirizzo;
+    private String password;
     private String mail;
     private Float spesaTot;
     private Float spesaCarta;
     private int numBiglietti;
     private int id;
+    private String telefono;
 
 
 
+    public Cliente(){
+        super();
+    }
 
-    public Cliente(String nome, String cognome, String CF, String username, String indirizzo, String mail, LocalDate dataNascita, Float spesaTot, Float spesaCarta, int numBiglietti, int id ) {
-        super(nome, cognome, dataNascita,CF);
+    public Cliente(String cf,int id,String username,String password,String mail,String telefono,Float spesaTot,Float spesaCarta,int numBiglietti,String nome,String cognome,LocalDate dataNascita) {
+        super(nome, cognome, dataNascita,cf);
         this.username = username;
-        this.indirizzo = indirizzo;
+        this.password=password;
         this.mail = mail;
         this.spesaTot=spesaTot;
         this.numBiglietti=numBiglietti;
         this.spesaCarta=spesaCarta;
         this.id=id;
+        this.telefono=telefono;
 
     }
 
@@ -37,33 +41,34 @@ public class Cliente extends Persona implements Comparable<Cliente> {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
 
-    public void setSesso(String sesso) {
-        this.sesso = sesso;
-    }
-
-    public String getIndirizzo() {
-        return indirizzo;
-    }
-
-    public void setIndirizzo(String indirizzo) {
-        this.indirizzo = indirizzo;
+    public String getPassword() {
+        return password;
     }
 
     public String getMail() {
         return mail;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public Float getSpesaTot() {
+        return spesaTot;
+    }
+
+    public Float getSpesaCarta() {
+        return spesaCarta;
+    }
+
+    public int getNumBiglietti() {
+        return numBiglietti;
     }
 
     public int getId() {
         return id;
+    }
+
+    public String getTelefono() {
+        return telefono;
     }
 
     @Override

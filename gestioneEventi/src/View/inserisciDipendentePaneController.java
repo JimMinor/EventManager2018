@@ -1,4 +1,4 @@
-package ControllerView;
+package View;
 
 import DB.ImpiegatoDAO;
 import DB.ImpiegatoDAOImp;
@@ -12,15 +12,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import Controller.*;
+import Control.*;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import static Controller.ControlloSintassi.controllaSintassiCF;
-import static Controller.ControlloSintassi.controllaSintassiEmail;
-import static Controller.ControlloSintassi.controllaSintassiIban;
+import static Control.ControlloSintassi.controllaSintassiCF;
+import static Control.ControlloSintassi.controllaSintassiEmail;
+import static Control.ControlloSintassi.controllaSintassiIban;
 
 public class inserisciDipendentePaneController implements Initializable {
 
@@ -116,7 +116,7 @@ public class inserisciDipendentePaneController implements Initializable {
             emailDipendenteTextField.clear();
             ibanDipendenteTextField.clear();
         }else {
-          //  new CambiaView(formInserisciDipedente).caricaFormDaRisorsa(formInserisciDipedente, "cercaDipendentiPane.fxml");
+          //  new MenuPrincipaleController(formInserisciDipedente).caricaFormDaRisorsa(formInserisciDipedente, "cercaDipendentiPane.fxml");
         }
     }
 
@@ -142,7 +142,7 @@ public class inserisciDipendentePaneController implements Initializable {
     private void controlla() throws NoValidEventDataException {
     }*/
 
-    private boolean controllaDatiDipendente() throws NoValidEventDataException, Exception {
+    private boolean controllaDatiDipendente() throws Exception {
 
         // Controllo nome dipendente: Diverso da NULL
         String nomeDipendente = nomeDipendenteTextField.getText();

@@ -1,6 +1,7 @@
-package Controller;
+package Control;
 
 public class DatiImpiegatoController {
+
 
 
 }

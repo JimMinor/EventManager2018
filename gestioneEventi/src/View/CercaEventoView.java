@@ -1,6 +1,6 @@
 package View;
-import Controller.CambiaView;
-import Controller.RicercaEventoController;
+import Control.MenuPrincipaleController;
+import Control.RicercaEventoController;
 import Model.VisualizzaEventiModel;
 import Model.Evento;
 import Model.LuogoEnum;
@@ -37,30 +37,23 @@ public class CercaEventoView  extends AnchorPane implements Observer {
     @FXML private ComboBox<LuogoEnum> luogoEventoComboBox;
     @FXML private AnchorPane cercaEventoPaneScreen;
     // Utilites e Altri Fields---------------------
-    private CambiaView cambiaView;
+    private MenuPrincipaleController menuPrincipaleController;
     private VisualizzaEventiModel eventiModel;
     private RicercaEventoController ricercaEventoController;
-    private Evento eventoSelezionato;
+
 
     /** Metodi per l'inizializzazione della classe */
 
-    public CercaEventoView(CambiaView cambiaView, VisualizzaEventiModel eventiModel) {
-        this.cambiaView = cambiaView;
+    public CercaEventoView(MenuPrincipaleController menuPrincipaleController, VisualizzaEventiModel eventiModel) {
+        this.menuPrincipaleController = menuPrincipaleController;
         this.eventiModel = eventiModel;
         eventiModel.addObserver(this);
+
     }
 
     public void initialize() {
-
         luogoEventoComboBox.setItems(FXCollections.observableArrayList(LuogoEnum.values()));
-
     }
-
-
-
-    /** Metodi FXML per gli eventi */
-
-
 
     public Button getModificaEventoButton() {
         return modificaEventoButton;
@@ -118,8 +111,8 @@ public class CercaEventoView  extends AnchorPane implements Observer {
         return cercaEventoPaneScreen;
     }
 
-    public CambiaView getCambiaView() {
-        return cambiaView;
+    public MenuPrincipaleController getMenuPrincipaleController() {
+        return menuPrincipaleController;
     }
 
     public VisualizzaEventiModel getEventiModel() {
@@ -130,9 +123,6 @@ public class CercaEventoView  extends AnchorPane implements Observer {
         return ricercaEventoController;
     }
 
-    public Evento getEventoSelezionato() {
-        return eventoSelezionato;
-    }
 
     /**    GETTERS  */
 

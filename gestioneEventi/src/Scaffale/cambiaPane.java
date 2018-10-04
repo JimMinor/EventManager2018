@@ -14,7 +14,7 @@ public class cambiaPane {
         System.out.println("../FXMLView/"+risorsa);
         try {
             rimuoviPane(pane);
-            Node node = (Node) FXMLLoader.load(getClass().getResource("../FXMLView/"+risorsa));
+            Node node = FXMLLoader.load(getClass().getResource("../FXMLView/"+risorsa));
             pane.getChildren().add(node);
         }catch(Exception e){
             e.printStackTrace();

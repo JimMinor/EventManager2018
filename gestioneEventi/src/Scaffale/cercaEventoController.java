@@ -1,6 +1,5 @@
 package Scaffale;
 
-import Controller.CambiaView;
 import Model.Evento;
 import Model.LuogoEnum;
 import com.jfoenix.controls.JFXComboBox;
@@ -11,11 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-
-import java.time.LocalDate;
-
-import static Model.LuogoEnum.*;
-import static Model.TipologiaEnum.*;
 
 
 public class cercaEventoController {

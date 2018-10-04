@@ -33,30 +33,31 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         selectSql = "SELECT * FROM CLIENTE NATURAL JOIN PERSONA";
         //{0}
         if (!username.equals("")) {
-            queryWhere = " WHERE USERNAME LIKE '%?%' ";
+            queryWhere = " WHERE USERNAME LIKE '%"+username+"%' ";
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, username);
             resultSet = preparedStatement.executeQuery();
-        } else
+        } else{
             preparedStatement = connection.prepareStatement(selectSql);
-        resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();}
         //{1}
 
 
         while (resultSet.next()) {
-            String username1 = (resultSet.getString("USERNAME"));
-            String nome = (resultSet.getString("NOME"));
-            String cognome = (resultSet.getString("COGNOME"));
-            String indirizzo = (resultSet.getString("INDIRIZZO"));
-            String email = (resultSet.getString("EMAIL"));
-            String cf = (resultSet.getString("CODICE_FISCALE"));
-            LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
-            Float spesaTot = (resultSet.getFloat("SPESA_TOT "));
-            Float spesaCarta = (resultSet.getFloat("SPESA_CARTA"));
-            int n_bigietti = (resultSet.getInt("NUM_BIGLIETTI"));
-            int id = (resultSet.getInt("ID"));
+            String cf = (resultSet.getString(1));//CODICEfISCALE
+            int id = (resultSet.getInt(2));//ID
+            String username1 = (resultSet.getString(3));//USERNAME
+            String password =(resultSet.getString(4));//PASSWORD
+            String email = (resultSet.getString(5));//EMAIL
+            String telefono =(resultSet.getString(6));//NUMERO DI TELEFONO
+            Float spesaTot = (resultSet.getFloat(7));//SPESA TOTALE
+            Float spesaCarta = (resultSet.getFloat(8));//SPESA CARTA
+            int n_bigietti = (resultSet.getInt(9));//NUMERO BIGLIETTI
+            String nome = (resultSet.getString(10));//NOME
+            String cognome = (resultSet.getString(11));//COGNOME
+            LocalDate dataNascita = (resultSet.getDate(12).toLocalDate());//DATA NASCITA
 
-            Cliente rigaCliente = new Cliente(nome, cognome, cf, username1, indirizzo, email, dataNascita, spesaTot, spesaCarta, n_bigietti, id);
+
+            Cliente rigaCliente = new Cliente(cf,id,username1,password,email,telefono,spesaTot,spesaCarta,n_bigietti,nome,cognome,dataNascita);
             listaclienti.add(rigaCliente);
 
         }
@@ -169,21 +170,25 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         ResultSet resultSet = null;
         Connection connection = UtilityDB.getConnessioneDB();
         PreparedStatement preparedStatement = null;
-        String selectSql = " SELECT * FROM IMPIGATO NATURAL JOIN PERSONA ";
+        String selectSql = " SELECT * FROM CLIENTE NATURAL JOIN PERSONA ";
         preparedStatement = connection.prepareStatement(selectSql);
         resultSet = preparedStatement.executeQuery();
         while(resultSet.next()){
-            String username1 = (resultSet.getString("USERNAME"));
-            String nome = (resultSet.getString("NOME"));
-            String cognome = (resultSet.getString("COGNOME"));
-            String indirizzo = (resultSet.getString("INDIRIZZO"));
-            String email = (resultSet.getString("EMAIL"));
-            String cf = (resultSet.getString("CODICE_FISCALE"));
-            LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
-            Float spesaTot = (resultSet.getFloat("SPESA_TOT "));
-            Float spesaCarta = (resultSet.getFloat("SPESA_CARTA"));
-            int n_bigietti = (resultSet.getInt("NUM_BIGLIETTI"));
-            int id = (resultSet.getInt("ID"));
+            String cf = (resultSet.getString(1));//CODICEfISCALE
+            int id = (resultSet.getInt(2));//ID
+            String username1 = (resultSet.getString(3));//USERNAME
+            String password =(resultSet.getString(4));//PASSWORD
+            String email = (resultSet.getString(5));//EMAIL
+            String telefono =(resultSet.getString(6));//NUMERO DI TELEFONO
+            Float spesaTot = (resultSet.getFloat(7));//SPESA TOTALE
+            Float spesaCarta = (resultSet.getFloat(8));//SPESA CARTA
+            int n_bigietti = (resultSet.getInt(9));//NUMERO BIGLIETTI
+            String nome = (resultSet.getString(10));//NOME
+            String cognome = (resultSet.getString(11));//COGNOME
+            LocalDate dataNascita = (resultSet.getDate(12).toLocalDate());//DATA NASCITA
+
+
+
 
         }
         resultSet.close();
@@ -238,7 +243,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
         while (resultSet.next()) setPartecipanti.add(resultSet.getString(1));
 
-        System.out.println("  Partecipanti" + setPartecipanti);
+
 
         UtilityDB.closeDB(preparedStatement);
 
@@ -263,32 +268,29 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         selectSql = "SELECT * FROM EVENTO";
         //{1,2,3}
         if ((!nomeEvento.equals("")) && !(luogo == null) && !(dataEvento == null)) {
-            queryWhere = " WHERE NOME LIKE '%?%' AND LUOGO=? AND DATA=? ";
+            queryWhere = " WHERE NOME LIKE '%"+nomeEvento+"%' AND LUOGO=? AND DATA=? ";
             System.out.println(queryWhere);
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, nomeEvento);
-            preparedStatement.setString(2, luogo);
-            preparedStatement.setDate(3, Date.valueOf(dataEvento));
+            preparedStatement.setString(1, luogo);
+            preparedStatement.setDate(2, Date.valueOf(dataEvento));
             resultSet = preparedStatement.executeQuery();
 
         }
         //{1,2}
         else if ((!nomeEvento.equals("")) && (!(luogo == null)) && (dataEvento == null)) {
 
-            queryWhere = " WHERE NOME LIKE '%?%' AND LUOGO=? ";
+            queryWhere = " WHERE NOME LIKE '%"+nomeEvento+"%' AND LUOGO=? ";
             System.out.println(queryWhere);
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, nomeEvento);
-            preparedStatement.setString(2, luogo);
+            preparedStatement.setString(1, luogo);
             resultSet = preparedStatement.executeQuery();
         }
         //{1,3}
         else if ((!nomeEvento.equals("")) && ((luogo == null)) && !(dataEvento == null)) {
-            queryWhere = " WHERE NOME LIKE '%?%' AND DATA=? ";
+            queryWhere = " WHERE NOME LIKE '%"+nomeEvento+"%' AND DATA=? ";
             System.out.println(queryWhere);
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, nomeEvento);
-            preparedStatement.setDate(2, Date.valueOf(dataEvento));
+            preparedStatement.setDate(1, Date.valueOf(dataEvento));
             resultSet = preparedStatement.executeQuery();
         }
 
@@ -303,10 +305,9 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         }
         //{1}
         else if ((!nomeEvento.equals("")) && ((luogo == null)) && (dataEvento == null)) {
-            queryWhere = " WHERE NOME LIKE '%?%' ";
+            queryWhere = " WHERE NOME LIKE '%"+nomeEvento+"%' ";
             System.out.println(queryWhere);
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, nomeEvento);
             resultSet = preparedStatement.executeQuery();
 
         }
@@ -357,35 +358,35 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
     public Impiegato eseguiQueryRicercaImpiegatoConnesso(String username, String password) throws SQLException {
 
-      PreparedStatement preparedStatement = null;
-      ResultSet resultSet = null;
-      String query = " SELECT * FROM IMPIEGATO JOIN PERSONA WHERE USERNAME = ? AND PASSWORD = ? ";
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        String query = " SELECT * FROM IMPIEGATO JOIN PERSONA WHERE USERNAME = ? AND PASSWORD = ? ";
 
-      preparedStatement = UtilityDB.getConnessioneDB().prepareStatement(query);
-      resultSet = preparedStatement.executeQuery();
+        preparedStatement = UtilityDB.getConnessioneDB().prepareStatement(query);
+        resultSet = preparedStatement.executeQuery();
         Impiegato imp = null;
         while (resultSet.next()) {
 
-          String nome1 = (resultSet.getString("NOME"));
-          String cognome1 = (resultSet.getString("COGNOME"));
-          LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
-          String CF = (resultSet.getString("CODICE_FISCALE"));
-          String usernameI = (resultSet.getString("USERNAME"));
-          String passwordI = (resultSet.getString("PASSWORD"));
-          LocalDate dataAssunzione = (resultSet.getDate("DATA_ASSUNZIONE").toLocalDate());
-          Float stipendio = (resultSet.getFloat("STIPENDIO"));
-          String amministratore = (resultSet.getString("ADMIN"));
-          String telefono = (resultSet.getString("TELEFONO"));
-          String iban = (resultSet.getString("IBAN"));
-          String email = (resultSet.getString("EMAIL"));
-          int id = (resultSet.getInt("ID"));
+            String nome1 = (resultSet.getString("NOME"));
+            String cognome1 = (resultSet.getString("COGNOME"));
+            LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
+            String CF = (resultSet.getString("CODICE_FISCALE"));
+            String usernameI = (resultSet.getString("USERNAME"));
+            String passwordI = (resultSet.getString("PASSWORD"));
+            LocalDate dataAssunzione = (resultSet.getDate("DATA_ASSUNZIONE").toLocalDate());
+            Float stipendio = (resultSet.getFloat("STIPENDIO"));
+            String amministratore = (resultSet.getString("ADMIN"));
+            String telefono = (resultSet.getString("TELEFONO"));
+            String iban = (resultSet.getString("IBAN"));
+            String email = (resultSet.getString("EMAIL"));
+            int id = (resultSet.getInt("ID"));
 
 
-          imp = new Impiegato(nome1, cognome1, dataNascita, CF, usernameI,
-                  passwordI, dataAssunzione, stipendio, amministratore, telefono, iban, email, id);
+            imp = new Impiegato(nome1, cognome1, dataNascita, CF, usernameI,
+                    passwordI, dataAssunzione, stipendio, amministratore, telefono, iban, email, id);
 
-      }
-      return imp;
+        }
+        return imp;
 
     }
 

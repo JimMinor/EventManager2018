@@ -12,7 +12,7 @@ public enum LuogoEnum {
     private CittaEnum cittaLuogo;
     private int numPosti;
 
-    private LuogoEnum(CittaEnum cittaLuogo, int numPosti){
+    LuogoEnum(CittaEnum cittaLuogo, int numPosti){
         this.cittaLuogo=cittaLuogo;
         this.numPosti=numPosti;
     }

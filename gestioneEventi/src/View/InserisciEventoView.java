@@ -1,6 +1,6 @@
 package View;
 
-import Controller.*;
+import Control.*;
 import Model.LuogoEnum;
 import Model.TipologiaEnum;
 import javafx.collections.FXCollections;
@@ -30,7 +30,7 @@ public class InserisciEventoView extends AnchorPane {
     // Utilies Fields---------------------------------
     private TipologiaEnum tipologiaEvento;
     private ObservableList<LuogoEnum> listaLuoghiEvento;
-    private CambiaView cambiaView;
+    private MenuPrincipaleController menuPrincipaleController;
     private Set<String> partecipantiEvento;
 
 
@@ -43,8 +43,8 @@ public class InserisciEventoView extends AnchorPane {
         tipologiaEventoComboBox.setItems(FXCollections.observableArrayList(TipologiaEnum.values()));
     }
 
-    public InserisciEventoView(CambiaView cambiaView) {
-        this.cambiaView = cambiaView;
+    public InserisciEventoView(MenuPrincipaleController menuPrincipaleController) {
+        this.menuPrincipaleController = menuPrincipaleController;
         partecipantiEvento= new HashSet<>();
 
     }

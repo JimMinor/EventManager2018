@@ -5,5 +5,5 @@ public  enum GenereManifestazioneEnum {
     FIERA,
     CIRCO,
     PARCHI,
-    ALTRI;
+    ALTRI
 }

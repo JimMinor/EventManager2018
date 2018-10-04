@@ -52,7 +52,7 @@ public class ImpiegatoDAOImp implements ImpiegatoDAO {
         return true;
     }
 
-    @Override public Collection<Impiegato> cercaImpiegato(String nome, String cognome, LocalDate dataNascita) throws Exception {
+    @Override public Collection<Impiegato> cercaImpiegato(String nome, String cognome, LocalDate dataNascita) {
         return null;
     }
 

@@ -1,8 +1,6 @@
-package ControllerView;
+package View;
 
-import Controller.CambiaView;
-import ControllerView.MenuPrincipaleStage;
-import com.jfoenix.controls.JFXButton;
+import Control.MenuPrincipaleController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,11 +21,11 @@ public class cercaDipendentiPaneController {
     @FXML private Button annullaCercaDipendenteButton;
     @FXML private Button nuovoDipendenteButton;
 
-    private CambiaView creaFormNuovoDipendente;
+    private MenuPrincipaleController creaFormNuovoDipendente;
 
 
-    public cercaDipendentiPaneController(CambiaView cambiaView) {
-        this.creaFormNuovoDipendente = cambiaView;
+    public cercaDipendentiPaneController(MenuPrincipaleController menuPrincipaleController) {
+        this.creaFormNuovoDipendente = menuPrincipaleController;
     }
 
     public void modificaDipendenteButtonPressed(ActionEvent actionEvent) {

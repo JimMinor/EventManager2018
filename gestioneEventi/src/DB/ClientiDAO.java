@@ -11,6 +11,6 @@ import java.util.Collection;
 public interface ClientiDAO {
 
 
-    public Collection<Cliente> cercaCliente(String username) throws Exception;
-    public void eliminaCliente(Cliente cù) throws Exception;
+    Collection<Cliente> cercaCliente(String username) throws Exception;
+    void eliminaCliente(Cliente c) throws Exception;
 }

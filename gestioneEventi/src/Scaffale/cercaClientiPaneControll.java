@@ -1,7 +1,7 @@
 package Scaffale;
 
-import Controller.CambiaStage;
-import Controller.ControlledStage;
+import Control.CambiaStage;
+import Control.ControlledStage;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
