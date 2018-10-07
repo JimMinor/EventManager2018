@@ -21,6 +21,10 @@ public  class Evento implements Comparable<Evento> {
     private Set<String> partecipantiEvento;
 
 
+
+    private Integer bigliettiVenduti;
+
+
     public Evento (){}
 
     public Evento(LuogoEnum luogoEvento, String descrizione,
@@ -38,6 +42,7 @@ public  class Evento implements Comparable<Evento> {
         this.dataEvento = dataEvento;
         this.genereEvento=genereEvento;
         this.partecipantiEvento=partecipantiEvento;
+        bigliettiVenduti = 0;
 
     }
 
@@ -83,6 +88,11 @@ public  class Evento implements Comparable<Evento> {
     public int getIdEvento() {
         return idEvento;
     }
+
+    public Integer getBigliettiVenduti() {
+        return bigliettiVenduti;
+    }
+
 
     /*********************
      *  Setters         *
@@ -138,6 +148,10 @@ public  class Evento implements Comparable<Evento> {
 
     public void setPartecipantiEvento(Set<String> partecipantiEvento) {
         this.partecipantiEvento = partecipantiEvento;
+    }
+
+    public void setBigliettiVenduti(Integer bigliettiVenduti) {
+        this.bigliettiVenduti = bigliettiVenduti;
     }
 
     /**

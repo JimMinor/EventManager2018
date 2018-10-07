@@ -2,17 +2,7 @@
 package DB;
 
 import Model.*;
-import com.sun.org.apache.xml.internal.security.Init;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.TableView;
-
-import javax.naming.PartialResultException;
-import javax.print.DocFlavor;
-import javax.xml.transform.Result;
 import java.sql.*;
-import java.text.Format;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,6 +12,7 @@ import java.util.Set;
 public class GestoreQueryCerca {//query generica per cercare tutti gli elementi appena apre la schermata
 
     public List<Cliente> eseguiQueryRicercaClienti(String username) throws SQLException {
+
         ArrayList<Cliente> listaclienti = new ArrayList<>();
         ResultSet resultSet = null;
         String selectSql = null;
@@ -252,6 +243,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
     }
 
     public List<Evento> eseguiQueryRicercaEventi(String nomeEvento, LuogoEnum luogoEvento, LocalDate dataEvento) throws SQLException {
+
         List<Evento> listaEventi = new ArrayList<>();
         ResultSet resultSet = null;
         String luogo = null;

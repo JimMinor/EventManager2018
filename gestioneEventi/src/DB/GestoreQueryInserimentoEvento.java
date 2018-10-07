@@ -3,12 +3,8 @@ package DB;
 import Model.LuogoEnum;
 import com.sun.istack.internal.NotNull;
 import Model.Evento;
-
-import javax.rmi.CORBA.Util;
 import java.sql.*;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public  class GestoreQueryInserimentoEvento {
