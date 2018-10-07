@@ -2,17 +2,7 @@
 package DB;
 
 import Model.*;
-import com.sun.org.apache.xml.internal.security.Init;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.TableView;
-
-import javax.naming.PartialResultException;
-import javax.print.DocFlavor;
-import javax.xml.transform.Result;
 import java.sql.*;
-import java.text.Format;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -22,6 +12,7 @@ import java.util.Set;
 public class GestoreQueryCerca {//query generica per cercare tutti gli elementi appena apre la schermata
 
     public List<Cliente> eseguiQueryRicercaClienti(String username) throws SQLException {
+
         ArrayList<Cliente> listaclienti = new ArrayList<>();
         ResultSet resultSet = null;
         String selectSql = null;
@@ -233,6 +224,47 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         return listaEventi;
     }
 
+    public Evento eseguiQueryRicercaEventiId(int idEvento) throws SQLException {
+
+        String sql = " SELECT * FROM EVENTO WHERE ID = ? ";
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+        Connection connection = null;
+        Evento evento = null;
+
+
+        connection = UtilityDB.getConnessioneDB();
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1,idEvento);
+        resultSet = preparedStatement.executeQuery();
+
+        while (resultSet.next()) {
+
+            LuogoEnum luogoEvento = (LuogoEnum.valueOf(resultSet.getString("LUOGO")));
+            LocalDate date = (resultSet.getDate("DATA").toLocalDate());
+            String nome = (resultSet.getString("NOME"));
+            LuogoEnum luogoEnum = (LuogoEnum.valueOf(resultSet.getString("LUOGO")));
+            Float prezzo = (resultSet.getFloat("PREZZO"));
+            String descrizione = (resultSet.getString("DESCRIZIONE"));
+            TipologiaEnum tipologia = (TipologiaEnum.valueOf(resultSet.getString("TIPOLOGIA")));
+            String genere = (resultSet.getString("GENERE"));
+            int id = (resultSet.getInt("ID"));
+            int biglietti = (resultSet.getInt("BIGLIETTI_VENDUTI"));
+            Set<String> partecipantiEvento = new HashSet<>();
+            partecipantiEvento = eseguiQueryRicercaPartecipantiEvento(id);
+            evento = new Evento(luogoEvento, descrizione, prezzo, tipologia, nome, date, genere, partecipantiEvento);
+            evento.setIdEvento(id);
+            evento.setBigliettiVenduti(biglietti);
+
+
+        }
+
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+        return evento;
+    }
+
     private Set<String> eseguiQueryRicercaPartecipantiEvento(int id) throws SQLException {
 
         Set<String> setPartecipanti = new HashSet<>();
@@ -252,6 +284,7 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
     }
 
     public List<Evento> eseguiQueryRicercaEventi(String nomeEvento, LuogoEnum luogoEvento, LocalDate dataEvento) throws SQLException {
+
         List<Evento> listaEventi = new ArrayList<>();
         ResultSet resultSet = null;
         String luogo = null;
@@ -388,6 +421,21 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
         }
         return imp;
 
+    }
+
+    public List<Evento> eseguiQueryRicercaEventiArtista(String Artista)  throws SQLException {
+
+        String query = " SELECT ID_EVENTO FROM PARTECIPANTI_EVENTO WHERE PARTECIPANTE = ? ";
+        PreparedStatement preparedStatement = UtilityDB.getConnessioneDB().prepareStatement(query);
+        preparedStatement.setString(1,Artista);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        List<Evento> listaEvento = new ArrayList<>();
+
+        while(resultSet.next())
+            listaEvento.add(eseguiQueryRicercaEventiId(resultSet.getInt(1)));
+
+        UtilityDB.closeDB(preparedStatement);
+        return listaEvento;
     }
 
 }

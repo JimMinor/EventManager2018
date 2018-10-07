@@ -38,4 +38,9 @@ public class EventoDAOImp implements EventoDAO {
     @Override public void modificaEvento (int eventoID, LocalDate data, LuogoEnum luogo ) throws SQLException {
         gestoreQueryModificaElimina.eseguiQueryModificaEvento(eventoID,data,luogo);
     }
+
+    @Override
+    public List<Evento> cercaEvento(String artista) throws Exception {
+       return gestoreQueryCerca.eseguiQueryRicercaEventiArtista(artista);
+    }
 }

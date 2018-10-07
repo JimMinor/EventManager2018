@@ -16,7 +16,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.event.*;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;

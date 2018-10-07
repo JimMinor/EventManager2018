@@ -1,13 +1,11 @@
 package Control;
 
+import Model.*;
 import View.*;
-import Model.Evento;
-import Model.TipologiaEnum;
-import Model.VisualizzaEventiModel;
 import View.cercaDipendentiPaneController;
-import Model.VisualizzaClientiModel;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -47,6 +45,8 @@ public class MenuPrincipaleController {
                 risorseForm.put("visualizzaDatiClienti", "../FXMLView/visualizzaClientiPane.fxml");
                 risorseForm.put("nuovoDipendente", "../FXMLView/inserisciDipendentePane.fxml");
                 risorseForm.put("visualizzaEvento","../FXMLView/VisualizzaEventoPane.fxml");
+                risorseForm.put("statistiche","../FXMLView/StatisicheBigliettiPane.fxml");
+
             }
         };
         inserisciRisorseRun.start();
@@ -71,6 +71,7 @@ public class MenuPrincipaleController {
         setListenerCercaEvento();
         setListenerCercaClienti();
         setListenerGestionePersonale();
+        setListenerStat();
     }
 
     private void setListenerInserisciEvento(){
@@ -112,6 +113,15 @@ public class MenuPrincipaleController {
             @Override
             public void run() {
                 mostraFormGestioneDipendeti();
+            }
+        }));
+    }
+
+    private void setListenerStat(){
+        menuPrincipaleView.getVisualizzaStaticheButton().addEventHandler(ActionEvent.ACTION, event-> Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                mostraStaticheMenu();
             }
         }));
     }
@@ -198,6 +208,16 @@ public class MenuPrincipaleController {
     }
 
     public void mostraStaticheMenu() {
+        try {
+            FXMLLoader loader = caricaFormDaRisorsa("statistiche");
+            StatisticheBigliettiModel statisticheBigliettiModel = new StatisticheBigliettiModel();
+            StatisticheBigliettiView statisticheBigliettiView = new StatisticheBigliettiView(statisticheBigliettiModel);
+            loader.setController(statisticheBigliettiView);
+            AnchorPane form = loader.load();
+            StatisticheBigliettiController statisticheBigliettiController = new StatisticheBigliettiController(statisticheBigliettiModel,statisticheBigliettiView,this);
+            formCorrente.getChildren().add(form);
+        } catch ( Exception e)  { e.printStackTrace(); }
+
     }
 
     public void visualizzaPaneClienti(VisualizzaClientiModel visualizzaClientiModel) {
