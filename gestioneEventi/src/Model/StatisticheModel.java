@@ -8,11 +8,15 @@ import java.util.Observable;
 
 import java.util.*;
 
-public class StatisticheBigliettiModel extends Observable {
+public class StatisticheModel extends Observable {
 
     private Map<String, Integer> mapBiglietti;
 
+    private Map<String,Integer> mapEventiCitta;
+
     private List<Evento> listEventi;
+
+    private List<Map<String,Integer>> listaMap;
 
     public Map<String, Integer> getMapBiglietti() {
         return mapBiglietti;
@@ -20,13 +24,14 @@ public class StatisticheBigliettiModel extends Observable {
 
     public void setMapBiglietti(Map<String, Integer> mapBiglietti) {
         this.mapBiglietti = mapBiglietti;
-        BarChart<String,Number> barChart = initStat();
-        setChanged();
-        notifyObservers(mapBiglietti);
+        listaMap.add(0,mapBiglietti);
+
     }
 
-    public StatisticheBigliettiModel(){
+    public StatisticheModel(){
         mapBiglietti = new HashMap<>();
+        mapEventiCitta = new HashMap<>();
+        listaMap = new ArrayList<>();
     }
 
     private BarChart<String,Number> initStat() {
@@ -55,5 +60,19 @@ public class StatisticheBigliettiModel extends Observable {
         this.listEventi = listEventi;
         setChanged();
         notifyObservers(listEventi);
+    }
+
+    public Map<String, Integer> getMapEventiCitta() {
+        return mapEventiCitta;
+    }
+
+    public void setMapEventiCitta(Map<String, Integer> mapEventiCitta) {
+        this.mapEventiCitta = mapEventiCitta;
+        listaMap.add(1,mapEventiCitta);
+    }
+
+    public void notifyView(){
+        setChanged();
+        notifyObservers(listaMap);
     }
 }

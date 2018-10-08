@@ -23,7 +23,7 @@ public class MostraAlert {
 
     }
 
-    public static void mostraAlertErroreInserimentoEvento(String messagge) {
+    public static void mostraAlertErroreInserimentoDati(String messagge) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Dati Errati");
         alert.setHeaderText(null);

@@ -3,11 +3,9 @@ package DB;
 
 import Model.*;
 import java.sql.*;
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GestoreQueryCerca {//query generica per cercare tutti gli elementi appena apre la schermata
 
@@ -269,14 +267,15 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
         Set<String> setPartecipanti = new HashSet<>();
         String query = " SELECT PARTECIPANTE FROM PARTECIPANTI_EVENTO WHERE ID_EVENTO = ? ";
-        PreparedStatement preparedStatement = UtilityDB.getConnessioneDB().prepareStatement(query);
+        Connection connection = UtilityDB.getConnessioneDB();
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1,id);
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while (resultSet.next()) setPartecipanti.add(resultSet.getString(1));
 
-
-
+        UtilityDB.closeResultSet(resultSet);
+        UtilityDB.closeConnection(connection);
         UtilityDB.closeDB(preparedStatement);
 
         return setPartecipanti;
@@ -436,6 +435,32 @@ public class GestoreQueryCerca {//query generica per cercare tutti gli elementi 
 
         UtilityDB.closeDB(preparedStatement);
         return listaEvento;
+    }
+
+    public Map<String,Integer> eseguiQueryRicercaEventiCitta(String artista) throws SQLException{
+        Map<String,Integer> map = new HashMap<>();
+        String query =
+                " SELECT CITTA , COUNT(CITTA) " +
+                " FROM EVENTO E JOIN partecipanti_evento PE on ID = ID_Evento " +
+                " WHERE PE.Partecipante = ? " +
+                " GROUP BY CITTA ";
+
+        Connection connection = UtilityDB.getConnessioneDB();
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1,artista);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        while (resultSet.next())
+            map.put(resultSet.getString("CITTA"),resultSet.getInt("COUNT(CITTA)"));
+
+        UtilityDB.closeResultSet(resultSet);
+        UtilityDB.closeDB(preparedStatement);
+        UtilityDB.closeConnection(connection);
+
+        return map;
+
+
+
     }
 
 }

@@ -5,7 +5,6 @@ import View.*;
 import View.cercaDipendentiPaneController;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -210,11 +209,11 @@ public class MenuPrincipaleController {
     public void mostraStaticheMenu() {
         try {
             FXMLLoader loader = caricaFormDaRisorsa("statistiche");
-            StatisticheBigliettiModel statisticheBigliettiModel = new StatisticheBigliettiModel();
-            StatisticheBigliettiView statisticheBigliettiView = new StatisticheBigliettiView(statisticheBigliettiModel);
-            loader.setController(statisticheBigliettiView);
+            StatisticheModel statisticheModel = new StatisticheModel();
+            StatisticheView statisticheView = new StatisticheView(statisticheModel);
+            loader.setController(statisticheView);
             AnchorPane form = loader.load();
-            StatisticheBigliettiController statisticheBigliettiController = new StatisticheBigliettiController(statisticheBigliettiModel,statisticheBigliettiView,this);
+            StatisticheController statisticheController = new StatisticheController(statisticheModel, statisticheView,this);
             formCorrente.getChildren().add(form);
         } catch ( Exception e)  { e.printStackTrace(); }
 

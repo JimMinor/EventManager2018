@@ -20,6 +20,7 @@ public class Cliente extends Persona implements Comparable<Cliente> {
     }
 
     public Cliente(String cf,int id,String username,String password,String mail,String telefono,Float spesaTot,Float spesaCarta,int numBiglietti,String nome,String cognome,LocalDate dataNascita) {
+
         super(nome, cognome, dataNascita,cf);
         this.username = username;
         this.password=password;

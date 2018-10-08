@@ -1,35 +1,30 @@
 package View;
-import Model.LuogoEnum;
-import Model.StatisticheBigliettiModel;
+import Model.StatisticheModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import com.sun.javafx.collections.MappingChange;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 
-import java.util.Map;
-import java.util.Observable;
-import java.util.Observer;
-import java.util.Set;
+import java.util.*;
 
-public class StatisticheBigliettiView implements Observer {
+public class StatisticheView implements Observer {
 
 
     @FXML private JFXTextField nomePartecipanteTextField;
     @FXML private BarChart<String, Number> barChart;
+    @FXML private PieChart pieChart;
     @FXML private CategoryAxis cittaX;
     @FXML private NumberAxis bigliettiY;
     @FXML private JFXButton cercaButton;
-    private StatisticheBigliettiModel statisticheBigliettiModel;
+    private StatisticheModel statisticheModel;
 
     public void initialize(){}
 
-    public StatisticheBigliettiView(StatisticheBigliettiModel statisticheBigliettiModel) {
-        this.statisticheBigliettiModel = statisticheBigliettiModel;
-        statisticheBigliettiModel.addObserver(this);
+    public StatisticheView(StatisticheModel statisticheModel) {
+        this.statisticheModel = statisticheModel;
+        statisticheModel.addObserver(this);
     }
 
 
@@ -57,17 +52,35 @@ public class StatisticheBigliettiView implements Observer {
         this.barChart = barChart;
     }
 
+    public PieChart getPieChart() {
+        return pieChart;
+    }
+
     @Override
     public void update(Observable o, Object arg) {
-        Map<String,Integer> map = (Map)arg;
+
+        List<Map<String,Integer>> listMap = (List<Map<String,Integer>>) arg;
+        Map<String,Integer> mapBiglietti = listMap.get(0);
+        Map<String,Integer> mapEventi = listMap.get(1);
+        // BAR CHART
         bigliettiY.setLabel("Biglietti Venduti");
         cittaX.setLabel("Citta'");
         XYChart.Series<String,Number>  serie = new XYChart.Series<>();
         serie.setName(nomePartecipanteTextField.getText());
-        Set<String> set = map.keySet();
+        Set<String> set = mapBiglietti.keySet();
         for(String luogo : set) {
-            serie.getData().add(new XYChart.Data<String, Number>(luogo, map.get(luogo)));
+            serie.getData().add(new XYChart.Data<String, Number>(luogo, mapBiglietti.get(luogo)));
         }
         barChart.getData().add(serie);
+        // PIE CHART
+        List<PieChart.Data> listDate = new ArrayList<>();
+        Set<String> setCitta = mapEventi.keySet();
+        for(String citta : setCitta )
+            listDate.add(new PieChart.Data(citta,mapEventi.get(citta)));
+
+        ObservableList<PieChart.Data> dataPieChart = FXCollections.observableArrayList(listDate);
+        pieChart.setData(dataPieChart);
     }
+
+
 }
