@@ -4,7 +4,9 @@ import Control.RicercaEventoController;
 import Model.VisualizzaEventiModel;
 import Model.Evento;
 import Model.LuogoEnum;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.concurrent.Task;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -129,10 +131,24 @@ public class CercaEventoView  extends AnchorPane implements Observer {
     @Override public void update(Observable observerModel, Object lista ){
 
         List<Evento> list = (List<Evento>)lista;
-        tabellaCercaEventoTableView.setItems(FXCollections.observableArrayList(list));
-        colonnaLuogoEvento.setCellValueFactory(new PropertyValueFactory<Evento, LuogoEnum>("LuogoEvento"));
-        colonnaNomeEvento.setCellValueFactory(new PropertyValueFactory<Evento, String>("Nome"));
-        colonnaDataEvento.setCellValueFactory(new PropertyValueFactory<Evento, LocalDate>("DataEvento"));
+        Task taskUpdate = new Task() {
+            @Override
+            protected Object call() throws Exception {
+                tabellaCercaEventoTableView.setItems(FXCollections.observableArrayList(list));
+                colonnaLuogoEvento.setCellValueFactory(new PropertyValueFactory<Evento, LuogoEnum>("LuogoEvento"));
+                colonnaNomeEvento.setCellValueFactory(new PropertyValueFactory<Evento, String>("Nome"));
+                colonnaDataEvento.setCellValueFactory(new PropertyValueFactory<Evento, LocalDate>("DataEvento"));
+                return null;
+            }
+        };
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                taskUpdate.run();
+            }
+        });
+
 
     }
 

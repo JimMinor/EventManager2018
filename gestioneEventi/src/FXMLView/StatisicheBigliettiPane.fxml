@@ -5,20 +5,41 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXTextField fx:id="nomePartecipanteTextField" focusColor="#3eb3da" layoutX="31.0" layoutY="21.0" prefHeight="25.0" prefWidth="195.0" promptText="Nome Artista " unFocusColor="#3eb3da" />
-      <BarChart fx:id="barChart" alternativeColumnFillVisible="true" layoutX="31.0" layoutY="79.0" prefHeight="286.0" prefWidth="539.0" titleSide="RIGHT">
-        <xAxis>
-          <CategoryAxis fx:id="cittaX" label="Citta" prefHeight="69.0" prefWidth="185.0" side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis fx:id="bigliettiY" side="LEFT" tickLabelFill="#3eb3da" />
-        </yAxis>
-      </BarChart>
-      <JFXButton fx:id="cercaButton" layoutX="274.0" layoutY="21.0" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #8cd742;" text="Cerca" />
+      <SplitPane dividerPositions="0.511864406779661" layoutX="7.0" layoutY="58.0" prefHeight="339.0" prefWidth="867.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="389.0" prefWidth="236.0">
+               <children>
+                  <PieChart fx:id="pieChart" layoutY="17.0" prefHeight="235.0" prefWidth="299.0" title="Numero di Eventi per Citta" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="337.0" prefWidth="402.0">
+               <children>
+                  <BarChart fx:id="barChart" alternativeColumnFillVisible="true" barGap="6.0" categoryGap="5.0" layoutX="7.0" layoutY="20.0" prefHeight="307.0" prefWidth="406.0" title="Biglietti venduti per Citta">
+                    <xAxis>
+                      <CategoryAxis fx:id="cittaX" focusTraversable="true" prefHeight="57.0" prefWidth="370.0" startMargin="10.0" tickLabelGap="10.0" tickLabelRotation="33.7" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="bigliettiY" prefHeight="216.0" prefWidth="45.0" side="LEFT" tickLabelFill="#3eb3da" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <JFXTextField fx:id="nomePartecipanteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="40.0" layoutY="23.0" prefHeight="25.0" prefWidth="134.0" promptText="Artista/Squadra/Atleta" unFocusColor="#3eb3da" />
+      <JFXButton fx:id="cercaButton" layoutX="195.0" layoutY="22.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
+      <Label layoutX="331.0" layoutY="26.0" text="Inserire nome di un Artista/Squadra/Atleta per visualizzare le statistiche">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

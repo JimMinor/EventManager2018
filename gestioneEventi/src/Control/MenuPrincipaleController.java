@@ -2,10 +2,9 @@ package Control;
 
 import Model.*;
 import View.*;
-import View.cercaDipendentiPaneController;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -46,6 +45,8 @@ public class MenuPrincipaleController {
                 risorseForm.put("nuovoDipendente", "../FXMLView/inserisciDipendentePane.fxml");
                 risorseForm.put("visualizzaEvento","../FXMLView/VisualizzaEventoPane.fxml");
                 risorseForm.put("statistiche","../FXMLView/StatisicheBigliettiPane.fxml");
+                risorseForm.put("cercaAddetti", "../FXMLView/cercaAddettiPane.fxml");
+
 
             }
         };
@@ -60,7 +61,7 @@ public class MenuPrincipaleController {
 
     }
 
-    public void pulisciForm() {
+    private void pulisciForm() {
         formCorrente.getChildren().clear();
     }
 
@@ -112,7 +113,7 @@ public class MenuPrincipaleController {
         gestionePersonaleButton.addEventHandler(ActionEvent.ACTION, event -> Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                mostraFormGestioneDipendeti();
+                mostraFormAddetti();
             }
         }));
     }
@@ -137,19 +138,34 @@ public class MenuPrincipaleController {
 
     public void mostraFormInserisciEvento(){
 
-        try {
+        InserisciEventoView inserisciEventoForm=new InserisciEventoView(this);
 
-            FXMLLoader loader = caricaFormDaRisorsa("creaEvento");
-            InserisciEventoView inserisciEventoForm=new InserisciEventoView(this);
-            loader.setController(inserisciEventoForm);
-            AnchorPane pane = loader.load();
-            InserisciEventoController inserisciEventoController = new InserisciEventoController(new Evento(),inserisciEventoForm);
-            formCorrente.getChildren().add(pane);
+        Task taskInserisciEvento = new Task() {
+            @Override
+            protected Object call() throws Exception {
+                try {
 
-        } catch( Exception e ) { e.printStackTrace(); }
+                    FXMLLoader loader = caricaFormDaRisorsa("creaEvento");
+                    loader.setController(inserisciEventoForm);
+                    AnchorPane pane = loader.load();
+                    InserisciEventoController inserisciEventoController = new InserisciEventoController(new Evento(),inserisciEventoForm);
+                    formCorrente.getChildren().add(pane);
+
+                } catch( Exception e ) { e.printStackTrace(); }
+                return null;
+            }
+        };
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                taskInserisciEvento.run();
+            }
+        });
+
     }
 
     public void mostraFormCercaEvento() {
+
         try {
 
             FXMLLoader loader = caricaFormDaRisorsa("cercaEvento");
@@ -183,12 +199,15 @@ public class MenuPrincipaleController {
 
     }
 
-    public void mostraFormGestioneDipendeti() {
+    public void mostraFormAddetti() {
             try {
-                FXMLLoader loader = caricaFormDaRisorsa("gestioneDipedenti");
-                cercaDipendentiPaneController dipendentiController = new cercaDipendentiPaneController(this);
-                loader.setController(dipendentiController);
+                FXMLLoader loader = caricaFormDaRisorsa("cercaAddetti");
+                VisualizzaAddettiModel visualizzaAddettiModel = new VisualizzaAddettiModel();
+                CercaAddettiView cercaAddettiView = new CercaAddettiView(visualizzaAddettiModel);
+                loader.setController(cercaAddettiView);
                 Node form = loader.load();
+                RicercaAddettoController ricercaAddettoController = new RicercaAddettoController(cercaAddettiView,
+                        visualizzaAddettiModel,this);
                 formCorrente.getChildren().add(form);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -210,11 +229,11 @@ public class MenuPrincipaleController {
     public void mostraStaticheMenu() {
         try {
             FXMLLoader loader = caricaFormDaRisorsa("statistiche");
-            StatisticheBigliettiModel statisticheBigliettiModel = new StatisticheBigliettiModel();
-            StatisticheBigliettiView statisticheBigliettiView = new StatisticheBigliettiView(statisticheBigliettiModel);
-            loader.setController(statisticheBigliettiView);
+            StatisticheModel statisticheModel = new StatisticheModel();
+            StatisticheView statisticheView = new StatisticheView(statisticheModel);
+            loader.setController(statisticheView);
             AnchorPane form = loader.load();
-            StatisticheBigliettiController statisticheBigliettiController = new StatisticheBigliettiController(statisticheBigliettiModel,statisticheBigliettiView,this);
+            StatisticheController statisticheController = new StatisticheController(statisticheModel, statisticheView);
             formCorrente.getChildren().add(form);
         } catch ( Exception e)  { e.printStackTrace(); }
 

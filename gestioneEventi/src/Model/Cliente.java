@@ -20,6 +20,7 @@ public class Cliente extends Persona implements Comparable<Cliente> {
     }
 
     public Cliente(String cf,int id,String username,String password,String mail,String telefono,Float spesaTot,Float spesaCarta,int numBiglietti,String nome,String cognome,LocalDate dataNascita) {
+
         super(nome, cognome, dataNascita,cf);
         this.username = username;
         this.password=password;
@@ -77,5 +78,19 @@ public class Cliente extends Persona implements Comparable<Cliente> {
         if(altro==null || altro.getClass()!=getClass())return false;
         Cliente c = (Cliente) altro;
         return c.getCF() == getCF();
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", mail='" + mail + '\'' +
+                ", spesaTot=" + spesaTot +
+                ", spesaCarta=" + spesaCarta +
+                ", numBiglietti=" + numBiglietti +
+                ", id=" + id +
+                ", telefono='" + telefono + '\'' +
+                '}';
     }
 }

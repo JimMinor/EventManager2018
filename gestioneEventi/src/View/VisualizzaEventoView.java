@@ -36,9 +36,6 @@ public class VisualizzaEventoView implements Observer {
         visualizzaEventiModel.addObserver(this);
     }
 
-    public void setAttributiEvento(){
-
-    }
     public void initialize(){}
 
     public JFXTextField getNomeEventoTextField() {
@@ -51,42 +48,6 @@ public class VisualizzaEventoView implements Observer {
 
     public JFXTextField getTipoEventoTextField() {
         return tipoEventoTextField;
-    }
-
-    public void setNomeEventoTextField(JFXTextField nomeEventoTextField) {
-        this.nomeEventoTextField = nomeEventoTextField;
-    }
-
-    public void setLuogoEventoTextField(JFXTextField luogoEventoTextField) {
-        this.luogoEventoTextField = luogoEventoTextField;
-    }
-
-    public void setTipoEventoTextField(JFXTextField tipoEventoTextField) {
-        this.tipoEventoTextField = tipoEventoTextField;
-    }
-
-    public void setGenereEventoTextField(JFXTextField genereEventoTextField) {
-        this.genereEventoTextField = genereEventoTextField;
-    }
-
-    public void setDataEventoDatePicker(JFXDatePicker dataEventoDatePicker) {
-        this.dataEventoDatePicker = dataEventoDatePicker;
-    }
-
-    public void setDescrizioneEventoTextField(JFXTextArea descrizioneEventoTextField) {
-        this.descrizioneEventoTextField = descrizioneEventoTextField;
-    }
-
-    public void setOkButton(JFXButton okButton) {
-        this.okButton = okButton;
-    }
-
-    public void setListaPartecipantiListView(JFXListView<String> listaPartecipantiListView) {
-        this.listaPartecipantiListView = listaPartecipantiListView;
-    }
-
-    public void setPrezzoTextField(JFXTextField prezzoTextField) {
-        this.prezzoTextField = prezzoTextField;
     }
 
     public JFXTextField getGenereEventoTextField() {

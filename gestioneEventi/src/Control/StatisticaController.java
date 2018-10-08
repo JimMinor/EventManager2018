@@ -1,4 +1,4 @@
-package View;
+package Control;
 
 import Model.LuogoEnum;
 import com.jfoenix.controls.JFXButton;

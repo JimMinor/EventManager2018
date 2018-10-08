@@ -69,7 +69,7 @@ public class InserisciEventoController {
                 try{
                     controllaDatiEvento();
                 } catch ( NoValidEventDataException e) {
-                    MostraAlert.mostraAlertErroreInserimentoEvento(e.getMessage());
+                    MostraAlert.mostraAlertErroreInserimentoDati(e.getMessage());
                 }
             };
         }));
@@ -183,7 +183,7 @@ public class InserisciEventoController {
                     MostraAlert.mostraAlertEventoInserito();
                 } catch (Exception ee) {
                     ee.printStackTrace();
-                    MostraAlert.mostraAlertErroreInserimentoEvento(ee.getMessage());
+                    MostraAlert.mostraAlertErroreInserimentoDati(ee.getMessage());
                 }
                 return null;
             }

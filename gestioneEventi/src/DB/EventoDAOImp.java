@@ -4,6 +4,7 @@ import Model.*;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 public class EventoDAOImp implements EventoDAO {
 
@@ -27,7 +28,7 @@ public class EventoDAOImp implements EventoDAO {
         return gestoreQueryCerca.eseguiQueryRicercaEventi(nomeEvento,luogoEvento,dataEvento);
     }
 
-     public List<Evento> cercaEvento () throws SQLException {
+    public List<Evento> cercaEvento () throws SQLException {
         return gestoreQueryCerca.eseguiQueryRicercaEventi();
     }
 
@@ -42,5 +43,10 @@ public class EventoDAOImp implements EventoDAO {
     @Override
     public List<Evento> cercaEvento(String artista) throws Exception {
        return gestoreQueryCerca.eseguiQueryRicercaEventiArtista(artista);
+    }
+
+    @Override
+    public Map<String, Integer> cercaEventiPerCitta(String artista) throws Exception {
+        return gestoreQueryCerca.eseguiQueryRicercaEventiCitta(artista);
     }
 }

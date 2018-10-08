@@ -39,8 +39,6 @@ public class VisualizzaDatiClienteController {
         visualizzaDatiClientiView.getEmailClienteTextField().setDisable(true);
         visualizzaDatiClientiView.getBigliettiAcquistatiTextField().setText(String.valueOf(clienteDaVisualizzare.getNumBiglietti()));
         visualizzaDatiClientiView.getBigliettiAcquistatiTextField().setDisable(true);
-        //visualizzaDatiClientiView.passwordClienteTextField.setText(clienteDaVisualizzare.getPassword());
-        //visualizzaDatiClientiView.passwordClienteTextField.setDisable(true);
         visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setValue(clienteDaVisualizzare.getDataNascita());
         visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setDisable(true);
     }

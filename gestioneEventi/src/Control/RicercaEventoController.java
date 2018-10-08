@@ -11,9 +11,7 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ProgressBar;
 
-import javax.xml.ws.Action;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -58,7 +56,7 @@ public class RicercaEventoController {
                     cercaEventi();
 
                 } catch ( Exception e) {
-                    MostraAlert.mostraAlertErroreInserimentoEvento(e.getMessage());
+                    MostraAlert.mostraAlertErroreInserimentoDati(e.getMessage());
                 }
             };
         }));
@@ -180,7 +178,7 @@ public class RicercaEventoController {
         }
         catch ( NoValidEventDataException e2) {
 
-            MostraAlert.mostraAlertErroreInserimentoEvento(e2.getMessagge());
+            MostraAlert.mostraAlertErroreInserimentoDati(e2.getMessagge());
         }
     }
 

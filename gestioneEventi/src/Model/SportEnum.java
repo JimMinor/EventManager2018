@@ -7,9 +7,6 @@ public enum SportEnum {
     GOLF,
     NUOTO,
     TENNIS,
-    CRICKET,
-    BASEBALL,
-    FOOTBALL_AMERICANO,
     CICLISMO,
     ATELTICA
 }

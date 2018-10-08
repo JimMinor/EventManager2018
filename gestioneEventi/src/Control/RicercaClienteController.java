@@ -25,6 +25,9 @@ public class RicercaClienteController {
         this.menuPrincipaleController = menuPrincipaleController;
         this.clientiDAO =  new ClienteDAOImp();
         setListenerCercaClienti();
+        cercaCliente("");
+
+
     }
 
     /** Set Listener per la classe CercaClientiView */
@@ -65,7 +68,6 @@ public class RicercaClienteController {
                 .addEventHandler(ActionEvent.ACTION, event -> Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        System.out.println("cerca");
                         cercaCliente(cercaClientiView.getUsernameCercaClientiTextField().getText());
                     }
                 }));
@@ -81,6 +83,7 @@ public class RicercaClienteController {
                         visualizzaclientiModel.setClienteSelezionato(clienteSelezionato);
                         eliminClienteSelezionato(clienteSelezionato);
                         visualizzaclientiModel.setClienteSelezionato(new Cliente());
+                        cercaCliente("");
                     }
                 })));
     }

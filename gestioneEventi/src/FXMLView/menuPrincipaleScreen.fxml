@@ -49,7 +49,7 @@
                   <Image url="@../icons/icons8-user-80.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="gestionePersonaleButton" accessibleRole="PARENT" alignment="CENTER" layoutX="25.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #dada3e;" text="     Gestione Personale" textFill="WHITE" AnchorPane.leftAnchor="25.0" />
+            <JFXButton fx:id="gestionePersonaleButton" accessibleRole="PARENT" alignment="CENTER" layoutX="25.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #dada3e;" text="     Gestione Addetti " textFill="WHITE" AnchorPane.leftAnchor="25.0" />
             <JFXButton fx:id="visualizzaStaticheButton" alignment="CENTER" layoutX="25.0" layoutY="335.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #da3e3e;" text="Statistiche" textFill="WHITE" AnchorPane.leftAnchor="25.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="35.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -58,7 +58,7 @@
             </ImageView>
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="35.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/icons8-name-tag-64.png" />
+                  <Image url="@../icons/icons8-workers-64.png" />
                </image>
             </ImageView>
          </children>

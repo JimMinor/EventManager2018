@@ -23,7 +23,7 @@ public class MostraAlert {
 
     }
 
-    public static void mostraAlertErroreInserimentoEvento(String messagge) {
+    public static void mostraAlertErroreInserimentoDati(String messagge) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Dati Errati");
         alert.setHeaderText(null);
@@ -41,6 +41,13 @@ public class MostraAlert {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Successo");
         alert.setContentText("L'impiegato e' stato inserito con successo");
+        alert.showAndWait();
+    }
+
+    public static void mostraAlertAddettoEliminato() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Successo");
+        alert.setContentText("L'addetto e' stato eliminato con successo");
         alert.showAndWait();
     }
 }

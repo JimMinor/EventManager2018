@@ -129,11 +129,11 @@ public class inserisciDipendentePaneController implements Initializable {
             //funzione per tornare al menu precedente
         }
         catch (NoValidEventDataException e) {
-            MostraAlert.mostraAlertErroreInserimentoEvento(e.getMessagge());
+            MostraAlert.mostraAlertErroreInserimentoDati(e.getMessagge());
         }
         catch( Exception e){
             e.printStackTrace();
-            MostraAlert.mostraAlertErroreInserimentoEvento("Errore Inserimento Dipendente");
+            MostraAlert.mostraAlertErroreInserimentoDati("Errore Inserimento Dipendente");
         }
 
     }
