@@ -39,9 +39,12 @@ public class StatisticheController {
                                      if( !artista.equals("")) {
 
                                          List<Evento> listeventi = eventoDAO.cercaEvento(artista);
+                                         if(!listeventi.isEmpty()){
                                          modelStat.setMapBiglietti(creaMappaBiglietti(listeventi));
                                          modelStat.setMapEventiCitta(eventoDAO.cercaEventiPerCitta(artista));
                                          modelStat.notifyView();
+                                         }
+                                         else MostraAlert.mostraAlertErroreInserimentoDati("Inserisci un Artista/Squadra/Atleta presente nel database");
                                      }
                                      else MostraAlert.mostraAlertErroreInserimentoDati("Inserisci una Artista/Squadra/Atleta");
 
