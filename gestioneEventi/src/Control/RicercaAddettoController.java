@@ -35,6 +35,8 @@ public class RicercaAddettoController {
         setListenerAnnullaButton();
         setListenerCercaButton();
         setListenerEliminaButton();
+        setListenerVisualizzaDatiButton();
+        setListenerNuovoButton();
     }
 
     private void setListenerAnnullaButton() {
@@ -74,7 +76,34 @@ public class RicercaAddettoController {
         );
     }
 
-    private void setListenerNuovoButton() {}
+    private void setListenerNuovoButton() {
+        cercaAddettiView.getNuovoAddettoButton().addEventHandler(ActionEvent.ACTION,
+                event -> Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        menuPrincipaleController.mostraFormInserisciAddetto();
+                    }
+                }));
+    }
+
+    private void setListenerVisualizzaDatiButton() {
+
+        cercaAddettiView.getVisualizzaAddettoButton().
+                addEventHandler(ActionEvent.ACTION, event -> Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        Addetto addettoSelezionato = cercaAddettiView.getTabellaCercaAddettoTableView().getSelectionModel().getSelectedItem();
+
+                        if(addettoSelezionato!=null)
+                        {
+                            visualizzaAddettiModel.setAddettoSelezionato(addettoSelezionato);
+                            menuPrincipaleController.mostraFormVisualizzaAddetto(visualizzaAddettiModel);
+                        }
+
+
+                    }
+                }));
+    }
 
     private void  eliminaAddettoSelezionato(){
 
@@ -92,12 +121,9 @@ public class RicercaAddettoController {
 
     }
 
-
-
-
     public void cercaAddetti () {
         String nomeAddetto = cercaAddettiView.getNomeCercaAddettoTextField().getText();
-        String cognomeAddetto = cercaAddettiView.getColonnaCognomeAddetto().getText();
+        String cognomeAddetto = cercaAddettiView.getCognomeCercaAddettoTextField().getText();
         LocalDate dataNascitaAddetto = cercaAddettiView.getDataNascitaCercaAddettoDataPicker().getValue();
 
         Task cercaAddettiTask = new Task() {

@@ -15,7 +15,7 @@ import java.util.Observer;
 public class CercaAddettiView implements Observer {
 
     @FXML private AnchorPane cercaAddettiScreenAnchorPane;
-    @FXML private Button modificaAddettoButton;
+    @FXML private Button visualizzaAddettoButton;
     @FXML private Button eliminaAddettiButton;
     @FXML private TableView<Addetto> tabellaCercaAddettoTableView;
     @FXML private TableColumn<Addetto, String> colonnaNomeAddetto;
@@ -41,8 +41,8 @@ public class CercaAddettiView implements Observer {
         return cercaAddettiScreenAnchorPane;
     }
 
-    public Button getModificaAddettoButton() {
-        return modificaAddettoButton;
+    public Button getVisualizzaAddettoButton() {
+        return visualizzaAddettoButton;
     }
 
     public Button getEliminaAddettiButton() {

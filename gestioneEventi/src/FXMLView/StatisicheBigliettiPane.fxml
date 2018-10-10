@@ -24,7 +24,7 @@
                <children>
                   <BarChart fx:id="barChart" alternativeColumnFillVisible="true" barGap="6.0" categoryGap="5.0" layoutX="7.0" layoutY="20.0" prefHeight="307.0" prefWidth="406.0" title="Biglietti venduti per Citta">
                     <xAxis>
-                      <CategoryAxis fx:id="cittaX" focusTraversable="true" prefHeight="57.0" prefWidth="370.0" startMargin="10.0" tickLabelGap="10.0" tickLabelRotation="33.7" />
+                        <CategoryAxis fx:id="cittaX" focusTraversable="true" prefHeight="57.0" prefWidth="370.0" startMargin="10.0" tickLabelGap="10.0" tickLabelRotation="33.7" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis fx:id="bigliettiY" prefHeight="216.0" prefWidth="45.0" side="LEFT" tickLabelFill="#3eb3da" />
@@ -34,8 +34,9 @@
             </AnchorPane>
         </items>
       </SplitPane>
+
       <JFXTextField fx:id="nomePartecipanteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="40.0" layoutY="23.0" prefHeight="25.0" prefWidth="134.0" promptText="Artista/Squadra/Atleta" unFocusColor="#3eb3da" />
-      <JFXButton fx:id="cercaButton" layoutX="195.0" layoutY="22.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
+       <JFXButton fx:id="cercaButton" layoutX="195.0" layoutY="22.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
       <Label layoutX="331.0" layoutY="26.0" text="Inserire nome di un Artista/Squadra/Atleta per visualizzare le statistiche">
          <font>
             <Font name="System Italic" size="12.0" />

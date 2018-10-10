@@ -112,10 +112,11 @@ public class RicercaEventoController {
                         getTabellaCercaEventoTableView().
                         getSelectionModel().
                         getSelectedItem());
-                if(evento!=null) {
-                    visualizzaEventiModel.setEventoSelezionato(evento);
-                    menuPrincipaleController.mostraFormVisualizzaEvento(visualizzaEventiModel);
-                }
+                         if(evento!=null)
+                         {
+                                  visualizzaEventiModel.setEventoSelezionato(evento);
+                                  menuPrincipaleController.mostraFormVisualizzaEvento(visualizzaEventiModel);
+                         }
 
             }
         }));

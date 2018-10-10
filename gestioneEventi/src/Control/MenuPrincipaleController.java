@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
+import javax.swing.tree.ExpandVetoException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +37,7 @@ public class MenuPrincipaleController {
         Thread inserisciRisorseRun = new Thread(){
             @Override
             public void run() {
+
                 risorseForm.put("creaEvento","../FXMLView/inserisciEventoPane.fxml");
                 risorseForm.put("tipoEvento","../FXMLView/tipoEventoPane.fxml");
                 risorseForm.put("gestioneClienti", "../FXMLView/cercaClientPane.fxml");
@@ -46,6 +48,8 @@ public class MenuPrincipaleController {
                 risorseForm.put("visualizzaEvento","../FXMLView/VisualizzaEventoPane.fxml");
                 risorseForm.put("statistiche","../FXMLView/StatisicheBigliettiPane.fxml");
                 risorseForm.put("cercaAddetti", "../FXMLView/cercaAddettiPane.fxml");
+                risorseForm.put("visualizzaAddetto","../FXMLView/visualizzaAddettoPane.fxml");
+                risorseForm.put("inserisciAddetto","../FXMLView/inserisciAddettoPane.fxml");
 
 
             }
@@ -234,6 +238,7 @@ public class MenuPrincipaleController {
             loader.setController(statisticheView);
             AnchorPane form = loader.load();
             StatisticheController statisticheController = new StatisticheController(statisticheModel, statisticheView);
+
             formCorrente.getChildren().add(form);
         } catch ( Exception e)  { e.printStackTrace(); }
 
@@ -270,5 +275,28 @@ public class MenuPrincipaleController {
 
 
         } catch ( Exception e ){ e.printStackTrace(); }
+    }
+
+    public void mostraFormVisualizzaAddetto(VisualizzaAddettiModel visualizzaAddettiModel) {
+
+        try {
+            FXMLLoader loader = caricaFormDaRisorsa("visualizzaAddetto");
+            VisualizzaAddettoView visualizzaAddettoView = new VisualizzaAddettoView(visualizzaAddettiModel);
+            loader.setController(visualizzaAddettoView);
+            Parent root = loader.load();
+            formCorrente.getChildren().add(root);
+            VisualizzaAddettoController visualizzaAddettoController = new VisualizzaAddettoController(visualizzaAddettiModel,visualizzaAddettoView,this);
+        } catch ( Exception e ) { e.printStackTrace(); }
+    }
+
+    public void mostraFormInserisciAddetto() {
+        try {
+            FXMLLoader loader = caricaFormDaRisorsa("inserisciAddetto");
+            InserisciAddettoView inserisciAddettoView = new InserisciAddettoView();
+            loader.setController(inserisciAddettoView);
+            Parent root = loader.load();
+            InserisciAddettoController inserisciAddettoController = new InserisciAddettoController(inserisciAddettoView,this);
+            formCorrente.getChildren().add(root);
+        } catch ( Exception e ) { e.printStackTrace(); }
     }
 }

@@ -302,7 +302,7 @@ public class GestoreQueryCerca {
         //{1,2,3}
         if ((!nomeEvento.equals("")) && !(luogo == null) && !(dataEvento == null)) {
             queryWhere = " WHERE NOME LIKE '%"+nomeEvento+"%' AND LUOGO=? AND DATA=? ";
-            System.out.println(queryWhere);
+
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, luogo);
             preparedStatement.setDate(2, Date.valueOf(dataEvento));
@@ -477,7 +477,7 @@ public class GestoreQueryCerca {
         //{1,2,3}
         if (!nome.equals("") && !cognome.equals("") && !(datanascita == null)) {
             queryWhere = " WHERE NOME LIKE '%"+nome+"%' AND COGNOME=? AND DATA_NASCITA=?";
-            System.out.println(queryWhere);
+            .out.println(queryWhere);
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, nome);
             preparedStatement.setString(2, cognome);
@@ -496,7 +496,7 @@ public class GestoreQueryCerca {
         //{1,3}
         else if (!nome.equals("") && cognome.equals("") && !(datanascita == null)) {
             queryWhere = " WHERE NOME LIKE '%"+nome+"%' AND DATA_NASCITA=?";
-            System.out.println(queryWhere);
+
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, nome);
             preparedStatement.setDate(2, Date.valueOf(datanascita));
@@ -505,7 +505,7 @@ public class GestoreQueryCerca {
         //{2,3}
         else if (nome.equals("") && !cognome.equals("") && !(datanascita == null)) {
             queryWhere = " WHERE COGNOME LIKE '%"+nome+"%' AND DATA_NASCITA=?";
-            System.out.println(queryWhere);
+
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, cognome);
             preparedStatement.setDate(2, Date.valueOf(datanascita));
@@ -514,7 +514,7 @@ public class GestoreQueryCerca {
         //{1}
         else if (!nome.equals("") && cognome.equals("") && (datanascita == null)) {
             queryWhere = " WHERE NOME LIKE '%"+nome+"%' ";
-            System.out.println(queryWhere);
+
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, nome);
             resultSet = preparedStatement.executeQuery();
@@ -522,7 +522,7 @@ public class GestoreQueryCerca {
         //{2}
         else if (nome.equals("") && !cognome.equals("") && (datanascita == null)) {
             queryWhere = " WHERE COGNOME='" + cognome + "'";
-            System.out.println(queryWhere);
+
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
 
             resultSet = preparedStatement.executeQuery();
@@ -531,18 +531,18 @@ public class GestoreQueryCerca {
         else if (nome.equals("") && cognome.equals("") && !(datanascita == null)) {
 
             queryWhere = " WHERE  DATA_NASCITA=?";
-            System.out.println(queryWhere);
+
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setDate(1, Date.valueOf(datanascita));
             resultSet = preparedStatement.executeQuery();
         }
         else {
-            System.out.println("Tutti i campi vuoti");
+
             preparedStatement = connection.prepareStatement(selectSql);
             resultSet = preparedStatement.executeQuery();
         }
 
-        System.out.println("Result set vuoto->"+resultSet.isBeforeFirst());
+
         while (resultSet.next()) {
             String nome1 = (resultSet.getString("NOME"));
             String cognome1 = (resultSet.getString("COGNOME"));
@@ -557,13 +557,13 @@ public class GestoreQueryCerca {
 
 
             Addetto rigaAddetto = new Addetto(nome1, cognome1, dataNascita, CF, dataAssunzione, stipendio, telefono, iban, email, id);
-            System.out.println(rigaAddetto);
+
             listaAddetto.add(rigaAddetto);
         }
         resultSet.close();
         preparedStatement.close();
         connection.close();
-        System.out.println("DB"+listaAddetto);
+
         return listaAddetto;
 
 
