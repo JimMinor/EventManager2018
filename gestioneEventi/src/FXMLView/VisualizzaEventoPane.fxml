@@ -9,14 +9,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXTextField fx:id="nomeEventoTextField" editable="false" focusColor="#3eb3da" layoutX="26.0" layoutY="38.0" promptText="Nome Evento" />
-      <JFXTextField fx:id="luogoEventoTextField" editable="false" focusColor="#3eb3da" layoutX="26.0" layoutY="100.0" promptText="Luogo Evento" />
-      <JFXTextField fx:id="tipoEventoTextField" editable="false" focusColor="#3eb3da" layoutX="26.0" layoutY="168.0" promptText="Tipo Evento" />
-      <JFXTextField fx:id="genereEventoTextField" editable="false" focusColor="#3eb3da" layoutX="26.0" layoutY="232.0" promptText="Genere dell'Evento" />
-      <JFXDatePicker fx:id="dataEventoDatePicker" defaultColor="#3eb3da" editable="false" layoutX="26.0" layoutY="286.0" promptText="Data dell'Evento" />
-      <JFXTextArea fx:id="descrizioneEventoTextField" editable="false" focusColor="#3eb3da" layoutX="357.0" layoutY="34.0" prefHeight="91.0" prefWidth="207.0" promptText="Descrizione dell'evento" />
+      <JFXTextField fx:id="nomeEventoTextField" editable="false" focusColor="#3eb3da" labelFloat="true" layoutX="26.0" layoutY="38.0" promptText="Nome Evento" unFocusColor="#3eb3da" />
+      <JFXTextField fx:id="luogoEventoTextField" editable="false" focusColor="#3eb3da" labelFloat="true" layoutX="26.0" layoutY="100.0" promptText="Luogo Evento" unFocusColor="#3eb3da" />
+      <JFXTextField fx:id="tipoEventoTextField" editable="false" focusColor="#3eb3da" labelFloat="true" layoutX="26.0" layoutY="168.0" promptText="Tipo Evento" unFocusColor="#3eb3da" />
+      <JFXTextField fx:id="genereEventoTextField" editable="false" focusColor="#3eb3da" labelFloat="true" layoutX="26.0" layoutY="232.0" promptText="Genere dell'Evento" unFocusColor="#3eb3da" />
+      <JFXDatePicker fx:id="dataEventoDatePicker" defaultColor="#3eb3da" editable="false" layoutX="26.0" layoutY="286.0" overLay="true" promptText="Data dell'Evento" />
+      <JFXTextArea fx:id="descrizioneEventoTextField" editable="false" focusColor="#3eb3da" labelFloat="true" layoutX="364.0" layoutY="34.0" prefHeight="131.0" prefWidth="200.0" promptText="Descrizione dell'evento" unFocusColor="#3eb3da" />
       <JFXButton fx:id="okButton" layoutX="409.0" layoutY="378.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #8cd742;" text="OK" textFill="WHITE" />
-      <JFXListView fx:id="listaPartecipantiListView" layoutX="361.0" layoutY="146.0" prefHeight="91.0" prefWidth="200.0" />
-      <JFXTextField fx:id="prezzoTextField" editable="false" focusColor="#3eb3da" layoutX="26.0" layoutY="343.0" prefHeight="25.0" prefWidth="149.0" promptText="Prezzo" />
+      <JFXListView fx:id="listaPartecipantiListView" layoutX="364.0" layoutY="193.0" prefHeight="147.0" prefWidth="200.0" />
+      <JFXTextField fx:id="prezzoTextField" editable="false" focusColor="#3eb3da" labelFloat="true" layoutX="26.0" layoutY="343.0" prefHeight="25.0" prefWidth="149.0" promptText="Prezzo" unFocusColor="#3eb3da" />
    </children>
 </AnchorPane>

@@ -87,6 +87,8 @@ public class InserisciEventoController {
                 Set<String> setPartecipanti = evento.getPartecipantiEvento();
                 setPartecipanti.add(partecipante);
                 evento.setPartecipantiEvento(setPartecipanti);
+                inserisciEventoView.getPartecipantiListView().
+                        setItems(FXCollections.observableArrayList(setPartecipanti));
                 partecipanteTextField.clear();
 
             }

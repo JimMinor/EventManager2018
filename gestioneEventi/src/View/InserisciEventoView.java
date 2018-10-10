@@ -24,8 +24,7 @@ public class InserisciEventoView extends AnchorPane {
     @FXML private TextField prezzoBigliettoTextField;
     @FXML private TextField partecipanteEventoTextField;
     @FXML private ComboBox<String> genereEventoComboBox;
-
-
+    @FXML private ListView<String> partecipantiListView;
     @FXML private ComboBox<TipologiaEnum> tipologiaEventoComboBox;
     // Utilies Fields---------------------------------
     private TipologiaEnum tipologiaEvento;
@@ -41,6 +40,7 @@ public class InserisciEventoView extends AnchorPane {
     public void initialize() {
         luogoEventoComboBox.setItems(FXCollections.observableArrayList(LuogoEnum.values()));
         tipologiaEventoComboBox.setItems(FXCollections.observableArrayList(TipologiaEnum.values()));
+
     }
 
     public InserisciEventoView(MenuPrincipaleController menuPrincipaleController) {
@@ -97,6 +97,8 @@ public class InserisciEventoView extends AnchorPane {
         return inserisciButton;
 
     }
+
+    public ListView<String> getPartecipantiListView () { return partecipantiListView; }
 
 
 

@@ -24,25 +24,25 @@ public class VisualizzaDatiClienteController {
     private void setAttributiCliente() {
         Cliente clienteDaVisualizzare = visualizzaClientiModel.getClienteSelezionato();
         visualizzaDatiClientiView.getUsernameClienteTextField().setText(clienteDaVisualizzare.getUsername());
-        visualizzaDatiClientiView.getUsernameClienteTextField().setDisable(true);
+        visualizzaDatiClientiView.getUsernameClienteTextField().setEditable(false);
         visualizzaDatiClientiView.getNomeClienteTextField().setText(clienteDaVisualizzare.getNome());
-        visualizzaDatiClientiView.getNomeClienteTextField().setDisable(true);
+        visualizzaDatiClientiView.getNomeClienteTextField().setEditable(false);
         visualizzaDatiClientiView.getCognomeClienteTextField().setText(clienteDaVisualizzare.getCognome());
-        visualizzaDatiClientiView.getCognomeClienteTextField().setDisable(true);
+        visualizzaDatiClientiView.getCognomeClienteTextField().setEditable(false);
         visualizzaDatiClientiView.getCodFiscaleClienteTextField().setText(clienteDaVisualizzare.getCF());
-        visualizzaDatiClientiView.getCodFiscaleClienteTextField().setDisable(true);
+        visualizzaDatiClientiView.getCodFiscaleClienteTextField().setEditable(false);
         visualizzaDatiClientiView.getSpesaCartaClienteTextField().setText(String.valueOf(clienteDaVisualizzare.getSpesaCarta()));
-        visualizzaDatiClientiView.getSpesaCartaClienteTextField().setDisable(true);
+        visualizzaDatiClientiView.getSpesaCartaClienteTextField().setEditable(false);
         visualizzaDatiClientiView.getSpesaTotaleClienteTextField().setText(String.valueOf(clienteDaVisualizzare.getSpesaTot()));
-        visualizzaDatiClientiView.getSpesaTotaleClienteTextField().setDisable(true);
+        visualizzaDatiClientiView.getSpesaTotaleClienteTextField().setEditable(false);
         visualizzaDatiClientiView.getEmailClienteTextField().setText(clienteDaVisualizzare.getMail());
-        visualizzaDatiClientiView.getEmailClienteTextField().setDisable(true);
+        visualizzaDatiClientiView.getEmailClienteTextField().setEditable(false);
         visualizzaDatiClientiView.getBigliettiAcquistatiTextField().setText(String.valueOf(clienteDaVisualizzare.getNumBiglietti()));
-        visualizzaDatiClientiView.getBigliettiAcquistatiTextField().setDisable(true);
+        visualizzaDatiClientiView.getBigliettiAcquistatiTextField().setEditable(false);
         visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setValue(clienteDaVisualizzare.getDataNascita());
-        visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setDisable(true);
+        visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setEditable(false);
         visualizzaDatiClientiView.getPasswordClienteTextField().setText(clienteDaVisualizzare.getPassword());
-        visualizzaDatiClientiView.getPasswordClienteTextField().setDisable(true);
+        visualizzaDatiClientiView.getPasswordClienteTextField().setEditable(false);
     }
 
     private void setListenerVisualizzaCliente(){
