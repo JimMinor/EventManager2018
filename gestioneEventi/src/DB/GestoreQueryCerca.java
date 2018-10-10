@@ -477,7 +477,6 @@ public class GestoreQueryCerca {
         //{1,2,3}
         if (!nome.equals("") && !cognome.equals("") && !(datanascita == null)) {
             queryWhere = " WHERE NOME LIKE '%"+nome+"%' AND COGNOME=? AND DATA_NASCITA=?";
-            .out.println(queryWhere);
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, nome);
             preparedStatement.setString(2, cognome);

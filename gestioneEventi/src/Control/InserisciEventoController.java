@@ -85,7 +85,6 @@ public class InserisciEventoController {
 
                 String partecipante = partecipanteTextField.getText();
                 Set<String> setPartecipanti = evento.getPartecipantiEvento();
-                setPartecipanti = new HashSet<>();
                 setPartecipanti.add(partecipante);
                 evento.setPartecipantiEvento(setPartecipanti);
                 partecipanteTextField.clear();

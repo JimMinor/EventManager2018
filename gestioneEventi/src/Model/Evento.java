@@ -3,6 +3,7 @@ package Model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.prefs.Preferences;
 
@@ -25,7 +26,9 @@ public  class Evento implements Comparable<Evento> {
     private Integer bigliettiVenduti;
 
 
-    public Evento (){}
+    public Evento (){
+        partecipantiEvento = new HashSet<>();
+    }
 
     public Evento(LuogoEnum luogoEvento, String descrizione,
                   Float prezzoBiglietto, TipologiaEnum tipologiaEvento,
