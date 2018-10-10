@@ -41,6 +41,8 @@ public class VisualizzaDatiClienteController {
         visualizzaDatiClientiView.getBigliettiAcquistatiTextField().setDisable(true);
         visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setValue(clienteDaVisualizzare.getDataNascita());
         visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setDisable(true);
+        visualizzaDatiClientiView.getPasswordClienteTextField().setText(clienteDaVisualizzare.getPassword());
+        visualizzaDatiClientiView.getPasswordClienteTextField().setDisable(true);
     }
 
     private void setListenerVisualizzaCliente(){
